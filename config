@@ -1,0 +1,40 @@
+#
+#  Configuration file for mdh/mdsetup/zbl96 
+#  Edit the lines below to contain settings suitable for your
+#  system, i.e. change COMPILER and FLAGS to the suitable value.
+#
+#  Supported values for declaring the MACHINE:
+#
+#  SunOS4, SunOS5, Ultrix, Linux, HP9000, Alpha, Convex, IBM
+#
+#
+#  Machine dedendent flag values:
+#
+#		COMPILER	FLAGS			Note
+#		--------	-----			-----------
+# convex:	cc 		-O1 -std		-O2 gives false results
+# HP9000	cc		-DHP9000 -O -Aa		realloc() doesn't work
+# Alpha		cc		-DAlpha -Olimit 1500 -O
+# Linux		cc		-DLinux -O
+# IBM AIX	cc		-DIBM -qmaxmem=8196
+# SGI		cc		-DSGI			
+# Sun OS 4	cc		-DSunOS4
+# Sun OS 5	cc		-DSunOS5
+#
+# If you do not have a well configured shell, use -DNOSHELL as well in FLAGS
+#
+
+#
+#  Edit the two lines below:
+#
+COMPILER = cc
+FLAGS = -DLinux -O
+
+#
+#
+#
+CC = $(COMPILER) $(FLAGS)  
+LINK = $(COMPILER) -O
+PROF = $(COMPILER) -p
+
+

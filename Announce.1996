@@ -1,0 +1,40 @@
+
+    Dear MDRANGE user !
+
+  This email has been sent to people who, according to my notes, at some 
+point have acquired or showed interest in MDRANGE. If you are no longer
+interested in the subject/code, a brief reply telling that will make me 
+remove you from my list of MDRANGE users.
+
+  This mail announces the arrival of a new package of the code.
+It includes a new dialog-like setup program mdsetup , which
+makes it quite easy to create the input files for the actual
+simulation code mdh. Also part of the package is a code which
+evaluates the SRIM96 electronic stopping powers, so all 
+required input files can now be generated online.
+
+  The package also contains slightly improved documentation
+and six sets of sample input files for mdh. The mdh code itself
+has also been somewhat enhanced; in particular, the initial atom
+displacements can now be obtained very quickly using a Debye
+temperature based algorithm.
+
+  The package can be obtained by anonymous ftp from
+
+ftp://beam.helsinki.fi/pub/knordlun/mdrange.tar.gz
+
+  which can be unpacked the usual way, using eg.
+
+gunzip mdrange.tar.gz
+tar xvf mdrange.tar
+
+  It should work on any Unix platform, and has been explicitly 
+tested on Alpha, Linux, AIX, SGI, HP, SGI and Sun Unix platforms.
+
+	Yours,
+
+
+		Kai Nordlund (author of mdh)
+		kai.nordlund@helsinki.fi
+		Jussi Sillanpaa (author of mdsetup)
+		jussi.sillanpaa@helsinki.fi

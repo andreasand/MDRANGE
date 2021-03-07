@@ -1,0 +1,153 @@
+
+   VERSIONS
+
+  mdrange has been developed in two major steps. The first one
+was by Kai Nordlund in 1994-2001. The second step contained a
+range of major physical additions as well as some changes in the
+basic algorithms by Jarkko Peltola in 2001- [5,9]. The version numbering
+up to 1.83b are Kai Nordlund's versions, from 1.83b up to 3.X
+Jarkko Peltolas [39,58,78,92]. The first versions are for short called "mdh1",
+the latter ones "mdh3". The main binary is called "mdh", as before.
+
+  Also in this distribution is a special rare-event enhanced
+version, compiled to the binary called mdhreed.
+Furthermore, the last "mdh1" version by Kai Nordlund is provided
+in the directory mdh1/mdh/. This is to enable checking that the
+new additions are not in discrepancy with possible previous uses
+of the program. They should not be, but caveat emptor.
+
+  A detailed list of the version history is in mdh/modification_history
+
+
+
+   INSTALLING MDRANGE
+
+  The directory bin/ contains precompiled binaries for Linux.
+If you are using a similar Linux to use, you may just get started
+with them directly.
+
+  If this does not work, EDIT THE FILE 'config' to contain
+the appropriate settings for your system (this should be real 
+easy, the file config contains directions how to do that).
+Then just issue the command 
+
+	make
+
+in the main mdrange directory. If this fails, try issuing 'make clean'
+and then make again. If you still have problems with compiling the
+code, the documentation may help (see below).
+  
+  The compilation should make 4 executables in the directory bin/:
+mdh, mdhreed, mdsetup and zbl96.
+
+  All the executables will be placed in the directory 
+mdrange/bin and all the data files needed by zbl96 and mdsetup will be 
+placed in mdrange/data. Note that you should not remove anything
+from, or move the, bin/ or data/ directories (If you need to do this, rerun 
+the script writeheader and recompile the mdsetup and zbl96 programs).
+
+
+  To use the programs, it is useful to add the mdrange/bin directory into 
+your search path, after which you can run them from anywhere in the system.
+If you do not know how to do this, ask your system operator for help.
+You can also move the executables from the mdrange/bin-directory
+to any other directory in your search path.
+
+  The easy way to start using the package is to use mdsetup. Go to
+the directory mdrange/test/ (which should be empty) and issue the command
+
+	../bin/mdsetup
+
+
+  If you wish to compile the old versions mdh1 and mdsetup1,
+go to the directories mdh1/mdh or mdh1/mdsetup and say make
+there.
+
+
+  For PENR-elecronic stopping model, we have included the "stopping.in"
+files for all ion-species, we have tested, in the PENR_stopping/
+directory. The directory also contains the spherical symmetric
+electron density profiles for Si (cdens.Si).  The full 3D-density map
+for Si can be calculated following the instructions in the
+PENR_stopping/charge_dens_calculation/ directory.  If you need to
+simulate some other ion-Si case and need the stopping.in-file for that
+case, contact us (jypeltol@acclab.helsinki.fi ). The cdens.in-files are
+from ZBL-book vol. 1.  The 3D-densitymap-file can be calculated only for
+Si and Ge, for the moment.
+
+
+
+    TESTING THE PARTS INDEPENDENTLY
+
+  To test whether the main simulation program mdh works, go to the directory
+
+examples/sisi10/
+
+  and issue the command ../../bin/mdh
+
+  The mean range should converge towards 205 +- 3 Angstrom.
+
+  Note that due to different numerical precision in different computer 
+systems and compilers, and the chaotic nature of the ion motion, the 
+results in one computer system do not need to be identical to those in 
+another. But the average should of course converge towards the same value.
+
+  To test mdsetup and zbl96, just start them anywhere. zbl96 gives
+a short online help when started with no command line parameters.
+
+    EXAMPLES
+
+  The directories examples/*/ contain examples which should
+both work for mdh1 and mdh3. The directories examples_mdh3
+contain examples of using the program in the new, mdh3 mode,
+as well as the reed version.
+
+    DOCUMENTATION
+
+The main documentation is the file mdh_program.html in the directory
+documentation, which is best read with a web browser, eg.
+
+netscape documentation/mdh_program.html
+
+
+Documentation concerning zbl is in the directory zbl96 .
+
+     REFERENCES, WITH ANNOTATIONS
+
+ 
+[5]  K. Nordlund, Molecular dynamics simulation of ion ranges in the 1 --
+    100 keV energy range, Comput. Mater. Sci. 3, 448 (1995).
+	- The original paper on the method, and the basic paper to
+	  cite for MDRANGE
+
+[9] P. Haussalo, K. Nordlund, and J. Keinonen, Stopping of 5 -- 100 keV
+    helium in tantalum, niobium, tungsten, and AISI 316L steel, Nucl. Instr.
+    Meth. Phys. Res. B 111, 1 (1996).
+	- Explains how the nuclear stopping power can be evaluated
+	  from MDRANGE
+
+[27] J. Sillanp‰‰, K. Nordlund, and J. Keinonen, Channeling in
+     manufacturing sharp junctions: a molecular dynamics simulation study,
+     Physica Scripta T79, 272 (1999).
+	- Our first implementation of a rare-event algorithm
+
+[39] J. Sillanp‰‰, K. Nordlund, and J. Keinonen, Electronic stopping of
+     Silicon from a 3D Charge Distribution, Phys. Rev. B 62, 3109 (2000).
+	- introduces the use of 3D charge distributions
+
+[58] J. Sillanp‰‰, J. Peltola, K. Nordlund, J. Keinonen, and M. J. Puska, 
+     Electronic stopping calculated using explicit phase shift factors, Phys.
+     Rev. B 63, 134113 (2000).
+	- introduces the "Puska" or PENR pair-specific stopping model
+
+[78] J. Peltola, K. Nordlund, and J. Keinonen, Effects of damage build-up
+     in range profiles in crystalline Si; molecular dynamics simulations, Nucl.
+     Instr. Meth. Phys. Res. B (2002), accepted for publication.
+	- the MDRANGE damage buildup model
+
+[92] J. Peltola, K. Nordlund, and J. Keinonen, Molecular dynamics
+     simulation method for calculating fluence-dependent range profiles, Nucl.
+     Instr. Meth. Phys. Res. B (2002), COSIRES 2002 conference paper, submitted
+     for publication.
+        - Introduces a modified way to handle cell shifting
+

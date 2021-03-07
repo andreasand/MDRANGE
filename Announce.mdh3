@@ -1,0 +1,70 @@
+
+    Dear MDRANGE user !
+
+  This email has been sent to people who, according to my notes, at
+some point have acquired or showed interest in MDRANGE. I am sure most
+of the recipients have long since lost interest in this topic. If this
+applies to you, you can ignore the rest of this email. We will send emails
+to this list less than once a year so you do not need to worry this is
+a new source of spam mails.
+
+  This email announces the arrival of a much extended version of the
+code, mdh V3.0, or "mdh3" for short.  It includes major physical
+additions, the most important of which are a pair-specific stopping
+model based on 3D charge distributions in Si [39, 58], a damage-buildup
+model, and an implementation of a rare-event-enhancement algorithm
+similar to the REED one by Beardmore and Grönbech-Jensen [B98].
+However, because the reed method holds a U.S. patent, No. 6,366,873,
+we do not distribute the reed method with the main package, but only
+to users outside the U.S. on special request. 
+
+  The new version also includes a range of corrections of bugs, ranging
+from completely harmless bugs to such which can be very serious in some
+applications.  If you are using an mdrange version < 1.83, it is worth
+upgrading. 
+
+  The package also contains slightly improved documentation and sample
+input files for all of the improvements.  The new version should be
+backward compatible with all the previous versions. 
+
+  The package can be downloaded from the web from the URL
+
+http://beam.helsinki.fi/~knordlun/mdrange.tar.gz
+
+  which can be unpacked the usual way, using eg.
+
+gunzip mdrange.tar.gz
+tar xvf mdrange.tar
+
+  It should work on any Unix platform, and has been recently explicitly 
+tested on Alpha Linux, Alpha OSF, Intel Linux, AIX, and Sun OS5 platforms.
+
+	Yours,
+
+
+		Kai Nordlund (author of mdh)
+		kai.nordlund@helsinki.fi
+		Jarkko Peltola (author of mdh3)
+		jypeltol@pcu.helsinki.fi
+
+
+[39] J. Sillanpää, K. Nordlund, and J. Keinonen, Electronic stopping of
+     Silicon from a 3D Charge Distribution, Phys. Rev. B 62, 3109 (2000).
+
+[58] J. Sillanpää, J. Peltola, K. Nordlund, J. Keinonen, and M. J. Puska, 
+     Electronic stopping calculated using explicit phase shift factors, Phys.
+     Rev. B 63, 134113 (2000).
+
+[78] J. Peltola, K. Nordlund, and J. Keinonen, Effects of damage build-up
+     in range profiles in crystalline Si; molecular dynamics simulations, Nucl.
+     Instr. Meth. Phys. Res. B (2002), accepted for publication.
+
+[92] J. Peltola, K. Nordlund, and J. Keinonen, Molecular dynamics
+     simulation method for calculating fluence-dependent range profiles, Nucl.
+     Instr. Meth. Phys. Res. B (2002), COSIRES 2002 conference paper, submitted
+     for publication.
+
+[B98] K. M. Beardmore and N. Gronbech-Jensen,
+     An Efficient Molecular Dynamics Scheme for the Calculation of Dopant
+     Profiles due to Ion Implantation,
+     Phys. Rev. E 57, 7278 (1998).

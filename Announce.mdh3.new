@@ -1,0 +1,45 @@
+
+    Dear MDRANGE user !
+
+  This email has been sent to people who, according to my notes, at some 
+point have acquired or showed interest in MDRANGE. If you are no longer
+interested in the subject/code, a brief reply telling that will make me 
+remove you from my list of MDRANGE users.
+
+  This mail announces the arrival of a new package of the code (MDRANGE3.0).
+The code now includes improved electronic stopping-calculation schemes using
+DFT-based linear stopping for low-velocity ions and local electron density. 
+For crystalline Si, the package contains very accurate, full 3-dimensional electron 
+density map, together with simpler spherical-symmetric density profiles. 
+The code can also handle fluence-dependency, with damage build-up scheme, for Si.
+It also contains a separate mdhreed-program for calculating accurate range profiles
+in low-concentration-end also.  
+The package includes a new version of mdsetup , which
+makes it quite easy to create the input files for the actual
+simulation code mdh3. 
+
+  The package also contains improved documentation
+and four new sets of sample input files for mdh3. The mdh3 code itself
+is totally rewritten version of the old mdh. 
+
+  The package can be obtained by anonymous ftp from
+
+ftp://beam.helsinki.fi/pub/knordlun/mdrange.tar.gz
+
+  which can be unpacked the usual way, using eg.
+
+gunzip mdrange.tar.gz
+tar xvf mdrange.tar
+
+  It should work on any Unix platform, and has been explicitly 
+tested on Alpha, Linux, AIX, SGI, HP, SGI and Sun Unix platforms.
+
+	Yours,
+
+
+		Kai Nordlund (author of mdh)
+		kai.nordlund@helsinki.fi
+		Jussi Sillanpaa (author of mdsetup)
+		jussi.sillanpaa@helsinki.fi
+		Jarkko Peltola (author of the features in mdh3)
+		jypeltol@acclab.helsinki.fi

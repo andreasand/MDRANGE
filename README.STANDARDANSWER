@@ -1,0 +1,93 @@
+
+  I assume you have read at least my Comput. Mater. Sci publication [5]
+and the stuff on my WWW pages dealing with MDRANGE. If not, 
+you can find both the publication and documentation below my WWW
+pages (look for "ion range calculations" etc.). Unfortunately the 
+documentation still is far from complete, so if you deal with more 
+complicated cases you will probably have to spend some time examining 
+the source code as well. 
+
+  The MDRANGE package can be obtained from the web by downloading the file
+
+http://beam.helsinki.fi/~knordlun/mdrange.tar.gz
+
+  which can be unpacked the usual way in any Unix, using eg.
+
+gunzip mdrange.tar.gz
+tar xvf mdrange.tar
+
+  If you have any problems with obtaining or unpacking the stuff,
+please let me know.
+
+  The program includes a dialog-like setup program mdsetup, which
+makes it quite easy to create the input files for the actual
+simulation code mdh. Also part of the package is a code which
+evaluates the SRIM96 electronic stopping powers, so all 
+required input files can now be generated online.
+
+  Note that the MDRANGE code should not be confused with the PARCAS code,
+another code maintained in our group. mdrange can be used to simulate
+the ranges and energy deposition of single ions, while PARCAS can
+be used to simulate full collision cascades and thermodynamics.
+PARCAS is a research code not given out publicly.
+
+  As of Feb 2014, also the mdhreed (REED version) of mdrange is
+provided with the package. The REED algorithm was previously protected
+by a US patent, but this patent has now expired and hence we
+are also distributing our REED version of the code.
+
+	 Yours,
+
+		 Kai Nordlund (author of mdh)
+		 Jussi Sillanpaa (author of mdsetup)
+		 Jarkko Peltola (author of mdh3)
+	
+
+PS. My publication database http://www.acclab.helsinki.fi/~knordlun/pub/ contains
+    reprints of many papers using MDRANGE in different applications.
+
+
+     REFERENCES, WITH ANNOTATIONS
+
+ 
+[5]  K. Nordlund, Molecular dynamics simulation of ion ranges in the 1 --
+    100 keV energy range, Comput. Mater. Sci. 3, 448 (1995).
+	- The original paper on the method, and the basic paper to
+	  cite for MDRANGE
+
+[9] P. Haussalo, K. Nordlund, and J. Keinonen, Stopping of 5 -- 100 keV
+    helium in tantalum, niobium, tungsten, and AISI 316L steel, Nucl. Instr.
+    Meth. Phys. Res. B 111, 1 (1996).
+	- Explains how the nuclear stopping power can be evaluated
+	  from MDRANGE
+
+[39] J. Sillanp‰‰, K. Nordlund, and J. Keinonen, Electronic stopping of
+     Silicon from a 3D Charge Distribution, Phys. Rev. B 62, 3109 (2000).
+	- introduces the use of 3D charge distributions
+
+[58] J. Sillanp‰‰, J. Peltola, K. Nordlund, J. Keinonen, and M. J. Puska, 
+     Electronic stopping calculated using explicit phase shift factors, Phys.
+     Rev. B 63, 134113 (2000).
+	- introduces the "Puska" or PENR pair-specific stopping model
+
+[78] J. Peltola, K. Nordlund, and J. Keinonen, Effects of damage build-up
+     in range profiles in crystalline Si; molecular dynamics simulations, Nucl.
+     Instr. Meth. Phys. Res. B 195 (2002) 269-280.
+	- the MDRANGE damage buildup model
+
+
+[92] J. Peltola, K. Nordlund, and J. Keinonen, Molecular dynamics
+     simulation method for calculating fluence-dependent range profiles, Nucl.
+     Instr. Meth. Phys. Res. B 202 (2003) 132.
+        - Introduces a modified way to handle cell shifting
+
+.---------------------------------------------------------------------------.
+| Kai Nordlund, PhD                | _______________________     Coherent   |
+| kai.nordlund@helsinki.fi         |   |||||||\\\|||||||||     displacement |
+| Accelerator Laboratory           |   ||||||.\|\\X|||||||       of atoms   |
+| University of Helsinki, Finland  |   ||||;'\X\/\\\.|||||      during ion  |
+| ph. +358-9-191-50007, fax -50042 |   ||,`\/`/7\''\'/`.||     irradiation. |
+| mobile phone: +358-40-5562806    |   |`\/\''\/''/\7-//`,   Nordlund et al.|
+| http://www.helsinki.fi/~knordlun |   '\,7/\\/X'``/\/\\'\   Nature 398, 49 |
+`---------------------------------------------------------------------------'
+

@@ -1,0 +1,8 @@
+
+echo "#define BINDIR" \"`pwd`/bin/\" > local.h
+echo "#define DATADIR" \"`pwd`/data/\" >> local.h
+echo "#define F_ELEMENTS" \"`pwd`/data/mass93.str\">> local.h
+echo "#define F_SCOEFA" \"`pwd`/data/scoef.95a\" >> local.h
+echo "#define F_SCOEFB" \"`pwd`/data/scoef.95b\" >> local.h
+cp local.h mdsetup
+mv local.h zbl96
