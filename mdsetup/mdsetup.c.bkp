@@ -1,0 +1,1177 @@
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include"MDpt.h"
+#include"local.h"
+#include<ctype.h>
+#include<math.h>
+#include<time.h>
+#include<unistd.h>
+
+main() {
+   int lkm, n, j, k, p, h, s=0,t, m, mo, grid, lkma, mmax, comp, multi,
+      seed, layers, rtype=1, atrpot=0, donetypes=0, szbl=0, expert=0, Ncalc=10000, 
+      Ninistate=10, Trange=0, pakkot=0, help=48, b=0, nice=8, maxtypes=0; 
+   int  types[12], reptyp[8];
+   int cells[3]={2, 2, 2};
+   int Z[9];
+   float atoms [300][4], laydim[2][4]; 
+   float MUU [12] [3];
+   const float BCC [2] [3] = {{0, 0, 0}, {0.5, 0.5, 0.5}};
+   const float FCC [4] [3] = {{0, 0, 0}, {0.5, 0.5, 0}, {0.5, 0, 0.5}, {0, 0.5, 0.5}};
+   const float DIA [8] [3] = {{0, 0, 0}, {0.5, 0.5, 0}, {0.5, 0, 0.5}, {0, 0.5, 0.5},
+			      {0.25, 0.25, 0.25}, {0.75, 0.75, 0.25}, {0.75, 0.25, 0.75}, {0.25, 0.75, 0.75}};
+   const float HEX [4] [3] = {{0, 0, 0}, {0.5, 0.866, 0}, {0.5, 0.289, 0.5}, 
+			      {1, 1.115, 0.5}}; 
+   float elstop[50] [2];
+   float lim[3]={0.5, 0.5, 0.5};
+   float reppot[6] [2]= {{0.1818, -3.2}, {0.5099, -0.9423},
+			 {0.2802, -0.4029}, {0.02817, -0.2016}, {0, 0}, {0, 0}};
+
+   float speed, force, transl, totalth, polysize, a, yl, 
+      polysizesigma, delta, EO, Theta0=0, minz=-3, maxz=-3,
+      Thetamax=0,Fii0=0, Fiimax=0, miny=0.5, minx=0.5, 
+      maxx=1.5,maxy=1.5, Tini=300, 
+      Timeini=300, elscale=1, repscale=1, R0rec=3, Rmrec=4, Rmini=5.33, R0ini=4.3; 
+   double l, incrspeed, topspeed;
+   double mass [9], dtemp[4]={0, 0, 0, 0};
+   FILE *fp;
+   FILE *gp;
+   FILE *ep;
+   FILE *hp;
+   FILE *cp;
+   char file[80]="coords.in";
+   char file1[80]="coords.in";
+   char file2[80]="elstop.in";
+   char file3[80]="param.in";
+   char file4[80]="reppot.0.1.in";
+   char file5[80]="runMDH";
+   char OK[2];
+   char ch, projectile[4], lattice[5],zsym[3], buf[80], speeddat[15];
+   char target[5], nicei[4], name[5], numb[3];
+
+   /* if you have a different version of ZBL, */
+   /*  modify these lines accordingly */
+
+   char zbl[50] = BINDIR"zbl96 ";    
+  			      
+   char nices[90]="nice -";
+   char chmod[90]="chmod 777 ";
+   char mdh[200]="mdh ";
+   char end[] = " >temp.in";
+   char nimi [70];
+   char compounds [70];
+   char endcomp[]="compounds.txt";
+   time_t aika;
+
+   void apua(int help);
+
+   time(&aika);
+
+   strcat(compounds,DATADIR);
+   strcat(compounds,endcomp);
+   printf("\n");
+   printf("MDsetup 0.30\n\n");
+   printf("Are you an EXPERT USER ?\n");
+   printf("Declaring yourself as one will result in a multitude of technical\n");
+   printf("questions, which will otherwise be bypassed by default values !\n"); 
+   printf("(Y/N) [N]: ");
+   if(gets(buf)!=NULL)
+      sscanf(buf,"%s",OK);
+   if(OK[0]==89 || OK[0]==121)
+      expert=1;
+   printf("\n");
+   printf("#----------------------------------------------------------------#\n");
+   printf("# 			The Target Material                      #\n"); 
+   printf("#----------------------------------------------------------------#\n");
+   printf("\n");
+   /*
+     Because the simulation of multilayered targets is somewhat buggy,
+     these features have been commented out. If you want to simulate such 
+     targets, write to us for modified simulation code.
+     jksillan@vesuri.helsinki.fi
+     kai.nordlund@helsinki.fi
+     OK="A";
+     printf("Is the target material multilayered (Y/N) [N]: ");
+     if(gets(buf)!=NULL)
+     sscanf(buf,"%s",OK);
+     if(OK[0]==89 || OK[0]==121) {
+     laydim[0][0]=-1e5;
+     multi=1;
+     printf("How many layers are there (<=4): ");
+     scanf("%d", &layers);
+     if(gets(buf)!=NULL) {
+     }
+     }
+     else
+     */
+   layers=1;
+   for(t=0;t<layers;t++) {
+      comp=1;
+      printf("\nIs the %d. target material an element or a compound? \n", t+1); 
+      printf("1 element 2 compound [1]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%d",&comp);
+      if(comp!=2) {
+	 for(;;) {
+	    b=0;
+	    printf("\nPlease enter the atomic number or chemical symbol of the grid atoms: "); 
+	    scanf("%s",zsym);
+	    zsym[0]=toupper(zsym[0]);
+	    zsym[1]=tolower(zsym[1]);
+	    if(48 <= zsym[0] && zsym[0] <=57) {
+	       if(zsym[1]==10 || zsym[1]==0) {
+		  Z[1+donetypes]=zsym[0]-48;
+		  maxtypes=lkma=b=1;
+	       }
+	       else {
+		  Z[1+donetypes]=zsym[1]-48+((zsym[0]-48)*10);
+		  maxtypes=lkma=b=1;
+	       }
+	    }
+	    else {
+	       if(zsym[1]==10 || zsym[1]==0) {
+		  for(n=0;n<108;n++) {
+		     strcpy(name,p_table[n].symbol);
+		     if(name[0]==zsym[0] && name[1] < 97) {
+			maxtypes=b=lkma=1;
+			Z[1+donetypes]=n+1;
+		     }
+		     if(b==1)
+			break;
+		  }
+	       }
+	       else {
+		  for(n=0;n<108;n++) {
+		     strcpy(name,p_table[n].symbol);
+		     if(name[0]==zsym[0] && name[1]==zsym[1]) {
+			maxtypes=b=lkma=1;
+			Z[1+donetypes]=n+1;
+		     }
+		     if(b==1)
+			break;
+		  }
+	       }
+	       if(b==0)
+		  printf("Element %s not found!\n", zsym);
+	    }
+	    if(b==1) {
+	       mass[1+donetypes]=p_table[Z[1+donetypes]-1].atomic_mass;
+	       if(mass[1+donetypes]<0)
+		  mass[1+donetypes]=-mass[1+donetypes];
+	       strcpy(name,p_table[Z[1+donetypes]-1].symbol);
+	       printf("%s , Z=%d\n", name, Z[1+donetypes]);
+	       OK[0]='A';
+	       types[0]=1;
+	       if(gets(buf)!=NULL) {
+	       }
+	       printf("Is this OK (Y/N) [Y] :");
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%c",OK);
+	       if(OK[0]==78 || OK[0]==110)
+		  b=0;
+	    }
+	    if(b==1)
+	       break;
+	 }
+	 strcpy(lattice,p_table[Z[1+donetypes]-1].crystal);
+	 l=p_table[Z[1+donetypes]-1].a;
+	 b=0;
+	 sprintf(target, " %d ", Z[1+donetypes]);
+
+	 for (;;) {
+	    OK[0]='A';
+	    printf("\nAtomic mass: %g\n",mass[1+donetypes]);
+	    printf("Crystal type: %s\n",lattice);
+	    printf("Lenght of unit cell: %g\n",l);
+	    OK[0]='A';
+	    if(lattice[0]!=66 && lattice[0]!=70 && lattice[0]!=68 && lattice[0]!=72 && lattice[0]!=83) {
+	       printf("Warning! Mdsetup DOES NOT CURRENTLY SUPPORT this crystal type.\n");
+	       printf("Unless the crystal type is changed, \n");
+	       printf("You shall have to make the coordinates file yourself\n");
+	    }
+	    printf("Is this OK (Y/N) [Y]: ");
+	    if(gets(buf)!=NULL);
+	    sscanf(buf, "%c",OK);
+	    if(OK[0]!=78 && OK[0]!=110) {
+	       if(lattice[0]==66)
+		  grid=1;
+	       if(lattice[0]==70)
+		  grid=2;
+	       if(lattice[0]==68)
+		  grid=3;
+	       if(lattice[0]==72)
+		  grid=4;
+	       if(lattice[0]==83)
+		  grid=5;
+	       b=1; 
+	    }
+	    else {
+	       printf("\n");
+	       printf("Please enter the type of the grid: \n");
+	       printf("1) BCC \n");
+	       printf("2) FCC \n");
+	       printf("3) DIA \n");
+	       printf("4) HEX \n");
+	       printf("5) SC \n");
+	       printf(": ");
+	       scanf("%d", &grid);
+	       if(grid==1)
+		  strcpy(lattice,p_table[2].crystal);
+	       if(grid==2)
+		  strcpy(lattice,p_table[9].crystal);
+	       if(grid==3)
+		  strcpy(lattice,p_table[5].crystal);
+	       if(grid==4)
+		  strcpy(lattice,p_table[0].crystal);
+	       if(grid==5)
+		  strcpy(lattice,p_table[83].crystal);
+	       printf("Please enter the mass of the grid atoms(amu): ");
+	       scanf("%lf", &mass[1+donetypes]);
+	       printf("Please enter the lenght of the unit cell(Å): ");
+	       scanf("%lf", &l);
+	       if(gets(buf)!=NULL) {
+	       }
+	    }
+	    if (b==1)
+	       break;
+	 }
+	 yl=l;
+	 if(grid==4) {
+	    printf("Please enter height of unit cell(Å) [%g]: ",l);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &a);
+	 }
+	 else
+	    a=l;
+	 dtemp[t]=p_table[Z[1+donetypes]-1].tdebye;
+      }
+
+      if(comp==2) {
+	 cp=fopen(compounds,"rt");
+	 printf("\n");
+	 m=mmax=1;
+	 for(;;) {
+	    while((ch=fgetc(cp))!= 37 && (m%40)!=0) {
+	       while((ch=fgetc(cp)) != 36) {
+	       }
+	       fscanf(cp,"%s", nimi);
+	       printf("%d %s", m, nimi);
+	       if((m%2)==0)
+		  printf("\n"); 
+	       else
+		  printf("\t");
+	       m++;
+	       mmax++;
+	       while((ch=fgetc(cp)) != 35) {
+	       }
+	    }
+	    mmax--;
+	    printf("Which material [more compounds]: ");
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d", &m);
+	    printf("\n");
+	    if(m>0 && m<=mmax)
+	       break;
+	    if((mmax%40)!=0) {
+	       m=mmax=1;
+	       rewind(cp);
+	    }
+ 
+	 }
+	 rewind(cp);
+ 
+	 for(n=0;n<m;n++) {
+	    while((ch=fgetc(cp)) != 36) {
+	    }   
+	 }
+	 fscanf(cp,"%s", nimi);
+	 fscanf(cp,"%s", lattice);
+	 if(lattice[0]==66) {
+	    grid=1;
+	    lkma=2;
+	 } 
+	 if(lattice[0]==70) {
+	    grid=2;
+	    lkma=4;
+	 }
+	 if(lattice[0]==68) {
+	    grid=3;
+	    lkma=8;
+	 }
+	 if(lattice[0]==72) {
+	    grid=4;
+	    lkma=4;
+	 }
+	 if(lattice[0]==77)
+	    grid=6;
+	 fscanf(cp,"%lf", &dtemp[t]);
+	 fscanf(cp,"%d",&maxtypes);
+	 fscanf(cp,"%lf",&l);
+	 printf("Please enter the grid lenght [%g]: ", l);
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%d",&l);
+	 if(grid==4 | grid==6) {
+	    fscanf(cp,"%g",&a);
+	    printf("Please enter the lattice height [%g]: ", a);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d",&a);
+	 }
+	 else
+	    a=l;
+	 if(grid==6) {
+	    fscanf(cp,"%g",&yl);
+	    fscanf(cp,"%d",&lkma);
+	    printf("Please enter the lattice height [%g]: ", a);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d",&yl);
+	 }
+	 else
+	    yl=l;
+	 for(n=0;n<lkma;n++) {
+	    fscanf(cp,"%d",&types[n]);
+	    types[n]=types[n]+donetypes;
+	 }
+	 for(m=donetypes+1;m<=maxtypes+donetypes;m++)
+	    fscanf(cp,"%d",&Z[m]);
+	 for(n=1;n<=maxtypes;n++)
+	    fscanf(cp,"%lf",&mass[n+donetypes]);
+	 if(grid==6) {
+	    for(n=0;n<lkma;n++) {
+	       fscanf(cp,"%g", &MUU[n][0]);
+	       fscanf(cp,"%g", &MUU[n][1]);
+	       fscanf(cp,"%g", &MUU[n][2]);	
+	    }
+	 }
+	 fclose(fp);
+	 m=mmax=0;
+      }
+      if(multi==1) {
+	 printf("\nPlease enter the thickness of the layer (Å): ");
+	 scanf("%f", &laydim[1][t]);
+	 if(t>0) {
+	    laydim[1][t]=totalth+laydim[1][t];
+	    laydim[0][t]=totalth;
+	 }
+	 totalth+=laydim[1][t];
+	 if(gets(buf)!=NULL) {
+	 }
+      }
+      if(expert==1) {
+	 for(;;) {
+	    printf("\n");
+	    printf("    (NEIGBOUR LIST CUT-OFF > POTENTIAL CUT-OFF)\n");
+	    printf("    Please enter the NEIGHBOUR LIST construction cut-off radius\n");
+	    printf("    to be used in RECOIL CALCULATION(Å) [%g]: ", Rmrec);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &Rmrec);
+	    printf("    Please enter the POTENTIAL cut-off radius\n");
+	    printf("    to be used in RECOIL CALCULATION (Å) [%g]: ", R0rec);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &R0rec);
+	    if(Rmrec >= R0rec)
+	       break;
+	 }
+      }
+      donetypes+=maxtypes;
+      if(1<=grid && grid<=6) {
+	 OK[0]='Y';
+	 printf("\n");
+	 printf("#--------------------------------------------------------------#\n");
+	 printf("#		The Coordinates File			       #\n");
+	 printf("#--------------------------------------------------------------#\n");
+	 printf("\n");
+	 if(expert==1) {
+	    printf("\nDo you want to create a coordinates file (Y/N) [Y]: ");
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%c",OK);
+	 }
+
+	 if(OK[0]!=78 && OK[0] !=110) {
+	    printf("\n");
+	    if(l<=2*R0rec) {
+	       lim[0]=1;
+	       cells[0]=3;
+	    }
+	    if(l<=R0rec) {
+	       lim[0]=1.5;
+	       cells[0]=4;
+	    }
+	    if(yl<=2*R0rec)    {
+	       lim[1]=1;
+	       cells[1]=3;
+	    } 
+	    if(yl<=R0rec)    {
+	       lim[1]=1.5;
+	       cells[1]=4;
+	    }
+	    if(a<=2*R0rec)    {
+	       lim[2]=1;
+	       cells[2]=3;
+	    }
+	    if(a<=R0rec)    {
+	       lim[2]=1.5;
+	       cells[2]=4;
+	    }
+
+	    if(expert==1) {
+	       printf("The size of the simulation cell: \n");
+	       if(grid==6) {
+		  printf("\n");
+		  printf("The compound you have chosen has a non-standard grid type.\n");
+		  printf("The unit cell used for this compound consists of %d atoms.\n\n", lkma);
+	       }
+	       printf("Please enter the number of unit cells in the X-direction [%d]: ", cells[0]); 
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%d", &cells[0]);
+	       printf("Please enter the number of unit cells in the Y-direction [%d]: ", cells[1]); 
+	       if(gets(buf)!=NULL) 
+		  sscanf(buf,"%d", &cells[1]);
+	       printf("Please enter the number of unit cells in the Z-direction [%d]: ",cells[2]); 
+	       if(gets(buf)!=NULL) 
+		  sscanf(buf,"%d", &cells[2]);
+	    }
+	    printf("\n");
+	    printf("Creating the grid, %d * %d * %d unit cells \n", cells[0], cells[1], cells[2]); 
+	    transl=l/8;
+	    if(grid==1) {
+	       lkm = 2 * cells[0]*cells[1]*cells[2];
+	       for (n=0; n<cells[0]; n++) {
+		  for(k=0; k<cells[1]; k++) {
+		     for(j=0; j<cells[2]; j++) {
+			for(m=0; m<2; m++) {
+			   atoms [s] [0] = transl + (l * (BCC [m] [0])) + l * n;
+			   atoms [s] [1] = transl+ (l * (BCC [m] [1])) + yl * k;
+			   atoms [s] [2] = transl+ (l * (BCC [m] [2])) + a * j;
+			   mo=(s%lkma);
+			   atoms [s] [3] = types[mo];
+			   s++;
+			}			
+		     }
+		  }
+
+	       }
+	    }
+	    if(grid==3) {
+	       lkm=8*cells[0]*cells[1]*cells[2];
+	       for (n=0; n<cells[0]; n++) {
+		  for(k=0; k<cells[1]; k++) {
+		     for(j=0; j<cells[2]; j++) {
+			for(m=0; m<8; m++) {
+			   atoms [s] [0] = transl+ (l * (DIA [m] [0])) + l * n;
+			   atoms [s] [1] = transl+ (l * (DIA [m] [1])) + l * k;
+			   atoms [s] [2] = transl+ (l * (DIA [m] [2])) + l * j;
+			   mo=(s%lkma);
+			   atoms [s] [3] = types[mo];
+			   s++;
+			}			
+		     }
+		  }
+
+	       }
+	    }
+	    if(grid==2) {
+	       lkm = 4 * cells[0] * cells[1] * cells[2];
+	       for (n=0; n<cells[0]; n++)  {
+		  for(k=0; k<cells[1]; k++) {
+		     for(j=0; j<cells[2]; j++) {
+			for(m=0; m<4; m++) {
+			   atoms [s] [0] = transl+ (l * (FCC [m] [0])) + l * n;
+			   atoms [s] [1] = transl+ (l * (FCC [m] [1])) + l * k;
+			   atoms [s] [2] = transl+ (l * (FCC [m] [2])) + l * j;
+			   mo=(s%lkma);
+			   atoms [s] [3] = types[mo];
+			   s++;
+			}
+		     }
+		  }
+
+	       }
+	    }
+
+	    if(grid==5) {
+	       lkm=cells[0]*cells[1]*cells[2];
+	       for(n=0;n<cells[0];n++) {
+		  for(k=0;k<cells[1];k++) {
+		     for(j=0; j<cells[2]; j++) {
+			atoms [s] [0]= l*n + transl;
+			atoms [s] [1]= yl*k + transl;
+			atoms [s] [2]= a*j + transl;
+			atoms [s] [3] = 1;
+		     }
+		  }
+	       }
+	    }
+
+	    if(grid==4) {
+	       lkm = 4 * cells[0] * cells[1] * cells[2];
+
+	       for (n=0; n<cells[0]; n++) {
+		  for(k=0; k<cells[1]; k++) {
+		     for(j=0; j<cells[2]; j++) {
+			for(m=0; m<4; m++) {
+			   atoms [s] [0] = transl + (l * (HEX [m] [0])) + l * n;
+			   atoms [s] [1] = transl + (l * (HEX [m] [1])) + yl * k;
+			   atoms [s] [2] = transl + (a * (HEX [m] [2])) + a * j;
+			   mo=(s%lkma);
+			   atoms [s] [3] = types[mo];
+			   s++;
+			}
+		     }
+		  }
+
+	       }
+	    }
+
+	    if(grid==6) {
+	       lkm=lkma*cells[0]*cells[2]*cells[1];
+	       for (n=0; n<cells[0]; n++) {
+		  for(k=0; k<cells[1]; k++) {
+		     for(j=0; j<cells[2]; j++) {
+			for(m=0; m<lkma; m++) {
+			   atoms[s][0]=transl+(l*MUU[m][0])+ l*n;
+			   atoms[s][1]=transl+(yl*MUU[m][1])+ yl*k;
+			   atoms[s][2]=transl+(a*MUU[m][2])+ a*j;
+			   atoms[s][3]=types[m];
+			   s++; 
+			}
+		     }
+		  }
+	       }
+	    }
+	    printf("\n");
+	    if(multi==1) {
+	       sprintf(numb,".%d",t+1);
+	       strcat(file1,numb);
+	    }
+	    if((fp=fopen(file1, "rt"))!=NULL) {
+	       printf("The default coordinates file (%s) already exists!\n", file1); 
+	       printf("Where do you want to save the coordinates [%s]: ",file1); 
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%s", file1);
+	       printf("\n");
+	    }
+	    fclose(fp);
+	    fp = fopen(file1, "wt");
+	    for(h=0;h<lkm;h++) {
+	       fprintf(fp, "%g %g %g %g \n", atoms [h] [0], atoms [h] [1], atoms [h] [2], atoms [h] [3]); 
+	    }
+	    fclose(fp);
+	 }
+      }
+      strcpy(file1,file);
+      s=0;
+   }
+   printf("\n");
+   printf("#----------------------------------------------------------------#\n");
+   printf("#               The Implanted Ion & Its Interactions             #\n");
+   printf("#----------------------------------------------------------------#\n");
+   for(;;) {
+      OK[0]='A';
+      b=0;
+      printf("\nPlease enter the atomic number or chemical symbol of the projectile: "); 
+      scanf("%s", zsym);
+      if(48 <= zsym[0] && zsym[0] <=57) {
+	 if(zsym[1]==10 || zsym[1]==0) {
+	    Z[0]=zsym[0]-48;
+	    b=1;
+	 }
+	 else {
+	    Z[0]=zsym[1]-48+((Z[0]=zsym[0]-48)*10);
+	    b=1;
+	 }
+      }
+      else {
+	 if(zsym[1]==10 || zsym[1]==0) {
+	    for(n=0;n<108;n++) {
+	       strcpy(name,p_table[n].symbol);
+	       if(name[0]==zsym[0] && name[1]<97) {
+		  Z[0]=n+1;
+		  b=1;
+	       }
+	       if(b==1)
+		  break;  
+	    }
+	 }
+	 else {
+	    for(n=0;n<108;n++) {
+	       strcpy(name,p_table[n].symbol);
+	       if(name[0]==zsym[0] && name[1]==zsym[1]) {
+		  b=1;
+		  Z[0]=n+1;
+	       }
+	       if(b==1)   
+		  break;
+	    }
+	 }
+	 if(b==0)
+	    printf("Element %s not found!\n", zsym);
+      }
+      if(b==1)
+	 break;
+   }
+        
+   mass[0]=p_table[Z[0]-1].atomic_mass;
+   if(gets(buf)!=NULL) {
+   }
+   printf("%s, Z=%d, mass=%g\n", p_table[Z[0]-1].symbol, Z[0], mass[0]);
+   printf("Is this OK (Y/N) [Y] :");
+   if(gets(buf)!=NULL)
+      sscanf(buf,"%c",OK);
+   if(OK[0]==78 || OK[0]==110) {
+      for(;;)/*projectile check-up*/ {
+	 printf("\n");
+	 printf("Please enter the atomic number of the projectile: ");
+	 scanf("%d",&Z[0]);
+	 printf("Please enter the mass of the projectile (amu): ");
+	 scanf("%lf", &mass[0]);
+	 printf("\n");
+	 if(gets(buf)!=NULL) {
+	 }
+	 OK[0]='A';
+	 printf("%s, Z=%d, mass=%g\n", p_table[Z[0]-1].symbol, Z[0], mass[0]);
+	 printf("Is this OK (Y/N) [Y] :");
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%c",OK);
+	 if(OK[0]!=78 && OK[0]!=110)
+	    break;
+      }
+   }
+
+   sprintf(projectile, "%d", Z[0]);
+   printf("\nPlease enter the recoil energy (keV): ");
+   fgets(buf,90,stdin); sscanf(buf,"%g", &EO);
+
+   topspeed=(EO*1.07e-6/mass[0])+1;
+   topspeed = 1.1*sqrt(1-pow(topspeed,(double) -2.0))*150;
+   incrspeed=topspeed/50;
+   EO = EO * 1000;
+   sprintf(speeddat, " 0  %lf  %lf", topspeed, incrspeed);
+
+   for(j=0;j<50;j++) elstop[j][0]=elstop[j][1] = 0.0;
+   for(n=1;n<=donetypes;n++) {
+      sprintf(target, " %d ", Z[n]);
+      strcat(zbl, projectile);
+      strcat(zbl, target);
+      strcat(zbl, speeddat);
+      strcat(zbl, end);
+      system(zbl);
+      gp = fopen("temp.in", "rt");
+      for(j=0;j<50;j++) {
+	 fscanf(gp, "%g %g", &speed, &force);
+	 elstop [j] [0]= elstop [j] [0]+(speed * 2187691.417/donetypes); /* BUG !!?!!? */
+	 elstop [j] [1]= elstop [j] [1] +(force * 100/donetypes);
+      }
+      fclose(gp);
+   }
+
+   /* if (gets(buf)!=NULL) {} */
+   if((ep=fopen(file2, "rt"))!=NULL) {
+      printf("\n");
+      printf("The default elstop file (%s) already exists\n", file2); 
+      printf("Where do you wish to save the electronic stopping [%s]: ",file2); 
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%s", file2);
+   }
+   fclose(ep);
+   ep = fopen(file2, "wt");
+
+   for(h=0;h<50;h++)
+      fprintf(ep, "%g %g\n", elstop [h] [0], elstop [h] [1]);	
+
+   fclose(ep);
+   
+
+   printf("\n\n");
+   printf("#----------------------------------------------------------------#\n");
+   printf("#			The Parameter File			 #\n");
+   printf("#----------------------------------------------------------------#\n");
+   OK[0]='A';
+   if(expert==1) {
+      printf("\nDo you want to make a parameter file (Y/N) [Y]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%c",OK);  
+   }
+   if(OK[0]!=78 && OK[0] !=110) {
+      for(;;) {
+	 printf("\nThe repulsive potential:");
+	 printf("\nThe use of reppot-files is strongly recommended!");
+	 printf("\nIf you don't have a reppot-file, the ZBL-85 universal stopping power");
+	 printf("\nwill be used instead.");
+	 printf("\n\nDo you have a reppot-file for interactions between the projectile and");
+	 OK[0]='A';
+	 printf("\n");
+	 for(n=1;n<=donetypes;n++) {
+	    printf("    %s (Y/N) [N]: ", p_table[Z[n]-1].symbol);
+	    if(gets(buf)!=NULL) sscanf(buf,"%c",OK);
+	    if(OK[0]==89 || OK[0]==121)
+	       reptyp[n]=2;
+	    else
+	       reptyp[n]=szbl=1;
+	    OK[0]='A';
+	 }
+	 if(szbl==1 && expert==1)
+	    OK[0]='Y';
+
+	 if(OK[0]==89 || OK[0] ==121) {
+	    printf("\nZBL-85 parameters\n");
+	    printf("a\t b\n");
+	    for(k=0;k<6;k++) {
+	       printf("%g\t %g\n", reppot[k][0], reppot[k][1]);
+	    }
+	    for(;;) {
+	       OK[0]='A';
+	       printf("Do you want to change the parameters (Y/N) [N]: ");
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%c",OK);
+	       if(OK[0]==89 || OK[0]==121) {
+		  printf("\nPlease enter the a-parameters\n");
+		  for(k=0;k<6;k++) {
+		     printf("[%g] :", reppot[k][0]);
+		     if(gets(buf)!=NULL)
+			sscanf(buf, "%g", &reppot[k][0]);
+	
+		  }
+		  printf("Then the b-parameters\n");
+		  for(k=0;k<6;k++) {
+		     printf("[%g] :", reppot[k][1]);
+		     if(gets(buf)!=NULL)
+			sscanf(buf, "%g", &reppot[k][1]);
+        
+		  }
+	       }
+
+	       else
+		  break;
+	    }
+	 }
+	 if(multi!=1) {
+	    pakkot=0;
+	    OK[0]='A';
+	    printf("\n0.  Is the target polycrystalline (Y/N) [N]: ");
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%c",OK);
+	    if(OK[0]==89 || OK[0] ==121) {
+	       help=50;
+	       b=0;
+	       Fiimax=360;
+	       Thetamax=180;
+	       for(;;) {
+		  printf("\n    Please enter the average size of the domains (Å, ? for help): "); 
+		  if(gets(buf)!=NULL) {
+		     if(buf[0]!=63) {
+			sscanf(buf,"%g", &polysize);
+			b=1;
+		     }
+		     else
+			apua(help);
+		  }
+		  if(b==1) 
+		     break;   
+	       }
+	       printf("\n    Please enter the standard deviation of domain size (Å): ");
+	       scanf("%g", &polysizesigma);
+	       printf("\n    Please enter the max. angle between domains (degrees): ");
+	       scanf("%g", &delta);
+	       pakkot=1;
+	       if(gets(buf)!=NULL) {
+	       }
+	    }
+	 }
+		
+	 printf("\n1.  Please enter the number of projectiles calculated [%d]: ", Ncalc); 
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%d", &Ncalc);
+	 if(pakkot==1) {
+	    Trange=1;
+	    rtype=2;
+	 }
+	 else {
+	    printf("\n2.  Please enter type of range\n");
+	    printf("    0=Z coordinate, 1=projection to the orig. direction of recoil atom\n"); 
+	    printf("    2=chord, 3=actual path of recoil atom [%d]: ", Trange); 
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d", &Trange);
+	    if(Trange!=1) {
+	       printf("\n3.  Please enter type of calculation\n");
+	       printf("    1=normal, 2=negative ranges allowed [%d] : ", rtype);
+	       if(gets(buf)!=NULL)                                                             
+		  sscanf(buf,"%d", &rtype);
+	    }
+	    else
+	       rtype=2;
+	 }
+	 OK[0]='A';
+	 printf("\n4.  The angles are chosen randomly between the min. & the max.\n");
+	 printf("    Please enter the azimuth (Fii) angle range [%g - %g]:", Fii0, Fiimax); 
+	 if(gets(buf)!=NULL) {
+	    sscanf(buf,"%g %c %g", &Fii0, OK, &Fiimax);
+	    if(OK[0]!=45 && OK[0]!=65)
+	       Fiimax=Fii0;
+	 }
+	 OK[0]='A';
+	 printf("    Please enter the polar (Theta) angle range [%g - %g]:", Theta0, Thetamax); 
+	 if(gets(buf)!=NULL) {
+	    sscanf(buf,"%g %c %g", &Theta0, OK, &Thetamax);
+	    if(OK[0]!=45 && OK[0]!=65)
+	       Thetamax=Theta0;
+	 } 
+	 if(expert==1) {
+	    printf("\n5.  Starting pos. of the recoil atom is also chosen randomly. \n"); 
+	    printf("    X- and Y-positions are measured in unit cells and unless you want to\n"); 
+	    printf("    emphasise some region, you should choose the values so that max = min +1\n"); 
+	    printf("    Please enter the x-range [%g - %g]:", minx, maxx);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g - %g", &minx, &maxx);
+	    printf("    Please enter the y-range [%g - %g]:", miny, maxy);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g - %g", &miny, &maxy);
+	    printf("    Please note that the Z-position must be small enough that \n");
+	    printf("    the recoil atom is not created inside the lattice!\n");
+	    printf("    Please enter the z-range (Å) [%g - %g]:", minz, maxz);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g - %g", &minz, &maxz);
+	 }
+	 OK[0]='N';
+	 if(expert==1) {
+	    printf("\nDo you wish to change any of the parameters 0-5 (Y/N) [N]: ");
+	    if(gets(buf)==NULL)
+	       sscanf(buf," %c", OK);
+	 }
+	 if(OK[0]!=89 && OK[0]!=121)
+	    break;
+      }
+      for(;;) {
+	 if(expert==1) {
+	    printf("\n6.  Moving limit: the fraction of the unit cell that must\n");
+	    printf("    always remain in front of the recoil atom; if the atom moves\n");
+	    printf("    past this limit, fresh crystal shall be created\n");
+	    printf("    ! The moving limits should be larger than the potential cut-off !\n");
+	    printf("    ! Do not change them unless you're sure you know what you are doing !\n");
+	    printf("    Please enter the x-limit [%g]: ", lim[0]);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &lim[0]);
+	    printf("    Please enter the y-limit [%g]: ", lim[1]);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &lim[1]);
+	    printf("    Please enter the z-limit [%g]: ", lim[2]);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &lim[2]);
+	 }
+	 printf("\n7.  Please enter the temperature of the initial state(K) [%g]: ", Tini); 
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%g", &Tini);
+	 printf("\n");
+	 printf("8.  The initial state calculation: \n");
+	 printf("    Please note that the Debye temp. depends on the real sample temperature\n"); 
+	 for(n=0;n<layers;n++) {
+	    printf("\n");
+	    printf("    Please enter the Debye temperature for %d. layer\n", n+1); 
+	    printf("    (K, 0=use an attractive potential instead) [%g]: ", dtemp[n]); 
+	    if(gets(buf)!=NULL)
+	       sscanf(buf, "%lf", &dtemp[n]);
+	    if(dtemp[n]<=0)  {
+	       printf("    Which attractive potential should be used?\n");
+	       printf("    1 Mazzone 2 Morse : ");
+	       scanf("%d", &atrpot);
+	       if(gets(buf)!=NULL) {
+	       }
+	    }   
+	 }
+	 if(expert==1) {
+	    printf("\n9.  How many iterations to determine the initial configuration [%d]: ",Ninistate);
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d", &Ninistate);
+	 }
+	 b=0;
+	 help=48;
+	 if(dtemp[n]>0) {
+	    for(;;) {
+	       printf("\n    Please enter the time of the initial state calculation\n");
+	       printf("    (fs, ? for help) [%g]: ", Timeini); 
+	       if(gets(buf)!=NULL) {
+		  if(buf[0]!=63) {
+		     sscanf(buf,"%g", &Timeini);
+		     b=1;
+		  }
+		  else
+		     apua(help);
+	       }
+	       if(b==1)
+		  break;
+	    }
+	 }	
+	 seed=getpid(); /* the seed is created from pid & clock */
+	 if(seed<=500)  
+	    seed=seed*seed;
+	 seed=aika%seed;
+	 if(expert==1) {
+	    printf("\n10. Please enter a seed for the random number generator");
+	    printf("\n    (integer) [use pid & clock (%d)]: ", seed); 
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%d", &seed);
+	 }
+	 for(;;) {
+	    if(dtemp[n]>0 && expert==1) {
+	       printf("\n    (NEIGBOUR LIST CUT-OFF > POTENTIAL CUT-OFF)");
+	       printf("\n11. Please enter the NEIGHBOUR LIST construction cut-off radius\n"); 
+	       printf("    to be used in INICALC.C(Å) [%g]: ", Rmini); 
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%g", &Rmini);
+	       printf("    Please enter the POTENTIAL cut-off radius\n");
+	       printf("    to be used in INICALC.C(Å) [%g]: ", R0ini);
+	       if(gets(buf)!=NULL)
+		  sscanf(buf,"%g", &R0ini);
+	       printf("\n");
+	    }
+	    if(Rmini >=  R0ini)
+	       break;
+	 }
+	 if(expert==1) {
+	    help=49;
+	    b=0;
+	    for(;;) {
+	       printf("\n15. By what coefficient do you want to scale the elstop (? for help) [%g]: ", elscale);
+	       if(gets(buf)!=NULL)  {
+		  if(buf[0]!=63) {
+		     sscanf(buf,"%g", &elscale);
+		     b=1;
+		  }   
+		  else
+		     apua(help);
+	       }
+	       if(b==1)
+		  break;
+	    }
+	    printf("    By what coefficient do you want to scale the repulsive pot. [%g]: ", repscale); 
+	    if(gets(buf)!=NULL)
+	       sscanf(buf,"%g", &repscale);
+	 }
+	 OK[0]='N';
+	 if(expert==1) {
+	    printf("\nDo you want to change any of the parameters 6-15 (Y/N) [N]: ");
+	    if(gets(buf)!=NULL)
+	       sscanf(buf," %c", OK);
+	 }
+	 if(OK[0]!=121 && OK[0]!=89)
+	    break;
+      }
+
+
+      if((hp=fopen(file3,"rt"))!=NULL) {
+	 printf("\n");
+	 printf("The default parameter file (%s) already exists\n",file3); 
+	 printf("Where do you want to save the parameters[%s]: ", file3); 
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%s", file3);
+      }
+      fclose(hp);
+      hp=fopen(file3,"wt"); 
+      for(n=0;n<=donetypes;n++) {
+	 fprintf(hp,"type[%d].Z:= %d\n", n, Z[n]);
+	 fprintf(hp,"type[%d].m:= %g\n", n, mass[n]);
+      }
+      fprintf(hp, "reccalc->E0:= %g\t# Recoil energy \n", EO);
+      fprintf(hp, "reccalc->Atype:= 0\t# Recoil atom type\n");
+      fprintf(hp,"reccalc->Ncalc:= %d \t# Number of histories\n", Ncalc);
+      fprintf(hp, "reccalc->Trange:= %d\t# Range type: 0=sz, 1=proj, 2=chord, 3=path\n", Trange); 
+      fprintf(hp, "reccalc->type:= %d\t# Recoil calculation type: 1=normal,\n", rtype); 
+      fprintf(hp,"2=negative range allowed\n");
+      fprintf(hp, "reccalc->Fii0:= %g\t# Azimuth angle of the recoil atom\n", Fii0);
+      fprintf(hp, "reccalc->Fiimax:= %g\t# is chosen randomly from [Fii0,Fiimax]\n", Fiimax); 
+      fprintf(hp, "reccalc->Theta0:= %g\t# Polar angle of the recoil atom\n", Theta0); 
+      fprintf(hp, "reccalc->Thetamax:= %g\t# is chosen randomly from [Theta0,Thetamax]\n\n\n",Thetamax); 
+      if(pakkot==1) {
+	 fprintf(hp, "reccalc->Polysize:= %g \t# Polycrystalline settings\n",polysize);
+	 fprintf(hp, "reccalc->Polysizesigma:= %g\n", polysizesigma);
+	 fprintf(hp, "reccalc->Polydeltaangle:= %g\n", delta);
+      }
+      fprintf(hp, "reccalc->Startmin.x:= %g\t# The starting pos. of the recoil\n", minx*l);
+      fprintf(hp, "reccalc->Startmax.x:= %g\n", maxx*l);
+      fprintf(hp, "reccalc->Startmin.y:= %g\n", miny*yl);
+      fprintf(hp, "reccalc->Startmax.y:= %g\n", maxy*yl);
+      fprintf(hp, "reccalc->Startmin.z:= %g\n", minz);
+      fprintf(hp, "reccalc->Startmax.z:= %g\n\n", maxz);
+      if(atrpot!=0)
+	 fprintf(hp, "pot->attr.type:= %d\n", atrpot); 
+      for(n=1;n<=donetypes;n++)
+	 fprintf(hp, "pot->rep.type[0][%d]:= %d\n\n",n, reptyp[n]);
+      if(szbl==1) {
+	 for(n=0;n<6;n++) {
+	    fprintf(hp, "pot->rep.ai[%d]:= %g\n", n, reppot[n][0]);
+	    fprintf(hp, "pot->rep.bi[%d]:= %g\n", n, reppot[n][1]);
+	 }
+      }
+
+      fprintf(hp, "layers->Nlayers:=%d\n", layers);
+      fprintf(hp, "layers->Natomsmax:= %d\n", 20*lkm);
+      fprintf(hp, "layers->Ninistate:= %d\n\n", Ninistate);
+      if(multi==1)  {
+	 for(t=0;t<layers;t++) {
+	    fprintf(hp, "layers->layer[%d].Probmode:= 0\n", t);
+	    fprintf(hp, "layers->layer[%d].minz:= %g\n", t, laydim[0][t]);
+	    fprintf(hp, "layers->layer[%d].maxz:= %g\n", t, laydim[1][t]);
+	    if(layers>1)
+	       fprintf(hp, "layers->layer[%d].ltype:= %d\n", t, t);
+	    fprintf(hp, "layers->layer[%d].debyet:= %g\n\n", t, dtemp[t]);
+	 }
+      }
+      else {
+	 fprintf(hp, "layers->layer[%d].debyet:= %g\n\n", 0, dtemp[0]);
+	    
+      }
+      fprintf(hp, "box->Max.x:= %g\t#The size of the simulation cell\n", l*cells[0]);
+      fprintf(hp, "box->Max.y:= %g\n", l*cells[1]);
+      fprintf(hp, "box->Max.z:= %g\n\n", l*cells[2]);
+      lim[0]=lim[0]*l;
+      lim[1]=lim[1]*yl;
+      lim[2]=lim[2]*a;
+      fprintf(hp, "box->movelim.x:= %g # Shift used in generating fresh crystal\n", lim[0]); 
+      fprintf(hp, "box->movelim.y:= %g # in front of the recoil.\n", lim[1]);
+      fprintf(hp, "box->movelim.z:= %g\n\n", lim[2]); 
+      fprintf(hp, "physical->Tini:= %g # Temperature of the inistate calculation\n", Tini);
+      if(dtemp[0]<=0)
+	 fprintf(hp, "time->Timeini:= %g\n", Timeini);
+      fprintf(hp, "gen->seed:= %d\n\n", seed);
+      if(dtemp[0]<=0) {
+	 fprintf(hp, "potcrit->Rmini:= %g # cut-off radiuses for inistate calc.\n", Rmini);
+	 fprintf(hp, "potcrit->R0ini:= %g\n", R0ini);
+      }
+      fprintf(hp, "potcrit->Rmrec:= %g # cut-off radiuses for recoil calc.\n", Rmrec);
+      fprintf(hp, "potcrit->R0rec:= %g\n\n", R0rec);
+      fprintf(hp, "elstop->scale:= %g # Electronic stopping power scaled by this\n", elscale);
+      fprintf(hp, "pot->rep.scale:= %g # Repulsive potential scaled by this\n", repscale);
+      fclose(hp);
+   }
+   printf("\n");
+   printf("#----------------------------------------------------------------#\n");
+   printf("#			The MDH Script				 #\n");
+   printf("#----------------------------------------------------------------#\n");
+   OK[0]='A';
+   printf("\n\nDo you want to make an MDH-script (Y/N) [N]: ");
+   if(gets(buf)!=NULL)
+      sscanf(buf,"%c",OK);
+   if(OK[0]==89 || OK[0] ==121) {
+      OK[0]='A';
+      printf("\nShould MDH calculate the deposited energies tables [N]: ");
+      if(gets(buf)!=NULL)
+	 scanf(buf, "%c",OK);
+      if(OK[0]==89 || OK[0] ==121)
+	 strcat(mdh, " -FD");
+      OK[0]='A';
+      printf("Should MDH calculate the stopping tables [N]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%c",OK);
+      if(OK[0]==89 || OK[0] ==121)
+	 strcat(mdh, " -S");
+      OK[0]='A';
+      printf("Should MDH calculate the average velocities tables [N]: ");   
+      if(gets(buf)!=NULL)
+	 sscanf(buf, "%c",OK);
+      if(OK[0]==89 || OK[0] ==121)
+	 strcat(mdh, " -AV");
+      OK[0]='A';
+      printf("Should MDH do statistics on E(z) [N]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%c",OK);
+      if(OK[0]==89 || OK[0] ==121)
+	 strcat(mdh, " -Es");
+      help=60;
+      b=0;   
+      for(;;) {
+	 OK[0]='A';
+	 printf("Do you want debug output (? for help) [N]: ");
+	 if(gets(buf)!=NULL) {
+	    if(buf[0]!=63) {
+	       sscanf(buf,"%c",OK);
+	       b=1;
+	    }
+	    else
+	       apua(help);
+	 }
+	 if(b==1)
+	    break;
+      }
+      if(OK[0]==89 || OK[0] ==121) {
+	 strcat(mdh," -d");
+	 OK[0]='A';
+	 printf("Do you want maximum debug [N]: ");
+	 if(gets(buf)!=NULL)
+	    sscanf(buf,"%c",OK);
+	 if(OK[0]==89 || OK[0] ==121) {
+	    strcat(mdh,"m");
+	 }
+      }
+      printf("Which param-file should be used [%s] : ", file3);
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%s",file3);
+      strcat(mdh," -pa ");
+      strcat(mdh,file3);
+      if(szbl!=1 && comp!=2 && multi!=1) {
+	 printf("Which reppot-file should be used [%s] :", file4);
+	 if(gets(buf)!=NULL) {
+	    sscanf(buf,"%s",file4);
+	    strcat(mdh," -rp ");
+	    strcat(mdh,file4);
+	 }
+      }
+      printf("\n");
+      printf("Nice is a UNIX command that prevents your program from hogging all\n");
+      printf("the resources and thus the other users will still be NICE to you\n");
+      printf("How nice [8]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%d", &nice);
+      sprintf(nicei, "%d ", nice);
+      strcat(nices, nicei);
+      strcat(nices, mdh);
+      printf("Do you want to run MDH in the background (Y/N) [Y]: ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf, " %c", OK);
+      if(OK[0]!=78 && OK[0] !=110)
+	 strcat(nices," &");
+      printf("Where do you want to save this script [%s]: ", file5);
+      if(gets(buf)!=NULL)
+	 sscanf(buf,"%s", file5);
+      fp=fopen(file5, "wt");
+      fprintf(fp,"%s", nices);
+      fclose(fp);
+      OK[0]='A';
+      strcat(chmod,file5);
+      system(chmod);
+      if(szbl!=1 && multi!=1)
+	 printf("\nTo run mdh, you must have a reppot-file available!\n");
+      printf("Do you wish to run the script now [N] : ");
+      if(gets(buf)!=NULL)
+	 sscanf(buf, " %c", OK);
+      if(OK[0]==89 || OK[0] ==121)
+	 system(nices);
+   }
+   printf("\nMay the force be with you!\n");
+}
+
+
+void apua(int help) {
+   char ch;
+   FILE *fp;
+   char endhelp[]="help.txt";
+   char helps[70];
+   strcat(helps,DATADIR);
+   strcat(helps,endhelp);
+
+   fp = fopen(helps, "rt");
+   for(;;) {
+      while((ch=fgetc(fp)) != 36) {
+      }
+      ch=fgetc(fp);
+      if (ch == help) {
+	 break;
+      }
+   }
+   while((ch=fgetc(fp))!= 35) {
+      printf("%c", ch);
+   }
+   printf("\n");
+   fclose(fp);
+}

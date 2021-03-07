@@ -1,0 +1,34 @@
+
+  Modification history started by Kai Nordlund on Dec 9, 1998.
+Should have started this years ago.
+
+
+- Dec 9, 1998, V0.95
+
+		Corrected HCP handling and improved on minx,maxx selection.
+		Also changed transl to depend on lattice type.
+
+		Also renamed MUU, aika and nimi to English names.
+
+		Also corrected fclose() bug.
+
+		Also added check of whether more than 4 unit cells are
+		needed (relevant only for Be).
+
+		Also removed fractional values of lim[] - these caused trouble.
+
+		Also changed unit cell size variables l, yl, a into a, b, c
+
+		Also added possibility of giving only one Theta or Phi
+
+- Sep 14, 2008 Kai Nordlund
+	
+		Removed SiO_2 from compound dictionary, elstop
+		averaging for that was wrong!
+
+
+- Mar 22, 2012 Kai Nordlund
+  
+		Took in Jean-Paul Crocombettes nice addition of an
+		arbitrary unit cell.
+

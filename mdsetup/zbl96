@@ -1,0 +1,5 @@
+#define BINDIR "/user1/nordlund/unix/mdrange/mdsetup/bin/"
+#define DATADIR "/user1/nordlund/unix/mdrange/mdsetup/data/"
+#define F_ELEMENTS "/user1/nordlund/unix/mdrange/mdsetup/data/mass93.str"
+#define F_SCOEFA "/user1/nordlund/unix/mdrange/mdsetup/data/scoef.95a"
+#define F_SCOEFB "/user1/nordlund/unix/mdrange/mdsetup/data/scoef.95b"
