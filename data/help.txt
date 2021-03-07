@@ -1,0 +1,44 @@
+$0
+The time of initial state calculation is usually set between 100-1000 fs.
+The larger the value, the slower the calculation.
+#
+$1
+The electronic stopping potential is much less accurate than the repulsive 
+potential; therefore, if the simulated range distribution appears to be 
+shifted in one direction, the electronic stopping is scaled. Here are some 
+examples of the scaling (Molecular dynamics simulations of atomic 
+collisions for ion irradiation experiments, K. Nordlund, Acta Polytechnica 
+Scandinavica (Applied physics series 202)).
+
+He->Ta					1.4
+He->Nb					1.0
+He->W					1.1
+He->AISI 316L (stainless steel)		1.0 
+#
+$2
+If you have no information of the domain size, try making it BIG (>50000Å)
+#
+$<
+To enable easy debugging two debug options are incorporated
+in the program. Ordinary debug mode is implemented with the command
+line option "-d". It prints out to standard output and standard error
+the values of a number of important variables during run-time.
+Variables from within the loop over time steps are not printed out
+for each time step to prevent the number of output data from  
+becoming too large. In maximum debug mode (selected with "-dm")
+variables from within the loop over time steps along with a large
+number of other information is printed out.
+Apart from outright debugging the debug modes can also be used
+to obtain a number of physical quantities. For instance,
+the temperature in the cell as a function of time in
+the initial displacement calculation can be obtained with
+the Unix command sequence
+
+mdh -dm |& grep ^ini
+
+With the options "-r", "-p" and "-pi" output of the recoil or
+of all atom coordinates during runtime can be selected.
+By piping the output of MDH to the drawing program dpc
+this enables making simple on-line animations of atom movement
+in the program.
+#
