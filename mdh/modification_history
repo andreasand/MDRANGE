@@ -1,0 +1,451 @@
+This file was started to be kept 23.5.1994 when the first bug in the first
+version (0.95) with no obvious major bugs was found.
+
+See also version history in beginning of mdh.c
+
+
+********* 23.5.1994
+Bug in not setting time->dtratio to 1.1 in gettsteps 
+if the value was forced to this value corrected
+********* 25.5.1994 V. 0.95.1 
+potential stored in array, sigmar and straggling calculation added
+********* 30.5.1994 V. 0.96
+Bugs in setcelltemp and getcelltemp corrected.
+Extensive testing of temperature behaviour with Silicon Mazzone potential
+in inistate calc. done. The result: the temperature does (both in
+mdsir and mdh) fluctuate heavily with small numbers of atoms.
+Both simulations gave very similar fluctuations, so there isn't a
+bug in that
+********* 31.5.1994 V. 0.97
+- Modified fmath.h to be able to handle different machines
+- Corrected minor bug in placement of setcelltemp
+- Added Morse potential
+- Other minor improvements, like -r option
+
+********* 2.6.1994
+- Stopway array added, changes contained in recoil.c and mdmain.c
+
+********* 6.6.1994
+- Small bug (n=1 => n=0) in copyinilayer() that caused atom 0 to get 
+  false coordinates in multiple inistate calcs corrected.
+
+********* 8.6.1994
+- Bug in printresults in treating huge ranges corrected. 
+  Max array size increased to 4000
+
+********* 7.7.1994
+- elstop->scale parameter to scale electronic stopping added.
+- subroutine eltime() modified to use function times() rather than clock()
+
+********* 12.7.1994 V0.98
+- added layer handling, with the option of selecting a layer randomly. Changes mostly
+  in borders.c, moveslice.c, mdh.c and structs.h. Some changes in the general meaning
+  of layers parameters.
+
+********* 15.7.1994 V0.99.1
+- Discovered a subtle physical bug: in strong collisions the time step must
+  be calculated from the force (acceleration) the particle experiences, and
+  must yield a lot smaller displacements than ordinarily. See text in time.c
+
+********* 18.7.1994
+- Added parameter recoil.incollision to prevent the recoil calculation from ending
+in the middle of a violent collision.
+- Changed default value pf reccalc->Emin to 1.0 !
+
+********* 21.7.1994
+- Modified "unirand < probability" in layer selection routines to 
+  "unirand <= probability". It seemed that in the extremely unlikely situation
+  of unirand=1 this could cause the correct layer from not being selected !
+
+********* 22.7.1994 V1.0
+
+- Added polycrystalline calculation
+- Added reccalc->type==2 option (in connection with poly calc.)
+
+Changes contained in structs.h (struct poly added), mdh.c, recoil.c, moveslice.c and readin.c.
+
+********* 3.8.1994 V1.01
+- Added deposited energies calculation
+Changes contained in structs.h, mdh.c, readin.c, recoil.c and elstop.c
+
+********* 14.8.1994 V1.01a
+- Found and corrected bug in handling Trange=1 surface, added recoil.range
+  parameter. Essential changes contained in recoil.c
+
+********* 2.9.1994
+- Found a few float variables outside readvar.c, redefined them to real.
+
+********* 17.10 1994 V1.1
+- Added atom changing routines (type[].prob) for simulating steel.
+  Removed the redundant type parameter in accelerations.
+********* 21.10.1994 V1.1
+- Added repulsive potential scaling factor pot->rep.scale. 
+********* 24.10 1994
+- Corrected a number of small bugs (eg. pow(x,y) -> pow((double)x,y)) to
+  make mdh work in rock.
+
+***********************************************
+Cut in versions due to hyklux tilt ! Merged versions 6.12.
+
+********* 3.11 1994 (My 25th birthday !)
+- Found out that the range in polycrst. calc depen table was not taken into
+  account correctly. Corrected.
+********* 7.11 1994
+- Corrected small bug in readelstop that caused tilt if the number of columns
+  in elstop.in was greater than 2.
+********* X.11 1994
+- Added linear and quadratic scaling of electronic stopping. Changes in
+  readin.c, structs.h and elstop.c.
+
+********* 29.11 1994 V1.1a
+- Corrected numerous bugs: 
+  - Preprocessor comparisons now OK
+  - poly->recpos.x etc. now initialized to zero in initrec
+  - Bugs in asplit and #define RICA etc. corrected (caused tilts in Linuxes)
+  - getmeandisplacement changed from function to subroutine.
+  - replaced abs() with oabs() to avoid conflict with system routines.
+
+********* 6.12 1994 V1.2
+- Called the merged version 1.2. Should be very robust, V1.1a was tested in ten
+  different architectures.
+
+********* 6.12 1994 V1.2a
+- Modified the Morse parameters for Ta and Nb to yield the same thermal
+  displacement as calculated from the Debye temperature. Changes contained
+  in potential.c.
+
+********* 23.12 V1.3 
+- Added small angle change routines in polycr. calc. Changes in mdh.c, recoil.c,
+  readin.c and structs.h
+
+********* 28.12 V1.3a
+- Corrected reccalc->theta selection process when reccalc->Theta0 != 0.0. Changes
+  in recoil.c
+
+********* 28.12 V1.3b
+- Added possibility of using individual repulsive potential
+
+********* 2.1 1995 V1.3b
+- Set poly->recpos to zero in initrec to prevent tilts in alpha. Also removed
+  unused param recoil->v0. Changes in mdh.c, recoil.c and structs.h.
+
+********* 4.1 1995 V1.3c
+- Corrected small angle change subroutines so that new angle depends on previous 
+  orientation rather than recoil direction. Changes in recoil.c
+
+********* 5.1 1995 V1.3c
+- Corrected stupid bug in change above.
+********* 10.1 V1.3d
+- Corrected even more stupid bug in change above !!
+- Added automatic stripping of mdh to Makefile
+- Set recresult->nrange=0 in initrec(), caused problems in alphas.
+- Found serious bug in individual rep. pot. reading
+  Changes in mdh.c, readin.c, recoil.c, start.c and structs.h
+
+********* 11.1 V1.4
+- Changes (improvements actually) in layer handling stuff. Changes in
+  readin.c, readcoords.c and borders.c.
+
+********* 12.1 V1.4 
+- Corrected bug that prevented array reading if i>10. Changes in readvar.c
+
+********* 23.1 V1.5
+- Added calculation of Zmean, density and ndensity. Changes in structs.h,
+  mdh.c and readcoords.c.
+- Added calculation of straggling of electronic stopping. Changes in
+  structs.h, mdh.c,readin.c and elstop.c
+
+********* 3.2 V1.5a
+- Corrected minor bug in FD calculation
+- Corrected bug in elstop LSSOmega calculation
+- Found out that the standard ANSI function realloc() causes trouble in
+  HP-UX. Increased the inital size of G to circumvent this.
+- Corrected bug in FD calculation: for large energies and statistics, the
+  float precision was not accurate enough. Changes in structs.h.
+
+********** 15.5 V1.5b
+- Modified repulsive potential calc. to work more sensibly in case of
+  insanely strong collisions (r < 0.002). Changes in mdh.c, recoil.c and 
+  potential.c.
+
+- Time step criteria modified. Changes in time.c and structs.h
+
+* The bug (some rare events getting too high velocities) was still not found !
+
+- Added getpid() in start.c (had been removed sometime) 
+
+********** 16.5 V1.5b
+- Changed printrec in outout.c to print lots of recoil structure parameters.
+********** 23.5 V1.5b
+- Modified stupid bug in potential.c (if (j=0) rr = 1e-15 should of course be rr = 1e-5)
+********** 24.5 V1.5c
+- Changed warning of j==0 in potential to be given only once 
+
+********** 26.5 V1.5d
+- Located horrifying error in accelerations.c: getneighbours() had all the 
+  time used only sizex in calculating boundary conditions ! Luckily, I always
+  used cubic simulation cells...
+
+********** 30.5 1997 V1.5d
+
+- Added atflag[i].interact=True into copyinilayer() for "beauty reasons",
+  lack of it didn't affect program functioning in any way.
+
+- Added #ifndef HP9000 options in start.c to prevent problems in karhu.
+
+********** 28.6 V1.51
+
+- Corrected bug in parameter handling by adding \0 in comparisons
+
+- Added calculation of stopping power tables. Changes in structs.h,
+  start.c and recoil.c.
+
+********** 3.7 V1.51a-c
+
+- Added static parameter zeroing at beginning of each recoil event 
+  for Sn calc. in calcdepen() in recoil.c V1.51a
+
+- Removed possibility of division with 0 in calcdepen(), V1.51b
+
+- V1.51c: Corrected calculation of Se statistics in collisions
+
+********** 4.7 V1.51d-f
+
+- Modified stopping calculation not to weigh collisions extra much
+
+- V1.51e: Changed calc. of stopping power to include dv, removed calculation
+  over collisions.
+
+- V1.51f: Changed place of dv multiplication (!)
+
+********** 4.7 V1.52
+
+- Added average velocity calculation
+- Renamed calcdepen() to calcmisc()
+
+********** 6.7 V 1.52a
+
+- Modified times in avvel output to be in fs
+
+- V1.52b: modified statistics calculation of avvel
+
+********** 20.9 V 1.52b
+
+- Added param new to getsttep
+
+********** 18.3 1996 V 1.6
+
+- Added spline interpolation of repulsive potential from reppot.in.type1.type2 file
+
+
+********** 23.4 1996 V1.6
+
+- Corrected stupid allocation bug for updateneeded in accelerations.c
+
+- checkdisplacements no longer done on firsttime
+
+************
+
+  Major additions by Jussi Sillanpää, not documented here.
+
+************
+
+********** 19.7 1996 V1.6b
+
+- Corrected for (i=0;i<=nat;i++) into for (i=0;i<nat;i++) in borders()
+
+- Added    recoil->attype=reccalc->Atype; in initrec()
+
+- 10.12 1996: Modified printhost to be (hopefully) more robust.
+
+********** 10.3 1997 V1.7
+
+- Corrected bug in setcelltemp for T=0.
+- Renamed version to V1.7 since it has now been pretty much tested and found
+  to be robust
+
+- Corrected trivial bug related to chord range calculation.
+
+********** 5.4 1997 V1.71
+
+- Added -recspec secondary recoil spectrum calculation, look for "recspec"
+  Changes mainly in recoil.c, moveslice.c and structs.h
+
+********** 17.9 1997
+
+- Added recspeczmin and recspeczmax (mostly for mixing calculations). 
+  See moveslice.c
+
+- Added factor 1/sqrt(m) into dependz interval calculation
+
+********** 8.10 1997
+
+- Noted that spline interpolation of derivative had VR2 at limits 1 and N,
+  should have been dVR2. Corrected, but not likely to have had any real-life
+  effect.
+
+- Also changed rmax in splinereppot to 9.0 from 4.0.
+
+- V1.72: Changed splinereppot to use screening function in interpolation.
+	All changes contained in potential.c
+
+********** 19.1 1998
+
+- V1.73: Added reccalc.zmax
+
+
+********** 9.2 1998
+
+- V1.74: Corrected factor sqrt(3) in Debye displacement calculation.
+  Old version gave too small displacements, which was sometimes a
+  serious problem in channeling directions. Otherwise effect not big.
+
+
+- V1.75: Removed the undocumented, not well tested and slightly buggy
+  vels[] array from the time step selection (sometimes gave unnecessarily
+  _small_ time steps so no serious problem). Checked with 10-100 keV 
+  Si->Cu and 1 MeV Kr->Pt mixing: no effect.
+  
+
+- Minor bug in createrecatom: at[i].a2x=at[i].a2y=at[i].a2z=0.0;
+
+********** 24.10 1998
+
+- V1.8:   Almost completely rewrote potential.c for accuracy
+  	  in extremely strong collisions. Potential derivative
+	  no longer read in. Also, maximum v and a of all atoms
+	  now used in time step calc. Accuracy almost perfect if
+	  properly used: for 1 GeV He->Si (p=1e-7) 0.01 degree accuracy.
+	  Also rewrote ZBL routine: no more storing !
+	  See ~/md/mdhdir/README.SCATTEST
+
+	  Also added pot->rep.type=3. Not much speedup, though :-(
+
+********* 9.12 1998
+
+	  Set default value of Trec to Tini in readin.c - not doing this 
+	  caused a small error in the recspec calculation if Trec was 
+	  not read in.
+
+********* 4.2 1999
+
+- V1.81	  Added recresult-> sumFDsput and sumFDtrans calculation.
+	  Added strong checking of elstop velocity maximum, exit
+	  if exceeded
+
+	  Also moved subelstop after getrecoilprop in main routine.
+	  This is more logical, but will change all results slightly
+	  due to the chaotic nature of the ion motion.
+
+	  6.2 Added output of irec itself in recspec output.
+
+	  6.5 Added range and recspec calculation index checks in recoil.c
+	      and moveslice.c
+
+	  1.11 1999 Changed sqrt(3) in inistatecalc into sqrt(3.0)
+
+********* 1.8 2000
+
+- V1.82   Optimized routine getmaxprop in recoil.c by moving out
+          sqrt from inside löop, and corrected output interval=1 straggle bug.
+
+	  Also added check whether output files can be opened before output.
+	
+********* 22.8 2000
+
+- V1.83	  Corrected horrible bug in moveslice:
+
+	  > I think that the line 2 , "if (move.x>0 && at[i].x<box->size.z-move.x)"
+	  > must be changed to        "if (move.x>0 && at[i].x<box->size.x-move.x)"
+
+	  Fortunately, this has only caused trouble for the (very rare)
+	  non-cubic simulation cells.
+
+- V1.83b  Corrected minor bug in inistacalc: vxsum=0.0; vysum=0.0; vzsum=0.0; 
+   	  missing in loops over inistates.
+
+*************************************
+********* 2000 - 13.8 2002 **********
+*************************************
+
+- V3.0	  Major rewrite up to version 3.0 by Jarkko Peltola.
+	  Main modifications are:
+	
+	- Possibility to make multi-layered targets with mdsetup.
+
+	- Option to use 3 different modes of electronic stopping for
+	  each layer (for example layer 0):
+          layers->layer[0].elstop:= 0 (default ZBL-stopping)
+	  layers->layer[0].elstop:= 1 (PENR-stopping)
+          layers->layer[0].elstop:= 2 (Brandt-Kitagawa-stopping) 
+
+	- Option to use 3-dimensional charge density map for Si-unitcell
+          layers->layer[0].fulldensity:= 1
+
+	- Opt ion to use damage build-up model for crystailline Si
+	  physical->Damage:= 1
+
+	- Totally rewritten the moveslice system. Information of the
+	  system can be found from our COSIRES2002- conference paper 
+	  (preprint can be found from our webpage)
+
+	- Option for surface erosion by sputtering
+	  physical->sputtering:= 1
+
+	- A separate REED-version of the code
+
+	- Option for Firsov-inelastic stopping
+	  elstop->Firsov:= 1 
+
+	- Option to make a movie-file from the movement of the first ion
+	  file->movie:= 1
+
+	- angular recoil spectrum output added (-recspec)
+
+	- New online arguments:
+	  -rselim min max   : for using some energy range for -recspec calculations
+	  -pr z             : prints the simulation box, when the first atom has reached depth z
+	  -dens             : prints eldens.out (first column= charge density in atomic units, second
+	                      column= ch. density in e/Å^3, third column= the amount of counts, when the ion
+	                      has been in that ch. density in elstop-calculation, fourth column= the amount of
+	                      Se that the ion has "felt" in that ch. density)   
+
+	- And a huge number of modifications and new variables into
+          the code.
+        
+*************************************
+********* 2004             **********
+*************************************
+
+- V3.01		Changed Debye displacements to be atom-specific
+	  	in inistatecalc.c
+
+*************************************
+********* 2005             **********
+*************************************
+
+- V3.02		Corrected Jarkkos bug in potential.c: dVspline
+		had wrong sign in front of (3*btemp, should have been
+		minus rather than plus. Tests in test/ and sigaas100/
+		indicated this had no effect on results in practice.
+
+*************************************
+********* 2008             **********
+*************************************
+
+- V3.02b	Modified -e output to also give velocity
+
+*************************************
+********* 2009             **********
+*************************************
+
+- V3.03		Added random periodic cell shift
+
+- V3.04		Replaced random number generator with Mersenne twister
+
+*************************************
+********* 2016            **********
+*************************************
+
+- V3.06		Disabled changing theta to -theta with 1/2 probability
+- V3.07		Corrected small error in projected range calculation at surface.

@@ -1,0 +1,227 @@
+borders.c: /*printf("nat: %d ion %d\n",*nat,recoil->number);*/
+borders.c:      recoil->number=j;
+borders.c:	     *nat-j,recoil->number,physical->sput_surf,recoil->sz);
+borders.c:     FD2=(recoil->eprev-recoil->energy);
+borders.c:     FDe2=elstop->Se*recoil->dr;
+borders.c:     FDn2=FD2-FDe2-elstop->totalfirsov*recoil->dr;
+borders.c:     r2=recoil->sz;  
+borders.c:     if (reccalc->Trange == 1) r2=recoil->r_proj;
+borders.c:	       FD2=(recoil->eprev-recoil->energy);
+borders.c:	       FDe2=elstop->Se*recoil->dr;
+borders.c:	       FDn2=FD2-FDe2-elstop->totalfirsov*recoil->dr;
+borders.c:	       r2=recoil->sz;  
+borders.c:	       if (reccalc->Trange == 1) r2=recoil->r_proj;
+elstop.c:   vreal=v*unit->vel[recoil->attype];
+elstop.c:   scale=elstop->scale+recoil->energy*(elstop->dscale+elstop->sqscale*recoil->energy);
+elstop.c:   i=recoil->number;
+elstop.c:   v=recoil->vel;
+elstop.c:   vreal=v*unit->vel[recoil->attype];
+elstop.c:     if(debug) printf("Using zbl elstop at depth %g layer %d \n",recoil->sz,nlayer);
+elstop.c:     scale=elstop->scale+recoil->energy*(elstop->dscale+elstop->sqscale*recoil->energy);
+elstop.c:     if (elstop->mode==1 && recoil->dr>0.0) {
+elstop.c:       omega=LSSOmega(type[recoil->attype].Z,layer.Zmean,recoil->vel,
+elstop.c:		      layer.ndensity,recoil->dr,unit,recoil->attype);
+elstop.c:       Semod=gaussianrand()*omega/recoil->dr;
+elstop.c:     if(debug) printf("using Puska elstop at depth %g ",recoil->sz);
+elstop.c:	 if(debug) printf("\nPuska model, no atoms inside rfirsov at depth %g, using default charge density ",recoil->sz); 
+elstop.c:        rex=recoil->x;
+elstop.c:	rey=recoil->y;
+elstop.c:	rez=recoil->z;
+elstop.c:	/*rez=recoil->sz-potcrit->oxide; */
+elstop.c:	  printf("cdens variable(%lg,%lg,%lg) LESS THAN ZERO z%lg sz%lg\n",elx,ely,elz,recoil->z, recoil->sz);	
+elstop.c:	  Se=type[recoil->attype].Z*type[recoil->attype].Z*0.21220659*(log(1+6.0292139/onelrad)-(1/(1+0.16585911*onelrad)));
+elstop.c:	   printf("BK model, no atoms inside rfirsov at depth %g, using default charge density ",recoil->sz); 
+elstop.c:       if(debug) printf("using BK elstop at depth %g ",recoil->sz);
+elstop.c:        rex=recoil->x;
+elstop.c:	rey=recoil->y;
+elstop.c:	rez=recoil->z;
+elstop.c:	/*rez=recoil->sz-potcrit->oxide; */
+elstop.c:	  printf("cdens variable(%lg,%lg,%lg) LESS THAN ZERO z%lg sz%lg\n",elx,ely,elz,recoil->z, recoil->sz);	
+elstop.c:     if(type[recoil->attype].Z>1)
+elstop.c:	q*=1/pow(1.0*type[recoil->attype].Z,0.66667); /*q is now reduced relative vel.*/
+elstop.c:        gamma=2*0.24005*pow((1-q),0.66667)/(pow(1.0*type[recoil->attype].Z,0.33333)*(1-((1-q)/7))); /*BK:s screening length lambda*/
+elstop.c:        gamma*=type[recoil->attype].Z;    /* Zeff calculated - square */
+elstop.c:     scale=elstop->scale+recoil->energy*(elstop->dscale+elstop->sqscale*recoil->energy);
+elstop.c:   deltav=time->dt[recoil->attype]*Se;
+elstop.c:   if(type[recoil->attype].Z>1){
+elstop.c:     avx=(at[i].vx*unit->vel[recoil->attype]);
+elstop.c:     avy=(at[i].vy*unit->vel[recoil->attype]);
+elstop.c:     avz=(at[i].vz*unit->vel[recoil->attype]);
+elstop.c:       if(type[recoil->attype].Z > type[at[ain].type].Z){
+elstop.c:	 z1 = type[recoil->attype].Z;
+elstop.c:	 z2 = type[recoil->attype].Z;
+elstop.c:     /*firtotal*=time->dt[recoil->attype];   Force -> change in velocity, dv = (F/m) *dt  
+elstop.c:     at[i].vx-=firtotalx*time->dt[recoil->attype];
+elstop.c:     at[i].vy-=firtotaly*time->dt[recoil->attype];
+elstop.c:     at[i].vz-=firtotalz*time->dt[recoil->attype];   
+moveslice.c:   if (! recoil->beeninside) {
+moveslice.c:     if (recoil->z > box->movelim.z) recoil->beeninside=True; 
+moveslice.c:   if(recoil->sz > (box->movelim.z+physical->sput_surf)) recoil->realbeeninside=True; /*aidon pinnan alap.*/
+moveslice.c:   if (recoil->x > box->size.x-box->movelim.x) { move1.x=-box->movelim.x; nmove++; }
+moveslice.c:   if (recoil->x < box->movelim.x) { move1.x=+box->movelim.x; nmove++; }
+moveslice.c:   if (recoil->y > box->size.y-box->movelim.y) { move1.y=-box->movelim.y; nmove++; }
+moveslice.c:   if (recoil->y < box->movelim.y) { move1.y=+box->movelim.y; nmove++; }
+moveslice.c:   if (recoil->z > box->size.z-box->movelim.z && recoil->beeninside)
+moveslice.c:   if (recoil->z < box->movelim.z && 
+moveslice.c:       ( recoil->realbeeninside || (reccalc->type==2 && recoil->turnedaround)) )
+moveslice.c:      getlayer(layers,recoil->sz,nlayer,firstrecstep); 
+moveslice.c:      getamorphstate(&namorph,recresult,recoil->sz,box->movelim.z,physical,layers,*nlayer);
+moveslice.c:	      /*if(recoil->sz<40) printf("%lg,%lg,%lg\n",xscale,yscale,zscale);	 */
+moveslice.c:	    rx=recoil->x;ry=recoil->y;rz=recoil->z; /*recoil coords. before scaling	   */
+moveslice.c:	    recoil->x=(recoil->x - center.x)*xscale;
+moveslice.c:	    recoil->y=(recoil->y - center.y)*yscale;
+moveslice.c:	    recoil->z=(recoil->z - center.z)*zscale;
+moveslice.c:	    recoil->x+=box->size.x/2;
+moveslice.c:	    recoil->y+=box->size.y/2;
+moveslice.c:	    recoil->z+=box->size.z/2;
+moveslice.c:	    rx-=recoil->x;ry-=recoil->y;rz-=recoil->z; /*difference due to scaling*/
+moveslice.c:	    recoil->ddx+=rx;
+moveslice.c:	    recoil->ddy+=ry;
+moveslice.c:	    recoil->ddz+=rz;
+moveslice.c:      getlayer(layers,recoil->sz+box->movelim.z,&nlayernext,firstrecstep); 
+moveslice.c:      getamorphstate(&namorphnext,recresult,recoil->sz+box->movelim.z,box->movelim.z,physical,layers,nlayernext);
+moveslice.c:      irec=recoil->number;
+moveslice.c:	       r=recoil->sz;
+moveslice.c:	       if (reccalc->Trange == 1) r=recoil->r_proj;
+moveslice.c:	 /*if(ll!=0) printf("%d atoms discarded in moveslice 'cause below %g ,boxz= %g ,recz= %g \n",ll,physical->sput_surf,box->movement.z-move.z,recoil->sz);*/
+moveslice.c:      recat.x+=move.x; recoil->x=recat.x;
+moveslice.c:      recat.y+=move.y; recoil->y=recat.y;
+moveslice.c:      recat.z+=move.z; recoil->z=recat.z;
+moveslice.c:      recoil->number=j;
+output.c:   printf("rec t %g pos %.8g %.8g %.8g vel %g E %g coll %d\n",t,recoil->sx,recoil->sy,recoil->sz,recoil->vel,recoil->energy,recoil->incollision);
+output.c:   printf("rec2 vx %g vy %g vz %g acc %g eprev %g\n",recoil->vx,recoil->vy,recoil->vz,recoil->acc,recoil->eprev);
+output.c:   printf("rec3 n %d number %d attype %d\n",recoil->n,recoil->number,recoil->attype);
+output.c:   printf("rec4 x %g y %g z %g xp %g yp %g zp %g\n",recoil->x,recoil->y,recoil->z,recoil->xp,recoil->yp,recoil->zp);
+output.c:   printf("rec5 dx %g dy %g dz %g dr %g drp %g\n\n",recoil->dx,recoil->dy,recoil->dz,recoil->dr,recoil->drp);
+recoil.c:   recoil->attype=reccalc->Atype;
+recoil.c:	   reccalc->E0,reccalc->v0*unit->vel[recoil->attype]);
+recoil.c:   x=100*0.001*(reccalc->E0/type[recoil->attype].m)/(0.974*25);
+recoil.c:   recresult->dependz=reccalc->E0/1000/sqrt(type[recoil->attype].m);
+recoil.c:	      recresult->stopvmax*unit->vel[recoil->attype],
+recoil.c:	      recresult->stopdv*unit->vel[recoil->attype]);
+recoil.c:	      recresult->avveltmax*unit->time[recoil->attype]/1e-15,
+recoil.c:	      recresult->avveldt*unit->time[recoil->attype]/1e-15);
+recoil.c:   recoil->number=i; recoil->attype=at[i].type;
+recoil.c:   recoil->ddx=recoil->ddy=recoil->ddz=0.0;
+recoil.c:   recoil->x=recoil->x0=at[i].x=reccalc->Startmin.x+unirand(seed1)*
+recoil.c:   recoil->y=recoil->y0=at[i].y=reccalc->Startmin.y+unirand(0)*
+recoil.c:   recoil->z=recoil->z0=at[i].z=reccalc->Startmin.z+unirand(0)*
+recoil.c:      recoil->fii = fii = pfii+(2*unirand(0)-1.0)*reccalc->Polydeltaangle;
+recoil.c:      recoil->theta=theta;
+recoil.c:	 recoil->fii  = fii  = reccalc->Fii0;
+recoil.c:	 recoil->theta= theta= reccalc->Theta0;
+recoil.c:	 recoil->fii=fii=reccalc->Fii0+unirand(0)*(reccalc->Fiimax-reccalc->Fii0);
+recoil.c:	    recoil->theta=theta=acos(cos(t)+unirand(0)*(1.0-cos(t)));
+recoil.c:	    recoil->theta=theta=reccalc->Theta0+unirand(0)*(reccalc->Thetamax-reccalc->Theta0);
+recoil.c:	 if (unirand(0) < 0.5) recoil->theta=theta=-theta;
+recoil.c:   MAXDEBUGSRRR("Recoil start",recoil->x0,recoil->y0,recoil->z0);
+recoil.c:   MAXDEBUGSRR("Recoil start",recoil->fii,recoil->theta);
+recoil.c:   recoil->vel=reccalc->v0=sqrtf(2.0*reccalc->E0);;
+recoil.c:      recoil->vel=poly->prevvel;
+recoil.c:   maxima->vel=recoil->vel;
+recoil.c:   maxima->vel_attype=recoil->attype;
+recoil.c:   recoil->energy=0.5*recoil->vel*recoil->vel;
+recoil.c:   recoil->eprev=recoil->energy; recoil->vprev=recoil->vel;
+recoil.c:   DEBUGSRR("Giving new recoil",recoil->vel,recoil->energy);
+recoil.c:   recoil->vel0=recoil->vel;
+recoil.c:   at[i].vx=recoil->vx0=recoil->vel*sin(theta)*cos(fii);
+recoil.c:   at[i].vy=recoil->vy0=recoil->vel*sin(theta)*sin(fii);
+recoil.c:   at[i].vz=recoil->vz0=recoil->vel*cos(theta);
+recoil.c:   MAXDEBUGSRRRR("Recoil start", recoil->vx0,recoil->vy0,recoil->vz0,recoil->vel0);
+recoil.c:   recoil->acc=0.0;
+recoil.c:   maxima->acc=recoil->acc;
+recoil.c:   maxima->acc_attype=recoil->attype;
+recoil.c:   recoil->touched=False; /*JARKKO surface debug*/
+recoil.c:   recoil->beeninside=False;
+recoil.c:   recoil->realbeeninside=False; /*JARKKO-damage*/
+recoil.c:   recoil->turnedaround=False;
+recoil.c:   recoil->incollision=False;
+recoil.c:   recoil->range=recoil->r_path=recoil->r_chord=recoil->r_proj=0.0;
+recoil.c:   recoil->n++;
+recoil.c:   recoil->xp=recoil->x; recoil->yp=recoil->y; recoil->zp=recoil->z;
+recoil.c:   recoil->sx=recoil->x; recoil->sy=recoil->y; recoil->sz=recoil->z;
+recoil.c:   recoil->r_proj=(recoil->vx0*recoil->sx+recoil->vy0*recoil->sy+
+recoil.c:		   recoil->vz0*recoil->sz)/recoil->vel0;
+recoil.c:   i=recoil->number;
+recoil.c:   recoil->x=at[i].x;
+recoil.c:   recoil->y=at[i].y;
+recoil.c:   recoil->z=at[i].z;
+recoil.c:   recoil->vx=at[i].vx;
+recoil.c:   recoil->vy=at[i].vy;
+recoil.c:   recoil->vz=at[i].vz;
+recoil.c:   recoil->sx=at[i].x+box->movement.x;  recoil->px=recoil->sx+poly->recpos.x;
+recoil.c:   recoil->sy=at[i].y+box->movement.y;  recoil->py=recoil->sy+poly->recpos.y;
+recoil.c:   recoil->sz=at[i].z+box->movement.z;  recoil->pz=recoil->sz+poly->recpos.z;
+recoil.c:   recoil->dx=recoil->sx-recoil->xp; 
+recoil.c:   recoil->dy=recoil->sy-recoil->yp; 
+recoil.c:   recoil->dz=recoil->sz-recoil->zp; 
+recoil.c:   recoil->dr=sqrtf(recoil->dx*recoil->dx+recoil->dy*recoil->dy+recoil->dz*recoil->dz);
+recoil.c:   recoil->xp=recoil->sx;
+recoil.c:   recoil->yp=recoil->sy;
+recoil.c:   recoil->zp=recoil->sz;
+recoil.c:   recoil->eprev=recoil->energy;
+recoil.c:   recoil->vprev=recoil->vel;
+recoil.c:   recoil->vel=sqrtf(at[i].vx*at[i].vx+at[i].vy*at[i].vy+at[i].vz*at[i].vz);
+recoil.c:   recoil->acc=sqrtf(at[i].ax*at[i].ax+at[i].ay*at[i].ay+at[i].az*at[i].az);
+recoil.c:   recoil->energy=0.5*recoil->vel*recoil->vel;
+recoil.c:   recoil->r_path+=recoil->dr;
+recoil.c:   recoil->r_chord=sqrtf((recoil->x0-recoil->sx)*(recoil->x0-recoil->sx)+
+recoil.c:			 (recoil->y0-recoil->sy)*(recoil->y0-recoil->sy)+
+recoil.c:			 (recoil->z0-recoil->sz)*(recoil->z0-recoil->sz));
+recoil.c:   r=recoil->r_proj;
+recoil.c:   recoil->r_proj=(recoil->vx0*recoil->sx+recoil->vy0*recoil->sy+
+recoil.c:		   recoil->vz0*recoil->sz)/recoil->vel0;
+recoil.c:   recoil->drp=recoil->r_proj-r;
+recoil.c:   if (reccalc->Trange == 0) r=recoil->sz;
+recoil.c:   if (reccalc->Trange == 1) r=recoil->r_proj;
+recoil.c:   if (reccalc->Trange == 2) r=recoil->r_chord;
+recoil.c:   if (reccalc->Trange == 3) r=recoil->r_path;
+recoil.c:   recoil->range=r;
+recoil.c:   if (at[i].vz < 0) recoil->turnedaround=True;
+recoil.c:   MAXDEBUGSRRRR("getrecprop:",r,recoil->vel,recoil->acc,recoil->dr);
+recoil.c:   dr=recoil->dz;
+recoil.c:   if (reccalc->Trange == 1) dr=recoil->drp;
+recoil.c:   FD=(recoil->eprev-recoil->energy);
+recoil.c:   FDe=elstop->Se*recoil->dr;
+recoil.c:   FDf=elstop->totalfirsov*recoil->dr; /*JARKKO*/
+recoil.c:      r=recoil->sz;
+recoil.c:      if (reccalc->Trange == 1) r=recoil->r_proj;
+recoil.c:   MAXDEBUGSRRRRR("calcdepen.c",dr,i,FDn,elstop->Se,recoil->energy);
+recoil.c:      i=(int) recoil->vel/recresult->stopdv;
+recoil.c:	   S=(recoil->eprev-recoil->energy)/dr;/**(recoil->vprev-recoil->vel);*/
+recoil.c:	    recresult->stopv+=recoil->vel;
+recoil.c:	 recresult->curavvel[i]+=recoil->vel;
+recoil.c:      MAXDEBUGSRRRR("avvel",i,t,recoil->vel,recresult->avvel[i]);
+recoil.c:   if (reccalc->Trange == 0) r=recoil->sz;
+recoil.c:   if (reccalc->Trange == 1) r=recoil->r_proj;
+recoil.c:   if (reccalc->Trange == 2) r=recoil->r_chord;
+recoil.c:   if (reccalc->Trange == 3) r=recoil->r_path;
+recoil.c:   recoil->range=r;
+recoil.c:   if (recoil->range < 2.0*reccalc->Startmin.z) stopway=1;
+recoil.c:   if (reccalc->type==2 && recoil->range < 0.0) stopway=4;
+recoil.c:   if (recoil->range>reccalc->Zmax) stopway=7;
+recoil.c:	     recoil->sx,recoil->sy,recoil->sz,recoil->energy,recoil->range,
+recoil.c:	     recoil->vx,recoil->vy,recoil->vz);
+recoil.c:      poly->recpos.x+=recoil->sx; 
+recoil.c:      poly->recpos.y+=recoil->sy; 
+recoil.c:      poly->recpos.z+=recoil->sz;
+recoil.c:      poly->range+=recoil->r_proj;
+recoil.c:	 recoil->range=poly->range;
+recoil.c:	 if (recoil->range<0 && !recerror) stopway=4;
+recoil.c:   MAXDEBUGSRRRRR("endrec.c",stopway,r,recoil->sx,recoil->sy,recoil->sz);
+recoil.c:      recresult->ranges[recresult->nrange]=recoil->range- physical->sput_surf; /*JARKKO erosion,range mitataan nollasta*/
+recoil.c:   if (stopway==1) recresult->sumFDsput+=recoil->energy;
+recoil.c:   if (stopway==7) recresult->sumFDtrans+=recoil->energy;
+recoil.c:	 if (i==recoil->number) continue;
+recoil.c:      j=(int) (recoil->x/zmax*ESTATZSIZE);
+recoil.c:      i=(int) (recoil->energy/reccalc->E0*ESTATESIZE);
+recoil.c:      fii=acos(recoil->vx/recoil->vel);
+recoil.c:      theta=acos(recoil->vz/recoil->vel);
+recoil.c:   poly->prevvel=recoil->vel;
+recoil.c:   poly->prevv.x=recoil->vx;
+recoil.c:   poly->prevv.y=recoil->vy;
+recoil.c:   poly->prevv.z=recoil->vz;
+time.c:   time->dtreal=time->Dt*1e-15;  /* Recalculated later from recoil->vel and time->kt */
+time.c:   velnow=vels[c]=recoil->vel;
+time.c:   recoil->incollision=False;
+time.c:      recoil->incollision=True;

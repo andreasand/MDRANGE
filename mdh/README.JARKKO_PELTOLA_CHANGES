@@ -1,0 +1,160 @@
+modified 28.8.2001 jarkko peltola
+
+-The damage build-up model is built in the MDRANGE version 2.0Beta, where the Beta comes
+ from not-fully-tested
+
+-First the changes in initial conditions
+
+-The changes in the arraysizes.c -file are:
+
+	#define ORIGMAXAMORPH 20  : defines the maximum number of amorphous simulation boxes
+				    for one layer, used for table initializion 
+	EXTERN int MAXAMORPH;	  : is the maximum number of am. state boxes 
+				    (readin via layers->layer[*].Namorph), used for big array 
+					initializion
+	
+	#define ZBOXES 10000	  : Maximum number of unitboxes in z-direction in damage calculation
+
+	#define MAXN 16 	  : maximum number of firsov partners, used in elstop calculations
+					
+	#define PI 3.1415927	  : now a global constant :-)
+
+-The changes in the structs.h -file are:
+
+	layer->elstop	: tells which mode of elstop is used for this layer: 0=default=ZBL,
+			  1=Spherical symmetric el.density + puska
+	layer->surfbind;                     : binding energy for the surface atoms in this layer
+	layer->natoms[ORIGMAXAMORPH];        : Number of atoms in layer  in each am. state
+  	layer->unitcellsize[ORIGMAXAMORPH];  : unitcellsizes for each am. state
+  	layer->Dose[ORIGMAXAMORPH];	     : dose (eV/simulation box)  for each am. state
+	layer->Namorph;  		     : number of am. states for this layer
+	
+  struct potcrit:
+   	int fatoms;  /* No. of atoms closer than Firsov cut-off */
+   	real frmin[MAXN]; /* Dist. to nearest Firsov-partners */  
+   	int fin[MAXN]; /* Indices of Firsov-partners */
+   	real rfirsov; /* Cut-off for the Firsov model */
+
+  struct elstop:
+	int Firsov; //flag
+  	real totalfirsov; //total force due to the firsov model
+   	int n[ORIGMAXLAYER];       /* Number of readin points for ZBL file for each layer*/
+   	int nc;                    /* Number of readin points for charge density file*/ not yet tables!!
+   	int ns;                    /* Number of readin points for stopping_density file*/ not yet tables!!
+	real v[ORIGMAXLAYER][MAXELSTOP]  	: ZBL elstop velocities
+	real Setable[ORIGMAXLAYER][MAXELSTOP];  : ZBL elstop Se:s
+  	real cdist[MAXSTOPP],celdens[MAXSTOPP]; : Puska not yet tables!!
+  	real dens[MAXSTOPP],stopp[MAXSTOPP];	: Puska not yet tables!!
+  	real slim,iperslim; 			: Jussi's parameters not any special
+
+  struct recresult:
+	double depennucl_box[ZBOXES],depennucl_boxtemp[ZBOXES]; 
+			//global and temp. tables for nucl. dep. energy
+  	double surfFDn;   //deposited energy in the surface layer for sputtering
+
+  struct physical:
+	int Damage;   //flag, 0=off
+	int bscaling;  //flag, 0=off
+  	int scaling;   //flag 0=off
+  	real Dose;   //real dose input
+  	real Dosescaling;  //scaling factor for dose
+  	int sputtering;    //flag 0=off
+  	real sput_surf;  //amount of surface sputtered in Ongs.
+  	real deltasput_surf;  //between two recoils, needed in handling the range-data
+  	real Y; //fixed value for yield if needed, overwrites calculated value
+  	real sputFD; //fixed value for surface depon. energy, overwrites calculated value 
+  	real sputdeltaV; //value for the increased volume/original volume, 
+			   because of the foreign ion in material usually, not used yet!!
+
+	recoil->realbeeninside;     /* Is the recoil inside the real surface ? */
+	int spreadFD; //flag controlling the spreading of the FDn
+
+-and now implantation routines in mdh.c chronologically: 
+
+-The Dosescaling is calculated in mdh.c IF the physical->damage or physical->sputtering values
+ are set
+
+-the recoil is set..
+
+-After the getlayer, follows getamorphstate(borders.c) function
+
+-after the at-table is initialized, it is eroded after the physical->sput_surf. if sputtering is on
+
+-the temporary recresult.depennucl_boxtemp[] table is set to zero
+
+   -the recoil enters the material..
+
+   -the recoil->beeninside tells if the ion has passed the first unit cell layer (0+box.movelim.z). 
+    (not necessary inside the material though!) This still makes the cell movement right to the 
+    positive z-direction. 
+    the recoil->realbeeninside tells if the ion has passed the first unit cell layer in the real
+    material according to the sput_surf. Should make the cell movement right to the 
+    negative z-direction. (SOMETHING WRONG HERE, the ion may travel to the -infinity!! 
+    (probably due to the trange!=0 thing, so 
+    i made a check : recoil.sz<2*start.z in mdh.c, should work now) 
+   
+   -the moveslize gets the next am. state and if physical.scaling is set, the old coordinates 
+    are scaled to match the volume of the new am.state (the recoil-ion too) and then
+    the new part is copied to the front of the ion IF those atoms are above the sput_surface.
+    the box-dimensions are scaled too, so be carefull.  
+
+   -accelerations-function fills the neighbour list inside the Firsov radius around the ion.
+	
+   -elstop function is called IF the ion is inside the material (sput_surf!!)
+    and the Firsov list is used to calculate spherical symmetric el. densities for the 
+    atoms, if the Puska-model was chosen. If there is foreign atoms (not Si, MODIFY WHEN OTHER
+    SUBRATES ARE USED) the elstop model tries to use ZBL-stopping as indicated in the layer
+    above (nearer the surface). Bad things happen, if you have no layer there...
+	Firsov-model can be used in both cases.
+
+   -if damage model is on, the recresult.depennucl_boxtemp[]-table is updated in
+    function spread_fdn(r2,box.movelim.z,&recresult,FDn2,1); where the 1 indicates, that the
+    temp table is updated. 4 indicates that recresult.depennucl_box[]-table is updated  
+    directly. The case is indicated by the physical.spreadFD-flag.
+  
+   -if the sputtering model in on, the deposited energy in the surface (0-5.43 Ongs.) is 
+    updated.
+
+   -the recoil has stopped..
+
+ -if damage model is on and the physical.spreadFD is on, the recresult.depennucl_box[]-table is 
+  updated according to the temp- table in
+  function spread_fdn(r2,box.movelim.z,&recresult,FDn2,3); where the 3 indicates, that a
+  gaussian distibution is used to spread the energy.
+
+ -if sputtering model is 1, the sputtering is calculated as
+  normally using model 
+
+     Y=0.042*Delta_FDN/(N_surface*E_b_surf) - physical.sputdeltaV 
+  
+ where Delta_FDN is the calculated Fdn=recresult.surfFDn/5.43, if physical.sputFD==0 && Fdn>0 
+  or if physical.sputFD!=0, Delta_FDN=physical.sputFD
+
+ and N_surface is the density in the surface and E_b_surf=surface binding energy
+
+  if sputtering model is 2, Y=physical.Y - physical.sputdeltaV
+  the physical.sputdeltaV takes care of the volume increase because of the foreign ions 
+  implanted in the material (readin (default=0))
+
+  the sput_surf is updated after that.
+
+-endrec function takes care of the range-shortening due to the sput_surf as subtracting
+ the delta_sput_surf (surface eroded because of the previous ion) from all the ranges calculated
+ before and adding the range of that ion as 
+ recresult->ranges[recresult->nrange]=recoil->range- physical->sput_surf; 
+   The older ranges are checked if they are eroded totally and are removed from the ranges[]-table
+ in that case.
+
+-and finally: prints realrange.out which is calculated using the information on the experimental Dose,
+ and can be directly compared to the experimental profile. 
+
+-notes: 
+  -the numbering goes like 1,2,3..n for layers (elstop.in.1,2... coords.in.1,2...)
+  -poly-model is not tested at all and may have some problems.
+  -mdsetup can be used only to make simulations, where the new options are not used
+   and if multilayer targets are chosen, the notation in the elstop-files must be taken care of.
+  -REED mode is in subdirectory reed and is NOT for the latest version!!
+  -interactions between implanted ions (preimplantation) , needs a new potential notation system
+  -minor optimizations made in the potential.c, accelerations.c, elstop.c -files 
+   (removed 5 - 8 divs). Tested with one case, and should be fine.
+
