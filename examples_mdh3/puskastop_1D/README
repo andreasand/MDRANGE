@@ -1,0 +1,32 @@
+
+This is a sample run for 15 keV B ion implated in the <100> channel of
+crystalline Si, using PENR stopping and spherically symmetric charge
+distributions for Si-atoms.  There is a 16.29 ≈ thick layer of SiO2 in
+the surface. 
+
+Reference:
+
+[58] J. Sillanp‰‰, J. Peltola, K. Nordlund, J. Keinonen, and M. J. Puska, 
+     Electronic stopping calculated using explicit phase shift factors, Phys.
+     Rev. B 63, 134113 (2000).
+
+
+The parameter files are:
+
+param.in = all the key parameters
+coords.in.1 = the first layer (SiO2) as a (16.29 ≈)^3 coordinate file
+coords.in.2 = the second layer (Si) as a (16.29 ≈)^3 coordinate file
+elstop.in.1 = ZBL-electronic stopping file as Stopping vs. velocity for the first layer 
+stopping.in = Stopping vs. one-electronic-radius for the second layer, because we have 
+	      set the elstop to 1 (PENR-model) for that layer. This file is calculated 
+	      with density functional methods and is valid ONLY for the B-ion.
+cdens.in = charge density (e/≈^3) vs. r (≈). This is the Hartee-Fock spherical-symmetric 
+	   charge density profile for Si atoms, used by the PENR-model. This profile is 
+	   taken from ZBL-book Vol.1.
+reppot.0.1.in = The repulsive pair-potential part between Si and B atoms, calculated 
+	        with DMol-package.
+
+The .orig files and the output file are the ones that we have simulated
+(with just these input files) , so you can compare your simulations with
+theses files. 
+

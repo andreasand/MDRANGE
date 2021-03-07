@@ -1,0 +1,30 @@
+This is a sample run for 40 keV Ge ion implated in the random direction of crystalline Si, using
+PENR stopping and spherically symmetric charge distributions for Si-atoms AND a DAMAGE BUILD-UP MODEL.
+Fluence is 1e14 ions/cm^2.
+There are no surface oxide.
+
+This case here is accepted in publication in NIMB. The coordinate files are from full MD simulation of
+amorphization of crystalline Si. 
+
+The parameter files are:
+
+param.in = all the key parameters
+coords.in.1.0 = Si-layer as a (4*5.43 = 21.72 Å)^3 coordinate file with no damage (Dose=0 eV per atom)
+coords.in.1.1 = Si-layer as a (21.72 Å)^3 coordinate file with some damage (Dose=0.7534 eV per atom)
+                The real size of the box is marked in the "O x y z" line. That is why the 
+	        param.in-file contains the "*scaling"-lines.
+...
+
+coords.in.1.19 = Si-layer as a (21.72 Å)^3 coordinate file with full damage (total amorphization) 
+
+stopping.in = Stopping vs. one-electronic-radius for the second layer, because we have 
+	      set the elstop to 1 (PENR-model) for that layer. This file is calculated 
+	      with density functional methods and is valid ONLY for the Ge-ion.
+cdens.in = charge density (e/Å^3) vs. r (Å). This is the Hartee-Fock spherical-symmetric 
+	   charge density profile for Si atoms, used by the PENR-model. This profile is 
+	   taken from ZBL-book Vol.1.
+reppot.0.1.in = The repulsive pair-potential part between Si and Ge atoms, calculated 
+	        with DMol-package.
+
+The .orig files and the output file are the ones that we have simulated (with just these 
+input files) , so you can compare your simulations with theses files.

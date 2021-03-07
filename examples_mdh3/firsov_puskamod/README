@@ -1,0 +1,43 @@
+
+  This is a sample run for 15 keV B ion implated in the <110> channel
+of crystalline Si, using the Firsov model for inelastic collisions,
+and PENR stopping for 3p2 electrons only, with a modified electronic
+density in the 110 channel. 
+
+  A description of this approach is given in J Peltola, K. Nordlund
+and J. Keinonen, Electronic stopping power calculation method for
+Molecular Dynamics simulations using local Firsov and free-electron-
+gas models, NIM B submitted (2003).
+
+There is a 16.29 Å thick layer of SiO2 in the surface.
+
+The parameter files are:
+
+param.in = all the key parameters
+coords.in.1 = the first layer (SiO2) as a (16.29 Å)^3 coordinate file
+coords.in.2 = the second layer (Si) as a (16.29 Å)^3 coordinate file
+elstop.in.1 = ZBL-electronic stopping file as Stopping vs. velocity for the first layer 
+stopping.in = Stopping vs. one-electronic-radius for the second layer, because we have 
+	      set the elstop to 1 (PENR-model) for that layer. This file is calculated 
+	      with density functional methods and is valid ONLY for the B-ion.
+charge.in = charge density as [log(rs)] vs. x,y,z [Å]. rs=one-electron-radius. Converting to charge density [eV/Å] 
+	    goes like:
+	    sigma[eV/Å]= 4/3 * PI * rs^3, where rs=value from charge.in multiplied with Bohr radius(0.52106176Å)
+	    This file contains very accurate 3D-charge 
+	    density map for one unit cell of crystalline Si. 128^3 points are used. Values in this file are, however, 
+            logarithm values of the rs for interpolation purposes.
+
+reppot.0.1.in = The repulsive pair-potential part between Si and B atoms, calculated 
+	        with DMol-package.
+
+
+  The file charge.in has been constructed as described in PENR_stopping/charge_dens_calculation/README.
+To be specific, the operations were:
+
+ctot 3p
+rsconvert (Input: cdensity.dat)
+cat chargedens_rs.in | correction 0.06 1 1 > corrected_chargedens_rs.in
+cp corrected_chargedens_rs.in charge.in 
+
+The .orig files and the output file are the ones that we have simulated (with just these 
+input files), so you can compare your simulations with theses files.

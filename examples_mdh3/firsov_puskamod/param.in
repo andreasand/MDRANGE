@@ -1,0 +1,60 @@
+type[0].Z:= 5
+type[0].m:= 11.00931
+type[1].Z:= 14
+type[1].m:= 28.0855
+type[2].Z:= 8
+type[2].m:= 15.9994
+
+layers->layer[1].elstop:= 1    # puska-model for Si-layer
+layers->layer[1].fulldensity:= 1 # we have a full charge density profile for
+	                         # the simulation box of Si atoms
+
+elstop->Firsov:= 1 
+
+reccalc->E0:= 15000	# Recoil energy 
+reccalc->Atype:= 0	# Recoil atom type
+reccalc->Ncalc:= 15000 # Number of histories
+reccalc->Trange:= 0	# Range type: 0=sz, 1=proj, 2=chord, 3=path
+reccalc->type:= 1	# Recoil calculation type: 1=normal,
+                          2=negative range allowed
+reccalc->Fii0:= 0	# Azimuth angle of the recoil atom
+reccalc->Fiimax:= 0	# is chosen randomly from [Fii0,Fiimax]
+reccalc->Theta0:= 44	# Polar angle of the recoil atom
+reccalc->Thetamax:= 46	# is chosen randomly from [Theta0,Thetamax]
+
+reccalc->Startmin.x:= 5.43	# The starting pos. of the recoil
+reccalc->Startmax.x:= 10.86
+reccalc->Startmin.y:= 5.43
+reccalc->Startmax.y:= 10.86
+reccalc->Startmin.z:= -3
+reccalc->Startmax.z:= -3
+
+pot->rep.type[0][1]:= 2
+
+layers->Nlayers:=2
+layers->Natomsmax:= 5000
+layers->layer[0].minz:= -10
+layers->layer[0].maxz:= 16.29
+layers->layer[0].ltype:= 1
+layers->layer[1].minz:= 16.29
+layers->layer[1].maxz:= 1.0e8
+layers->layer[1].ltype:= 2
+layers->Ninistate:= 10
+layers->layer[1].debyet:= 519
+layers->layer[0].debyet:= 6000
+
+box->Max.x:= 16.29	#The size of the simulation cell
+box->Max.y:= 16.29
+box->Max.z:= 16.29
+box->movelim.x:= 5.43 # Shift used in generating fresh crystal
+box->movelim.y:= 5.43 # in front of the recoil.
+box->movelim.z:= 5.43
+
+physical->Tini:= 300 # Temperature of the inistate calculation
+gen->seed:= 335392
+
+potcrit->Rmrec:= 4 # cut-off radiuses for recoil calc.
+potcrit->R0rec:= 3
+
+elstop->scale:= 1 # Electronic stopping power scaled by this
+pot->rep.scale:= 1 # Repulsive potential scaled by this

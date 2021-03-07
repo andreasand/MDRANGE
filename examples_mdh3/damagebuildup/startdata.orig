@@ -1,0 +1,438 @@
+
+TIME PARAMETERS
+
+Initial time step (fs) (NOT USED) time->Dt: 0.1 (default)
+Maximum time step (fs) time->Dtmax: 2 (default)
+Time step increasing criterion (Å) time->Kt: 0.1 (default)
+Time step increasing criterion in collisions (eV) time->Et: 300 (default)
+Time step in inistate calc. (fs) time->Dtini: 2 (default)
+Length of inistate calc. (fs) time->Timeini: 200 (default)
+
+TYPE PARAMETERS
+
+Atomic number  type[0].Z: 32 (read in)
+Atom mass      type[0].m: 73.9212 (readin)
+Atom charge    type[0].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[0].prob: 1 (default)
+
+Atomic number  type[1].Z: 14 (read in)
+Atom mass      type[1].m: 28.0855 (readin)
+Atom charge    type[1].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[1].prob: 1 (default)
+
+Atomic number  type[2].Z: 14 (default)
+Atom mass      type[2].m: 28.0855 (default)
+Atom charge    type[2].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[2].prob: 1 (default)
+
+Atomic number  type[3].Z: 14 (default)
+Atom mass      type[3].m: 28.0855 (default)
+Atom charge    type[3].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[3].prob: 1 (default)
+
+Atomic number  type[4].Z: 14 (default)
+Atom mass      type[4].m: 28.0855 (default)
+Atom charge    type[4].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[4].prob: 1 (default)
+
+Atomic number  type[5].Z: 14 (default)
+Atom mass      type[5].m: 28.0855 (default)
+Atom charge    type[5].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[5].prob: 1 (default)
+
+Atomic number  type[6].Z: 14 (default)
+Atom mass      type[6].m: 28.0855 (default)
+Atom charge    type[6].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[6].prob: 1 (default)
+
+Atomic number  type[7].Z: 14 (default)
+Atom mass      type[7].m: 28.0855 (default)
+Atom charge    type[7].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[7].prob: 1 (default)
+
+Atomic number  type[8].Z: 14 (default)
+Atom mass      type[8].m: 28.0855 (default)
+Atom charge    type[8].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[8].prob: 1 (default)
+
+Atomic number  type[9].Z: 14 (default)
+Atom mass      type[9].m: 28.0855 (default)
+Atom charge    type[9].q: 0 (default)
+Atom probability of occuring, if 1 no effect type[9].prob: 1 (default)
+
+
+LAYERS PARAMETERS
+
+Number of different layers layers->Nlayers: 1 (read in)
+Number of inistate calcs for each layer layers->Ninistate: 10 (read in)
+Maximum number of atoms in one layer layers->Natomsmax: 4320 (read in)
+Layer number 0:
+Minimum Z   layers->layer[0].minz: -1000000000 (default)
+Maximum Z   layers->layer[0].maxz: 1000000000 (default)
+Density (not used) layers->layer[0].density: 2.33 (default)
+Debye temp (0 if N/A) layers->layer[0].debyet: 519 (readin)
+Layer type, i.e. index > 0 of coord file name layers->layer[0].ltype: 0 (default)
+Override for time of inistate calc. layers->layer[0].Timeinior: -1 (default)
+Probability for layer selection layers->layer[0].Probability: 1 (default)
+Mode of probability for layer selection layers->layer[0].Probmode: 0 (default)
+Thickness of selected layer for Probmode=2 layers->layer[0].Thickness: 0 (default)
+Number of amorphous states, 1=no am. states layers->layer[0].Namorph: 20 (read in)
+0=ZBL,1=Puska,2=BK elstop  layers->layer[0].elstop: 1 (read in)
+0=off=default,1=using full charge density file layers->layer[0].fulldensity: 0 (default)
+surface binding energy (eV) layers->layer[0].surfbind: 4.63 (default)
+
+
+REPULSIVE POTENTIAL PARAMETERS
+
+
+Potential type for each pair: 
+1 = ZBL type-potential using read in params 
+2 = Potential and derivative read in from file and spline interpolated
+  pot->rep.type[0][0]: 1 (default)
+  pot->rep.type[0][1]: 2 (read in)
+  pot->rep.type[0][2]: 1 (default)
+  pot->rep.type[0][3]: 1 (default)
+  pot->rep.type[0][4]: 1 (default)
+  pot->rep.type[0][5]: 1 (default)
+  pot->rep.type[0][6]: 1 (default)
+  pot->rep.type[0][7]: 1 (default)
+  pot->rep.type[0][8]: 1 (default)
+  pot->rep.type[0][9]: 1 (default)
+  pot->rep.type[1][0]: 1 (default)
+  pot->rep.type[1][1]: 1 (default)
+  pot->rep.type[1][2]: 1 (default)
+  pot->rep.type[1][3]: 1 (default)
+  pot->rep.type[1][4]: 1 (default)
+  pot->rep.type[1][5]: 1 (default)
+  pot->rep.type[1][6]: 1 (default)
+  pot->rep.type[1][7]: 1 (default)
+  pot->rep.type[1][8]: 1 (default)
+  pot->rep.type[1][9]: 1 (default)
+  pot->rep.type[2][0]: 1 (default)
+  pot->rep.type[2][1]: 1 (default)
+  pot->rep.type[2][2]: 1 (default)
+  pot->rep.type[2][3]: 1 (default)
+  pot->rep.type[2][4]: 1 (default)
+  pot->rep.type[2][5]: 1 (default)
+  pot->rep.type[2][6]: 1 (default)
+  pot->rep.type[2][7]: 1 (default)
+  pot->rep.type[2][8]: 1 (default)
+  pot->rep.type[2][9]: 1 (default)
+  pot->rep.type[3][0]: 1 (default)
+  pot->rep.type[3][1]: 1 (default)
+  pot->rep.type[3][2]: 1 (default)
+  pot->rep.type[3][3]: 1 (default)
+  pot->rep.type[3][4]: 1 (default)
+  pot->rep.type[3][5]: 1 (default)
+  pot->rep.type[3][6]: 1 (default)
+  pot->rep.type[3][7]: 1 (default)
+  pot->rep.type[3][8]: 1 (default)
+  pot->rep.type[3][9]: 1 (default)
+  pot->rep.type[4][0]: 1 (default)
+  pot->rep.type[4][1]: 1 (default)
+  pot->rep.type[4][2]: 1 (default)
+  pot->rep.type[4][3]: 1 (default)
+  pot->rep.type[4][4]: 1 (default)
+  pot->rep.type[4][5]: 1 (default)
+  pot->rep.type[4][6]: 1 (default)
+  pot->rep.type[4][7]: 1 (default)
+  pot->rep.type[4][8]: 1 (default)
+  pot->rep.type[4][9]: 1 (default)
+  pot->rep.type[5][0]: 1 (default)
+  pot->rep.type[5][1]: 1 (default)
+  pot->rep.type[5][2]: 1 (default)
+  pot->rep.type[5][3]: 1 (default)
+  pot->rep.type[5][4]: 1 (default)
+  pot->rep.type[5][5]: 1 (default)
+  pot->rep.type[5][6]: 1 (default)
+  pot->rep.type[5][7]: 1 (default)
+  pot->rep.type[5][8]: 1 (default)
+  pot->rep.type[5][9]: 1 (default)
+  pot->rep.type[6][0]: 1 (default)
+  pot->rep.type[6][1]: 1 (default)
+  pot->rep.type[6][2]: 1 (default)
+  pot->rep.type[6][3]: 1 (default)
+  pot->rep.type[6][4]: 1 (default)
+  pot->rep.type[6][5]: 1 (default)
+  pot->rep.type[6][6]: 1 (default)
+  pot->rep.type[6][7]: 1 (default)
+  pot->rep.type[6][8]: 1 (default)
+  pot->rep.type[6][9]: 1 (default)
+  pot->rep.type[7][0]: 1 (default)
+  pot->rep.type[7][1]: 1 (default)
+  pot->rep.type[7][2]: 1 (default)
+  pot->rep.type[7][3]: 1 (default)
+  pot->rep.type[7][4]: 1 (default)
+  pot->rep.type[7][5]: 1 (default)
+  pot->rep.type[7][6]: 1 (default)
+  pot->rep.type[7][7]: 1 (default)
+  pot->rep.type[7][8]: 1 (default)
+  pot->rep.type[7][9]: 1 (default)
+  pot->rep.type[8][0]: 1 (default)
+  pot->rep.type[8][1]: 1 (default)
+  pot->rep.type[8][2]: 1 (default)
+  pot->rep.type[8][3]: 1 (default)
+  pot->rep.type[8][4]: 1 (default)
+  pot->rep.type[8][5]: 1 (default)
+  pot->rep.type[8][6]: 1 (default)
+  pot->rep.type[8][7]: 1 (default)
+  pot->rep.type[8][8]: 1 (default)
+  pot->rep.type[8][9]: 1 (default)
+  pot->rep.type[9][0]: 1 (default)
+  pot->rep.type[9][1]: 1 (default)
+  pot->rep.type[9][2]: 1 (default)
+  pot->rep.type[9][3]: 1 (default)
+  pot->rep.type[9][4]: 1 (default)
+  pot->rep.type[9][5]: 1 (default)
+  pot->rep.type[9][6]: 1 (default)
+  pot->rep.type[9][7]: 1 (default)
+  pot->rep.type[9][8]: 1 (default)
+  pot->rep.type[9][9]: 1 (default)
+    pot->rep.ai[0]: 0 (default)
+ai[0] is 0.0 => using ZBL values
+
+Default repulsive potential factors (used for all interactions !): 
+
+0 0.1818 -3.2
+1 0.5099 -0.9423
+2 0.2802 -0.4029
+3 0.02817 -0.2016
+4 0 0
+5 0 0
+
+Individual repulsive potential factors (used for specific atom pair):
+
+None found !
+pot->rep.k_e 14.3998
+typei 0 typej 0 fact 14745.4 au 0.105566
+typei 0 typej 1 fact 6451.09 au 0.115572
+typei 0 typej 2 fact 6451.09 au 0.115572
+typei 0 typej 3 fact 6451.09 au 0.115572
+typei 0 typej 4 fact 6451.09 au 0.115572
+typei 0 typej 5 fact 6451.09 au 0.115572
+typei 0 typej 6 fact 6451.09 au 0.115572
+typei 0 typej 7 fact 6451.09 au 0.115572
+typei 0 typej 8 fact 6451.09 au 0.115572
+typei 0 typej 9 fact 6451.09 au 0.115572
+typei 1 typej 0 fact 6451.09 au 0.115572
+typei 1 typej 1 fact 2822.35 au 0.127674
+typei 1 typej 2 fact 2822.35 au 0.127674
+typei 1 typej 3 fact 2822.35 au 0.127674
+typei 1 typej 4 fact 2822.35 au 0.127674
+typei 1 typej 5 fact 2822.35 au 0.127674
+typei 1 typej 6 fact 2822.35 au 0.127674
+typei 1 typej 7 fact 2822.35 au 0.127674
+typei 1 typej 8 fact 2822.35 au 0.127674
+typei 1 typej 9 fact 2822.35 au 0.127674
+typei 2 typej 0 fact 6451.09 au 0.115572
+typei 2 typej 1 fact 2822.35 au 0.127674
+typei 2 typej 2 fact 2822.35 au 0.127674
+typei 2 typej 3 fact 2822.35 au 0.127674
+typei 2 typej 4 fact 2822.35 au 0.127674
+typei 2 typej 5 fact 2822.35 au 0.127674
+typei 2 typej 6 fact 2822.35 au 0.127674
+typei 2 typej 7 fact 2822.35 au 0.127674
+typei 2 typej 8 fact 2822.35 au 0.127674
+typei 2 typej 9 fact 2822.35 au 0.127674
+typei 3 typej 0 fact 6451.09 au 0.115572
+typei 3 typej 1 fact 2822.35 au 0.127674
+typei 3 typej 2 fact 2822.35 au 0.127674
+typei 3 typej 3 fact 2822.35 au 0.127674
+typei 3 typej 4 fact 2822.35 au 0.127674
+typei 3 typej 5 fact 2822.35 au 0.127674
+typei 3 typej 6 fact 2822.35 au 0.127674
+typei 3 typej 7 fact 2822.35 au 0.127674
+typei 3 typej 8 fact 2822.35 au 0.127674
+typei 3 typej 9 fact 2822.35 au 0.127674
+typei 4 typej 0 fact 6451.09 au 0.115572
+typei 4 typej 1 fact 2822.35 au 0.127674
+typei 4 typej 2 fact 2822.35 au 0.127674
+typei 4 typej 3 fact 2822.35 au 0.127674
+typei 4 typej 4 fact 2822.35 au 0.127674
+typei 4 typej 5 fact 2822.35 au 0.127674
+typei 4 typej 6 fact 2822.35 au 0.127674
+typei 4 typej 7 fact 2822.35 au 0.127674
+typei 4 typej 8 fact 2822.35 au 0.127674
+typei 4 typej 9 fact 2822.35 au 0.127674
+typei 5 typej 0 fact 6451.09 au 0.115572
+typei 5 typej 1 fact 2822.35 au 0.127674
+typei 5 typej 2 fact 2822.35 au 0.127674
+typei 5 typej 3 fact 2822.35 au 0.127674
+typei 5 typej 4 fact 2822.35 au 0.127674
+typei 5 typej 5 fact 2822.35 au 0.127674
+typei 5 typej 6 fact 2822.35 au 0.127674
+typei 5 typej 7 fact 2822.35 au 0.127674
+typei 5 typej 8 fact 2822.35 au 0.127674
+typei 5 typej 9 fact 2822.35 au 0.127674
+typei 6 typej 0 fact 6451.09 au 0.115572
+typei 6 typej 1 fact 2822.35 au 0.127674
+typei 6 typej 2 fact 2822.35 au 0.127674
+typei 6 typej 3 fact 2822.35 au 0.127674
+typei 6 typej 4 fact 2822.35 au 0.127674
+typei 6 typej 5 fact 2822.35 au 0.127674
+typei 6 typej 6 fact 2822.35 au 0.127674
+typei 6 typej 7 fact 2822.35 au 0.127674
+typei 6 typej 8 fact 2822.35 au 0.127674
+typei 6 typej 9 fact 2822.35 au 0.127674
+typei 7 typej 0 fact 6451.09 au 0.115572
+typei 7 typej 1 fact 2822.35 au 0.127674
+typei 7 typej 2 fact 2822.35 au 0.127674
+typei 7 typej 3 fact 2822.35 au 0.127674
+typei 7 typej 4 fact 2822.35 au 0.127674
+typei 7 typej 5 fact 2822.35 au 0.127674
+typei 7 typej 6 fact 2822.35 au 0.127674
+typei 7 typej 7 fact 2822.35 au 0.127674
+typei 7 typej 8 fact 2822.35 au 0.127674
+typei 7 typej 9 fact 2822.35 au 0.127674
+typei 8 typej 0 fact 6451.09 au 0.115572
+typei 8 typej 1 fact 2822.35 au 0.127674
+typei 8 typej 2 fact 2822.35 au 0.127674
+typei 8 typej 3 fact 2822.35 au 0.127674
+typei 8 typej 4 fact 2822.35 au 0.127674
+typei 8 typej 5 fact 2822.35 au 0.127674
+typei 8 typej 6 fact 2822.35 au 0.127674
+typei 8 typej 7 fact 2822.35 au 0.127674
+typei 8 typej 8 fact 2822.35 au 0.127674
+typei 8 typej 9 fact 2822.35 au 0.127674
+typei 9 typej 0 fact 6451.09 au 0.115572
+typei 9 typej 1 fact 2822.35 au 0.127674
+typei 9 typej 2 fact 2822.35 au 0.127674
+typei 9 typej 3 fact 2822.35 au 0.127674
+typei 9 typej 4 fact 2822.35 au 0.127674
+typei 9 typej 5 fact 2822.35 au 0.127674
+typei 9 typej 6 fact 2822.35 au 0.127674
+typei 9 typej 7 fact 2822.35 au 0.127674
+typei 9 typej 8 fact 2822.35 au 0.127674
+typei 9 typej 9 fact 2822.35 au 0.127674
+
+Repulsive potential scaling factor pot->rep.scale: 1 (readin)
+
+ATTRACTIVE POTENTIAL PARAMETERS
+
+Attractive potential type pot->attr.type: 1 (default)
+Type means Mazzone Silicon potential
+   D (eV) pot->attr.mazD: 4.5 (default)
+   alpha (1/Å) pot->attr.mazalpha: 0.2 (default)
+   Nearest neighbour dist (Å) pot->attr.mazr1: 2.35 (default)
+   Harmonic const (eV/Å) pot->attr.mazK: 1.8 (default)
+   Second nearest neighbourdist (Å) pot->attr.mazr2: 3.84 (default)
+    Width of harmonic well (Å) pot->attr.mazd: 0.33 (default)
+
+SIMULATION CELL PARAMETERS
+
+Box limit  box->Min.x: 0 (default)
+Box limit  box->Min.y: 0 (default)
+Box limit  box->Min.z: 0 (default)
+Box limit  box->Max.x: 21.72 (readin)
+Box limit  box->Max.y: 21.72 (readin)
+Box limit  box->Max.z: 21.72 (readin)
+Limit for moving cell box->movelim.x: 5.43 (readin)
+Limit for moving cell box->movelim.y: 5.43 (readin)
+Limit for moving cell box->movelim.z: 5.43 (readin)
+Time step interval between cm scalings in inistate calc. box->Iniscaleint: 50 (default)
+
+RECOIL CALCULATION PARAMETERS
+
+Recoil calculation type reccalc->type: 1 (read in)
+Recoil particle type reccalc->Atype: 0 (read in)
+Number of recoils to be calculated reccalc->Ncalc: 15000 (read in)
+Type of range used for result (0 sz 1 proj 2 chord 3 path) reccalc->Trange: 0 (read in)
+Original energy in eV reccalc->E0: 40000 (readin)
+Maximum z for arrays in Estat calc reccalc->Estatzmax: 5000 (default)
+Minimum energy before recoil is stopped reccalc->Emin: 1 (default)
+Z at which to end recoil calculation reccalc->Zmax: 1e+30 (default)
+Starting position min limit  reccalc->Startmin.x: -2.715 (readin)
+Starting position min limit  reccalc->Startmin.y: -2.715 (readin)
+Starting position min limit  reccalc->Startmin.z: -3 (readin)
+Starting position max limit  reccalc->Startmax.x: 2.715 (readin)
+Starting position max limit  reccalc->Startmax.y: 2.715 (readin)
+Starting position max limit  reccalc->Startmax.z: -3 (readin)
+Velocity direction (degrees) reccalc->Theta0: 6 (readin)
+Velocity direction (degrees) reccalc->Fii0: 30 (readin)
+Velocity direction limit (degrees) reccalc->Thetamax: 7 (readin)
+Velocity direction limit (degrees) reccalc->Fiimax: 30 (readin)
+Polycrystalline domain size reccalc->Polysize: 0 (default)
+Poly domain size sigma reccalc->Polysizesigma: 0 (default)
+Maximum change in direction, in degrees reccalc->Polydeltaangle: 0 (default)
+FORCED SEED FOR RECOIL CALC, DEBUG ONLY !! reccalc->Forceseed: 0 (default)
+Interval for coordinate output reccalc->Outputstep: 0 (default)
+Minimum z for primary recoil spectrum calc. reccalc->recspeczmin: -1e+30 (default)
+Maximum z for primary recoil spectrum calc. reccalc->recspeczmax: 1e+30 (default)
+Thickness of slices for Stopping calcs reccalc->stopDR: 4 (default)
+
+POTCRIT PARAMETERS
+
+Potential cutoff radius in recoil calc.         potcrit->R0rec: 3 (readin)
+Neighhbour list cutoff radius in recoil calc.   potcrit->Rmrec: 4 (readin)
+Potential cutoff radius in inistate calc.       potcrit->R0ini: 4.3 (default)
+Neighhbour list cutoff radius in inistate calc. potcrit->Rmini: 10.76 (default)
+Muffin-tin radius potcrit->rfirsov: 1.47 (default)
+
+PHYSICAL SIMULATION PARAMETERS
+
+Required temperature in inistate calc. physical->Tini: 300 (readin)
+Required temperature in recoil calc. physical->Trec: 300 (default)
+Damage buildup flag (0-inactive) physical->Damage: 1 (read in)
+Dose physical->Dose: 1e+14 (readin)
+scaling between different boxes/layers physical->scaling: 1 (read in)
+scaling in the initstate for coords.num physical->bscaling: 0 (default)
+sputtering flag (0-inactive) physical->sputtering: 0 (default)
+if FDn needs spreading in damage model- flag (0-inactive) physical->spreadFD: 0 (default)
+amount of erosion, used in sputtering for example physical->sput_surf: 0 (default)
+Fixed value for sput. yield, if needed physical->Y: 0 (default)
+Fixed value for surf. depon. nucl. energy, if needed physical->sputFD: 0 (default)
+Value controlling the volume increase in sputtering model physical->sputdeltaV: 0 (default)
+
+MISCELLANEOUS GENERAL PARAMETERS
+
+Seed number for random number generator gen->seed: 12382 (read in)
+
+FILE HANDLING PARAMETERS
+
+Interval between result output in range calc. file->output: 40 (default)
+movie?, 1=yes,0=no file->movie: 0 (default)
+
+ELSTOP PARAMETERS
+
+El. stopping mode: if 1 include straggling elstop->mode: 0 (default)
+Use Firsov model? elstop->Firsov: 0 (default)
+Scaled el. density in channels, may improve <110> results. elstop->correction: 0 (default)
+Elstop modifying factor, see elstop.c elstop->scale: 1 (readin)
+Linear elstop modifying factor elstop->dscale: 0 (default)
+Quadratic elstop modifying factor elstop->sqscale: 0 (default)
+dx in rho data elstop->dx: 0.042421875 (default)
+dy in rho data elstop->dy: 0.042421875 (default)
+dz in rho data elstop->dz: 0.042421875 (default)
+unit cell, x, rho-data elstop->ux: 5.43 (default)
+unit cell, y, rho-data elstop->uy: 5.43 (default)
+unit cell, z, rho-data elstop->uz: 5.43 (default)
+
+
+UNIT CONVERSION FACTORS (from SI units) 
+
+unit length 1e-10 m, unit energy  1.60219e-19 J
+unit force  1.60219e-09 N, temp conv. eV -> K  11604.5
+
+MASS CONVERSION FACTORS, INTERNAL MASSES == 1
+atom type 0 mass 1.22751e-25 kg
+atom type 1 mass 4.66378e-26 kg
+atom type 2 mass 4.66378e-26 kg
+atom type 3 mass 4.66378e-26 kg
+atom type 4 mass 4.66378e-26 kg
+atom type 5 mass 4.66378e-26 kg
+atom type 6 mass 4.66378e-26 kg
+atom type 7 mass 4.66378e-26 kg
+atom type 8 mass 4.66378e-26 kg
+atom type 9 mass 4.66378e-26 kg
+
+MASS AND TIME DEPENDENT INTERNAL UNITS
+atom type 0 unit time 8.75293e-14 unit vel 1142.47 unit acc. 1.30524e+16
+atom type 1 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 2 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 3 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 4 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 5 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 6 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 7 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 8 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16
+atom type 9 unit time 5.39523e-14 unit vel 1853.48 unit acc. 3.4354e+16

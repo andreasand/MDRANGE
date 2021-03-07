@@ -1,0 +1,56 @@
+
+
+  United States users: note that the REED method is granted U.S. patent
+  No. 6,366,873. Using it in the U.S. for any means may be illegal,
+  and we can not take responsibility for it.  Hence we forbid anyone in
+  the U.S.  from using the mdhreed code; if you are in the U.S.  and
+  nevertheless do so, we do not take any responsibility for this.
+  We also forbid anyone from outside the U.S. from transferring 
+  rhe mdhreed to the U.S.
+  
+  We strongly recommend U.S.  users needing REED to instead purchase the
+  REED code, http://bifrost.lanl.gov/~reed/reed.shtml, which is of
+  comparable quality to our code but probably easier to use for Si.
+
+
+
+This is a sample run for 40 keV As ion implated in the <110> channel of
+crystalline Si, using PENR stopping and spherically symmetric charge
+distributions for Si-atoms.  There is a 16.29 ≈ thick layer of SiO2 in
+the surface. 
+
+The parameter files are for simulation with "mdhreed" executable, which
+uses a REED-like splitting scheme for maintaining the same accuracy in the
+range profile for all ion ranges. 
+
+The original REED method is developed by Beardmore and Gronbech-Jensen:
+
+[B98] K. M. Beardmore and N. Gronbech-Jensen,
+     An Efficient Molecular Dynamics Scheme for the Calculation of Dopant
+     Profiles due to Ion Implantation,
+     Phys. Rev. E 57, 7278 (1998).
+
+and our implementation is first used in
+
+[27] J. Sillanp‰‰, K. Nordlund, and J. Keinonen, Channeling in
+     manufacturing sharp junctions: a molecular dynamics simulation study,
+     Physica Scripta T79, 272 (1999).
+
+
+The parameter files are:
+
+param.in = all the key parameters
+coords.in.1 = the first layer (SiO2) as a (16.29 ≈)^3 coordinate file
+coords.in.2 = the second layer (Si) as a (16.29 ≈)^3 coordinate file
+elstop.in.1 = ZBL-electronic stopping file as Stopping vs. velocity for the first layer 
+stopping.in = Stopping vs. one-electronic-radius for the second layer, because we have 
+	      set the elstop to 1 (PENR-model) for that layer. This file is calculated 
+	      with density functional methods and is valid ONLY for the As-ion.
+cdens.in = charge density (e/≈^3) vs. r (≈). This is the Hartee-Fock spherical-symmetric 
+	   charge density profile for Si atoms, used by the PENR-model. This profile is 
+	   taken from ZBL-book Vol.1.
+reppot.0.1.in = The repulsive pair-potential part between Si and As atoms, calculated 
+	        with DMol-package.
+
+The .orig files and the output file are the ones that we have simulated (with just these 
+input files) , so you can compare your simulations with theses files. 

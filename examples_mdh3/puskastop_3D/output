@@ -1,0 +1,2352 @@
+real run time 0 sec CPU time 0
+----- mdh V3.0Zeta Jul 7 2002 -----
+
+Run started Mon Aug  5 14:40:14 2002
+Pid 20774 Host kl-simu1.pc.helsinki.fi
+NUM OF LAYERS: 2 
+Read in 285 atoms in layer 1 amorphization cell 0 Zmean 10.0211 density 2197.33 kg/m^3 i.e. 0.0659298 atoms/Å^3
+Had to move 0 coordinates
+unitboxsize(volume of the coordinates): 5.43,5.43,5.43 num 3 3 3
+Read in 216 atoms in layer 2 amorphization cell 0 Zmean 14 density 2330.39 kg/m^3 i.e. 0.0499678 atoms/Å^3
+Had to move 0 coordinates
+unitboxsize(volume of the coordinates): 5.43,5.43,5.43 num 3 3 3
+
+Starting inistate calculations
+------------------------------
+
+Layer # 0 amorphstate # 0 Inistate calc. # 0
+Mean displacement (Debye) 0.0104599
+
+Layer # 0 amorphstate # 0 Inistate calc. # 1
+Mean displacement (Debye) 0.0110577
+
+Layer # 0 amorphstate # 0 Inistate calc. # 2
+Mean displacement (Debye) 0.0108174
+
+Layer # 0 amorphstate # 0 Inistate calc. # 3
+Mean displacement (Debye) 0.0105331
+
+Layer # 0 amorphstate # 0 Inistate calc. # 4
+Mean displacement (Debye) 0.0106819
+
+Layer # 0 amorphstate # 0 Inistate calc. # 5
+Mean displacement (Debye) 0.0103826
+
+Layer # 0 amorphstate # 0 Inistate calc. # 6
+Mean displacement (Debye) 0.0104693
+
+Layer # 0 amorphstate # 0 Inistate calc. # 7
+Mean displacement (Debye) 0.0108335
+
+Layer # 0 amorphstate # 0 Inistate calc. # 8
+Mean displacement (Debye) 0.0105447
+
+Layer # 0 amorphstate # 0 Inistate calc. # 9
+Mean displacement (Debye) 0.010895
+
+Layer # 1 amorphstate # 0 Inistate calc. # 0
+Mean displacement (Debye) 0.120617
+
+Layer # 1 amorphstate # 0 Inistate calc. # 1
+Mean displacement (Debye) 0.122031
+
+Layer # 1 amorphstate # 0 Inistate calc. # 2
+Mean displacement (Debye) 0.124584
+
+Layer # 1 amorphstate # 0 Inistate calc. # 3
+Mean displacement (Debye) 0.121775
+
+Layer # 1 amorphstate # 0 Inistate calc. # 4
+Mean displacement (Debye) 0.123885
+
+Layer # 1 amorphstate # 0 Inistate calc. # 5
+Mean displacement (Debye) 0.128065
+
+Layer # 1 amorphstate # 0 Inistate calc. # 6
+Mean displacement (Debye) 0.127213
+
+Layer # 1 amorphstate # 0 Inistate calc. # 7
+Mean displacement (Debye) 0.120269
+
+Layer # 1 amorphstate # 0 Inistate calc. # 8
+Mean displacement (Debye) 0.127692
+
+Layer # 1 amorphstate # 0 Inistate calc. # 9
+Mean displacement (Debye) 0.127722
+
+Inistate calculation ended
+real run time 1 sec CPU time 0
+
+Starting recoil event calculation
+---------------------------------
+
+type of elstop for layer 0 is 0
+Read in 198 elstop(ZBL) points from elstop.in.1 for layer 0 , max vel 1.97e+06 max Se 46.4007
+type of elstop for layer 1 is 1
+Allocating 16777216 bytes for charge density table in layer 1
+Reading charge density file for full box..DONE, 2097152 points
+Read in 59 el.stopping points from stopping.in for layer 1 , last stopping=2.2939e-06
+Distance between stopping density points=0.1
+Recoil energy 15000 eV and velocity 512755 m/s
+Recoil velocity is 5.59541 percent of V_Fermi of Si
+reppot() Read in 103 valid-seeming repulsive potential points
+Reading in reppot for atom type pair 0 1, r 2.96723
+Spline initialization of screening functions done for atom type pair 0 1
+Output of 40 recoil events at real run time 32 sec CPU time 20
+Ways of stopping: 39 1 0 0 0 0 0 0
+Mean range 1131.64 +- 114.564 straggle 706.222
+Area for range.out is 2695
+Energy/ion lost outside: sputtered 45.3459 transmitted 0 eV/ion
+
+Output of 80 recoil events at real run time 61 sec CPU time 38
+Ways of stopping: 79 1 0 0 0 0 0 0
+Mean range 1122.49 +- 78.3257 straggle 691.754
+Area for range.out is 5495
+Energy/ion lost outside: sputtered 22.673 transmitted 0 eV/ion
+
+Output of 120 recoil events at real run time 85 sec CPU time 54
+Ways of stopping: 119 1 0 0 0 0 0 0
+Mean range 1110.76 +- 62.4735 straggle 678.636
+Area for range.out is 8295
+Energy/ion lost outside: sputtered 15.1153 transmitted 0 eV/ion
+
+Output of 160 recoil events at real run time 115 sec CPU time 74
+Ways of stopping: 158 2 0 0 0 0 0 0
+Mean range 1178.54 +- 54.4448 straggle 682.191
+Area for range.out is 12600
+Energy/ion lost outside: sputtered 26.3257 transmitted 0 eV/ion
+
+Output of 200 recoil events at real run time 142 sec CPU time 91
+Ways of stopping: 198 2 0 0 0 0 0 0
+Mean range 1175.94 +- 49.1195 straggle 689.425
+Area for range.out is 15800
+Energy/ion lost outside: sputtered 21.0605 transmitted 0 eV/ion
+
+Output of 240 recoil events at real run time 167 sec CPU time 108
+Ways of stopping: 238 2 0 0 0 0 0 0
+Mean range 1163.14 +- 43.8665 straggle 675.317
+Area for range.out is 19000
+Energy/ion lost outside: sputtered 17.5504 transmitted 0 eV/ion
+
+Output of 280 recoil events at real run time 197 sec CPU time 127
+Ways of stopping: 275 5 0 0 0 0 0 0
+Mean range 1193.35 +- 41.3226 straggle 684.01
+Area for range.out is 21960
+Energy/ion lost outside: sputtered 27.4325 transmitted 0 eV/ion
+
+Output of 320 recoil events at real run time 224 sec CPU time 146
+Ways of stopping: 315 5 0 0 0 0 0 0
+Mean range 1204.86 +- 38.6008 straggle 684.008
+Area for range.out is 25160
+Energy/ion lost outside: sputtered 24.0035 transmitted 0 eV/ion
+
+Output of 360 recoil events at real run time 251 sec CPU time 163
+Ways of stopping: 354 6 0 0 0 0 0 0
+Mean range 1201.33 +- 35.912 straggle 674.725
+Area for range.out is 28280
+Energy/ion lost outside: sputtered 30.4447 transmitted 0 eV/ion
+
+Output of 400 recoil events at real run time 276 sec CPU time 180
+Ways of stopping: 394 6 0 0 0 0 0 0
+Mean range 1186.58 +- 34.0882 straggle 675.773
+Area for range.out is 31440
+Energy/ion lost outside: sputtered 27.4002 transmitted 0 eV/ion
+
+Output of 440 recoil events at real run time 305 sec CPU time 199
+Ways of stopping: 434 6 0 0 0 0 0 0
+Mean range 1197.16 +- 32.3982 straggle 674.163
+Area for range.out is 34640
+Energy/ion lost outside: sputtered 24.9093 transmitted 0 eV/ion
+
+Output of 480 recoil events at real run time 333 sec CPU time 217
+Ways of stopping: 474 6 0 0 0 0 0 0
+Mean range 1201.23 +- 31.0111 straggle 674.447
+Area for range.out is 37840
+Energy/ion lost outside: sputtered 22.8335 transmitted 0 eV/ion
+
+Output of 520 recoil events at real run time 360 sec CPU time 235
+Ways of stopping: 513 7 0 0 0 0 0 0
+Mean range 1201.6 +- 29.5601 straggle 668.868
+Area for range.out is 40960
+Energy/ion lost outside: sputtered 22.0972 transmitted 0 eV/ion
+
+Output of 560 recoil events at real run time 410 sec CPU time 252
+Ways of stopping: 553 7 0 0 0 0 0 0
+Mean range 1190.71 +- 28.5066 straggle 669.754
+Area for range.out is 44120
+Energy/ion lost outside: sputtered 20.5189 transmitted 0 eV/ion
+
+Output of 600 recoil events at real run time 462 sec CPU time 269
+Ways of stopping: 592 8 0 0 0 0 0 0
+Mean range 1176.24 +- 27.462 straggle 667.614
+Area for range.out is 47240
+Energy/ion lost outside: sputtered 24.18 transmitted 0 eV/ion
+
+Output of 640 recoil events at real run time 496 sec CPU time 288
+Ways of stopping: 631 9 0 0 0 0 0 0
+Mean range 1186.97 +- 26.9989 straggle 677.667
+Area for range.out is 50360
+Energy/ion lost outside: sputtered 22.9718 transmitted 0 eV/ion
+
+Output of 680 recoil events at real run time 524 sec CPU time 307
+Ways of stopping: 671 9 0 0 0 0 0 0
+Mean range 1194.91 +- 26.369 straggle 682.544
+Area for range.out is 53560
+Energy/ion lost outside: sputtered 21.6205 transmitted 0 eV/ion
+
+Output of 720 recoil events at real run time 553 sec CPU time 326
+Ways of stopping: 711 9 0 0 0 0 0 0
+Mean range 1197.7 +- 25.6454 straggle 683.344
+Area for range.out is 56760
+Energy/ion lost outside: sputtered 20.4194 transmitted 0 eV/ion
+
+Output of 760 recoil events at real run time 581 sec CPU time 344
+Ways of stopping: 751 9 0 0 0 0 0 0
+Mean range 1200.24 +- 24.8978 straggle 681.854
+Area for range.out is 59960
+Energy/ion lost outside: sputtered 19.3447 transmitted 0 eV/ion
+
+Output of 800 recoil events at real run time 607 sec CPU time 362
+Ways of stopping: 791 9 0 0 0 0 0 0
+Mean range 1196.64 +- 24.2144 straggle 680.592
+Area for range.out is 63120
+Energy/ion lost outside: sputtered 18.3775 transmitted 0 eV/ion
+
+Output of 840 recoil events at real run time 635 sec CPU time 380
+Ways of stopping: 831 9 0 0 0 0 0 0
+Mean range 1197.51 +- 23.5191 straggle 677.578
+Area for range.out is 66320
+Energy/ion lost outside: sputtered 17.5023 transmitted 0 eV/ion
+
+Output of 880 recoil events at real run time 664 sec CPU time 399
+Ways of stopping: 870 10 0 0 0 0 0 0
+Mean range 1206.22 +- 23.0531 straggle 679.579
+Area for range.out is 69440
+Energy/ion lost outside: sputtered 20.3819 transmitted 0 eV/ion
+
+Output of 920 recoil events at real run time 691 sec CPU time 417
+Ways of stopping: 910 10 0 0 0 0 0 0
+Mean range 1204.2 +- 22.7695 straggle 686.493
+Area for range.out is 72640
+Energy/ion lost outside: sputtered 19.4957 transmitted 0 eV/ion
+
+Output of 960 recoil events at real run time 724 sec CPU time 437
+Ways of stopping: 950 10 0 0 0 0 0 0
+Mean range 1208.16 +- 22.2163 straggle 684.392
+Area for range.out is 75840
+Energy/ion lost outside: sputtered 18.6834 transmitted 0 eV/ion
+
+Output of 1000 recoil events at real run time 754 sec CPU time 455
+Ways of stopping: 989 11 0 0 0 0 0 0
+Mean range 1206.42 +- 21.6511 straggle 680.546
+Area for range.out is 78960
+Energy/ion lost outside: sputtered 20.4782 transmitted 0 eV/ion
+
+Output of 1040 recoil events at real run time 783 sec CPU time 472
+Ways of stopping: 1029 11 0 0 0 0 0 0
+Mean range 1197.7 +- 21.0889 straggle 676.161
+Area for range.out is 82160
+Energy/ion lost outside: sputtered 19.6906 transmitted 0 eV/ion
+
+Output of 1080 recoil events at real run time 814 sec CPU time 490
+Ways of stopping: 1069 11 0 0 0 0 0 0
+Mean range 1189.68 +- 20.5952 straggle 673.058
+Area for range.out is 85360
+Energy/ion lost outside: sputtered 18.9613 transmitted 0 eV/ion
+
+Output of 1120 recoil events at real run time 847 sec CPU time 509
+Ways of stopping: 1108 12 0 0 0 0 0 0
+Mean range 1190.09 +- 20.2582 straggle 674.024
+Area for range.out is 88480
+Energy/ion lost outside: sputtered 18.8676 transmitted 0 eV/ion
+
+Output of 1160 recoil events at real run time 883 sec CPU time 529
+Ways of stopping: 1148 12 0 0 0 0 0 0
+Mean range 1192.71 +- 19.9133 straggle 674.41
+Area for range.out is 91680
+Energy/ion lost outside: sputtered 18.217 transmitted 0 eV/ion
+
+Output of 1200 recoil events at real run time 918 sec CPU time 549
+Ways of stopping: 1187 13 0 0 0 0 0 0
+Mean range 1195.31 +- 19.49 straggle 671.202
+Area for range.out is 94800
+Energy/ion lost outside: sputtered 18.5522 transmitted 0 eV/ion
+
+Output of 1240 recoil events at real run time 949 sec CPU time 568
+Ways of stopping: 1227 13 0 0 0 0 0 0
+Mean range 1196.04 +- 19.1489 straggle 670.486
+Area for range.out is 97960
+Energy/ion lost outside: sputtered 17.9537 transmitted 0 eV/ion
+
+Output of 1280 recoil events at real run time 976 sec CPU time 586
+Ways of stopping: 1267 13 0 0 0 0 0 0
+Mean range 1196.98 +- 18.8356 straggle 670.188
+Area for range.out is 101160
+Energy/ion lost outside: sputtered 17.3927 transmitted 0 eV/ion
+
+Output of 1320 recoil events at real run time 1003 sec CPU time 604
+Ways of stopping: 1306 14 0 0 0 0 0 0
+Mean range 1195.69 +- 18.5723 straggle 670.92
+Area for range.out is 104240
+Energy/ion lost outside: sputtered 19.6486 transmitted 0 eV/ion
+
+Output of 1360 recoil events at real run time 1031 sec CPU time 623
+Ways of stopping: 1346 14 0 0 0 0 0 0
+Mean range 1198.85 +- 18.3317 straggle 672.302
+Area for range.out is 107440
+Energy/ion lost outside: sputtered 19.0707 transmitted 0 eV/ion
+
+Output of 1400 recoil events at real run time 1063 sec CPU time 642
+Ways of stopping: 1386 14 0 0 0 0 0 0
+Mean range 1199.59 +- 18.0274 straggle 670.9
+Area for range.out is 110640
+Energy/ion lost outside: sputtered 18.5258 transmitted 0 eV/ion
+
+Output of 1440 recoil events at real run time 1091 sec CPU time 659
+Ways of stopping: 1424 16 0 0 0 0 0 0
+Mean range 1199.62 +- 17.7997 straggle 671.451
+Area for range.out is 113680
+Energy/ion lost outside: sputtered 19.7114 transmitted 0 eV/ion
+
+Output of 1480 recoil events at real run time 1126 sec CPU time 680
+Ways of stopping: 1464 16 0 0 0 0 0 0
+Mean range 1202.65 +- 17.5614 straggle 671.707
+Area for range.out is 116880
+Energy/ion lost outside: sputtered 19.1787 transmitted 0 eV/ion
+
+Output of 1520 recoil events at real run time 1156 sec CPU time 699
+Ways of stopping: 1502 18 0 0 0 0 0 0
+Mean range 1201.69 +- 17.3151 straggle 670.836
+Area for range.out is 119920
+Energy/ion lost outside: sputtered 22.9777 transmitted 0 eV/ion
+
+Output of 1560 recoil events at real run time 1191 sec CPU time 718
+Ways of stopping: 1542 18 0 0 0 0 0 0
+Mean range 1203.27 +- 17.0543 straggle 669.478
+Area for range.out is 123120
+Energy/ion lost outside: sputtered 22.3885 transmitted 0 eV/ion
+
+Output of 1600 recoil events at real run time 1221 sec CPU time 738
+Ways of stopping: 1582 18 0 0 0 0 0 0
+Mean range 1204.1 +- 16.8273 straggle 669.084
+Area for range.out is 126320
+Energy/ion lost outside: sputtered 21.8288 transmitted 0 eV/ion
+
+Output of 1640 recoil events at real run time 1254 sec CPU time 757
+Ways of stopping: 1621 19 0 0 0 0 0 0
+Mean range 1204.88 +- 16.63 straggle 669.346
+Area for range.out is 129440
+Energy/ion lost outside: sputtered 21.9092 transmitted 0 eV/ion
+
+Output of 1680 recoil events at real run time 1288 sec CPU time 778
+Ways of stopping: 1660 20 0 0 0 0 0 0
+Mean range 1205.93 +- 16.3647 straggle 666.548
+Area for range.out is 132560
+Energy/ion lost outside: sputtered 22.9285 transmitted 0 eV/ion
+
+Output of 1720 recoil events at real run time 1318 sec CPU time 797
+Ways of stopping: 1700 20 0 0 0 0 0 0
+Mean range 1204 +- 16.1297 straggle 664.851
+Area for range.out is 135760
+Energy/ion lost outside: sputtered 22.3953 transmitted 0 eV/ion
+
+Output of 1760 recoil events at real run time 1351 sec CPU time 816
+Ways of stopping: 1740 20 0 0 0 0 0 0
+Mean range 1201.7 +- 15.9382 straggle 664.644
+Area for range.out is 138960
+Energy/ion lost outside: sputtered 21.8863 transmitted 0 eV/ion
+
+Output of 1800 recoil events at real run time 1383 sec CPU time 835
+Ways of stopping: 1780 20 0 0 0 0 0 0
+Mean range 1202.78 +- 15.7593 straggle 664.699
+Area for range.out is 142160
+Energy/ion lost outside: sputtered 21.4 transmitted 0 eV/ion
+
+Output of 1840 recoil events at real run time 1413 sec CPU time 854
+Ways of stopping: 1820 20 0 0 0 0 0 0
+Mean range 1201.8 +- 15.536 straggle 662.604
+Area for range.out is 145360
+Energy/ion lost outside: sputtered 20.9348 transmitted 0 eV/ion
+
+Output of 1880 recoil events at real run time 1444 sec CPU time 873
+Ways of stopping: 1860 20 0 0 0 0 0 0
+Mean range 1199.06 +- 15.3908 straggle 663.591
+Area for range.out is 148560
+Energy/ion lost outside: sputtered 20.4893 transmitted 0 eV/ion
+
+Output of 1920 recoil events at real run time 1476 sec CPU time 892
+Ways of stopping: 1900 20 0 0 0 0 0 0
+Mean range 1198.57 +- 15.2337 straggle 663.849
+Area for range.out is 151760
+Energy/ion lost outside: sputtered 20.0625 transmitted 0 eV/ion
+
+Output of 1960 recoil events at real run time 1508 sec CPU time 911
+Ways of stopping: 1940 20 0 0 0 0 0 0
+Mean range 1198.17 +- 15.0986 straggle 664.854
+Area for range.out is 154920
+Energy/ion lost outside: sputtered 19.653 transmitted 0 eV/ion
+
+Output of 2000 recoil events at real run time 1538 sec CPU time 929
+Ways of stopping: 1980 20 0 0 0 0 0 0
+Mean range 1195.09 +- 14.9801 straggle 666.404
+Area for range.out is 158120
+Energy/ion lost outside: sputtered 19.26 transmitted 0 eV/ion
+
+Output of 2040 recoil events at real run time 1572 sec CPU time 950
+Ways of stopping: 2020 20 0 0 0 0 0 0
+Mean range 1194.3 +- 14.8545 straggle 667.461
+Area for range.out is 161320
+Energy/ion lost outside: sputtered 18.8823 transmitted 0 eV/ion
+
+Output of 2080 recoil events at real run time 1604 sec CPU time 970
+Ways of stopping: 2060 20 0 0 0 0 0 0
+Mean range 1196.1 +- 14.7032 straggle 667.176
+Area for range.out is 164520
+Energy/ion lost outside: sputtered 18.5192 transmitted 0 eV/ion
+
+Output of 2120 recoil events at real run time 1628 sec CPU time 985
+Ways of stopping: 2099 21 0 0 0 0 0 0
+Mean range 1192.49 +- 14.5618 straggle 666.988
+Area for range.out is 167640
+Energy/ion lost outside: sputtered 19.1185 transmitted 0 eV/ion
+
+Output of 2160 recoil events at real run time 1658 sec CPU time 1005
+Ways of stopping: 2139 21 0 0 0 0 0 0
+Mean range 1195.28 +- 14.4601 straggle 668.613
+Area for range.out is 170840
+Energy/ion lost outside: sputtered 18.7645 transmitted 0 eV/ion
+
+Output of 2200 recoil events at real run time 1683 sec CPU time 1021
+Ways of stopping: 2179 21 0 0 0 0 0 0
+Mean range 1192.03 +- 14.331 straggle 668.814
+Area for range.out is 174000
+Energy/ion lost outside: sputtered 18.4233 transmitted 0 eV/ion
+
+Output of 2240 recoil events at real run time 1712 sec CPU time 1040
+Ways of stopping: 2218 22 0 0 0 0 0 0
+Mean range 1193.52 +- 14.2068 straggle 668.926
+Area for range.out is 177120
+Energy/ion lost outside: sputtered 18.5005 transmitted 0 eV/ion
+
+Output of 2280 recoil events at real run time 1744 sec CPU time 1059
+Ways of stopping: 2258 22 0 0 0 0 0 0
+Mean range 1192.26 +- 14.0656 straggle 668.225
+Area for range.out is 180320
+Energy/ion lost outside: sputtered 18.1759 transmitted 0 eV/ion
+
+Output of 2320 recoil events at real run time 1780 sec CPU time 1079
+Ways of stopping: 2297 23 0 0 0 0 0 0
+Mean range 1194.13 +- 13.9396 straggle 667.936
+Area for range.out is 183440
+Energy/ion lost outside: sputtered 19.3948 transmitted 0 eV/ion
+
+Output of 2360 recoil events at real run time 1812 sec CPU time 1099
+Ways of stopping: 2337 23 0 0 0 0 0 0
+Mean range 1194.98 +- 13.812 straggle 667.566
+Area for range.out is 186640
+Energy/ion lost outside: sputtered 19.066 transmitted 0 eV/ion
+
+Output of 2400 recoil events at real run time 1846 sec CPU time 1120
+Ways of stopping: 2377 23 0 0 0 0 0 0
+Mean range 1194.78 +- 13.6943 straggle 667.519
+Area for range.out is 189840
+Energy/ion lost outside: sputtered 18.7483 transmitted 0 eV/ion
+
+Output of 2440 recoil events at real run time 1877 sec CPU time 1139
+Ways of stopping: 2416 24 0 0 0 0 0 0
+Mean range 1195.1 +- 13.5654 straggle 666.639
+Area for range.out is 192960
+Energy/ion lost outside: sputtered 18.6802 transmitted 0 eV/ion
+
+Output of 2480 recoil events at real run time 1908 sec CPU time 1158
+Ways of stopping: 2455 25 0 0 0 0 0 0
+Mean range 1195.08 +- 13.4498 straggle 666.273
+Area for range.out is 196080
+Energy/ion lost outside: sputtered 19.3615 transmitted 0 eV/ion
+
+Output of 2520 recoil events at real run time 1939 sec CPU time 1177
+Ways of stopping: 2495 25 0 0 0 0 0 0
+Mean range 1193.88 +- 13.3016 straggle 664.283
+Area for range.out is 199280
+Energy/ion lost outside: sputtered 19.0542 transmitted 0 eV/ion
+
+Output of 2560 recoil events at real run time 1970 sec CPU time 1195
+Ways of stopping: 2535 25 0 0 0 0 0 0
+Mean range 1191.98 +- 13.1881 straggle 663.876
+Area for range.out is 202440
+Energy/ion lost outside: sputtered 18.7565 transmitted 0 eV/ion
+
+Output of 2600 recoil events at real run time 2002 sec CPU time 1215
+Ways of stopping: 2574 26 0 0 0 0 0 0
+Mean range 1192.11 +- 13.0875 straggle 663.861
+Area for range.out is 205560
+Energy/ion lost outside: sputtered 18.5611 transmitted 0 eV/ion
+
+Output of 2640 recoil events at real run time 2036 sec CPU time 1235
+Ways of stopping: 2614 26 0 0 0 0 0 0
+Mean range 1192.39 +- 13.0003 straggle 664.544
+Area for range.out is 208760
+Energy/ion lost outside: sputtered 18.2799 transmitted 0 eV/ion
+
+Output of 2680 recoil events at real run time 2064 sec CPU time 1254
+Ways of stopping: 2654 26 0 0 0 0 0 0
+Mean range 1193.72 +- 12.9022 straggle 664.557
+Area for range.out is 211960
+Energy/ion lost outside: sputtered 18.0071 transmitted 0 eV/ion
+
+Output of 2720 recoil events at real run time 2089 sec CPU time 1270
+Ways of stopping: 2694 26 0 0 0 0 0 0
+Mean range 1191.44 +- 12.7884 straggle 663.643
+Area for range.out is 215160
+Energy/ion lost outside: sputtered 17.7423 transmitted 0 eV/ion
+
+Output of 2760 recoil events at real run time 2124 sec CPU time 1290
+Ways of stopping: 2733 27 0 0 0 0 0 0
+Mean range 1192.5 +- 12.7017 straggle 663.899
+Area for range.out is 218280
+Energy/ion lost outside: sputtered 18.6584 transmitted 0 eV/ion
+
+Output of 2800 recoil events at real run time 2158 sec CPU time 1310
+Ways of stopping: 2773 27 0 0 0 0 0 0
+Mean range 1192.85 +- 12.616 straggle 664.227
+Area for range.out is 221480
+Energy/ion lost outside: sputtered 18.3918 transmitted 0 eV/ion
+
+Output of 2840 recoil events at real run time 2190 sec CPU time 1329
+Ways of stopping: 2813 27 0 0 0 0 0 0
+Mean range 1192.32 +- 12.5273 straggle 664.299
+Area for range.out is 224680
+Energy/ion lost outside: sputtered 18.1328 transmitted 0 eV/ion
+
+Output of 2880 recoil events at real run time 2219 sec CPU time 1346
+Ways of stopping: 2852 28 0 0 0 0 0 0
+Mean range 1189.18 +- 12.4514 straggle 664.841
+Area for range.out is 227760
+Energy/ion lost outside: sputtered 19.4968 transmitted 0 eV/ion
+
+Output of 2920 recoil events at real run time 2250 sec CPU time 1364
+Ways of stopping: 2891 29 0 0 0 0 0 0
+Mean range 1187.28 +- 12.3521 straggle 664.034
+Area for range.out is 230880
+Energy/ion lost outside: sputtered 20.1238 transmitted 0 eV/ion
+
+Output of 2960 recoil events at real run time 2284 sec CPU time 1384
+Ways of stopping: 2931 29 0 0 0 0 0 0
+Mean range 1187.38 +- 12.2512 straggle 663.152
+Area for range.out is 234080
+Energy/ion lost outside: sputtered 19.8519 transmitted 0 eV/ion
+
+Output of 3000 recoil events at real run time 2316 sec CPU time 1403
+Ways of stopping: 2971 29 0 0 0 0 0 0
+Mean range 1187.83 +- 12.1707 straggle 663.276
+Area for range.out is 237280
+Energy/ion lost outside: sputtered 19.5872 transmitted 0 eV/ion
+
+Output of 3040 recoil events at real run time 2341 sec CPU time 1420
+Ways of stopping: 3011 29 0 0 0 0 0 0
+Mean range 1185.59 +- 12.1217 straggle 665.039
+Area for range.out is 240400
+Energy/ion lost outside: sputtered 19.3294 transmitted 0 eV/ion
+
+Output of 3080 recoil events at real run time 2371 sec CPU time 1439
+Ways of stopping: 3050 30 0 0 0 0 0 0
+Mean range 1187.56 +- 12.0675 straggle 666.341
+Area for range.out is 243520
+Energy/ion lost outside: sputtered 19.8792 transmitted 0 eV/ion
+
+Output of 3120 recoil events at real run time 2401 sec CPU time 1457
+Ways of stopping: 3090 30 0 0 0 0 0 0
+Mean range 1185.69 +- 11.9673 straggle 665.128
+Area for range.out is 246720
+Energy/ion lost outside: sputtered 19.6243 transmitted 0 eV/ion
+
+Output of 3160 recoil events at real run time 2437 sec CPU time 1479
+Ways of stopping: 3130 30 0 0 0 0 0 0
+Mean range 1187.88 +- 11.9043 straggle 665.899
+Area for range.out is 249920
+Energy/ion lost outside: sputtered 19.3759 transmitted 0 eV/ion
+
+Output of 3200 recoil events at real run time 2468 sec CPU time 1498
+Ways of stopping: 3169 31 0 0 0 0 0 0
+Mean range 1187.23 +- 11.8532 straggle 667.158
+Area for range.out is 253000
+Energy/ion lost outside: sputtered 19.6822 transmitted 0 eV/ion
+
+Output of 3240 recoil events at real run time 2500 sec CPU time 1518
+Ways of stopping: 3207 33 0 0 0 0 0 0
+Mean range 1187.41 +- 11.7899 straggle 667.564
+Area for range.out is 256040
+Energy/ion lost outside: sputtered 20.2596 transmitted 0 eV/ion
+
+Output of 3280 recoil events at real run time 2535 sec CPU time 1539
+Ways of stopping: 3247 33 0 0 0 0 0 0
+Mean range 1189.26 +- 11.7232 straggle 667.916
+Area for range.out is 259240
+Energy/ion lost outside: sputtered 20.0125 transmitted 0 eV/ion
+
+Output of 3320 recoil events at real run time 2572 sec CPU time 1562
+Ways of stopping: 3287 33 0 0 0 0 0 0
+Mean range 1191.3 +- 11.655 straggle 668.109
+Area for range.out is 262440
+Energy/ion lost outside: sputtered 19.7714 transmitted 0 eV/ion
+
+Output of 3360 recoil events at real run time 2599 sec CPU time 1578
+Ways of stopping: 3326 34 0 0 0 0 0 0
+Mean range 1188.3 +- 11.5906 straggle 668.349
+Area for range.out is 265560
+Energy/ion lost outside: sputtered 20.0314 transmitted 0 eV/ion
+
+Output of 3400 recoil events at real run time 2628 sec CPU time 1597
+Ways of stopping: 3366 34 0 0 0 0 0 0
+Mean range 1189.61 +- 11.5294 straggle 668.805
+Area for range.out is 268760
+Energy/ion lost outside: sputtered 19.7958 transmitted 0 eV/ion
+
+Output of 3440 recoil events at real run time 2659 sec CPU time 1618
+Ways of stopping: 3406 34 0 0 0 0 0 0
+Mean range 1192.64 +- 11.4869 straggle 670.291
+Area for range.out is 271960
+Energy/ion lost outside: sputtered 19.5656 transmitted 0 eV/ion
+
+Output of 3480 recoil events at real run time 2688 sec CPU time 1637
+Ways of stopping: 3446 34 0 0 0 0 0 0
+Mean range 1194.52 +- 11.4246 straggle 670.556
+Area for range.out is 275160
+Energy/ion lost outside: sputtered 19.3407 transmitted 0 eV/ion
+
+Output of 3520 recoil events at real run time 2715 sec CPU time 1655
+Ways of stopping: 3486 34 0 0 0 0 0 0
+Mean range 1195.16 +- 11.3646 straggle 670.899
+Area for range.out is 278360
+Energy/ion lost outside: sputtered 19.1209 transmitted 0 eV/ion
+
+Output of 3560 recoil events at real run time 2743 sec CPU time 1673
+Ways of stopping: 3525 35 0 0 0 0 0 0
+Mean range 1195.01 +- 11.3211 straggle 672.057
+Area for range.out is 281480
+Energy/ion lost outside: sputtered 19.7366 transmitted 0 eV/ion
+
+Output of 3600 recoil events at real run time 2771 sec CPU time 1691
+Ways of stopping: 3565 35 0 0 0 0 0 0
+Mean range 1195.44 +- 11.2639 straggle 672.448
+Area for range.out is 284680
+Energy/ion lost outside: sputtered 19.5173 transmitted 0 eV/ion
+
+Output of 3640 recoil events at real run time 2802 sec CPU time 1710
+Ways of stopping: 3605 35 0 0 0 0 0 0
+Mean range 1197.26 +- 11.2329 straggle 674.351
+Area for range.out is 287880
+Energy/ion lost outside: sputtered 19.3028 transmitted 0 eV/ion
+
+Output of 3680 recoil events at real run time 2828 sec CPU time 1727
+Ways of stopping: 3645 35 0 0 0 0 0 0
+Mean range 1196.26 +- 11.1755 straggle 674.618
+Area for range.out is 291080
+Energy/ion lost outside: sputtered 19.093 transmitted 0 eV/ion
+
+Output of 3720 recoil events at real run time 2852 sec CPU time 1743
+Ways of stopping: 3684 36 0 0 0 0 0 0
+Mean range 1195.53 +- 11.1109 straggle 674.294
+Area for range.out is 294200
+Energy/ion lost outside: sputtered 19.4173 transmitted 0 eV/ion
+
+Output of 3760 recoil events at real run time 2876 sec CPU time 1759
+Ways of stopping: 3724 36 0 0 0 0 0 0
+Mean range 1193.28 +- 11.0576 straggle 674.697
+Area for range.out is 297400
+Energy/ion lost outside: sputtered 19.2108 transmitted 0 eV/ion
+
+Output of 3800 recoil events at real run time 2903 sec CPU time 1777
+Ways of stopping: 3763 37 0 0 0 0 0 0
+Mean range 1193.34 +- 10.9888 straggle 674.001
+Area for range.out is 300520
+Energy/ion lost outside: sputtered 19.6453 transmitted 0 eV/ion
+
+Output of 3840 recoil events at real run time 2931 sec CPU time 1795
+Ways of stopping: 3802 38 0 0 0 0 0 0
+Mean range 1194.01 +- 10.9383 straggle 674.37
+Area for range.out is 303640
+Energy/ion lost outside: sputtered 20.4135 transmitted 0 eV/ion
+
+Output of 3880 recoil events at real run time 2961 sec CPU time 1815
+Ways of stopping: 3842 38 0 0 0 0 0 0
+Mean range 1195.11 +- 10.8628 straggle 673.232
+Area for range.out is 306840
+Energy/ion lost outside: sputtered 20.2031 transmitted 0 eV/ion
+
+Output of 3920 recoil events at real run time 2989 sec CPU time 1833
+Ways of stopping: 3881 39 0 0 0 0 0 0
+Mean range 1195.32 +- 10.8079 straggle 673.222
+Area for range.out is 309960
+Energy/ion lost outside: sputtered 21.6361 transmitted 0 eV/ion
+
+Output of 3960 recoil events at real run time 3018 sec CPU time 1852
+Ways of stopping: 3921 39 0 0 0 0 0 0
+Mean range 1196.7 +- 10.7558 straggle 673.419
+Area for range.out is 313160
+Energy/ion lost outside: sputtered 21.4176 transmitted 0 eV/ion
+
+Output of 4000 recoil events at real run time 3046 sec CPU time 1871
+Ways of stopping: 3960 40 0 0 0 0 0 0
+Mean range 1197.67 +- 10.708 straggle 673.751
+Area for range.out is 316280
+Energy/ion lost outside: sputtered 21.3303 transmitted 0 eV/ion
+
+Output of 4040 recoil events at real run time 3075 sec CPU time 1890
+Ways of stopping: 3999 41 0 0 0 0 0 0
+Mean range 1199.22 +- 10.6608 straggle 674.078
+Area for range.out is 319400
+Energy/ion lost outside: sputtered 21.4075 transmitted 0 eV/ion
+
+Output of 4080 recoil events at real run time 3106 sec CPU time 1910
+Ways of stopping: 4039 41 0 0 0 0 0 0
+Mean range 1201.83 +- 10.6314 straggle 675.573
+Area for range.out is 322600
+Energy/ion lost outside: sputtered 21.1976 transmitted 0 eV/ion
+
+Output of 4120 recoil events at real run time 3135 sec CPU time 1929
+Ways of stopping: 4078 42 0 0 0 0 0 0
+Mean range 1203.07 +- 10.5829 straggle 675.735
+Area for range.out is 325720
+Energy/ion lost outside: sputtered 21.1144 transmitted 0 eV/ion
+
+Output of 4160 recoil events at real run time 3164 sec CPU time 1948
+Ways of stopping: 4118 42 0 0 0 0 0 0
+Mean range 1204.72 +- 10.5381 straggle 676.165
+Area for range.out is 328920
+Energy/ion lost outside: sputtered 20.9114 transmitted 0 eV/ion
+
+Output of 4200 recoil events at real run time 3193 sec CPU time 1967
+Ways of stopping: 4158 42 0 0 0 0 0 0
+Mean range 1205.5 +- 10.4881 straggle 676.219
+Area for range.out is 332120
+Energy/ion lost outside: sputtered 20.7122 transmitted 0 eV/ion
+
+Output of 4240 recoil events at real run time 3221 sec CPU time 1984
+Ways of stopping: 4198 42 0 0 0 0 0 0
+Mean range 1204.1 +- 10.4246 straggle 675.348
+Area for range.out is 335320
+Energy/ion lost outside: sputtered 20.5168 transmitted 0 eV/ion
+
+Output of 4280 recoil events at real run time 3246 sec CPU time 2001
+Ways of stopping: 4237 43 0 0 0 0 0 0
+Mean range 1203.51 +- 10.3635 straggle 674.501
+Area for range.out is 338440
+Energy/ion lost outside: sputtered 20.3413 transmitted 0 eV/ion
+
+Output of 4320 recoil events at real run time 3274 sec CPU time 2019
+Ways of stopping: 4277 43 0 0 0 0 0 0
+Mean range 1203.45 +- 10.3244 straggle 675.122
+Area for range.out is 341640
+Energy/ion lost outside: sputtered 20.1529 transmitted 0 eV/ion
+
+Output of 4360 recoil events at real run time 3302 sec CPU time 2037
+Ways of stopping: 4317 43 0 0 0 0 0 0
+Mean range 1202.86 +- 10.2684 straggle 674.595
+Area for range.out is 344840
+Energy/ion lost outside: sputtered 19.968 transmitted 0 eV/ion
+
+Output of 4400 recoil events at real run time 3326 sec CPU time 2056
+Ways of stopping: 4357 43 0 0 0 0 0 0
+Mean range 1203.81 +- 10.223 straggle 674.715
+Area for range.out is 348000
+Energy/ion lost outside: sputtered 19.7865 transmitted 0 eV/ion
+
+Output of 4440 recoil events at real run time 3348 sec CPU time 2073
+Ways of stopping: 4396 44 0 0 0 0 0 0
+Mean range 1203.71 +- 10.1914 straggle 675.637
+Area for range.out is 351080
+Energy/ion lost outside: sputtered 19.8198 transmitted 0 eV/ion
+
+Output of 4480 recoil events at real run time 3371 sec CPU time 2091
+Ways of stopping: 4436 44 0 0 0 0 0 0
+Mean range 1204.19 +- 10.1509 straggle 676.006
+Area for range.out is 354280
+Energy/ion lost outside: sputtered 19.6429 transmitted 0 eV/ion
+
+Output of 4520 recoil events at real run time 3394 sec CPU time 2110
+Ways of stopping: 4476 44 0 0 0 0 0 0
+Mean range 1204.46 +- 10.1067 straggle 676.09
+Area for range.out is 357480
+Energy/ion lost outside: sputtered 19.469 transmitted 0 eV/ion
+
+Output of 4560 recoil events at real run time 3416 sec CPU time 2127
+Ways of stopping: 4515 45 0 0 0 0 0 0
+Mean range 1204.55 +- 10.0623 straggle 676.051
+Area for range.out is 360600
+Energy/ion lost outside: sputtered 19.488 transmitted 0 eV/ion
+
+Output of 4600 recoil events at real run time 3437 sec CPU time 2143
+Ways of stopping: 4555 45 0 0 0 0 0 0
+Mean range 1203.28 +- 10.0287 straggle 676.772
+Area for range.out is 363800
+Energy/ion lost outside: sputtered 19.3186 transmitted 0 eV/ion
+
+Output of 4640 recoil events at real run time 3459 sec CPU time 2161
+Ways of stopping: 4594 46 0 0 0 0 0 0
+Mean range 1203.96 +- 9.99067 straggle 677.084
+Area for range.out is 366920
+Energy/ion lost outside: sputtered 19.5661 transmitted 0 eV/ion
+
+Output of 4680 recoil events at real run time 3482 sec CPU time 2179
+Ways of stopping: 4634 46 0 0 0 0 0 0
+Mean range 1203.99 +- 9.95592 straggle 677.661
+Area for range.out is 370120
+Energy/ion lost outside: sputtered 19.3989 transmitted 0 eV/ion
+
+Output of 4720 recoil events at real run time 3504 sec CPU time 2197
+Ways of stopping: 4673 47 0 0 0 0 0 0
+Mean range 1203.75 +- 9.90567 straggle 677.073
+Area for range.out is 373240
+Energy/ion lost outside: sputtered 19.3712 transmitted 0 eV/ion
+
+Output of 4760 recoil events at real run time 3527 sec CPU time 2215
+Ways of stopping: 4713 47 0 0 0 0 0 0
+Mean range 1204.35 +- 9.8685 straggle 677.413
+Area for range.out is 376440
+Energy/ion lost outside: sputtered 19.2084 transmitted 0 eV/ion
+
+Output of 4800 recoil events at real run time 3549 sec CPU time 2232
+Ways of stopping: 4753 47 0 0 0 0 0 0
+Mean range 1203.84 +- 9.82116 straggle 677.019
+Area for range.out is 379640
+Energy/ion lost outside: sputtered 19.0483 transmitted 0 eV/ion
+
+Output of 4840 recoil events at real run time 3573 sec CPU time 2251
+Ways of stopping: 4792 48 0 0 0 0 0 0
+Mean range 1204.82 +- 9.7814 straggle 677.04
+Area for range.out is 382760
+Energy/ion lost outside: sputtered 19.1876 transmitted 0 eV/ion
+
+Output of 4880 recoil events at real run time 3596 sec CPU time 2269
+Ways of stopping: 4832 48 0 0 0 0 0 0
+Mean range 1205.08 +- 9.74505 straggle 677.334
+Area for range.out is 385960
+Energy/ion lost outside: sputtered 19.0304 transmitted 0 eV/ion
+
+Output of 4920 recoil events at real run time 3618 sec CPU time 2287
+Ways of stopping: 4872 48 0 0 0 0 0 0
+Mean range 1204.97 +- 9.70289 straggle 677.189
+Area for range.out is 389160
+Energy/ion lost outside: sputtered 18.8756 transmitted 0 eV/ion
+
+Output of 4960 recoil events at real run time 3639 sec CPU time 2303
+Ways of stopping: 4910 50 0 0 0 0 0 0
+Mean range 1204.78 +- 9.67426 straggle 677.82
+Area for range.out is 392200
+Energy/ion lost outside: sputtered 18.9035 transmitted 0 eV/ion
+
+Output of 5000 recoil events at real run time 3663 sec CPU time 2321
+Ways of stopping: 4950 50 0 0 0 0 0 0
+Mean range 1205.42 +- 9.63406 straggle 677.748
+Area for range.out is 395400
+Energy/ion lost outside: sputtered 18.7523 transmitted 0 eV/ion
+
+Output of 5040 recoil events at real run time 3686 sec CPU time 2340
+Ways of stopping: 4988 52 0 0 0 0 0 0
+Mean range 1206.18 +- 9.60236 straggle 678.106
+Area for range.out is 398440
+Energy/ion lost outside: sputtered 19.343 transmitted 0 eV/ion
+
+Output of 5080 recoil events at real run time 3712 sec CPU time 2360
+Ways of stopping: 5028 52 0 0 0 0 0 0
+Mean range 1207.62 +- 9.56598 straggle 678.241
+Area for range.out is 401640
+Energy/ion lost outside: sputtered 19.1907 transmitted 0 eV/ion
+
+Output of 5120 recoil events at real run time 3735 sec CPU time 2378
+Ways of stopping: 5068 52 0 0 0 0 0 0
+Mean range 1208.01 +- 9.52381 straggle 677.932
+Area for range.out is 404840
+Energy/ion lost outside: sputtered 19.0408 transmitted 0 eV/ion
+
+Output of 5160 recoil events at real run time 3756 sec CPU time 2395
+Ways of stopping: 5108 52 0 0 0 0 0 0
+Mean range 1207.43 +- 9.48143 straggle 677.574
+Area for range.out is 408040
+Energy/ion lost outside: sputtered 18.8932 transmitted 0 eV/ion
+
+Output of 5200 recoil events at real run time 3779 sec CPU time 2412
+Ways of stopping: 5148 52 0 0 0 0 0 0
+Mean range 1207.06 +- 9.44455 straggle 677.577
+Area for range.out is 411240
+Energy/ion lost outside: sputtered 18.7479 transmitted 0 eV/ion
+
+Output of 5240 recoil events at real run time 3802 sec CPU time 2430
+Ways of stopping: 5188 52 0 0 0 0 0 0
+Mean range 1206.87 +- 9.41477 straggle 678.06
+Area for range.out is 414440
+Energy/ion lost outside: sputtered 18.6047 transmitted 0 eV/ion
+
+Output of 5280 recoil events at real run time 3825 sec CPU time 2447
+Ways of stopping: 5228 52 0 0 0 0 0 0
+Mean range 1206.28 +- 9.37736 straggle 677.964
+Area for range.out is 417640
+Energy/ion lost outside: sputtered 18.4638 transmitted 0 eV/ion
+
+Output of 5320 recoil events at real run time 3848 sec CPU time 2465
+Ways of stopping: 5267 53 0 0 0 0 0 0
+Mean range 1206.19 +- 9.34427 straggle 678.087
+Area for range.out is 420760
+Energy/ion lost outside: sputtered 18.5401 transmitted 0 eV/ion
+
+Output of 5360 recoil events at real run time 3874 sec CPU time 2485
+Ways of stopping: 5307 53 0 0 0 0 0 0
+Mean range 1207.85 +- 9.31703 straggle 678.674
+Area for range.out is 423960
+Energy/ion lost outside: sputtered 18.4017 transmitted 0 eV/ion
+
+Output of 5400 recoil events at real run time 3899 sec CPU time 2504
+Ways of stopping: 5347 53 0 0 0 0 0 0
+Mean range 1208.03 +- 9.28231 straggle 678.689
+Area for range.out is 427160
+Energy/ion lost outside: sputtered 18.2654 transmitted 0 eV/ion
+
+Output of 5440 recoil events at real run time 3924 sec CPU time 2522
+Ways of stopping: 5387 53 0 0 0 0 0 0
+Mean range 1207.9 +- 9.24502 straggle 678.487
+Area for range.out is 430360
+Energy/ion lost outside: sputtered 18.1311 transmitted 0 eV/ion
+
+Output of 5480 recoil events at real run time 3949 sec CPU time 2541
+Ways of stopping: 5427 53 0 0 0 0 0 0
+Mean range 1208.88 +- 9.21477 straggle 678.773
+Area for range.out is 433560
+Energy/ion lost outside: sputtered 17.9988 transmitted 0 eV/ion
+
+Output of 5520 recoil events at real run time 3973 sec CPU time 2560
+Ways of stopping: 5467 53 0 0 0 0 0 0
+Mean range 1209.55 +- 9.18556 straggle 679.111
+Area for range.out is 436760
+Energy/ion lost outside: sputtered 17.8683 transmitted 0 eV/ion
+
+Output of 5560 recoil events at real run time 3995 sec CPU time 2577
+Ways of stopping: 5506 54 0 0 0 0 0 0
+Mean range 1209.48 +- 9.15528 straggle 679.283
+Area for range.out is 439880
+Energy/ion lost outside: sputtered 17.8389 transmitted 0 eV/ion
+
+Output of 5600 recoil events at real run time 4014 sec CPU time 2592
+Ways of stopping: 5546 54 0 0 0 0 0 0
+Mean range 1207.41 +- 9.11204 straggle 678.526
+Area for range.out is 443040
+Energy/ion lost outside: sputtered 17.7115 transmitted 0 eV/ion
+
+Output of 5640 recoil events at real run time 4035 sec CPU time 2609
+Ways of stopping: 5586 54 0 0 0 0 0 0
+Mean range 1206.32 +- 9.07861 straggle 678.47
+Area for range.out is 446240
+Energy/ion lost outside: sputtered 17.5858 transmitted 0 eV/ion
+
+Output of 5680 recoil events at real run time 4059 sec CPU time 2628
+Ways of stopping: 5626 54 0 0 0 0 0 0
+Mean range 1207.49 +- 9.04598 straggle 678.448
+Area for range.out is 449440
+Energy/ion lost outside: sputtered 17.462 transmitted 0 eV/ion
+
+Output of 5720 recoil events at real run time 4081 sec CPU time 2646
+Ways of stopping: 5666 54 0 0 0 0 0 0
+Mean range 1206.73 +- 9.01133 straggle 678.248
+Area for range.out is 452640
+Energy/ion lost outside: sputtered 17.3399 transmitted 0 eV/ion
+
+Output of 5760 recoil events at real run time 4104 sec CPU time 2664
+Ways of stopping: 5706 54 0 0 0 0 0 0
+Mean range 1207.2 +- 8.98037 straggle 678.3
+Area for range.out is 455840
+Energy/ion lost outside: sputtered 17.2195 transmitted 0 eV/ion
+
+Output of 5800 recoil events at real run time 4127 sec CPU time 2682
+Ways of stopping: 5746 54 0 0 0 0 0 0
+Mean range 1207.68 +- 8.94759 straggle 678.19
+Area for range.out is 459040
+Energy/ion lost outside: sputtered 17.1007 transmitted 0 eV/ion
+
+Output of 5840 recoil events at real run time 4149 sec CPU time 2700
+Ways of stopping: 5786 54 0 0 0 0 0 0
+Mean range 1207.87 +- 8.91599 straggle 678.143
+Area for range.out is 462200
+Energy/ion lost outside: sputtered 16.9836 transmitted 0 eV/ion
+
+Output of 5880 recoil events at real run time 4169 sec CPU time 2716
+Ways of stopping: 5826 54 0 0 0 0 0 0
+Mean range 1206.91 +- 8.89167 straggle 678.627
+Area for range.out is 465360
+Energy/ion lost outside: sputtered 16.8681 transmitted 0 eV/ion
+
+Output of 5920 recoil events at real run time 4193 sec CPU time 2734
+Ways of stopping: 5866 54 0 0 0 0 0 0
+Mean range 1207.39 +- 8.86407 straggle 678.84
+Area for range.out is 468560
+Energy/ion lost outside: sputtered 16.7541 transmitted 0 eV/ion
+
+Output of 5960 recoil events at real run time 4214 sec CPU time 2751
+Ways of stopping: 5906 54 0 0 0 0 0 0
+Mean range 1206.99 +- 8.83156 straggle 678.652
+Area for range.out is 471760
+Energy/ion lost outside: sputtered 16.6416 transmitted 0 eV/ion
+
+Output of 6000 recoil events at real run time 4237 sec CPU time 2770
+Ways of stopping: 5944 56 0 0 0 0 0 0
+Mean range 1207.55 +- 8.79761 straggle 678.215
+Area for range.out is 474800
+Energy/ion lost outside: sputtered 17.1775 transmitted 0 eV/ion
+
+Output of 6040 recoil events at real run time 4258 sec CPU time 2786
+Ways of stopping: 5984 56 0 0 0 0 0 0
+Mean range 1206.58 +- 8.76399 straggle 677.893
+Area for range.out is 478000
+Energy/ion lost outside: sputtered 17.0638 transmitted 0 eV/ion
+
+Output of 6080 recoil events at real run time 4280 sec CPU time 2804
+Ways of stopping: 6023 57 0 0 0 0 0 0
+Mean range 1206.36 +- 8.73177 straggle 677.599
+Area for range.out is 481120
+Energy/ion lost outside: sputtered 17.1199 transmitted 0 eV/ion
+
+Output of 6120 recoil events at real run time 4299 sec CPU time 2819
+Ways of stopping: 6062 58 0 0 0 0 0 0
+Mean range 1204.68 +- 8.69576 straggle 676.986
+Area for range.out is 484200
+Energy/ion lost outside: sputtered 17.0514 transmitted 0 eV/ion
+
+Output of 6160 recoil events at real run time 4319 sec CPU time 2834
+Ways of stopping: 6100 60 0 0 0 0 0 0
+Mean range 1203.49 +- 8.66706 straggle 676.864
+Area for range.out is 487240
+Energy/ion lost outside: sputtered 17.8493 transmitted 0 eV/ion
+
+Output of 6200 recoil events at real run time 4342 sec CPU time 2853
+Ways of stopping: 6139 61 0 0 0 0 0 0
+Mean range 1203.91 +- 8.64252 straggle 677.102
+Area for range.out is 490360
+Energy/ion lost outside: sputtered 18.4478 transmitted 0 eV/ion
+
+Output of 6240 recoil events at real run time 4364 sec CPU time 2870
+Ways of stopping: 6178 62 0 0 0 0 0 0
+Mean range 1204.13 +- 8.61919 straggle 677.416
+Area for range.out is 493480
+Energy/ion lost outside: sputtered 18.4536 transmitted 0 eV/ion
+
+Output of 6280 recoil events at real run time 4385 sec CPU time 2887
+Ways of stopping: 6218 62 0 0 0 0 0 0
+Mean range 1203.43 +- 8.58957 straggle 677.27
+Area for range.out is 496680
+Energy/ion lost outside: sputtered 18.336 transmitted 0 eV/ion
+
+Output of 6320 recoil events at real run time 4408 sec CPU time 2905
+Ways of stopping: 6257 63 0 0 0 0 0 0
+Mean range 1203.6 +- 8.56023 straggle 677.071
+Area for range.out is 499800
+Energy/ion lost outside: sputtered 18.2326 transmitted 0 eV/ion
+
+Output of 6360 recoil events at real run time 4431 sec CPU time 2923
+Ways of stopping: 6297 63 0 0 0 0 0 0
+Mean range 1204.15 +- 8.53018 straggle 676.847
+Area for range.out is 503000
+Energy/ion lost outside: sputtered 18.1179 transmitted 0 eV/ion
+
+Output of 6400 recoil events at real run time 4455 sec CPU time 2942
+Ways of stopping: 6337 63 0 0 0 0 0 0
+Mean range 1204.85 +- 8.49725 straggle 676.373
+Area for range.out is 506200
+Energy/ion lost outside: sputtered 18.0047 transmitted 0 eV/ion
+
+Output of 6440 recoil events at real run time 4477 sec CPU time 2959
+Ways of stopping: 6376 64 0 0 0 0 0 0
+Mean range 1204.35 +- 8.47587 straggle 676.744
+Area for range.out is 509320
+Energy/ion lost outside: sputtered 18.5179 transmitted 0 eV/ion
+
+Output of 6480 recoil events at real run time 4500 sec CPU time 2978
+Ways of stopping: 6416 64 0 0 0 0 0 0
+Mean range 1204.75 +- 8.45625 straggle 677.292
+Area for range.out is 512520
+Energy/ion lost outside: sputtered 18.4036 transmitted 0 eV/ion
+
+Output of 6520 recoil events at real run time 4523 sec CPU time 2997
+Ways of stopping: 6455 65 0 0 0 0 0 0
+Mean range 1205.78 +- 8.43228 straggle 677.422
+Area for range.out is 515640
+Energy/ion lost outside: sputtered 18.3733 transmitted 0 eV/ion
+
+Output of 6560 recoil events at real run time 4545 sec CPU time 3014
+Ways of stopping: 6495 65 0 0 0 0 0 0
+Mean range 1205.6 +- 8.40353 straggle 677.201
+Area for range.out is 518840
+Energy/ion lost outside: sputtered 18.2613 transmitted 0 eV/ion
+
+Output of 6600 recoil events at real run time 4565 sec CPU time 3030
+Ways of stopping: 6535 65 0 0 0 0 0 0
+Mean range 1204.49 +- 8.37218 straggle 676.749
+Area for range.out is 522040
+Energy/ion lost outside: sputtered 18.1506 transmitted 0 eV/ion
+
+Output of 6640 recoil events at real run time 4586 sec CPU time 3047
+Ways of stopping: 6575 65 0 0 0 0 0 0
+Mean range 1203.78 +- 8.34213 straggle 676.381
+Area for range.out is 525240
+Energy/ion lost outside: sputtered 18.0413 transmitted 0 eV/ion
+
+Output of 6680 recoil events at real run time 4607 sec CPU time 3063
+Ways of stopping: 6615 65 0 0 0 0 0 0
+Mean range 1202.98 +- 8.3131 straggle 676.075
+Area for range.out is 528440
+Energy/ion lost outside: sputtered 17.9332 transmitted 0 eV/ion
+
+Output of 6720 recoil events at real run time 4632 sec CPU time 3083
+Ways of stopping: 6655 65 0 0 0 0 0 0
+Mean range 1203.86 +- 8.28882 straggle 676.136
+Area for range.out is 531640
+Energy/ion lost outside: sputtered 17.8265 transmitted 0 eV/ion
+
+Output of 6760 recoil events at real run time 4656 sec CPU time 3101
+Ways of stopping: 6695 65 0 0 0 0 0 0
+Mean range 1204.39 +- 8.27031 straggle 676.651
+Area for range.out is 534840
+Energy/ion lost outside: sputtered 17.721 transmitted 0 eV/ion
+
+Output of 6800 recoil events at real run time 4678 sec CPU time 3119
+Ways of stopping: 6735 65 0 0 0 0 0 0
+Mean range 1204.11 +- 8.24093 straggle 676.258
+Area for range.out is 538040
+Energy/ion lost outside: sputtered 17.6168 transmitted 0 eV/ion
+
+Output of 6840 recoil events at real run time 4701 sec CPU time 3137
+Ways of stopping: 6775 65 0 0 0 0 0 0
+Mean range 1204.46 +- 8.21732 straggle 676.321
+Area for range.out is 541240
+Energy/ion lost outside: sputtered 17.5137 transmitted 0 eV/ion
+
+Output of 6880 recoil events at real run time 4723 sec CPU time 3154
+Ways of stopping: 6814 66 0 0 0 0 0 0
+Mean range 1204.18 +- 8.19582 straggle 676.49
+Area for range.out is 544360
+Energy/ion lost outside: sputtered 17.8195 transmitted 0 eV/ion
+
+Output of 6920 recoil events at real run time 4744 sec CPU time 3171
+Ways of stopping: 6853 67 0 0 0 0 0 0
+Mean range 1203.61 +- 8.1735 straggle 676.576
+Area for range.out is 547440
+Energy/ion lost outside: sputtered 17.8865 transmitted 0 eV/ion
+
+Output of 6960 recoil events at real run time 4766 sec CPU time 3188
+Ways of stopping: 6893 67 0 0 0 0 0 0
+Mean range 1203.03 +- 8.14407 straggle 676.105
+Area for range.out is 550640
+Energy/ion lost outside: sputtered 17.7837 transmitted 0 eV/ion
+
+Output of 7000 recoil events at real run time 4788 sec CPU time 3205
+Ways of stopping: 6932 68 0 0 0 0 0 0
+Mean range 1202.82 +- 8.11258 straggle 675.394
+Area for range.out is 553760
+Energy/ion lost outside: sputtered 17.6843 transmitted 0 eV/ion
+
+Output of 7040 recoil events at real run time 4807 sec CPU time 3221
+Ways of stopping: 6971 69 0 0 0 0 0 0
+Mean range 1201.64 +- 8.08404 straggle 674.908
+Area for range.out is 556880
+Energy/ion lost outside: sputtered 17.7137 transmitted 0 eV/ion
+
+Output of 7080 recoil events at real run time 4831 sec CPU time 3239
+Ways of stopping: 7010 70 0 0 0 0 0 0
+Mean range 1201.95 +- 8.06148 straggle 674.905
+Area for range.out is 560000
+Energy/ion lost outside: sputtered 17.8787 transmitted 0 eV/ion
+
+Output of 7120 recoil events at real run time 4855 sec CPU time 3258
+Ways of stopping: 7050 70 0 0 0 0 0 0
+Mean range 1202.29 +- 8.04307 straggle 675.283
+Area for range.out is 563200
+Energy/ion lost outside: sputtered 17.7782 transmitted 0 eV/ion
+
+Output of 7160 recoil events at real run time 4878 sec CPU time 3277
+Ways of stopping: 7089 71 0 0 0 0 0 0
+Mean range 1203.13 +- 8.02167 straggle 675.347
+Area for range.out is 566320
+Energy/ion lost outside: sputtered 18.044 transmitted 0 eV/ion
+
+Output of 7200 recoil events at real run time 4899 sec CPU time 3294
+Ways of stopping: 7129 71 0 0 0 0 0 0
+Mean range 1202.41 +- 7.99232 straggle 674.772
+Area for range.out is 569520
+Energy/ion lost outside: sputtered 17.9438 transmitted 0 eV/ion
+
+Output of 7240 recoil events at real run time 4922 sec CPU time 3312
+Ways of stopping: 7169 71 0 0 0 0 0 0
+Mean range 1202.57 +- 7.97029 straggle 674.797
+Area for range.out is 572720
+Energy/ion lost outside: sputtered 17.8446 transmitted 0 eV/ion
+
+Output of 7280 recoil events at real run time 4947 sec CPU time 3331
+Ways of stopping: 7209 71 0 0 0 0 0 0
+Mean range 1203.14 +- 7.94797 straggle 674.782
+Area for range.out is 575920
+Energy/ion lost outside: sputtered 17.7466 transmitted 0 eV/ion
+
+Output of 7320 recoil events at real run time 4969 sec CPU time 3349
+Ways of stopping: 7249 71 0 0 0 0 0 0
+Mean range 1203.14 +- 7.92385 straggle 674.598
+Area for range.out is 579120
+Energy/ion lost outside: sputtered 17.6496 transmitted 0 eV/ion
+
+Output of 7360 recoil events at real run time 4993 sec CPU time 3368
+Ways of stopping: 7288 72 0 0 0 0 0 0
+Mean range 1203.47 +- 7.9093 straggle 675.169
+Area for range.out is 582240
+Energy/ion lost outside: sputtered 17.7984 transmitted 0 eV/ion
+
+Output of 7400 recoil events at real run time 5014 sec CPU time 3384
+Ways of stopping: 7328 72 0 0 0 0 0 0
+Mean range 1202.79 +- 7.89312 straggle 675.634
+Area for range.out is 585440
+Energy/ion lost outside: sputtered 17.7022 transmitted 0 eV/ion
+
+Output of 7440 recoil events at real run time 5035 sec CPU time 3401
+Ways of stopping: 7367 73 0 0 0 0 0 0
+Mean range 1202.35 +- 7.86639 straggle 675.136
+Area for range.out is 588560
+Energy/ion lost outside: sputtered 18.13 transmitted 0 eV/ion
+
+Output of 7480 recoil events at real run time 5057 sec CPU time 3418
+Ways of stopping: 7406 74 0 0 0 0 0 0
+Mean range 1202.38 +- 7.84304 straggle 674.912
+Area for range.out is 591680
+Energy/ion lost outside: sputtered 18.3069 transmitted 0 eV/ion
+
+Output of 7520 recoil events at real run time 5079 sec CPU time 3436
+Ways of stopping: 7444 76 0 0 0 0 0 0
+Mean range 1202.35 +- 7.81878 straggle 674.548
+Area for range.out is 594720
+Energy/ion lost outside: sputtered 18.4944 transmitted 0 eV/ion
+
+Output of 7560 recoil events at real run time 5104 sec CPU time 3455
+Ways of stopping: 7483 77 0 0 0 0 0 0
+Mean range 1203.51 +- 7.79728 straggle 674.454
+Area for range.out is 597840
+Energy/ion lost outside: sputtered 18.6921 transmitted 0 eV/ion
+
+Output of 7600 recoil events at real run time 5126 sec CPU time 3472
+Ways of stopping: 7523 77 0 0 0 0 0 0
+Mean range 1203.02 +- 7.77288 straggle 674.138
+Area for range.out is 601040
+Energy/ion lost outside: sputtered 18.5937 transmitted 0 eV/ion
+
+Output of 7640 recoil events at real run time 5145 sec CPU time 3488
+Ways of stopping: 7562 78 0 0 0 0 0 0
+Mean range 1202.11 +- 7.74971 straggle 673.869
+Area for range.out is 604160
+Energy/ion lost outside: sputtered 18.4987 transmitted 0 eV/ion
+
+Output of 7680 recoil events at real run time 5166 sec CPU time 3504
+Ways of stopping: 7601 79 0 0 0 0 0 0
+Mean range 1201.56 +- 7.73009 straggle 673.894
+Area for range.out is 607280
+Energy/ion lost outside: sputtered 18.6521 transmitted 0 eV/ion
+
+Output of 7720 recoil events at real run time 5189 sec CPU time 3522
+Ways of stopping: 7639 81 0 0 0 0 0 0
+Mean range 1201.61 +- 7.70781 straggle 673.629
+Area for range.out is 610320
+Energy/ion lost outside: sputtered 18.6912 transmitted 0 eV/ion
+
+Output of 7760 recoil events at real run time 5208 sec CPU time 3538
+Ways of stopping: 7679 81 0 0 0 0 0 0
+Mean range 1200.71 +- 7.68533 straggle 673.421
+Area for range.out is 613520
+Energy/ion lost outside: sputtered 18.5949 transmitted 0 eV/ion
+
+Output of 7800 recoil events at real run time 5230 sec CPU time 3555
+Ways of stopping: 7718 82 0 0 0 0 0 0
+Mean range 1200.69 +- 7.66104 straggle 672.995
+Area for range.out is 616640
+Energy/ion lost outside: sputtered 18.8461 transmitted 0 eV/ion
+
+Output of 7840 recoil events at real run time 5269 sec CPU time 3573
+Ways of stopping: 7758 82 0 0 0 0 0 0
+Mean range 1200.89 +- 7.64328 straggle 673.173
+Area for range.out is 619840
+Energy/ion lost outside: sputtered 18.7499 transmitted 0 eV/ion
+
+Output of 7880 recoil events at real run time 5312 sec CPU time 3589
+Ways of stopping: 7798 82 0 0 0 0 0 0
+Mean range 1199.79 +- 7.61925 straggle 672.784
+Area for range.out is 623040
+Energy/ion lost outside: sputtered 18.6547 transmitted 0 eV/ion
+
+Output of 7920 recoil events at real run time 5357 sec CPU time 3607
+Ways of stopping: 7836 84 0 0 0 0 0 0
+Mean range 1199.6 +- 7.59775 straggle 672.519
+Area for range.out is 626080
+Energy/ion lost outside: sputtered 19.0707 transmitted 0 eV/ion
+
+Output of 7960 recoil events at real run time 5400 sec CPU time 3624
+Ways of stopping: 7875 85 0 0 0 0 0 0
+Mean range 1199.24 +- 7.58242 straggle 672.83
+Area for range.out is 629200
+Energy/ion lost outside: sputtered 18.992 transmitted 0 eV/ion
+
+Output of 8000 recoil events at real run time 5449 sec CPU time 3640
+Ways of stopping: 7914 86 0 0 0 0 0 0
+Mean range 1198.33 +- 7.56312 straggle 672.778
+Area for range.out is 632280
+Energy/ion lost outside: sputtered 19.0489 transmitted 0 eV/ion
+
+Output of 8040 recoil events at real run time 5492 sec CPU time 3658
+Ways of stopping: 7954 86 0 0 0 0 0 0
+Mean range 1198.42 +- 7.54469 straggle 672.832
+Area for range.out is 635480
+Energy/ion lost outside: sputtered 18.9542 transmitted 0 eV/ion
+
+Output of 8080 recoil events at real run time 5554 sec CPU time 3678
+Ways of stopping: 7994 86 0 0 0 0 0 0
+Mean range 1198.97 +- 7.52713 straggle 672.953
+Area for range.out is 638680
+Energy/ion lost outside: sputtered 18.8603 transmitted 0 eV/ion
+
+Output of 8120 recoil events at real run time 5590 sec CPU time 3694
+Ways of stopping: 8033 87 0 0 0 0 0 0
+Mean range 1198.29 +- 7.50124 straggle 672.272
+Area for range.out is 641800
+Energy/ion lost outside: sputtered 19.0829 transmitted 0 eV/ion
+
+Output of 8160 recoil events at real run time 5642 sec CPU time 3711
+Ways of stopping: 8073 87 0 0 0 0 0 0
+Mean range 1198.06 +- 7.48366 straggle 672.364
+Area for range.out is 645000
+Energy/ion lost outside: sputtered 18.9894 transmitted 0 eV/ion
+
+Output of 8200 recoil events at real run time 5689 sec CPU time 3729
+Ways of stopping: 8112 88 0 0 0 0 0 0
+Mean range 1198.13 +- 7.46503 straggle 672.309
+Area for range.out is 648120
+Energy/ion lost outside: sputtered 19.1234 transmitted 0 eV/ion
+
+Output of 8240 recoil events at real run time 5741 sec CPU time 3748
+Ways of stopping: 8152 88 0 0 0 0 0 0
+Mean range 1198.77 +- 7.44602 straggle 672.248
+Area for range.out is 651320
+Energy/ion lost outside: sputtered 19.0306 transmitted 0 eV/ion
+
+Output of 8280 recoil events at real run time 5788 sec CPU time 3766
+Ways of stopping: 8192 88 0 0 0 0 0 0
+Mean range 1198.75 +- 7.42895 straggle 672.351
+Area for range.out is 654520
+Energy/ion lost outside: sputtered 18.9386 transmitted 0 eV/ion
+
+Output of 8320 recoil events at real run time 5843 sec CPU time 3784
+Ways of stopping: 8232 88 0 0 0 0 0 0
+Mean range 1199.09 +- 7.41148 straggle 672.406
+Area for range.out is 657720
+Energy/ion lost outside: sputtered 18.8476 transmitted 0 eV/ion
+
+Output of 8360 recoil events at real run time 5896 sec CPU time 3801
+Ways of stopping: 8272 88 0 0 0 0 0 0
+Mean range 1198.4 +- 7.38687 straggle 671.799
+Area for range.out is 660920
+Energy/ion lost outside: sputtered 18.7574 transmitted 0 eV/ion
+
+Output of 8400 recoil events at real run time 5958 sec CPU time 3821
+Ways of stopping: 8312 88 0 0 0 0 0 0
+Mean range 1198.57 +- 7.36864 straggle 671.76
+Area for range.out is 664080
+Energy/ion lost outside: sputtered 18.6681 transmitted 0 eV/ion
+
+Output of 8440 recoil events at real run time 6003 sec CPU time 3838
+Ways of stopping: 8352 88 0 0 0 0 0 0
+Mean range 1197.89 +- 7.34849 straggle 671.533
+Area for range.out is 667280
+Energy/ion lost outside: sputtered 18.5796 transmitted 0 eV/ion
+
+Output of 8480 recoil events at real run time 6051 sec CPU time 3856
+Ways of stopping: 8392 88 0 0 0 0 0 0
+Mean range 1198.44 +- 7.33322 straggle 671.741
+Area for range.out is 670440
+Energy/ion lost outside: sputtered 18.492 transmitted 0 eV/ion
+
+Output of 8520 recoil events at real run time 6096 sec CPU time 3873
+Ways of stopping: 8432 88 0 0 0 0 0 0
+Mean range 1197.8 +- 7.31043 straggle 671.248
+Area for range.out is 673640
+Energy/ion lost outside: sputtered 18.4052 transmitted 0 eV/ion
+
+Output of 8560 recoil events at real run time 6141 sec CPU time 3891
+Ways of stopping: 8472 88 0 0 0 0 0 0
+Mean range 1198.06 +- 7.29276 straggle 671.211
+Area for range.out is 676840
+Energy/ion lost outside: sputtered 18.3192 transmitted 0 eV/ion
+
+Output of 8600 recoil events at real run time 6191 sec CPU time 3909
+Ways of stopping: 8512 88 0 0 0 0 0 0
+Mean range 1198.03 +- 7.27563 straggle 671.214
+Area for range.out is 680040
+Energy/ion lost outside: sputtered 18.2339 transmitted 0 eV/ion
+
+Output of 8640 recoil events at real run time 6244 sec CPU time 3927
+Ways of stopping: 8552 88 0 0 0 0 0 0
+Mean range 1198.25 +- 7.25469 straggle 670.853
+Area for range.out is 683240
+Energy/ion lost outside: sputtered 18.1495 transmitted 0 eV/ion
+
+Output of 8680 recoil events at real run time 6298 sec CPU time 3945
+Ways of stopping: 8592 88 0 0 0 0 0 0
+Mean range 1198.41 +- 7.23957 straggle 671.019
+Area for range.out is 686440
+Energy/ion lost outside: sputtered 18.0659 transmitted 0 eV/ion
+
+Output of 8720 recoil events at real run time 6348 sec CPU time 3962
+Ways of stopping: 8632 88 0 0 0 0 0 0
+Mean range 1198.09 +- 7.22046 straggle 670.803
+Area for range.out is 689640
+Energy/ion lost outside: sputtered 17.983 transmitted 0 eV/ion
+
+Output of 8760 recoil events at real run time 6395 sec CPU time 3980
+Ways of stopping: 8671 89 0 0 0 0 0 0
+Mean range 1198.28 +- 7.20097 straggle 670.503
+Area for range.out is 692760
+Energy/ion lost outside: sputtered 18.1661 transmitted 0 eV/ion
+
+Output of 8800 recoil events at real run time 6437 sec CPU time 3997
+Ways of stopping: 8711 89 0 0 0 0 0 0
+Mean range 1197.54 +- 7.18328 straggle 670.397
+Area for range.out is 695960
+Energy/ion lost outside: sputtered 18.0835 transmitted 0 eV/ion
+
+Output of 8840 recoil events at real run time 6478 sec CPU time 4014
+Ways of stopping: 8749 91 0 0 0 0 0 0
+Mean range 1197.69 +- 7.16908 straggle 670.53
+Area for range.out is 699000
+Energy/ion lost outside: sputtered 18.7409 transmitted 0 eV/ion
+
+Output of 8880 recoil events at real run time 6528 sec CPU time 4031
+Ways of stopping: 8788 92 0 0 0 0 0 0
+Mean range 1197.29 +- 7.15242 straggle 670.46
+Area for range.out is 702120
+Energy/ion lost outside: sputtered 18.8661 transmitted 0 eV/ion
+
+Output of 8920 recoil events at real run time 6580 sec CPU time 4050
+Ways of stopping: 8828 92 0 0 0 0 0 0
+Mean range 1197.92 +- 7.13602 straggle 670.445
+Area for range.out is 705320
+Energy/ion lost outside: sputtered 18.7815 transmitted 0 eV/ion
+
+Output of 8960 recoil events at real run time 6624 sec CPU time 4066
+Ways of stopping: 8868 92 0 0 0 0 0 0
+Mean range 1197.22 +- 7.12157 straggle 670.601
+Area for range.out is 708520
+Energy/ion lost outside: sputtered 18.6976 transmitted 0 eV/ion
+
+Output of 9000 recoil events at real run time 6673 sec CPU time 4083
+Ways of stopping: 8908 92 0 0 0 0 0 0
+Mean range 1196.69 +- 7.10004 straggle 670.079
+Area for range.out is 711720
+Energy/ion lost outside: sputtered 18.6145 transmitted 0 eV/ion
+
+Output of 9040 recoil events at real run time 6718 sec CPU time 4100
+Ways of stopping: 8948 92 0 0 0 0 0 0
+Mean range 1196.3 +- 7.08163 straggle 669.841
+Area for range.out is 714920
+Energy/ion lost outside: sputtered 18.5321 transmitted 0 eV/ion
+
+Output of 9080 recoil events at real run time 6777 sec CPU time 4119
+Ways of stopping: 8988 92 0 0 0 0 0 0
+Mean range 1196.72 +- 7.06748 straggle 669.995
+Area for range.out is 718120
+Energy/ion lost outside: sputtered 18.4505 transmitted 0 eV/ion
+
+Output of 9120 recoil events at real run time 6825 sec CPU time 4137
+Ways of stopping: 9028 92 0 0 0 0 0 0
+Mean range 1196.92 +- 7.04798 straggle 669.633
+Area for range.out is 721320
+Energy/ion lost outside: sputtered 18.3696 transmitted 0 eV/ion
+
+Output of 9160 recoil events at real run time 6871 sec CPU time 4155
+Ways of stopping: 9067 93 0 0 0 0 0 0
+Mean range 1197.21 +- 7.03565 straggle 669.903
+Area for range.out is 724440
+Energy/ion lost outside: sputtered 18.6209 transmitted 0 eV/ion
+
+Output of 9200 recoil events at real run time 6922 sec CPU time 4175
+Ways of stopping: 9107 93 0 0 0 0 0 0
+Mean range 1197.79 +- 7.02217 straggle 670.093
+Area for range.out is 727640
+Energy/ion lost outside: sputtered 18.5399 transmitted 0 eV/ion
+
+Output of 9240 recoil events at real run time 6998 sec CPU time 4195
+Ways of stopping: 9147 93 0 0 0 0 0 0
+Mean range 1198.76 +- 7.0109 straggle 670.485
+Area for range.out is 730840
+Energy/ion lost outside: sputtered 18.4597 transmitted 0 eV/ion
+
+Output of 9280 recoil events at real run time 7086 sec CPU time 4213
+Ways of stopping: 9187 93 0 0 0 0 0 0
+Mean range 1198.4 +- 6.99037 straggle 669.982
+Area for range.out is 734040
+Energy/ion lost outside: sputtered 18.3801 transmitted 0 eV/ion
+
+Output of 9320 recoil events at real run time 7174 sec CPU time 4230
+Ways of stopping: 9227 93 0 0 0 0 0 0
+Mean range 1198.21 +- 6.97762 straggle 670.215
+Area for range.out is 737200
+Energy/ion lost outside: sputtered 18.3012 transmitted 0 eV/ion
+
+Output of 9360 recoil events at real run time 7267 sec CPU time 4248
+Ways of stopping: 9267 93 0 0 0 0 0 0
+Mean range 1198.39 +- 6.96368 straggle 670.324
+Area for range.out is 740400
+Energy/ion lost outside: sputtered 18.223 transmitted 0 eV/ion
+
+Output of 9400 recoil events at real run time 7340 sec CPU time 4266
+Ways of stopping: 9306 94 0 0 0 0 0 0
+Mean range 1198.22 +- 6.94905 straggle 670.322
+Area for range.out is 743520
+Energy/ion lost outside: sputtered 18.3222 transmitted 0 eV/ion
+
+Output of 9440 recoil events at real run time 7421 sec CPU time 4284
+Ways of stopping: 9346 94 0 0 0 0 0 0
+Mean range 1198.28 +- 6.93251 straggle 670.163
+Area for range.out is 746680
+Energy/ion lost outside: sputtered 18.2446 transmitted 0 eV/ion
+
+Output of 9480 recoil events at real run time 7506 sec CPU time 4302
+Ways of stopping: 9385 95 0 0 0 0 0 0
+Mean range 1198.65 +- 6.9205 straggle 670.396
+Area for range.out is 749800
+Energy/ion lost outside: sputtered 18.4148 transmitted 0 eV/ion
+
+Output of 9520 recoil events at real run time 7608 sec CPU time 4321
+Ways of stopping: 9425 95 0 0 0 0 0 0
+Mean range 1199.08 +- 6.90666 straggle 670.48
+Area for range.out is 753000
+Energy/ion lost outside: sputtered 18.3375 transmitted 0 eV/ion
+
+Output of 9560 recoil events at real run time 7686 sec CPU time 4338
+Ways of stopping: 9465 95 0 0 0 0 0 0
+Mean range 1198.76 +- 6.89296 straggle 670.569
+Area for range.out is 756160
+Energy/ion lost outside: sputtered 18.2607 transmitted 0 eV/ion
+
+Output of 9600 recoil events at real run time 7780 sec CPU time 4356
+Ways of stopping: 9505 95 0 0 0 0 0 0
+Mean range 1198.86 +- 6.87925 straggle 670.647
+Area for range.out is 759360
+Energy/ion lost outside: sputtered 18.1846 transmitted 0 eV/ion
+
+Output of 9640 recoil events at real run time 7849 sec CPU time 4372
+Ways of stopping: 9545 95 0 0 0 0 0 0
+Mean range 1197.97 +- 6.86227 straggle 670.398
+Area for range.out is 762560
+Energy/ion lost outside: sputtered 18.1092 transmitted 0 eV/ion
+
+Output of 9680 recoil events at real run time 7940 sec CPU time 4392
+Ways of stopping: 9585 95 0 0 0 0 0 0
+Mean range 1198.73 +- 6.85368 straggle 670.96
+Area for range.out is 765760
+Energy/ion lost outside: sputtered 18.0344 transmitted 0 eV/ion
+
+Output of 9720 recoil events at real run time 8027 sec CPU time 4411
+Ways of stopping: 9625 95 0 0 0 0 0 0
+Mean range 1199.38 +- 6.83943 straggle 670.962
+Area for range.out is 768960
+Energy/ion lost outside: sputtered 17.9601 transmitted 0 eV/ion
+
+Output of 9760 recoil events at real run time 8092 sec CPU time 4428
+Ways of stopping: 9665 95 0 0 0 0 0 0
+Mean range 1198.58 +- 6.82297 straggle 670.736
+Area for range.out is 772160
+Energy/ion lost outside: sputtered 17.8865 transmitted 0 eV/ion
+
+Output of 9800 recoil events at real run time 8152 sec CPU time 4445
+Ways of stopping: 9705 95 0 0 0 0 0 0
+Mean range 1198.28 +- 6.80963 straggle 670.809
+Area for range.out is 775360
+Energy/ion lost outside: sputtered 17.8135 transmitted 0 eV/ion
+
+Output of 9840 recoil events at real run time 8224 sec CPU time 4463
+Ways of stopping: 9745 95 0 0 0 0 0 0
+Mean range 1198.11 +- 6.79535 straggle 670.781
+Area for range.out is 778520
+Energy/ion lost outside: sputtered 17.7411 transmitted 0 eV/ion
+
+Output of 9880 recoil events at real run time 8284 sec CPU time 4479
+Ways of stopping: 9785 95 0 0 0 0 0 0
+Mean range 1197.3 +- 6.78022 straggle 670.66
+Area for range.out is 781720
+Energy/ion lost outside: sputtered 17.6693 transmitted 0 eV/ion
+
+Output of 9920 recoil events at real run time 8375 sec CPU time 4498
+Ways of stopping: 9825 95 0 0 0 0 0 0
+Mean range 1198 +- 6.7716 straggle 671.175
+Area for range.out is 784920
+Energy/ion lost outside: sputtered 17.598 transmitted 0 eV/ion
+
+Output of 9960 recoil events at real run time 8444 sec CPU time 4516
+Ways of stopping: 9865 95 0 0 0 0 0 0
+Mean range 1198.04 +- 6.75657 straggle 671.046
+Area for range.out is 788120
+Energy/ion lost outside: sputtered 17.5274 transmitted 0 eV/ion
+
+Output of 10000 recoil events at real run time 8514 sec CPU time 4533
+Ways of stopping: 9905 95 0 0 0 0 0 0
+Mean range 1197.59 +- 6.74396 straggle 671.151
+Area for range.out is 791320
+Energy/ion lost outside: sputtered 17.4573 transmitted 0 eV/ion
+
+Output of 10040 recoil events at real run time 8597 sec CPU time 4551
+Ways of stopping: 9944 96 0 0 0 0 0 0
+Mean range 1197.84 +- 6.73015 straggle 671.094
+Area for range.out is 794440
+Energy/ion lost outside: sputtered 17.7922 transmitted 0 eV/ion
+
+Output of 10080 recoil events at real run time 8664 sec CPU time 4568
+Ways of stopping: 9984 96 0 0 0 0 0 0
+Mean range 1197.38 +- 6.71543 straggle 670.972
+Area for range.out is 797640
+Energy/ion lost outside: sputtered 17.7216 transmitted 0 eV/ion
+
+Output of 10120 recoil events at real run time 8746 sec CPU time 4586
+Ways of stopping: 10023 97 0 0 0 0 0 0
+Mean range 1197.52 +- 6.70203 straggle 670.939
+Area for range.out is 800760
+Energy/ion lost outside: sputtered 17.7693 transmitted 0 eV/ion
+
+Output of 10160 recoil events at real run time 8814 sec CPU time 4603
+Ways of stopping: 10063 97 0 0 0 0 0 0
+Mean range 1197.29 +- 6.68464 straggle 670.533
+Area for range.out is 803960
+Energy/ion lost outside: sputtered 17.6994 transmitted 0 eV/ion
+
+Output of 10200 recoil events at real run time 8877 sec CPU time 4620
+Ways of stopping: 10102 98 0 0 0 0 0 0
+Mean range 1197.19 +- 6.66744 straggle 670.102
+Area for range.out is 807080
+Energy/ion lost outside: sputtered 17.6333 transmitted 0 eV/ion
+
+Output of 10240 recoil events at real run time 8954 sec CPU time 4637
+Ways of stopping: 10141 99 0 0 0 0 0 0
+Mean range 1196.86 +- 6.65217 straggle 669.858
+Area for range.out is 810160
+Energy/ion lost outside: sputtered 17.6534 transmitted 0 eV/ion
+
+Output of 10280 recoil events at real run time 9024 sec CPU time 4656
+Ways of stopping: 10181 99 0 0 0 0 0 0
+Mean range 1197.27 +- 6.64268 straggle 670.22
+Area for range.out is 813360
+Energy/ion lost outside: sputtered 17.5847 transmitted 0 eV/ion
+
+Output of 10320 recoil events at real run time 9093 sec CPU time 4674
+Ways of stopping: 10220 100 0 0 0 0 0 0
+Mean range 1197.28 +- 6.63001 straggle 670.222
+Area for range.out is 816480
+Energy/ion lost outside: sputtered 17.6851 transmitted 0 eV/ion
+
+Output of 10360 recoil events at real run time 9153 sec CPU time 4691
+Ways of stopping: 10258 102 0 0 0 0 0 0
+Mean range 1197.09 +- 6.61633 straggle 670.081
+Area for range.out is 819520
+Energy/ion lost outside: sputtered 17.8578 transmitted 0 eV/ion
+
+Output of 10400 recoil events at real run time 9217 sec CPU time 4708
+Ways of stopping: 10298 102 0 0 0 0 0 0
+Mean range 1196.81 +- 6.60143 straggle 669.874
+Area for range.out is 822680
+Energy/ion lost outside: sputtered 17.7891 transmitted 0 eV/ion
+
+Output of 10440 recoil events at real run time 9284 sec CPU time 4724
+Ways of stopping: 10338 102 0 0 0 0 0 0
+Mean range 1196.13 +- 6.5851 straggle 669.514
+Area for range.out is 825880
+Energy/ion lost outside: sputtered 17.721 transmitted 0 eV/ion
+
+Output of 10480 recoil events at real run time 9336 sec CPU time 4739
+Ways of stopping: 10378 102 0 0 0 0 0 0
+Mean range 1195.16 +- 6.57019 straggle 669.289
+Area for range.out is 829080
+Energy/ion lost outside: sputtered 17.6534 transmitted 0 eV/ion
+
+Output of 10520 recoil events at real run time 9399 sec CPU time 4753
+Ways of stopping: 10417 103 0 0 0 0 0 0
+Mean range 1194.04 +- 6.5591 straggle 669.414
+Area for range.out is 832200
+Energy/ion lost outside: sputtered 18.1122 transmitted 0 eV/ion
+
+Output of 10560 recoil events at real run time 9480 sec CPU time 4771
+Ways of stopping: 10457 103 0 0 0 0 0 0
+Mean range 1194.15 +- 6.54341 straggle 669.094
+Area for range.out is 835400
+Energy/ion lost outside: sputtered 18.0436 transmitted 0 eV/ion
+
+Output of 10600 recoil events at real run time 9560 sec CPU time 4789
+Ways of stopping: 10496 104 0 0 0 0 0 0
+Mean range 1194.17 +- 6.52844 straggle 668.807
+Area for range.out is 838520
+Energy/ion lost outside: sputtered 18.1656 transmitted 0 eV/ion
+
+Output of 10640 recoil events at real run time 9644 sec CPU time 4806
+Ways of stopping: 10536 104 0 0 0 0 0 0
+Mean range 1193.87 +- 6.51448 straggle 668.647
+Area for range.out is 841720
+Energy/ion lost outside: sputtered 18.0973 transmitted 0 eV/ion
+
+Output of 10680 recoil events at real run time 9712 sec CPU time 4822
+Ways of stopping: 10576 104 0 0 0 0 0 0
+Mean range 1192.93 +- 6.50152 straggle 668.582
+Area for range.out is 844920
+Energy/ion lost outside: sputtered 18.0295 transmitted 0 eV/ion
+
+Output of 10720 recoil events at real run time 9785 sec CPU time 4839
+Ways of stopping: 10615 105 0 0 0 0 0 0
+Mean range 1192.5 +- 6.48914 straggle 668.539
+Area for range.out is 848040
+Energy/ion lost outside: sputtered 17.9819 transmitted 0 eV/ion
+
+Output of 10760 recoil events at real run time 9875 sec CPU time 4859
+Ways of stopping: 10655 105 0 0 0 0 0 0
+Mean range 1193.26 +- 6.47991 straggle 668.845
+Area for range.out is 851240
+Energy/ion lost outside: sputtered 17.9151 transmitted 0 eV/ion
+
+Output of 10800 recoil events at real run time 9952 sec CPU time 4877
+Ways of stopping: 10695 105 0 0 0 0 0 0
+Mean range 1193.46 +- 6.47159 straggle 669.239
+Area for range.out is 854440
+Energy/ion lost outside: sputtered 17.8487 transmitted 0 eV/ion
+
+Output of 10840 recoil events at real run time 10020 sec CPU time 4894
+Ways of stopping: 10735 105 0 0 0 0 0 0
+Mean range 1193.4 +- 6.46069 straggle 669.36
+Area for range.out is 857640
+Energy/ion lost outside: sputtered 17.7828 transmitted 0 eV/ion
+
+Output of 10880 recoil events at real run time 10085 sec CPU time 4911
+Ways of stopping: 10773 107 0 0 0 0 0 0
+Mean range 1192.87 +- 6.44649 straggle 669.07
+Area for range.out is 860680
+Energy/ion lost outside: sputtered 17.9544 transmitted 0 eV/ion
+
+Output of 10920 recoil events at real run time 10151 sec CPU time 4930
+Ways of stopping: 10813 107 0 0 0 0 0 0
+Mean range 1193.13 +- 6.43512 straggle 669.129
+Area for range.out is 863880
+Energy/ion lost outside: sputtered 17.8886 transmitted 0 eV/ion
+
+Output of 10960 recoil events at real run time 10219 sec CPU time 4947
+Ways of stopping: 10851 109 0 0 0 0 0 0
+Mean range 1192.99 +- 6.42386 straggle 669.131
+Area for range.out is 866920
+Energy/ion lost outside: sputtered 18.0704 transmitted 0 eV/ion
+
+Output of 11000 recoil events at real run time 10283 sec CPU time 4964
+Ways of stopping: 10891 109 0 0 0 0 0 0
+Mean range 1192.89 +- 6.41108 straggle 669.029
+Area for range.out is 870120
+Energy/ion lost outside: sputtered 18.0047 transmitted 0 eV/ion
+
+Output of 11040 recoil events at real run time 10342 sec CPU time 4982
+Ways of stopping: 10930 110 0 0 0 0 0 0
+Mean range 1192.7 +- 6.40275 straggle 669.355
+Area for range.out is 873240
+Energy/ion lost outside: sputtered 18.2579 transmitted 0 eV/ion
+
+Output of 11080 recoil events at real run time 10423 sec CPU time 5001
+Ways of stopping: 10970 110 0 0 0 0 0 0
+Mean range 1193.18 +- 6.39307 straggle 669.566
+Area for range.out is 876440
+Energy/ion lost outside: sputtered 18.192 transmitted 0 eV/ion
+
+Output of 11120 recoil events at real run time 10501 sec CPU time 5019
+Ways of stopping: 11009 111 0 0 0 0 0 0
+Mean range 1193.35 +- 6.37967 straggle 669.349
+Area for range.out is 879560
+Energy/ion lost outside: sputtered 18.3544 transmitted 0 eV/ion
+
+Output of 11160 recoil events at real run time 10569 sec CPU time 5037
+Ways of stopping: 11049 111 0 0 0 0 0 0
+Mean range 1193.67 +- 6.36792 straggle 669.329
+Area for range.out is 882760
+Energy/ion lost outside: sputtered 18.2886 transmitted 0 eV/ion
+
+Output of 11200 recoil events at real run time 10635 sec CPU time 5054
+Ways of stopping: 11089 111 0 0 0 0 0 0
+Mean range 1193.41 +- 6.35509 straggle 669.189
+Area for range.out is 885960
+Energy/ion lost outside: sputtered 18.2233 transmitted 0 eV/ion
+
+Output of 11240 recoil events at real run time 10717 sec CPU time 5071
+Ways of stopping: 11129 111 0 0 0 0 0 0
+Mean range 1193.3 +- 6.34723 straggle 669.565
+Area for range.out is 889160
+Energy/ion lost outside: sputtered 18.1584 transmitted 0 eV/ion
+
+Output of 11280 recoil events at real run time 10784 sec CPU time 5088
+Ways of stopping: 11168 112 0 0 0 0 0 0
+Mean range 1192.9 +- 6.33669 straggle 669.624
+Area for range.out is 892240
+Energy/ion lost outside: sputtered 18.3347 transmitted 0 eV/ion
+
+Output of 11320 recoil events at real run time 10863 sec CPU time 5105
+Ways of stopping: 11207 113 0 0 0 0 0 0
+Mean range 1192.96 +- 6.32432 straggle 669.482
+Area for range.out is 895360
+Energy/ion lost outside: sputtered 18.4638 transmitted 0 eV/ion
+
+Output of 11360 recoil events at real run time 10942 sec CPU time 5122
+Ways of stopping: 11246 114 0 0 0 0 0 0
+Mean range 1192.55 +- 6.3118 straggle 669.319
+Area for range.out is 898480
+Energy/ion lost outside: sputtered 18.429 transmitted 0 eV/ion
+
+Output of 11400 recoil events at real run time 11005 sec CPU time 5139
+Ways of stopping: 11285 115 0 0 0 0 0 0
+Mean range 1192.62 +- 6.30103 straggle 669.334
+Area for range.out is 901600
+Energy/ion lost outside: sputtered 18.7612 transmitted 0 eV/ion
+
+Output of 11440 recoil events at real run time 11094 sec CPU time 5158
+Ways of stopping: 11325 115 0 0 0 0 0 0
+Mean range 1192.85 +- 6.28935 straggle 669.277
+Area for range.out is 904800
+Energy/ion lost outside: sputtered 18.6956 transmitted 0 eV/ion
+
+Output of 11480 recoil events at real run time 11159 sec CPU time 5175
+Ways of stopping: 11364 116 0 0 0 0 0 0
+Mean range 1192.64 +- 6.27692 straggle 669.104
+Area for range.out is 907920
+Energy/ion lost outside: sputtered 19.0372 transmitted 0 eV/ion
+
+Output of 11520 recoil events at real run time 11221 sec CPU time 5192
+Ways of stopping: 11403 117 0 0 0 0 0 0
+Mean range 1192.42 +- 6.26617 straggle 669.102
+Area for range.out is 911040
+Energy/ion lost outside: sputtered 19.1327 transmitted 0 eV/ion
+
+Output of 11560 recoil events at real run time 11277 sec CPU time 5206
+Ways of stopping: 11442 118 0 0 0 0 0 0
+Mean range 1191.5 +- 6.25445 straggle 668.992
+Area for range.out is 914160
+Energy/ion lost outside: sputtered 19.203 transmitted 0 eV/ion
+
+Output of 11600 recoil events at real run time 11340 sec CPU time 5224
+Ways of stopping: 11482 118 0 0 0 0 0 0
+Mean range 1191.43 +- 6.24555 straggle 669.207
+Area for range.out is 917360
+Energy/ion lost outside: sputtered 19.1368 transmitted 0 eV/ion
+
+Output of 11640 recoil events at real run time 11402 sec CPU time 5242
+Ways of stopping: 11522 118 0 0 0 0 0 0
+Mean range 1191.47 +- 6.23419 straggle 669.153
+Area for range.out is 920560
+Energy/ion lost outside: sputtered 19.071 transmitted 0 eV/ion
+
+Output of 11680 recoil events at real run time 11477 sec CPU time 5261
+Ways of stopping: 11562 118 0 0 0 0 0 0
+Mean range 1192.09 +- 6.2244 straggle 669.26
+Area for range.out is 923760
+Energy/ion lost outside: sputtered 19.0057 transmitted 0 eV/ion
+
+Output of 11720 recoil events at real run time 11576 sec CPU time 5282
+Ways of stopping: 11602 118 0 0 0 0 0 0
+Mean range 1193.02 +- 6.21699 straggle 669.62
+Area for range.out is 926960
+Energy/ion lost outside: sputtered 18.9409 transmitted 0 eV/ion
+
+Output of 11760 recoil events at real run time 11645 sec CPU time 5300
+Ways of stopping: 11642 118 0 0 0 0 0 0
+Mean range 1192.87 +- 6.20807 straggle 669.81
+Area for range.out is 930160
+Energy/ion lost outside: sputtered 18.8764 transmitted 0 eV/ion
+
+Output of 11800 recoil events at real run time 11720 sec CPU time 5318
+Ways of stopping: 11679 121 0 0 0 0 0 0
+Mean range 1193.3 +- 6.20005 straggle 670.008
+Area for range.out is 933120
+Energy/ion lost outside: sputtered 19.7116 transmitted 0 eV/ion
+
+Output of 11840 recoil events at real run time 11790 sec CPU time 5335
+Ways of stopping: 11718 122 0 0 0 0 0 0
+Mean range 1193.27 +- 6.19035 straggle 670.075
+Area for range.out is 936240
+Energy/ion lost outside: sputtered 19.9346 transmitted 0 eV/ion
+
+Output of 11880 recoil events at real run time 11861 sec CPU time 5353
+Ways of stopping: 11758 122 0 0 0 0 0 0
+Mean range 1193.08 +- 6.17737 straggle 669.81
+Area for range.out is 939440
+Energy/ion lost outside: sputtered 19.8675 transmitted 0 eV/ion
+
+Output of 11920 recoil events at real run time 11931 sec CPU time 5370
+Ways of stopping: 11798 122 0 0 0 0 0 0
+Mean range 1192.89 +- 6.165 straggle 669.605
+Area for range.out is 942640
+Energy/ion lost outside: sputtered 19.8009 transmitted 0 eV/ion
+
+Output of 11960 recoil events at real run time 11995 sec CPU time 5384
+Ways of stopping: 11838 122 0 0 0 0 0 0
+Mean range 1191.87 +- 6.15446 straggle 669.593
+Area for range.out is 945800
+Energy/ion lost outside: sputtered 19.7346 transmitted 0 eV/ion
+
+Output of 12000 recoil events at real run time 12056 sec CPU time 5401
+Ways of stopping: 11878 122 0 0 0 0 0 0
+Mean range 1191.48 +- 6.14284 straggle 669.457
+Area for range.out is 949000
+Energy/ion lost outside: sputtered 19.6689 transmitted 0 eV/ion
+
+Output of 12040 recoil events at real run time 12109 sec CPU time 5419
+Ways of stopping: 11918 122 0 0 0 0 0 0
+Mean range 1191.48 +- 6.13732 straggle 669.981
+Area for range.out is 952200
+Energy/ion lost outside: sputtered 19.6035 transmitted 0 eV/ion
+
+Output of 12080 recoil events at real run time 12162 sec CPU time 5438
+Ways of stopping: 11957 123 0 0 0 0 0 0
+Mean range 1191.98 +- 6.12932 straggle 670.201
+Area for range.out is 955280
+Energy/ion lost outside: sputtered 19.9886 transmitted 0 eV/ion
+
+Output of 12120 recoil events at real run time 12216 sec CPU time 5457
+Ways of stopping: 11997 123 0 0 0 0 0 0
+Mean range 1192.04 +- 6.11759 straggle 670.037
+Area for range.out is 958480
+Energy/ion lost outside: sputtered 19.9227 transmitted 0 eV/ion
+
+Output of 12160 recoil events at real run time 12271 sec CPU time 5475
+Ways of stopping: 12035 125 0 0 0 0 0 0
+Mean range 1192.46 +- 6.10827 straggle 670.075
+Area for range.out is 961520
+Energy/ion lost outside: sputtered 20.2954 transmitted 0 eV/ion
+
+Output of 12200 recoil events at real run time 12329 sec CPU time 5493
+Ways of stopping: 12075 125 0 0 0 0 0 0
+Mean range 1192.37 +- 6.09907 straggle 670.176
+Area for range.out is 964720
+Energy/ion lost outside: sputtered 20.2289 transmitted 0 eV/ion
+
+Output of 12240 recoil events at real run time 12381 sec CPU time 5511
+Ways of stopping: 12114 126 0 0 0 0 0 0
+Mean range 1192.7 +- 6.09154 straggle 670.43
+Area for range.out is 967840
+Energy/ion lost outside: sputtered 20.4329 transmitted 0 eV/ion
+
+Output of 12280 recoil events at real run time 12428 sec CPU time 5527
+Ways of stopping: 12154 126 0 0 0 0 0 0
+Mean range 1191.9 +- 6.08167 straggle 670.447
+Area for range.out is 971040
+Energy/ion lost outside: sputtered 20.3664 transmitted 0 eV/ion
+
+Output of 12320 recoil events at real run time 12482 sec CPU time 5545
+Ways of stopping: 12194 126 0 0 0 0 0 0
+Mean range 1192.07 +- 6.07193 straggle 670.474
+Area for range.out is 974240
+Energy/ion lost outside: sputtered 20.3003 transmitted 0 eV/ion
+
+Output of 12360 recoil events at real run time 12547 sec CPU time 5563
+Ways of stopping: 12234 126 0 0 0 0 0 0
+Mean range 1192.23 +- 6.06316 straggle 670.603
+Area for range.out is 977440
+Energy/ion lost outside: sputtered 20.2346 transmitted 0 eV/ion
+
+Output of 12400 recoil events at real run time 12594 sec CPU time 5582
+Ways of stopping: 12274 126 0 0 0 0 0 0
+Mean range 1192.56 +- 6.05526 straggle 670.823
+Area for range.out is 980640
+Energy/ion lost outside: sputtered 20.1693 transmitted 0 eV/ion
+
+Output of 12440 recoil events at real run time 12653 sec CPU time 5600
+Ways of stopping: 12314 126 0 0 0 0 0 0
+Mean range 1192.69 +- 6.04619 straggle 670.909
+Area for range.out is 983840
+Energy/ion lost outside: sputtered 20.1044 transmitted 0 eV/ion
+
+Output of 12480 recoil events at real run time 12712 sec CPU time 5617
+Ways of stopping: 12353 127 0 0 0 0 0 0
+Mean range 1192.68 +- 6.03547 straggle 670.779
+Area for range.out is 986960
+Energy/ion lost outside: sputtered 20.4802 transmitted 0 eV/ion
+
+Output of 12520 recoil events at real run time 12766 sec CPU time 5634
+Ways of stopping: 12392 128 0 0 0 0 0 0
+Mean range 1192.74 +- 6.02403 straggle 670.564
+Area for range.out is 990080
+Energy/ion lost outside: sputtered 20.9052 transmitted 0 eV/ion
+
+Output of 12560 recoil events at real run time 12818 sec CPU time 5652
+Ways of stopping: 12431 129 0 0 0 0 0 0
+Mean range 1192.71 +- 6.01552 straggle 670.67
+Area for range.out is 993200
+Energy/ion lost outside: sputtered 21.1702 transmitted 0 eV/ion
+
+Output of 12600 recoil events at real run time 12873 sec CPU time 5670
+Ways of stopping: 12471 129 0 0 0 0 0 0
+Mean range 1192.65 +- 6.00454 straggle 670.522
+Area for range.out is 996400
+Energy/ion lost outside: sputtered 21.103 transmitted 0 eV/ion
+
+Output of 12640 recoil events at real run time 12932 sec CPU time 5690
+Ways of stopping: 12511 129 0 0 0 0 0 0
+Mean range 1193.08 +- 5.99294 straggle 670.299
+Area for range.out is 999600
+Energy/ion lost outside: sputtered 21.0363 transmitted 0 eV/ion
+
+Output of 12680 recoil events at real run time 12978 sec CPU time 5707
+Ways of stopping: 12549 131 0 0 0 0 0 0
+Mean range 1192.76 +- 5.98372 straggle 670.283
+Area for range.out is 1.00264e+06
+Energy/ion lost outside: sputtered 21.1154 transmitted 0 eV/ion
+
+Output of 12720 recoil events at real run time 13029 sec CPU time 5724
+Ways of stopping: 12586 134 0 0 0 0 0 0
+Mean range 1192.94 +- 5.97535 straggle 670.331
+Area for range.out is 1.0056e+06
+Energy/ion lost outside: sputtered 21.4095 transmitted 0 eV/ion
+
+Output of 12760 recoil events at real run time 13084 sec CPU time 5743
+Ways of stopping: 12626 134 0 0 0 0 0 0
+Mean range 1193.32 +- 5.96839 straggle 670.615
+Area for range.out is 1.0088e+06
+Energy/ion lost outside: sputtered 21.3424 transmitted 0 eV/ion
+
+Output of 12800 recoil events at real run time 13133 sec CPU time 5762
+Ways of stopping: 12666 134 0 0 0 0 0 0
+Mean range 1193.62 +- 5.95879 straggle 670.595
+Area for range.out is 1.012e+06
+Energy/ion lost outside: sputtered 21.2757 transmitted 0 eV/ion
+
+Output of 12840 recoil events at real run time 13187 sec CPU time 5780
+Ways of stopping: 12706 134 0 0 0 0 0 0
+Mean range 1193.64 +- 5.94937 straggle 670.592
+Area for range.out is 1.0152e+06
+Energy/ion lost outside: sputtered 21.2094 transmitted 0 eV/ion
+
+Output of 12880 recoil events at real run time 13239 sec CPU time 5798
+Ways of stopping: 12746 134 0 0 0 0 0 0
+Mean range 1193.46 +- 5.93905 straggle 670.482
+Area for range.out is 1.0184e+06
+Energy/ion lost outside: sputtered 21.1435 transmitted 0 eV/ion
+
+Output of 12920 recoil events at real run time 13294 sec CPU time 5816
+Ways of stopping: 12786 134 0 0 0 0 0 0
+Mean range 1193.36 +- 5.92951 straggle 670.455
+Area for range.out is 1.02156e+06
+Energy/ion lost outside: sputtered 21.0781 transmitted 0 eV/ion
+
+Output of 12960 recoil events at real run time 13342 sec CPU time 5832
+Ways of stopping: 12826 134 0 0 0 0 0 0
+Mean range 1192.74 +- 5.92095 straggle 670.532
+Area for range.out is 1.02476e+06
+Energy/ion lost outside: sputtered 21.013 transmitted 0 eV/ion
+
+Output of 13000 recoil events at real run time 13401 sec CPU time 5850
+Ways of stopping: 12866 134 0 0 0 0 0 0
+Mean range 1192.8 +- 5.91211 straggle 670.575
+Area for range.out is 1.02796e+06
+Energy/ion lost outside: sputtered 20.9484 transmitted 0 eV/ion
+
+Output of 13040 recoil events at real run time 13449 sec CPU time 5868
+Ways of stopping: 12904 136 0 0 0 0 0 0
+Mean range 1193.18 +- 5.90303 straggle 670.533
+Area for range.out is 1.031e+06
+Energy/ion lost outside: sputtered 21.197 transmitted 0 eV/ion
+
+Output of 13080 recoil events at real run time 13511 sec CPU time 5887
+Ways of stopping: 12943 137 0 0 0 0 0 0
+Mean range 1193.33 +- 5.89611 straggle 670.759
+Area for range.out is 1.03408e+06
+Energy/ion lost outside: sputtered 21.3437 transmitted 0 eV/ion
+
+Output of 13120 recoil events at real run time 13564 sec CPU time 5903
+Ways of stopping: 12982 138 0 0 0 0 0 0
+Mean range 1193.11 +- 5.88816 straggle 670.862
+Area for range.out is 1.0372e+06
+Energy/ion lost outside: sputtered 21.4362 transmitted 0 eV/ion
+
+Output of 13160 recoil events at real run time 13619 sec CPU time 5922
+Ways of stopping: 13020 140 0 0 0 0 0 0
+Mean range 1193.35 +- 5.87782 straggle 670.664
+Area for range.out is 1.04024e+06
+Energy/ion lost outside: sputtered 21.8242 transmitted 0 eV/ion
+
+Output of 13200 recoil events at real run time 13674 sec CPU time 5941
+Ways of stopping: 13060 140 0 0 0 0 0 0
+Mean range 1193.85 +- 5.87069 straggle 670.879
+Area for range.out is 1.04344e+06
+Energy/ion lost outside: sputtered 21.7581 transmitted 0 eV/ion
+
+Output of 13240 recoil events at real run time 13727 sec CPU time 5958
+Ways of stopping: 13100 140 0 0 0 0 0 0
+Mean range 1193.41 +- 5.86206 straggle 670.918
+Area for range.out is 1.0466e+06
+Energy/ion lost outside: sputtered 21.6923 transmitted 0 eV/ion
+
+Output of 13280 recoil events at real run time 13781 sec CPU time 5974
+Ways of stopping: 13140 140 0 0 0 0 0 0
+Mean range 1192.97 +- 5.85112 straggle 670.688
+Area for range.out is 1.04976e+06
+Energy/ion lost outside: sputtered 21.627 transmitted 0 eV/ion
+
+Output of 13320 recoil events at real run time 13834 sec CPU time 5992
+Ways of stopping: 13179 141 0 0 0 0 0 0
+Mean range 1193.22 +- 5.84289 straggle 670.738
+Area for range.out is 1.05288e+06
+Energy/ion lost outside: sputtered 21.6689 transmitted 0 eV/ion
+
+Output of 13360 recoil events at real run time 13889 sec CPU time 6012
+Ways of stopping: 13217 143 0 0 0 0 0 0
+Mean range 1193.77 +- 5.83289 straggle 670.554
+Area for range.out is 1.05592e+06
+Energy/ion lost outside: sputtered 21.8877 transmitted 0 eV/ion
+
+Output of 13400 recoil events at real run time 13935 sec CPU time 6029
+Ways of stopping: 13256 144 0 0 0 0 0 0
+Mean range 1193.73 +- 5.82586 straggle 670.733
+Area for range.out is 1.05904e+06
+Energy/ion lost outside: sputtered 21.8495 transmitted 0 eV/ion
+
+Output of 13440 recoil events at real run time 13994 sec CPU time 6049
+Ways of stopping: 13295 145 0 0 0 0 0 0
+Mean range 1194.29 +- 5.82005 straggle 671.049
+Area for range.out is 1.06216e+06
+Energy/ion lost outside: sputtered 21.8113 transmitted 0 eV/ion
+
+Output of 13480 recoil events at real run time 14044 sec CPU time 6066
+Ways of stopping: 13335 145 0 0 0 0 0 0
+Mean range 1194.16 +- 5.81108 straggle 671.022
+Area for range.out is 1.06536e+06
+Energy/ion lost outside: sputtered 21.7466 transmitted 0 eV/ion
+
+Output of 13520 recoil events at real run time 14092 sec CPU time 6083
+Ways of stopping: 13375 145 0 0 0 0 0 0
+Mean range 1193.92 +- 5.80088 straggle 670.849
+Area for range.out is 1.06856e+06
+Energy/ion lost outside: sputtered 21.6822 transmitted 0 eV/ion
+
+Output of 13560 recoil events at real run time 14145 sec CPU time 6100
+Ways of stopping: 13413 147 0 0 0 0 0 0
+Mean range 1193.82 +- 5.79261 straggle 670.844
+Area for range.out is 1.0716e+06
+Energy/ion lost outside: sputtered 21.9238 transmitted 0 eV/ion
+
+Output of 13600 recoil events at real run time 14198 sec CPU time 6116
+Ways of stopping: 13453 147 0 0 0 0 0 0
+Mean range 1193.3 +- 5.7813 straggle 670.532
+Area for range.out is 1.0748e+06
+Energy/ion lost outside: sputtered 21.8593 transmitted 0 eV/ion
+
+Output of 13640 recoil events at real run time 14249 sec CPU time 6133
+Ways of stopping: 13492 148 0 0 0 0 0 0
+Mean range 1192.89 +- 5.77155 straggle 670.37
+Area for range.out is 1.07792e+06
+Energy/ion lost outside: sputtered 21.8144 transmitted 0 eV/ion
+
+Output of 13680 recoil events at real run time 14301 sec CPU time 6151
+Ways of stopping: 13531 149 0 0 0 0 0 0
+Mean range 1193.17 +- 5.76297 straggle 670.34
+Area for range.out is 1.08104e+06
+Energy/ion lost outside: sputtered 22.0325 transmitted 0 eV/ion
+
+Output of 13720 recoil events at real run time 14355 sec CPU time 6168
+Ways of stopping: 13569 151 0 0 0 0 0 0
+Mean range 1193.04 +- 5.75547 straggle 670.407
+Area for range.out is 1.08408e+06
+Energy/ion lost outside: sputtered 22.2044 transmitted 0 eV/ion
+
+Output of 13760 recoil events at real run time 14411 sec CPU time 6186
+Ways of stopping: 13609 151 0 0 0 0 0 0
+Mean range 1193.02 +- 5.74574 straggle 670.26
+Area for range.out is 1.08728e+06
+Energy/ion lost outside: sputtered 22.1399 transmitted 0 eV/ion
+
+Output of 13800 recoil events at real run time 14474 sec CPU time 6205
+Ways of stopping: 13648 152 0 0 0 0 0 0
+Mean range 1193.38 +- 5.73939 straggle 670.478
+Area for range.out is 1.09036e+06
+Energy/ion lost outside: sputtered 22.4486 transmitted 0 eV/ion
+
+Output of 13840 recoil events at real run time 14536 sec CPU time 6222
+Ways of stopping: 13686 154 0 0 0 0 0 0
+Mean range 1193.48 +- 5.73067 straggle 670.391
+Area for range.out is 1.0934e+06
+Energy/ion lost outside: sputtered 22.7951 transmitted 0 eV/ion
+
+Output of 13880 recoil events at real run time 14597 sec CPU time 6242
+Ways of stopping: 13726 154 0 0 0 0 0 0
+Mean range 1193.85 +- 5.72201 straggle 670.355
+Area for range.out is 1.0966e+06
+Energy/ion lost outside: sputtered 22.7294 transmitted 0 eV/ion
+
+Output of 13920 recoil events at real run time 14647 sec CPU time 6259
+Ways of stopping: 13766 154 0 0 0 0 0 0
+Mean range 1193.7 +- 5.71414 straggle 670.408
+Area for range.out is 1.0998e+06
+Energy/ion lost outside: sputtered 22.6641 transmitted 0 eV/ion
+
+Output of 13960 recoil events at real run time 14705 sec CPU time 6278
+Ways of stopping: 13806 154 0 0 0 0 0 0
+Mean range 1194.18 +- 5.70741 straggle 670.59
+Area for range.out is 1.103e+06
+Energy/ion lost outside: sputtered 22.5992 transmitted 0 eV/ion
+
+Output of 14000 recoil events at real run time 14765 sec CPU time 6296
+Ways of stopping: 13845 155 0 0 0 0 0 0
+Mean range 1194.47 +- 5.69933 straggle 670.586
+Area for range.out is 1.10612e+06
+Energy/ion lost outside: sputtered 22.7418 transmitted 0 eV/ion
+
+Output of 14040 recoil events at real run time 14818 sec CPU time 6315
+Ways of stopping: 13885 155 0 0 0 0 0 0
+Mean range 1194.5 +- 5.68889 straggle 670.324
+Area for range.out is 1.10932e+06
+Energy/ion lost outside: sputtered 22.677 transmitted 0 eV/ion
+
+Output of 14080 recoil events at real run time 14875 sec CPU time 6333
+Ways of stopping: 13924 156 0 0 0 0 0 0
+Mean range 1194.99 +- 5.68064 straggle 670.291
+Area for range.out is 1.11244e+06
+Energy/ion lost outside: sputtered 22.9243 transmitted 0 eV/ion
+
+Output of 14120 recoil events at real run time 14927 sec CPU time 6352
+Ways of stopping: 13963 157 0 0 0 0 0 0
+Mean range 1195.29 +- 5.67254 straggle 670.273
+Area for range.out is 1.11556e+06
+Energy/ion lost outside: sputtered 23.0123 transmitted 0 eV/ion
+
+Output of 14160 recoil events at real run time 14972 sec CPU time 6369
+Ways of stopping: 14003 157 0 0 0 0 0 0
+Mean range 1194.7 +- 5.66246 straggle 670.039
+Area for range.out is 1.11876e+06
+Energy/ion lost outside: sputtered 22.9473 transmitted 0 eV/ion
+
+Output of 14200 recoil events at real run time 15027 sec CPU time 6386
+Ways of stopping: 14043 157 0 0 0 0 0 0
+Mean range 1194.39 +- 5.65346 straggle 669.929
+Area for range.out is 1.12188e+06
+Energy/ion lost outside: sputtered 22.8826 transmitted 0 eV/ion
+
+Output of 14240 recoil events at real run time 15075 sec CPU time 6402
+Ways of stopping: 14083 157 0 0 0 0 0 0
+Mean range 1193.97 +- 5.64349 straggle 669.7
+Area for range.out is 1.12508e+06
+Energy/ion lost outside: sputtered 22.8183 transmitted 0 eV/ion
+
+Output of 14280 recoil events at real run time 15126 sec CPU time 6419
+Ways of stopping: 14123 157 0 0 0 0 0 0
+Mean range 1193.95 +- 5.6357 straggle 669.724
+Area for range.out is 1.12828e+06
+Energy/ion lost outside: sputtered 22.7544 transmitted 0 eV/ion
+
+Output of 14320 recoil events at real run time 15187 sec CPU time 6439
+Ways of stopping: 14162 158 0 0 0 0 0 0
+Mean range 1194.29 +- 5.62747 straggle 669.669
+Area for range.out is 1.13136e+06
+Energy/ion lost outside: sputtered 22.8067 transmitted 0 eV/ion
+
+Output of 14360 recoil events at real run time 15234 sec CPU time 6455
+Ways of stopping: 14202 158 0 0 0 0 0 0
+Mean range 1193.96 +- 5.61775 straggle 669.456
+Area for range.out is 1.13456e+06
+Energy/ion lost outside: sputtered 22.7431 transmitted 0 eV/ion
+
+Output of 14400 recoil events at real run time 15287 sec CPU time 6472
+Ways of stopping: 14242 158 0 0 0 0 0 0
+Mean range 1194.03 +- 5.60788 straggle 669.22
+Area for range.out is 1.13776e+06
+Energy/ion lost outside: sputtered 22.68 transmitted 0 eV/ion
+
+Output of 14440 recoil events at real run time 15336 sec CPU time 6488
+Ways of stopping: 14281 159 0 0 0 0 0 0
+Mean range 1193.58 +- 5.59994 straggle 669.186
+Area for range.out is 1.14088e+06
+Energy/ion lost outside: sputtered 22.6872 transmitted 0 eV/ion
+
+Output of 14480 recoil events at real run time 15398 sec CPU time 6507
+Ways of stopping: 14321 159 0 0 0 0 0 0
+Mean range 1193.85 +- 5.59546 straggle 669.588
+Area for range.out is 1.14408e+06
+Energy/ion lost outside: sputtered 22.6246 transmitted 0 eV/ion
+
+Output of 14520 recoil events at real run time 15466 sec CPU time 6526
+Ways of stopping: 14361 159 0 0 0 0 0 0
+Mean range 1194.35 +- 5.58912 straggle 669.762
+Area for range.out is 1.14728e+06
+Energy/ion lost outside: sputtered 22.5622 transmitted 0 eV/ion
+
+Output of 14560 recoil events at real run time 15522 sec CPU time 6543
+Ways of stopping: 14400 160 0 0 0 0 0 0
+Mean range 1194.34 +- 5.58039 straggle 669.623
+Area for range.out is 1.1504e+06
+Energy/ion lost outside: sputtered 22.5659 transmitted 0 eV/ion
+
+Output of 14600 recoil events at real run time 15582 sec CPU time 6562
+Ways of stopping: 14440 160 0 0 0 0 0 0
+Mean range 1194.46 +- 5.57281 straggle 669.643
+Area for range.out is 1.1536e+06
+Energy/ion lost outside: sputtered 22.5041 transmitted 0 eV/ion
+
+Output of 14640 recoil events at real run time 15636 sec CPU time 6580
+Ways of stopping: 14480 160 0 0 0 0 0 0
+Mean range 1194.46 +- 5.56319 straggle 669.412
+Area for range.out is 1.1568e+06
+Energy/ion lost outside: sputtered 22.4426 transmitted 0 eV/ion
+
+Output of 14680 recoil events at real run time 15705 sec CPU time 6598
+Ways of stopping: 14519 161 0 0 0 0 0 0
+Mean range 1194.83 +- 5.55863 straggle 669.763
+Area for range.out is 1.15992e+06
+Energy/ion lost outside: sputtered 22.6813 transmitted 0 eV/ion
+
+Output of 14720 recoil events at real run time 15749 sec CPU time 6615
+Ways of stopping: 14559 161 0 0 0 0 0 0
+Mean range 1194.71 +- 5.55176 straggle 669.856
+Area for range.out is 1.16312e+06
+Energy/ion lost outside: sputtered 22.6197 transmitted 0 eV/ion
+
+Output of 14760 recoil events at real run time 15803 sec CPU time 6634
+Ways of stopping: 14599 161 0 0 0 0 0 0
+Mean range 1194.95 +- 5.5451 straggle 669.971
+Area for range.out is 1.16632e+06
+Energy/ion lost outside: sputtered 22.5584 transmitted 0 eV/ion
+
+Output of 14800 recoil events at real run time 15854 sec CPU time 6651
+Ways of stopping: 14639 161 0 0 0 0 0 0
+Mean range 1194.83 +- 5.5371 straggle 669.921
+Area for range.out is 1.16952e+06
+Energy/ion lost outside: sputtered 22.4974 transmitted 0 eV/ion
+
+Output of 14840 recoil events at real run time 15912 sec CPU time 6670
+Ways of stopping: 14679 161 0 0 0 0 0 0
+Mean range 1195.08 +- 5.52933 straggle 669.894
+Area for range.out is 1.17272e+06
+Energy/ion lost outside: sputtered 22.4367 transmitted 0 eV/ion
+
+Output of 14880 recoil events at real run time 15960 sec CPU time 6687
+Ways of stopping: 14718 162 0 0 0 0 0 0
+Mean range 1194.74 +- 5.5202 straggle 669.676
+Area for range.out is 1.17584e+06
+Energy/ion lost outside: sputtered 22.4298 transmitted 0 eV/ion
+
+Output of 14920 recoil events at real run time 16016 sec CPU time 6704
+Ways of stopping: 14757 163 0 0 0 0 0 0
+Mean range 1194.69 +- 5.51247 straggle 669.623
+Area for range.out is 1.17896e+06
+Energy/ion lost outside: sputtered 22.5905 transmitted 0 eV/ion
+
+Output of 14960 recoil events at real run time 16058 sec CPU time 6721
+Ways of stopping: 14797 163 0 0 0 0 0 0
+Mean range 1194.13 +- 5.50363 straggle 669.455
+Area for range.out is 1.18212e+06
+Energy/ion lost outside: sputtered 22.5301 transmitted 0 eV/ion
+
+Output of 15000 recoil events at real run time 16127 sec CPU time 6741
+Ways of stopping: 14837 163 0 0 0 0 0 0
+Mean range 1194.78 +- 5.49744 straggle 669.605
+Area for range.out is 1.18532e+06
+Energy/ion lost outside: sputtered 22.4701 transmitted 0 eV/ion
+
+
+End of simulation of 15000 events at real run time 16127 sec CPU time 6741
+Output of 15000 recoil events at real run time 16127 sec CPU time 6741
+Ways of stopping: 14837 163 0 0 0 0 0 0
+Mean range 1194.78 +- 5.49744 straggle 669.605
+Area for range.out is 1.18532e+06
+Energy/ion lost outside: sputtered 22.4701 transmitted 0 eV/ion
+
