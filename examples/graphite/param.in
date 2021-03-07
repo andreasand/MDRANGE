@@ -1,0 +1,56 @@
+
+type[0].Z:= 6.0
+type[0].m:= 12.000
+type[1].Z:= 6
+type[1].m:= 12.011
+
+reccalc->E0:= 3000	# Recoil energy 
+reccalc->Atype:= 0	# Recoil atom type
+
+reccalc->Ncalc:= 1000 	# Number of histories
+reccalc->Trange:= 0	# Range type: 0=sz, 1=proj, 2=chord, 3=path
+reccalc->type:= 1	# Recoil calculation type: 1=normal, 2=negative range allowed
+reccalc->Fii0:= 0	# Azimuth angle of the recoil atom
+reccalc->Fiimax:= 360	# is chosen randomly from [Fii0,Fiimax]
+reccalc->Theta0:= 65	# Polar angle of the recoil atom
+reccalc->Thetamax:= 65	# is chosen randomly from [Theta0,Thetamax]
+
+reccalc->Startmin.x:= 2.456	# The starting pos. of the recoil
+reccalc->Startmax.x:= 4.912
+reccalc->Startmin.y:= 2.12696
+reccalc->Startmax.y:= 6.38088
+reccalc->Startmin.z:= -3
+reccalc->Startmax.z:= -3
+
+pot->rep.type[0][1]:= 1
+
+layers->Nlayers:=1
+layers->Natomsmax:= 4320
+layers->Ninistate:= 10
+
+layers->layer[0].debyet:= 1860
+
+physical->debyet:= 1860	#The Debye temp., 0 if N/A
+
+box->Max.x:= 9.824	#The size of the simulation cell
+box->Max.y:= 8.50783
+box->Max.z:= 13.396
+
+box->movelim.x:= 2.456   # Shift used in generating fresh crystal
+box->movelim.y:= 2.12696 # in front of the recoil.
+box->movelim.z:= 3.349
+
+physical->Tini:= 300 # Temperature of the inistate calculation
+time->Timeini:= 300
+gen->seed:= 8374
+
+potcrit->Rmini:= 5.33 # cut-off radiuses for inistate calc.
+potcrit->R0ini:= 4.3
+potcrit->Rmrec:= 4 # cut-off radiuses for recoil calc.
+potcrit->R0rec:= 3
+
+elstop->scale:= 1 # Electronic stopping power scaled by this
+pot->rep.scale:= 1 # Repulsive potential scaled by this
+
+file->output:= 10
+

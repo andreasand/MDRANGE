@@ -1,0 +1,22 @@
+
+The subdirectories here contain a set of sample input files for mdh.
+Once you have compiled mdh, just run it directly in one of the
+directories (no need to use mdsetup or zbl96, since all the input
+files are there already).
+
+  Note that some of the input files have not been created by
+mdsetup, so the input files can look quite different on the first glance.
+The parameter names are the same in all cases, though.
+
+  Summary of example directories:
+
+sisi10		10 keV Si -> Si at 6° tilt, using default parameter values
+hsi1		1 keV H -> Si, straight into 100 channel
+polysi50	50 keV 30 Si -> poly-Si of 500 A grain size
+assi15		15 keV As -> multilayer Si (20 A amorphous surface layer)
+hemo60		60 keV He -> Mo, the electronic stopping scaled with 1.1
+graphite	3 keV H -> graphite, 65° theta, random phi
+
+  Some more notes on these are given in the README files in each
+subdirectory.
+

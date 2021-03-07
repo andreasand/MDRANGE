@@ -1,0 +1,13 @@
+
+  This directory contains the minimal mdh input file; all default
+parameter values except the incident angle are used. This amounts
+to a 10 keV Si -> c-Si simulation, with the universal ZBL 
+repulsive potential, and initial atomic displacements calculated
+from the Mazzone potential at 300 K.
+
+  The electronic stopping power is an experimental Si -> Si stoppping 
+power measured at the Accelerator Laboratory at the University
+of Helsinki [J. Keinonen et. al., APL 60 (1992) 228].
+
+
+

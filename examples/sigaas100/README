@@ -1,0 +1,48 @@
+
+  This directory contains a sample input for 100 keV Si -> GaAs
+implantation. The present input files are for implantation
+straight into the 100 channel. For other angles, change
+the reccalc->Fii and Theta variables. E.g. for a 'random'
+direction try 
+
+reccalc->Fii0:= 30      # Azimuth angle of the recoil atom
+reccalc->Fiimax:= 30    # is chosen randomly from [Fii0,Fiimax]
+reccalc->Theta0:= 7     # Polar angle of the recoil atom
+reccalc->Thetamax:= 7   # is chosen randomly from [Theta0,Thetamax]
+
+  To start  a simulation, just issue the mdh command in this
+directory. 
+
+
+  The interatomic potentials are ab initio potentials calculated
+using the DMol package which should be quite accurate. The
+electronic stopping power elstop.in.expt is an experimental stopping 
+power for Si in Ge. We have found that ions in Ge an GaAs have 
+almost exactly the same stopping, so this stopping should
+be applicable for Si in GaAs as well. Note that the method
+used to determine the stopping has the highest uncertainty
+at low energies. Still, the stopping should be better than what
+TRIM gives.
+
+  More information can be found in the following references.
+Please cite these references if you publish any work using
+the repulsive potential and/or the electronic stopping
+power (considerable work has been put into obtaining them).
+
+@Article{Nor96c,
+  author = 	 "K. Nordlund and N. Runeberg and D. Sundholm",
+  title = 	 "Repulsive interatomic potentials calculated using
+		  Hartree-Fock and density-functional theory methods",
+  year =	 1997,
+  journal =	 "Nucl. Instr. Meth. Phys. Res. B",
+  volume =       132,
+  pages =        45
+}
+
+@article{Kei92,
+	author = " J. Keinonen and K. Arstila  and P. Tikkanen",
+	journal = " Appl. Phys. Lett.",
+	year = 1992,
+	volume = {60},
+	pages = " 228",
+}

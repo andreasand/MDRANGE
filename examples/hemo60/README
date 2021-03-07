@@ -1,0 +1,11 @@
+
+  60 keV He -> poly-Mo,
+  
+  with practically infinite (10^6 A) polycrystalline grain size,
+and 
+
+  Electronic stopping scaled with 1.1
+
+  Repulsive potential used is from DFT calculations 
+[P. Haussalo et. al, NIM B 111 (1996) 1].
+

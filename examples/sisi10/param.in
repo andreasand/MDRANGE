@@ -1,0 +1,6 @@
+
+reccalc->Theta0:= 6.0
+
+layers->layer[0].debyet:= 345
+
+

@@ -1,0 +1,57 @@
+
+type[0].Z:= 2
+type[0].m:= 4.0026
+type[1].Z:= 42
+type[1].m:= 95.94
+
+reccalc->E0:= 60000
+reccalc->Atype:= 0
+reccalc->Ncalc:= 12000
+reccalc->Trange:= 1
+reccalc->type:= 1
+
+reccalc->Fii0:= 0
+reccalc->Fiimax:= 360
+reccalc->Theta0:= 0
+reccalc->Thetamax:= 180
+
+reccalc->Polysize:= 1000000
+reccalc->Polysizesigma:= 2000
+reccalc->Polydeltaangle:= 0.0		# 0.0 means random orientation 
+
+reccalc->Startmin.x:= 1.575
+reccalc->Startmax.x:= 4.725
+reccalc->Startmin.y:= 1.575
+reccalc->Startmax.y:= 4.725
+reccalc->Startmin.z:= -3
+reccalc->Startmax.z:= -3
+
+pot->rep.type[0][1]:= 2
+
+pot->attr.type:=  1
+
+layers->Nlayers:=1
+layers->Natomsmax:= 320
+layers->Ninistate:= 10
+
+box->Max.x:= 9.45
+box->Max.y:= 9.45
+box->Max.z:= 9.45
+
+box->movelim.x:= 3.15
+box->movelim.y:= 3.15
+box->movelim.z:= 3.15
+
+physical->Tini:= 300
+physical->debye:= 1
+time->Timeini:= 300
+gen->seed:= 845301
+
+potcrit->Rmini:= 6.0
+potcrit->R0ini:= 5.0
+potcrit->Rmrec:= 4.0
+potcrit->R0rec:= 3.0
+
+elstop->scale:= 1.1
+pot->rep.scale:= 1.0
+

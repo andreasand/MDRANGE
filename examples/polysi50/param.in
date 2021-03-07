@@ -1,0 +1,19 @@
+
+reccalc->Polysize:= 500.0
+reccalc->Polydeltaangle:= 90.0
+
+reccalc->Thetamax:= 45.0
+reccalc->Fiimax:= 360.0
+
+type[0].m:= 30.0
+reccalc->Atype:= 0
+
+reccalc->E0:= 50000.0
+gen->seed:= 16342985
+layers->Natomsmax:= 100
+
+physical->Tini:= 300.0
+reccalc->Outputstep:= 5
+reccalc->Ncalc:= 100000
+
+layers->layer[0].debyet:= 345

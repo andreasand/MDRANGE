@@ -1,0 +1,54 @@
+#
+#  Parameter file for mdh simulation of implantation in silicon
+#
+
+#
+# Recoil energy
+#
+reccalc->E0:= 1000.0 
+
+#
+#  Mass and Z for particle type 0
+#
+type[0].m:= 1.0077
+type[0].Z:= 1
+
+#
+#  Atom type of recoil particle (see above); no need to modify usually
+#
+reccalc->Atype:= 0
+
+#
+#  Initial direction; Theta0 is tilt from normal incidence, Fii0 rotation.
+#  Given in units of degrees. To have for instance 22.5 oblique incidence
+#  and rotation, replace 0.0 with 22.5 for both.
+#
+reccalc->Theta0:= 0.0
+reccalc->Fii0:= 0.0
+
+#
+#  Cell size in Å (Angstrom)
+#
+box->Max.x:= 10.84
+box->Max.y:= 10.84
+box->Max.z:= 10.84
+
+#
+#  Temperature (in initial state calculation)
+#
+physical->Tini:= 300.0
+
+#
+# Number of recoil events to calculate
+#
+reccalc->Ncalc:= 10000
+
+#
+#  Miscellaneous parameters, no need to modify usually
+#
+gen->seed:= 16342985
+layers->Natomsmax:= 100
+layers->Ninistate:= 5
+
+layers->layer[0].debyet:= 345
+

@@ -1,0 +1,60 @@
+
+  15 keV As -> multilayer Si (20 A random surface layer)
+
+  First 20 A form an amorphous Si surface layer:
+	- Default is a 216 atom amorphous bulk Si structure from ab initio
+	  MD simulations, in the file coords.in.1 (coords.in.1.abini216)
+	- You can replace coords.in.1 with coords.in.1.random216, which 
+          contains a truly random 216 atom structure (the only criterion used 
+          in creating it was that no atom was supposed to be closer than 
+	  2.3 A from any other)
+	
+  Rest of the sample is crystalline. 
+
+  You can easily modify the width of the surface amorphous layer by 
+  changing the minz and maxz parameters in param.in; note that both
+  the first layer minz and second layer maxz must be modified.
+
+  ZBL Universal repulsive potential
+
+  Electronic stopping power is the same for both layers.
+  
+  THE DEFAULT INPUT FILES HAVE NOW BEEN CHECKED AND SHOULD BE OK
+  (see notes below).
+
+  Note that real amorphous Si has a lower density than 
+  crystalline Si. Therefore, you might want to remove some
+  atoms from coords.in.1 to get the desired density.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  For theta=0°, using the default amorphous structure does not
+give a proper range profile: the 63 atom cell has channels in 100...
+
+  Range results for theta=phi=0°:
+
+Amorphous layer		_    _
+thickness (maxz)	R ± dR		Notes
+---------------		-------		------
+None			880 ± 30	Crystalline 64 atom cell only
+None			750 ± 20	Crystalline 216 atom cell only
+0 Å 			450 ± 20	coords.in.1.abini 
+0 Å 			375 ± 18	216 atom cells used
+20 Å			376 ± 16	debyet removed, coords.in.1.random
+20 Å			338 ± 12	debyet removed, 216 atom cells used
+10000 Å (infinite)	420 ± 20	coords.in.1.abini 
+10000 Å (infinite)	510 ± 20	coords.in.1.random
+10000 Å (infinite)	167 ± 2		debyet removed,	coords.in.1.random
+10000 Å (infinite)	215 ± 8	 	216 atom cells used
+10000 Å (infinite)	163 ± 2		debyet removed, 216 atom cells used
+10000 Å (infinite)	166 ± 4		debyet removed, coords.in.random216
+
+  When debyet is not used for the amorphous layer, the initial
+state simulation causes the amorphous structure to lose its shape,
+making it even more random. Therefore, the 216 atom cells and
+no debyet is the best choice, and was made the default.
+
+  Note that using maxz=0 for the amorphous layer is not the
+same as using a purely crystalline cell; maxz=0 still gives
+the very first atom layer as amorphous.
+
