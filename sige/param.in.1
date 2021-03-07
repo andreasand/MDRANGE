@@ -1,0 +1,74 @@
+
+type[0].Z:= 14
+type[0].m:= 27.9769
+type[1].Z:= 14
+type[1].m:= 28.0855
+type[1].prob:= 0.5
+type[2].Z:= 32
+type[2].m:= 72.6100
+type[2].prob:= 0.5
+
+physical->Dose:= 1e+10	# Physical Dose for experimental comparison
+physical->Damage:= 0	# Flag for Damage modelling (0=no,1=yes)
+physical->scaling:= 0	# Flag for dimensional scaling during the simulation
+			      according to the volume in the coords.in.# files
+physical->bscaling:= 0	# Flag for dimensional scaling at the start of simulation
+			      according x_i/box.movelim.i ratio
+physical->sputtering:= 0	# Flag for sputtering modelling
+physical->sput_surf:= 0	# amount of eroded surface in Ångströms
+reccalc->E0:= 40000	# Recoil energy 
+reccalc->Atype:= 0	# Recoil atom type
+reccalc->Ncalc:= 10000 	# Number of histories
+reccalc->Trange:= 0	# Range type: 0=sz, 1=proj, 2=chord, 3=path
+reccalc->type:= 1	# Recoil calculation type: 1=normal,
+                          2=negative range allowed
+reccalc->Fii0:= 0	# Azimuth angle of the recoil atom
+reccalc->Fiimax:= 360	# is chosen randomly from [Fii0,Fiimax]
+reccalc->Theta0:= 7	# Polar angle of the recoil atom
+reccalc->Thetamax:= 7	# is chosen randomly from [Theta0,Thetamax]
+
+
+reccalc->Startmin.x:= 5.43	# The starting pos. of the recoil
+reccalc->Startmax.x:= 10.86
+reccalc->Startmin.y:= 5.43
+reccalc->Startmax.y:= 10.86
+reccalc->Startmin.z:= -3
+reccalc->Startmax.z:= -3
+
+pot->rep.type[0][1]:= 1
+pot->rep.type[0][2]:= 1
+
+pot->rep.ai[0]:= 0.1818
+pot->rep.bi[0]:= -3.2
+pot->rep.ai[1]:= 0.5099
+pot->rep.bi[1]:= -0.9423
+pot->rep.ai[2]:= 0.2802
+pot->rep.bi[2]:= -0.4029
+pot->rep.ai[3]:= 0.02817
+pot->rep.bi[3]:= -0.2016
+pot->rep.ai[4]:= 0
+pot->rep.bi[4]:= 0
+pot->rep.ai[5]:= 0
+pot->rep.bi[5]:= 0
+layers->Nlayers:=1
+layers->Natomsmax:= 4320
+layers->Ninistate:= 10
+
+layers->layer[0].debyet:= 519
+
+box->Max.x:= 16.29	#The size of the simulation cell
+box->Max.y:= 16.29
+box->Max.z:= 16.29
+
+box->movelim.x:= 5.43 # Shift used in generating fresh crystal
+box->movelim.y:= 5.43 # in front of the recoil.
+box->movelim.z:= 5.43
+
+physical->Tini:= 300 # Temperature of the inistate calculation
+gen->seed:= 3497
+
+potcrit->Rmrec:= 4 # cut-off radiuses for recoil calc.
+potcrit->R0rec:= 3
+
+elstop->scale:= 1 # Electronic stopping power scaled by this
+pot->rep.scale:= 1 # Repulsive potential scaled by this

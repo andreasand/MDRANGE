@@ -1,0 +1,2067 @@
+real run time 0 sec CPU time 0
+Output of deposited energies selected
+Output of primary recoil spectrum  selected
+----- mdh V3.05 Feb 22 2010 -----
+
+Run started Tue Jul 23 14:20:14 2013
+Pid 12207 Host dx1-flkl-nano
+Angular recoil specctrum calculated in E interval 0 - 5000
+NUM OF LAYERS: 1 
+FINISHED READING CELLVOLUME FOR am. state 0: 16.29,16.29,16.29
+FINISHED READING DOSE FOR am. state 0: 0(eV/atom)=0(eV/unitcell)
+Read in 216 atoms in layer 1 amorphization cell 0 Zmean 14 density 2330.39 kg/m^3 i.e. 0.0499678 atoms/Å^3
+Had to move 0 coordinates
+unitboxsize(volume of the coordinates): 5.43,5.43,5.43 num 3 3 3
+
+Starting inistate calculations
+------------------------------
+
+Layer # 0 amorphstate # 0 Inistate calc. # 0
+Mean displacement (Debye) 0.126503
+
+Layer # 0 amorphstate # 0 Inistate calc. # 1
+Mean displacement (Debye) 0.122074
+
+Layer # 0 amorphstate # 0 Inistate calc. # 2
+Mean displacement (Debye) 0.126252
+
+Layer # 0 amorphstate # 0 Inistate calc. # 3
+Mean displacement (Debye) 0.121607
+
+Layer # 0 amorphstate # 0 Inistate calc. # 4
+Mean displacement (Debye) 0.125472
+
+Layer # 0 amorphstate # 0 Inistate calc. # 5
+Mean displacement (Debye) 0.124819
+
+Layer # 0 amorphstate # 0 Inistate calc. # 6
+Mean displacement (Debye) 0.123008
+
+Layer # 0 amorphstate # 0 Inistate calc. # 7
+Mean displacement (Debye) 0.12892
+
+Layer # 0 amorphstate # 0 Inistate calc. # 8
+Mean displacement (Debye) 0.12768
+
+Layer # 0 amorphstate # 0 Inistate calc. # 9
+Mean displacement (Debye) 0.11853
+
+Inistate calculation ended
+real run time 0 sec CPU time 0
+
+Starting recoil event calculation
+---------------------------------
+
+type of elstop for layer 0 is 0
+Read in 50 elstop(ZBL) points from elstop.in for layer 0 , max vel 207918 max Se 10.36
+Recoil energy 5000 eV and velocity 176495 m/s
+Output of 40 recoil events at real run time 1 sec CPU time 0
+Ways of stopping: 40 0 0 0 0 0 0 0
+Mean range 121.804 +- 11.0309 straggle 68.8882
+Area for range.out is 280
+Total deposited energies/ion: FDn 3995.74 FDe 1003.29 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 49.45 recoils of type 1: total 4082.66 < 1 eV 104.43
+
+Output of 80 recoil events at real run time 1 sec CPU time 0
+Ways of stopping: 80 0 0 0 0 0 0 0
+Mean range 124.597 +- 8.2696 straggle 73.5018
+Area for range.out is 640
+Total deposited energies/ion: FDn 3994.7 FDe 1004.32 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 49.66 recoils of type 1: total 4082.28 < 1 eV 104.575
+
+Output of 120 recoil events at real run time 2 sec CPU time 1
+Ways of stopping: 120 0 0 0 0 0 0 0
+Mean range 129.239 +- 7.78751 straggle 84.9517
+Area for range.out is 960
+Total deposited energies/ion: FDn 3970.74 FDe 1028.29 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 51.12 recoils of type 1: total 4059 < 1 eV 105.69
+
+Output of 160 recoil events at real run time 2 sec CPU time 1
+Ways of stopping: 160 0 0 0 0 0 0 0
+Mean range 130.996 +- 6.34733 straggle 80.0367
+Area for range.out is 1280
+Total deposited energies/ion: FDn 3957.13 FDe 1041.89 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 51.02 recoils of type 1: total 4045.78 < 1 eV 106.22
+
+Output of 200 recoil events at real run time 3 sec CPU time 2
+Ways of stopping: 200 0 0 0 0 0 0 0
+Mean range 129.507 +- 5.54095 straggle 78.1647
+Area for range.out is 1600
+Total deposited energies/ion: FDn 3968.89 FDe 1030.13 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.38 recoils of type 1: total 4056.71 < 1 eV 105.057
+
+Output of 240 recoil events at real run time 3 sec CPU time 2
+Ways of stopping: 240 0 0 0 0 0 0 0
+Mean range 131.25 +- 5.31952 straggle 82.2378
+Area for range.out is 1920
+Total deposited energies/ion: FDn 3959.42 FDe 1039.6 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.73 recoils of type 1: total 4047.11 < 1 eV 105.097
+
+Output of 280 recoil events at real run time 4 sec CPU time 3
+Ways of stopping: 280 0 0 0 0 0 0 0
+Mean range 130.636 +- 4.90287 straggle 81.8941
+Area for range.out is 2240
+Total deposited energies/ion: FDn 3958.5 FDe 1040.52 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.90 recoils of type 1: total 4046.56 < 1 eV 105.469
+
+Output of 320 recoil events at real run time 4 sec CPU time 3
+Ways of stopping: 320 0 0 0 0 0 0 0
+Mean range 131.035 +- 4.57351 straggle 81.6854
+Area for range.out is 2560
+Total deposited energies/ion: FDn 3945.7 FDe 1053.33 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.77 recoils of type 1: total 4034.8 < 1 eV 106.611
+
+Output of 360 recoil events at real run time 5 sec CPU time 3
+Ways of stopping: 360 0 0 0 0 0 0 0
+Mean range 130.033 +- 4.29833 straggle 81.4417
+Area for range.out is 2880
+Total deposited energies/ion: FDn 3952.39 FDe 1046.63 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.53 recoils of type 1: total 4040.79 < 1 eV 105.886
+
+Output of 400 recoil events at real run time 5 sec CPU time 4
+Ways of stopping: 400 0 0 0 0 0 0 0
+Mean range 129.163 +- 4.08245 straggle 81.5469
+Area for range.out is 3200
+Total deposited energies/ion: FDn 3958.74 FDe 1040.28 FDf 0
+Energy/ion lost outside: sputtered 0 transmitted 0 eV/ion
+Energy/ion lost to 50.16 recoils of type 1: total 4046.57 < 1 eV 105.194
+
+Output of 440 recoil events at real run time 5 sec CPU time 4
+Ways of stopping: 439 1 0 0 0 0 0 0
+Mean range 126.468 +- 3.82684 straggle 80.0898
+Area for range.out is 3512
+Total deposited energies/ion: FDn 3979.88 FDe 1018.67 FDf 0
+Energy/ion lost outside: sputtered 0.478821 transmitted 0 eV/ion
+Energy/ion lost to 49.27 recoils of type 1: total 4066.16 < 1 eV 103.397
+
+Output of 480 recoil events at real run time 6 sec CPU time 5
+Ways of stopping: 479 1 0 0 0 0 0 0
+Mean range 123.919 +- 3.61295 straggle 78.9906
+Area for range.out is 3832
+Total deposited energies/ion: FDn 3999.93 FDe 998.652 FDf 0
+Energy/ion lost outside: sputtered 0.438919 transmitted 0 eV/ion
+Energy/ion lost to 48.40 recoils of type 1: total 4084.57 < 1 eV 101.568
+
+Output of 520 recoil events at real run time 6 sec CPU time 5
+Ways of stopping: 519 1 0 0 0 0 0 0
+Mean range 123.944 +- 3.48958 straggle 79.4215
+Area for range.out is 4152
+Total deposited energies/ion: FDn 4000.8 FDe 997.821 FDf 0
+Energy/ion lost outside: sputtered 0.405156 transmitted 0 eV/ion
+Energy/ion lost to 48.39 recoils of type 1: total 4085.38 < 1 eV 101.536
+
+Output of 560 recoil events at real run time 7 sec CPU time 5
+Ways of stopping: 559 1 0 0 0 0 0 0
+Mean range 123.108 +- 3.33126 straggle 78.691
+Area for range.out is 4472
+Total deposited energies/ion: FDn 4007.21 FDe 991.439 FDf 0
+Energy/ion lost outside: sputtered 0.376217 transmitted 0 eV/ion
+Energy/ion lost to 48.17 recoils of type 1: total 4091.21 < 1 eV 100.946
+
+Output of 600 recoil events at real run time 7 sec CPU time 6
+Ways of stopping: 599 1 0 0 0 0 0 0
+Mean range 123.616 +- 3.24327 straggle 79.311
+Area for range.out is 4792
+Total deposited energies/ion: FDn 4003.77 FDe 994.899 FDf 0
+Energy/ion lost outside: sputtered 0.351135 transmitted 0 eV/ion
+Energy/ion lost to 48.40 recoils of type 1: total 4087.93 < 1 eV 101.12
+
+Output of 640 recoil events at real run time 7 sec CPU time 6
+Ways of stopping: 639 1 0 0 0 0 0 0
+Mean range 122.792 +- 3.10993 straggle 78.5526
+Area for range.out is 5112
+Total deposited energies/ion: FDn 4008.35 FDe 990.348 FDf 0
+Energy/ion lost outside: sputtered 0.329189 transmitted 0 eV/ion
+Energy/ion lost to 48.31 recoils of type 1: total 4092.08 < 1 eV 100.617
+
+Output of 680 recoil events at real run time 8 sec CPU time 7
+Ways of stopping: 679 1 0 0 0 0 0 0
+Mean range 121.957 +- 2.97749 straggle 77.5293
+Area for range.out is 5432
+Total deposited energies/ion: FDn 4014.62 FDe 984.096 FDf 0
+Energy/ion lost outside: sputtered 0.309825 transmitted 0 eV/ion
+Energy/ion lost to 47.89 recoils of type 1: total 4097.63 < 1 eV 99.8136
+
+Output of 720 recoil events at real run time 8 sec CPU time 7
+Ways of stopping: 718 2 0 0 0 0 0 0
+Mean range 121.138 +- 2.86126 straggle 76.6155
+Area for range.out is 5744
+Total deposited energies/ion: FDn 4020.54 FDe 978.177 FDf 0
+Energy/ion lost outside: sputtered 0.308759 transmitted 0 eV/ion
+Energy/ion lost to 47.56 recoils of type 1: total 4103.14 < 1 eV 99.3784
+
+Output of 760 recoil events at real run time 9 sec CPU time 7
+Ways of stopping: 757 3 0 0 0 0 0 0
+Mean range 120.909 +- 2.79678 straggle 76.8987
+Area for range.out is 6056
+Total deposited energies/ion: FDn 4022.75 FDe 975.914 FDf 0
+Energy/ion lost outside: sputtered 0.366578 transmitted 0 eV/ion
+Energy/ion lost to 47.49 recoils of type 1: total 4105.15 < 1 eV 99.0863
+
+Output of 800 recoil events at real run time 9 sec CPU time 8
+Ways of stopping: 797 3 0 0 0 0 0 0
+Mean range 120.232 +- 2.7124 straggle 76.5261
+Area for range.out is 6376
+Total deposited energies/ion: FDn 4029.02 FDe 969.661 FDf 0
+Energy/ion lost outside: sputtered 0.348249 transmitted 0 eV/ion
+Energy/ion lost to 47.16 recoils of type 1: total 4110.68 < 1 eV 98.3216
+
+Output of 840 recoil events at real run time 9 sec CPU time 8
+Ways of stopping: 837 3 0 0 0 0 0 0
+Mean range 120.046 +- 2.63523 straggle 76.194
+Area for range.out is 6696
+Total deposited energies/ion: FDn 4030.16 FDe 968.53 FDf 0
+Energy/ion lost outside: sputtered 0.331665 transmitted 0 eV/ion
+Energy/ion lost to 47.11 recoils of type 1: total 4111.75 < 1 eV 98.2445
+
+Output of 880 recoil events at real run time 10 sec CPU time 9
+Ways of stopping: 877 3 0 0 0 0 0 0
+Mean range 119.643 +- 2.58883 straggle 76.6224
+Area for range.out is 7016
+Total deposited energies/ion: FDn 4034.56 FDe 964.145 FDf 0
+Energy/ion lost outside: sputtered 0.31659 transmitted 0 eV/ion
+Energy/ion lost to 47.01 recoils of type 1: total 4115.9 < 1 eV 97.9255
+
+Output of 920 recoil events at real run time 10 sec CPU time 9
+Ways of stopping: 917 3 0 0 0 0 0 0
+Mean range 119.844 +- 2.52624 straggle 76.458
+Area for range.out is 7336
+Total deposited energies/ion: FDn 4032.95 FDe 965.777 FDf 0
+Energy/ion lost outside: sputtered 0.302825 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4114.41 < 1 eV 98.0546
+
+Output of 960 recoil events at real run time 11 sec CPU time 9
+Ways of stopping: 957 3 0 0 0 0 0 0
+Mean range 119.876 +- 2.45487 straggle 75.9027
+Area for range.out is 7656
+Total deposited energies/ion: FDn 4033.5 FDe 965.233 FDf 0
+Energy/ion lost outside: sputtered 0.290207 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4115.08 < 1 eV 98.1929
+
+Output of 1000 recoil events at real run time 11 sec CPU time 10
+Ways of stopping: 997 3 0 0 0 0 0 0
+Mean range 120.366 +- 2.40489 straggle 75.8972
+Area for range.out is 7976
+Total deposited energies/ion: FDn 4029.29 FDe 969.455 FDf 0
+Energy/ion lost outside: sputtered 0.278599 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4111.06 < 1 eV 98.4293
+
+Output of 1040 recoil events at real run time 11 sec CPU time 10
+Ways of stopping: 1037 3 0 0 0 0 0 0
+Mean range 120.574 +- 2.33936 straggle 75.2968
+Area for range.out is 8296
+Total deposited energies/ion: FDn 4027.65 FDe 971.104 FDf 0
+Energy/ion lost outside: sputtered 0.267884 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4109.44 < 1 eV 98.4653
+
+Output of 1080 recoil events at real run time 12 sec CPU time 11
+Ways of stopping: 1077 3 0 0 0 0 0 0
+Mean range 121.129 +- 2.28594 straggle 74.9845
+Area for range.out is 8616
+Total deposited energies/ion: FDn 4023.7 FDe 975.072 FDf 0
+Energy/ion lost outside: sputtered 0.257962 transmitted 0 eV/ion
+Energy/ion lost to 47.35 recoils of type 1: total 4105.91 < 1 eV 98.9242
+
+Output of 1120 recoil events at real run time 12 sec CPU time 11
+Ways of stopping: 1117 3 0 0 0 0 0 0
+Mean range 121.011 +- 2.23927 straggle 74.8063
+Area for range.out is 8936
+Total deposited energies/ion: FDn 4024.79 FDe 973.989 FDf 0
+Energy/ion lost outside: sputtered 0.248749 transmitted 0 eV/ion
+Energy/ion lost to 47.32 recoils of type 1: total 4107.05 < 1 eV 98.9305
+
+Output of 1160 recoil events at real run time 13 sec CPU time 11
+Ways of stopping: 1157 3 0 0 0 0 0 0
+Mean range 120.584 +- 2.1919 straggle 74.5245
+Area for range.out is 9256
+Total deposited energies/ion: FDn 4027.84 FDe 970.945 FDf 0
+Energy/ion lost outside: sputtered 0.240172 transmitted 0 eV/ion
+Energy/ion lost to 47.16 recoils of type 1: total 4109.83 < 1 eV 98.6168
+
+Output of 1200 recoil events at real run time 13 sec CPU time 12
+Ways of stopping: 1197 3 0 0 0 0 0 0
+Mean range 120.52 +- 2.15651 straggle 74.579
+Area for range.out is 9576
+Total deposited energies/ion: FDn 4028.33 FDe 970.464 FDf 0
+Energy/ion lost outside: sputtered 0.232166 transmitted 0 eV/ion
+Energy/ion lost to 47.17 recoils of type 1: total 4110.29 < 1 eV 98.5525
+
+Output of 1240 recoil events at real run time 14 sec CPU time 12
+Ways of stopping: 1237 3 0 0 0 0 0 0
+Mean range 120.507 +- 2.11329 straggle 74.2965
+Area for range.out is 9896
+Total deposited energies/ion: FDn 4029.88 FDe 968.918 FDf 0
+Energy/ion lost outside: sputtered 0.224677 transmitted 0 eV/ion
+Energy/ion lost to 47.14 recoils of type 1: total 4111.77 < 1 eV 98.4364
+
+Output of 1280 recoil events at real run time 14 sec CPU time 13
+Ways of stopping: 1277 3 0 0 0 0 0 0
+Mean range 119.798 +- 2.07799 straggle 74.2281
+Area for range.out is 10212
+Total deposited energies/ion: FDn 4035.54 FDe 963.267 FDf 0
+Energy/ion lost outside: sputtered 0.217655 transmitted 0 eV/ion
+Energy/ion lost to 46.92 recoils of type 1: total 4116.99 < 1 eV 97.9499
+
+Output of 1320 recoil events at real run time 14 sec CPU time 13
+Ways of stopping: 1317 3 0 0 0 0 0 0
+Mean range 119.723 +- 2.03862 straggle 73.9544
+Area for range.out is 10532
+Total deposited energies/ion: FDn 4035.17 FDe 963.64 FDf 0
+Energy/ion lost outside: sputtered 0.21106 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4116.75 < 1 eV 98.0801
+
+Output of 1360 recoil events at real run time 15 sec CPU time 13
+Ways of stopping: 1357 3 0 0 0 0 0 0
+Mean range 120.043 +- 2.01254 straggle 74.1096
+Area for range.out is 10852
+Total deposited energies/ion: FDn 4032.66 FDe 966.156 FDf 0
+Energy/ion lost outside: sputtered 0.204852 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4114.53 < 1 eV 98.3973
+
+Output of 1400 recoil events at real run time 15 sec CPU time 14
+Ways of stopping: 1397 3 0 0 0 0 0 0
+Mean range 120.07 +- 1.9773 straggle 73.8781
+Area for range.out is 11172
+Total deposited energies/ion: FDn 4032.18 FDe 966.642 FDf 0
+Energy/ion lost outside: sputtered 0.198999 transmitted 0 eV/ion
+Energy/ion lost to 47.09 recoils of type 1: total 4114.17 < 1 eV 98.533
+
+Output of 1440 recoil events at real run time 16 sec CPU time 14
+Ways of stopping: 1437 3 0 0 0 0 0 0
+Mean range 119.649 +- 1.95332 straggle 74.0201
+Area for range.out is 11492
+Total deposited energies/ion: FDn 4035.46 FDe 963.373 FDf 0
+Energy/ion lost outside: sputtered 0.193472 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4117.23 < 1 eV 98.2864
+
+Output of 1480 recoil events at real run time 16 sec CPU time 15
+Ways of stopping: 1477 3 0 0 0 0 0 0
+Mean range 119.885 +- 1.92537 straggle 73.9702
+Area for range.out is 11812
+Total deposited energies/ion: FDn 4033.35 FDe 965.484 FDf 0
+Energy/ion lost outside: sputtered 0.188243 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4115.34 < 1 eV 98.5306
+
+Output of 1520 recoil events at real run time 17 sec CPU time 15
+Ways of stopping: 1517 3 0 0 0 0 0 0
+Mean range 119.954 +- 1.89746 straggle 73.8793
+Area for range.out is 12132
+Total deposited energies/ion: FDn 4032.94 FDe 965.902 FDf 0
+Energy/ion lost outside: sputtered 0.183289 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4115.04 < 1 eV 98.6651
+
+Output of 1560 recoil events at real run time 17 sec CPU time 16
+Ways of stopping: 1557 3 0 0 0 0 0 0
+Mean range 119.955 +- 1.86205 straggle 73.4509
+Area for range.out is 12452
+Total deposited energies/ion: FDn 4032.35 FDe 966.493 FDf 0
+Energy/ion lost outside: sputtered 0.178589 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4114.58 < 1 eV 98.8072
+
+Output of 1600 recoil events at real run time 17 sec CPU time 16
+Ways of stopping: 1597 3 0 0 0 0 0 0
+Mean range 120.601 +- 1.84308 straggle 73.6311
+Area for range.out is 12772
+Total deposited energies/ion: FDn 4027.62 FDe 971.227 FDf 0
+Energy/ion lost outside: sputtered 0.174124 transmitted 0 eV/ion
+Energy/ion lost to 47.28 recoils of type 1: total 4110.24 < 1 eV 99.2528
+
+Output of 1640 recoil events at real run time 18 sec CPU time 16
+Ways of stopping: 1637 3 0 0 0 0 0 0
+Mean range 121.041 +- 1.8218 straggle 73.6873
+Area for range.out is 13092
+Total deposited energies/ion: FDn 4024.42 FDe 974.432 FDf 0
+Energy/ion lost outside: sputtered 0.169877 transmitted 0 eV/ion
+Energy/ion lost to 47.40 recoils of type 1: total 4107.18 < 1 eV 99.4149
+
+Output of 1680 recoil events at real run time 18 sec CPU time 17
+Ways of stopping: 1677 3 0 0 0 0 0 0
+Mean range 120.674 +- 1.79395 straggle 73.4424
+Area for range.out is 13412
+Total deposited energies/ion: FDn 4027.57 FDe 971.284 FDf 0
+Energy/ion lost outside: sputtered 0.165833 transmitted 0 eV/ion
+Energy/ion lost to 47.29 recoils of type 1: total 4110.1 < 1 eV 99.1623
+
+Output of 1720 recoil events at real run time 19 sec CPU time 17
+Ways of stopping: 1717 3 0 0 0 0 0 0
+Mean range 121.39 +- 1.80563 straggle 74.7974
+Area for range.out is 13732
+Total deposited energies/ion: FDn 4022.14 FDe 976.719 FDf 0
+Energy/ion lost outside: sputtered 0.161976 transmitted 0 eV/ion
+Energy/ion lost to 47.51 recoils of type 1: total 4105.02 < 1 eV 99.6407
+
+Output of 1760 recoil events at real run time 19 sec CPU time 18
+Ways of stopping: 1757 3 0 0 0 0 0 0
+Mean range 121.323 +- 1.78268 straggle 74.7027
+Area for range.out is 14052
+Total deposited energies/ion: FDn 4022.7 FDe 976.171 FDf 0
+Energy/ion lost outside: sputtered 0.158295 transmitted 0 eV/ion
+Energy/ion lost to 47.52 recoils of type 1: total 4105.56 < 1 eV 99.6132
+
+Output of 1800 recoil events at real run time 20 sec CPU time 18
+Ways of stopping: 1797 3 0 0 0 0 0 0
+Mean range 121.164 +- 1.75468 straggle 74.362
+Area for range.out is 14372
+Total deposited energies/ion: FDn 4023.59 FDe 975.283 FDf 0
+Energy/ion lost outside: sputtered 0.154777 transmitted 0 eV/ion
+Energy/ion lost to 47.46 recoils of type 1: total 4106.39 < 1 eV 99.5431
+
+Output of 1840 recoil events at real run time 20 sec CPU time 18
+Ways of stopping: 1837 3 0 0 0 0 0 0
+Mean range 121.059 +- 1.7318 straggle 74.205
+Area for range.out is 14692
+Total deposited energies/ion: FDn 4024.1 FDe 974.773 FDf 0
+Energy/ion lost outside: sputtered 0.151413 transmitted 0 eV/ion
+Energy/ion lost to 47.42 recoils of type 1: total 4106.94 < 1 eV 99.5809
+
+Output of 1880 recoil events at real run time 20 sec CPU time 19
+Ways of stopping: 1877 3 0 0 0 0 0 0
+Mean range 121.067 +- 1.71188 straggle 74.1462
+Area for range.out is 15012
+Total deposited energies/ion: FDn 4023.78 FDe 975.092 FDf 0
+Energy/ion lost outside: sputtered 0.148191 transmitted 0 eV/ion
+Energy/ion lost to 47.44 recoils of type 1: total 4106.62 < 1 eV 99.5496
+
+Output of 1920 recoil events at real run time 21 sec CPU time 19
+Ways of stopping: 1917 3 0 0 0 0 0 0
+Mean range 120.844 +- 1.69295 straggle 74.104
+Area for range.out is 15332
+Total deposited energies/ion: FDn 4025.17 FDe 973.705 FDf 0
+Energy/ion lost outside: sputtered 0.145104 transmitted 0 eV/ion
+Energy/ion lost to 47.39 recoils of type 1: total 4107.94 < 1 eV 99.4435
+
+Output of 1960 recoil events at real run time 21 sec CPU time 20
+Ways of stopping: 1956 4 0 0 0 0 0 0
+Mean range 120.241 +- 1.67202 straggle 73.9292
+Area for range.out is 15644
+Total deposited energies/ion: FDn 4030.29 FDe 968.591 FDf 0
+Energy/ion lost outside: sputtered 0.147418 transmitted 0 eV/ion
+Energy/ion lost to 47.18 recoils of type 1: total 4112.64 < 1 eV 98.9679
+
+Output of 2000 recoil events at real run time 22 sec CPU time 20
+Ways of stopping: 1996 4 0 0 0 0 0 0
+Mean range 120.153 +- 1.65135 straggle 73.7584
+Area for range.out is 15964
+Total deposited energies/ion: FDn 4031.09 FDe 967.789 FDf 0
+Energy/ion lost outside: sputtered 0.144469 transmitted 0 eV/ion
+Energy/ion lost to 47.16 recoils of type 1: total 4113.41 < 1 eV 98.9081
+
+Output of 2040 recoil events at real run time 22 sec CPU time 20
+Ways of stopping: 2036 4 0 0 0 0 0 0
+Mean range 119.826 +- 1.62968 straggle 73.5165
+Area for range.out is 16284
+Total deposited energies/ion: FDn 4033.9 FDe 964.979 FDf 0
+Energy/ion lost outside: sputtered 0.141636 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4116.05 < 1 eV 98.6879
+
+Output of 2080 recoil events at real run time 22 sec CPU time 21
+Ways of stopping: 2076 4 0 0 0 0 0 0
+Mean range 119.925 +- 1.60815 straggle 73.2549
+Area for range.out is 16604
+Total deposited energies/ion: FDn 4033.2 FDe 965.682 FDf 0
+Energy/ion lost outside: sputtered 0.138913 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4115.39 < 1 eV 98.7522
+
+Output of 2120 recoil events at real run time 23 sec CPU time 21
+Ways of stopping: 2116 4 0 0 0 0 0 0
+Mean range 119.991 +- 1.5904 straggle 73.1412
+Area for range.out is 16924
+Total deposited energies/ion: FDn 4032.69 FDe 966.196 FDf 0
+Energy/ion lost outside: sputtered 0.136292 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4114.87 < 1 eV 98.7373
+
+Output of 2160 recoil events at real run time 23 sec CPU time 22
+Ways of stopping: 2156 4 0 0 0 0 0 0
+Mean range 119.699 +- 1.57099 straggle 72.9283
+Area for range.out is 17244
+Total deposited energies/ion: FDn 4034.08 FDe 964.811 FDf 0
+Energy/ion lost outside: sputtered 0.133768 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4116.07 < 1 eV 98.5189
+
+Output of 2200 recoil events at real run time 24 sec CPU time 22
+Ways of stopping: 2196 4 0 0 0 0 0 0
+Mean range 119.676 +- 1.55814 straggle 73.0002
+Area for range.out is 17564
+Total deposited energies/ion: FDn 4034.72 FDe 964.171 FDf 0
+Energy/ion lost outside: sputtered 0.131336 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4116.68 < 1 eV 98.4922
+
+Output of 2240 recoil events at real run time 24 sec CPU time 22
+Ways of stopping: 2236 4 0 0 0 0 0 0
+Mean range 119.508 +- 1.54012 straggle 72.8104
+Area for range.out is 17884
+Total deposited energies/ion: FDn 4035.96 FDe 962.935 FDf 0
+Energy/ion lost outside: sputtered 0.12899 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4117.86 < 1 eV 98.4026
+
+Output of 2280 recoil events at real run time 24 sec CPU time 23
+Ways of stopping: 2276 4 0 0 0 0 0 0
+Mean range 119.212 +- 1.52246 straggle 72.6166
+Area for range.out is 18204
+Total deposited energies/ion: FDn 4037.91 FDe 960.987 FDf 0
+Energy/ion lost outside: sputtered 0.126727 transmitted 0 eV/ion
+Energy/ion lost to 46.86 recoils of type 1: total 4119.7 < 1 eV 98.273
+
+Output of 2320 recoil events at real run time 25 sec CPU time 23
+Ways of stopping: 2316 4 0 0 0 0 0 0
+Mean range 119.11 +- 1.5095 straggle 72.6289
+Area for range.out is 18520
+Total deposited energies/ion: FDn 4038.81 FDe 960.089 FDf 0
+Energy/ion lost outside: sputtered 0.124542 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4120.56 < 1 eV 98.2309
+
+Output of 2360 recoil events at real run time 25 sec CPU time 24
+Ways of stopping: 2356 4 0 0 0 0 0 0
+Mean range 119.325 +- 1.4985 straggle 72.7198
+Area for range.out is 18840
+Total deposited energies/ion: FDn 4037.41 FDe 961.492 FDf 0
+Energy/ion lost outside: sputtered 0.122432 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4119.19 < 1 eV 98.2766
+
+Output of 2400 recoil events at real run time 26 sec CPU time 24
+Ways of stopping: 2396 4 0 0 0 0 0 0
+Mean range 119.547 +- 1.48216 straggle 72.535
+Area for range.out is 19160
+Total deposited energies/ion: FDn 4035.73 FDe 963.171 FDf 0
+Energy/ion lost outside: sputtered 0.120391 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4117.6 < 1 eV 98.3881
+
+Output of 2440 recoil events at real run time 26 sec CPU time 24
+Ways of stopping: 2436 4 0 0 0 0 0 0
+Mean range 119.55 +- 1.46827 straggle 72.4528
+Area for range.out is 19480
+Total deposited energies/ion: FDn 4035.7 FDe 963.205 FDf 0
+Energy/ion lost outside: sputtered 0.118417 transmitted 0 eV/ion
+Energy/ion lost to 46.90 recoils of type 1: total 4117.52 < 1 eV 98.337
+
+Output of 2480 recoil events at real run time 27 sec CPU time 25
+Ways of stopping: 2476 4 0 0 0 0 0 0
+Mean range 119.558 +- 1.45521 straggle 72.3957
+Area for range.out is 19800
+Total deposited energies/ion: FDn 4035.72 FDe 963.186 FDf 0
+Energy/ion lost outside: sputtered 0.116507 transmitted 0 eV/ion
+Energy/ion lost to 46.89 recoils of type 1: total 4117.48 < 1 eV 98.2802
+
+Output of 2520 recoil events at real run time 27 sec CPU time 25
+Ways of stopping: 2516 4 0 0 0 0 0 0
+Mean range 119.522 +- 1.44895 straggle 72.6646
+Area for range.out is 20120
+Total deposited energies/ion: FDn 4036.09 FDe 962.821 FDf 0
+Energy/ion lost outside: sputtered 0.114658 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4117.81 < 1 eV 98.241
+
+Output of 2560 recoil events at real run time 27 sec CPU time 26
+Ways of stopping: 2556 4 0 0 0 0 0 0
+Mean range 119.717 +- 1.44101 straggle 72.8385
+Area for range.out is 20440
+Total deposited energies/ion: FDn 4034.47 FDe 964.443 FDf 0
+Energy/ion lost outside: sputtered 0.112867 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4116.29 < 1 eV 98.3515
+
+Output of 2600 recoil events at real run time 28 sec CPU time 26
+Ways of stopping: 2595 5 0 0 0 0 0 0
+Mean range 119.811 +- 1.42992 straggle 72.8279
+Area for range.out is 20752
+Total deposited energies/ion: FDn 4034.35 FDe 964.512 FDf 0
+Energy/ion lost outside: sputtered 0.159861 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4116.2 < 1 eV 98.3838
+
+Output of 2640 recoil events at real run time 28 sec CPU time 26
+Ways of stopping: 2635 5 0 0 0 0 0 0
+Mean range 119.796 +- 1.41792 straggle 72.7713
+Area for range.out is 21072
+Total deposited energies/ion: FDn 4034.31 FDe 964.559 FDf 0
+Energy/ion lost outside: sputtered 0.157439 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4116.21 < 1 eV 98.437
+
+Output of 2680 recoil events at real run time 29 sec CPU time 27
+Ways of stopping: 2675 5 0 0 0 0 0 0
+Mean range 119.729 +- 1.40293 straggle 72.5467
+Area for range.out is 21392
+Total deposited energies/ion: FDn 4034.73 FDe 964.134 FDf 0
+Energy/ion lost outside: sputtered 0.155089 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.65 < 1 eV 98.4496
+
+Output of 2720 recoil events at real run time 29 sec CPU time 27
+Ways of stopping: 2715 5 0 0 0 0 0 0
+Mean range 119.911 +- 1.39216 straggle 72.5262
+Area for range.out is 21712
+Total deposited energies/ion: FDn 4033.17 FDe 965.7 FDf 0
+Energy/ion lost outside: sputtered 0.152809 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4115.19 < 1 eV 98.5917
+
+Output of 2760 recoil events at real run time 30 sec CPU time 28
+Ways of stopping: 2755 5 0 0 0 0 0 0
+Mean range 119.873 +- 1.37969 straggle 72.4043
+Area for range.out is 22032
+Total deposited energies/ion: FDn 4033.5 FDe 965.371 FDf 0
+Energy/ion lost outside: sputtered 0.150594 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4115.49 < 1 eV 98.5584
+
+Output of 2800 recoil events at real run time 30 sec CPU time 28
+Ways of stopping: 2795 5 0 0 0 0 0 0
+Mean range 119.618 +- 1.36766 straggle 72.2924
+Area for range.out is 22352
+Total deposited energies/ion: FDn 4035.55 FDe 963.33 FDf 0
+Energy/ion lost outside: sputtered 0.148443 transmitted 0 eV/ion
+Energy/ion lost to 46.89 recoils of type 1: total 4117.39 < 1 eV 98.3981
+
+Output of 2840 recoil events at real run time 30 sec CPU time 28
+Ways of stopping: 2835 5 0 0 0 0 0 0
+Mean range 119.791 +- 1.3602 straggle 72.4104
+Area for range.out is 22672
+Total deposited energies/ion: FDn 4034.36 FDe 964.514 FDf 0
+Energy/ion lost outside: sputtered 0.146352 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4116.28 < 1 eV 98.4941
+
+Output of 2880 recoil events at real run time 31 sec CPU time 29
+Ways of stopping: 2875 5 0 0 0 0 0 0
+Mean range 119.538 +- 1.34537 straggle 72.1251
+Area for range.out is 22992
+Total deposited energies/ion: FDn 4036.24 FDe 962.635 FDf 0
+Energy/ion lost outside: sputtered 0.144319 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4118.02 < 1 eV 98.3323
+
+Output of 2920 recoil events at real run time 31 sec CPU time 29
+Ways of stopping: 2915 5 0 0 0 0 0 0
+Mean range 119.495 +- 1.33595 straggle 72.1163
+Area for range.out is 23308
+Total deposited energies/ion: FDn 4036.49 FDe 962.394 FDf 0
+Energy/ion lost outside: sputtered 0.142342 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4118.2 < 1 eV 98.2685
+
+Output of 2960 recoil events at real run time 32 sec CPU time 30
+Ways of stopping: 2955 5 0 0 0 0 0 0
+Mean range 119.67 +- 1.32517 straggle 72.0242
+Area for range.out is 23628
+Total deposited energies/ion: FDn 4034.85 FDe 964.03 FDf 0
+Energy/ion lost outside: sputtered 0.140419 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4116.74 < 1 eV 98.4554
+
+Output of 3000 recoil events at real run time 32 sec CPU time 30
+Ways of stopping: 2995 5 0 0 0 0 0 0
+Mean range 119.873 +- 1.3189 straggle 72.1669
+Area for range.out is 23944
+Total deposited energies/ion: FDn 4033.38 FDe 965.506 FDf 0
+Energy/ion lost outside: sputtered 0.138547 transmitted 0 eV/ion
+Energy/ion lost to 47.00 recoils of type 1: total 4115.37 < 1 eV 98.573
+
+Output of 3040 recoil events at real run time 32 sec CPU time 31
+Ways of stopping: 3035 5 0 0 0 0 0 0
+Mean range 119.68 +- 1.31057 straggle 72.1886
+Area for range.out is 24260
+Total deposited energies/ion: FDn 4034.84 FDe 964.046 FDf 0
+Energy/ion lost outside: sputtered 0.136724 transmitted 0 eV/ion
+Energy/ion lost to 46.92 recoils of type 1: total 4116.67 < 1 eV 98.4022
+
+Output of 3080 recoil events at real run time 33 sec CPU time 31
+Ways of stopping: 3075 5 0 0 0 0 0 0
+Mean range 119.708 +- 1.30146 straggle 72.1577
+Area for range.out is 24580
+Total deposited energies/ion: FDn 4034.96 FDe 963.925 FDf 0
+Energy/ion lost outside: sputtered 0.134948 transmitted 0 eV/ion
+Energy/ion lost to 46.91 recoils of type 1: total 4116.74 < 1 eV 98.3356
+
+Output of 3120 recoil events at real run time 33 sec CPU time 31
+Ways of stopping: 3115 5 0 0 0 0 0 0
+Mean range 119.973 +- 1.2954 straggle 72.2877
+Area for range.out is 24900
+Total deposited energies/ion: FDn 4033.17 FDe 965.723 FDf 0
+Energy/ion lost outside: sputtered 0.133218 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4115.06 < 1 eV 98.4775
+
+Output of 3160 recoil events at real run time 34 sec CPU time 32
+Ways of stopping: 3155 5 0 0 0 0 0 0
+Mean range 119.778 +- 1.2877 straggle 72.3179
+Area for range.out is 25220
+Total deposited energies/ion: FDn 4034.59 FDe 964.303 FDf 0
+Energy/ion lost outside: sputtered 0.131532 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4116.4 < 1 eV 98.3864
+
+Output of 3200 recoil events at real run time 34 sec CPU time 32
+Ways of stopping: 3195 5 0 0 0 0 0 0
+Mean range 119.811 +- 1.28191 straggle 72.4476
+Area for range.out is 25536
+Total deposited energies/ion: FDn 4034.26 FDe 964.634 FDf 0
+Energy/ion lost outside: sputtered 0.129887 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4116.06 < 1 eV 98.3818
+
+Output of 3240 recoil events at real run time 35 sec CPU time 33
+Ways of stopping: 3235 5 0 0 0 0 0 0
+Mean range 119.833 +- 1.27287 straggle 72.3862
+Area for range.out is 25856
+Total deposited energies/ion: FDn 4034.35 FDe 964.547 FDf 0
+Energy/ion lost outside: sputtered 0.128284 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.18 < 1 eV 98.4335
+
+Output of 3280 recoil events at real run time 35 sec CPU time 33
+Ways of stopping: 3275 5 0 0 0 0 0 0
+Mean range 119.778 +- 1.26547 straggle 72.4087
+Area for range.out is 26176
+Total deposited energies/ion: FDn 4034.62 FDe 964.275 FDf 0
+Energy/ion lost outside: sputtered 0.126719 transmitted 0 eV/ion
+Energy/ion lost to 46.91 recoils of type 1: total 4116.39 < 1 eV 98.3539
+
+Output of 3320 recoil events at real run time 35 sec CPU time 33
+Ways of stopping: 3315 5 0 0 0 0 0 0
+Mean range 119.802 +- 1.25639 straggle 72.3272
+Area for range.out is 26496
+Total deposited energies/ion: FDn 4034.64 FDe 964.255 FDf 0
+Energy/ion lost outside: sputtered 0.125193 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4116.39 < 1 eV 98.332
+
+Output of 3360 recoil events at real run time 36 sec CPU time 34
+Ways of stopping: 3355 5 0 0 0 0 0 0
+Mean range 119.743 +- 1.24684 straggle 72.2093
+Area for range.out is 26816
+Total deposited energies/ion: FDn 4034.65 FDe 964.245 FDf 0
+Energy/ion lost outside: sputtered 0.123702 transmitted 0 eV/ion
+Energy/ion lost to 46.90 recoils of type 1: total 4116.47 < 1 eV 98.3842
+
+Output of 3400 recoil events at real run time 36 sec CPU time 34
+Ways of stopping: 3395 5 0 0 0 0 0 0
+Mean range 119.924 +- 1.245 straggle 72.5315
+Area for range.out is 27136
+Total deposited energies/ion: FDn 4033.4 FDe 965.503 FDf 0
+Energy/ion lost outside: sputtered 0.122247 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4115.26 < 1 eV 98.4365
+
+Output of 3440 recoil events at real run time 37 sec CPU time 35
+Ways of stopping: 3435 5 0 0 0 0 0 0
+Mean range 119.844 +- 1.2372 straggle 72.5002
+Area for range.out is 27456
+Total deposited energies/ion: FDn 4034.17 FDe 964.734 FDf 0
+Energy/ion lost outside: sputtered 0.120825 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.02 < 1 eV 98.4216
+
+Output of 3480 recoil events at real run time 37 sec CPU time 35
+Ways of stopping: 3475 5 0 0 0 0 0 0
+Mean range 119.971 +- 1.23292 straggle 72.6692
+Area for range.out is 27776
+Total deposited energies/ion: FDn 4033.47 FDe 965.435 FDf 0
+Energy/ion lost outside: sputtered 0.119437 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4115.4 < 1 eV 98.4966
+
+Output of 3520 recoil events at real run time 38 sec CPU time 36
+Ways of stopping: 3515 5 0 0 0 0 0 0
+Mean range 119.949 +- 1.2235 straggle 72.5278
+Area for range.out is 28096
+Total deposited energies/ion: FDn 4033.58 FDe 965.326 FDf 0
+Energy/ion lost outside: sputtered 0.118079 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4115.5 < 1 eV 98.4835
+
+Output of 3560 recoil events at real run time 38 sec CPU time 36
+Ways of stopping: 3554 6 0 0 0 0 0 0
+Mean range 120.012 +- 1.21426 straggle 72.3785
+Area for range.out is 28408
+Total deposited energies/ion: FDn 4033.37 FDe 965.536 FDf 0
+Energy/ion lost outside: sputtered 0.117172 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4115.31 < 1 eV 98.5166
+
+Output of 3600 recoil events at real run time 39 sec CPU time 36
+Ways of stopping: 3594 6 0 0 0 0 0 0
+Mean range 119.96 +- 1.20748 straggle 72.3782
+Area for range.out is 28728
+Total deposited energies/ion: FDn 4033.62 FDe 965.29 FDf 0
+Energy/ion lost outside: sputtered 0.11587 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4115.55 < 1 eV 98.5055
+
+Output of 3640 recoil events at real run time 39 sec CPU time 37
+Ways of stopping: 3634 6 0 0 0 0 0 0
+Mean range 120.064 +- 1.20015 straggle 72.3381
+Area for range.out is 29048
+Total deposited energies/ion: FDn 4032.86 FDe 966.054 FDf 0
+Energy/ion lost outside: sputtered 0.114597 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4114.85 < 1 eV 98.5723
+
+Output of 3680 recoil events at real run time 39 sec CPU time 37
+Ways of stopping: 3674 6 0 0 0 0 0 0
+Mean range 119.913 +- 1.1911 straggle 72.1872
+Area for range.out is 29368
+Total deposited energies/ion: FDn 4033.92 FDe 964.988 FDf 0
+Energy/ion lost outside: sputtered 0.113351 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4115.85 < 1 eV 98.4886
+
+Output of 3720 recoil events at real run time 40 sec CPU time 38
+Ways of stopping: 3714 6 0 0 0 0 0 0
+Mean range 119.956 +- 1.1847 straggle 72.1889
+Area for range.out is 29688
+Total deposited energies/ion: FDn 4033.44 FDe 965.47 FDf 0
+Energy/ion lost outside: sputtered 0.112132 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4115.43 < 1 eV 98.5501
+
+Output of 3760 recoil events at real run time 40 sec CPU time 38
+Ways of stopping: 3754 6 0 0 0 0 0 0
+Mean range 120.055 +- 1.17887 straggle 72.2194
+Area for range.out is 30008
+Total deposited energies/ion: FDn 4032.76 FDe 966.15 FDf 0
+Energy/ion lost outside: sputtered 0.110939 transmitted 0 eV/ion
+Energy/ion lost to 47.00 recoils of type 1: total 4114.81 < 1 eV 98.6137
+
+Output of 3800 recoil events at real run time 41 sec CPU time 38
+Ways of stopping: 3794 6 0 0 0 0 0 0
+Mean range 120.124 +- 1.17043 straggle 72.0836
+Area for range.out is 30324
+Total deposited energies/ion: FDn 4032.33 FDe 966.584 FDf 0
+Energy/ion lost outside: sputtered 0.109771 transmitted 0 eV/ion
+Energy/ion lost to 47.01 recoils of type 1: total 4114.41 < 1 eV 98.6399
+
+Output of 3840 recoil events at real run time 41 sec CPU time 39
+Ways of stopping: 3834 6 0 0 0 0 0 0
+Mean range 120.197 +- 1.16268 straggle 71.9827
+Area for range.out is 30644
+Total deposited energies/ion: FDn 4032.03 FDe 966.888 FDf 0
+Energy/ion lost outside: sputtered 0.108628 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4114.12 < 1 eV 98.6625
+
+Output of 3880 recoil events at real run time 42 sec CPU time 39
+Ways of stopping: 3874 6 0 0 0 0 0 0
+Mean range 120.384 +- 1.15934 straggle 72.1496
+Area for range.out is 30964
+Total deposited energies/ion: FDn 4030.63 FDe 968.283 FDf 0
+Energy/ion lost outside: sputtered 0.107508 transmitted 0 eV/ion
+Energy/ion lost to 47.06 recoils of type 1: total 4112.79 < 1 eV 98.7433
+
+Output of 3920 recoil events at real run time 42 sec CPU time 40
+Ways of stopping: 3914 6 0 0 0 0 0 0
+Mean range 120.425 +- 1.1572 straggle 72.3874
+Area for range.out is 31284
+Total deposited energies/ion: FDn 4030.34 FDe 968.573 FDf 0
+Energy/ion lost outside: sputtered 0.106411 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4112.51 < 1 eV 98.7504
+
+Output of 3960 recoil events at real run time 42 sec CPU time 40
+Ways of stopping: 3954 6 0 0 0 0 0 0
+Mean range 120.359 +- 1.15037 straggle 72.327
+Area for range.out is 31604
+Total deposited energies/ion: FDn 4030.85 FDe 968.067 FDf 0
+Energy/ion lost outside: sputtered 0.105336 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4112.97 < 1 eV 98.6927
+
+Output of 4000 recoil events at real run time 43 sec CPU time 40
+Ways of stopping: 3994 6 0 0 0 0 0 0
+Mean range 120.322 +- 1.14461 straggle 72.3282
+Area for range.out is 31924
+Total deposited energies/ion: FDn 4031.45 FDe 967.466 FDf 0
+Energy/ion lost outside: sputtered 0.104283 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4113.49 < 1 eV 98.6118
+
+Output of 4040 recoil events at real run time 43 sec CPU time 41
+Ways of stopping: 4034 6 0 0 0 0 0 0
+Mean range 120.244 +- 1.14025 straggle 72.4128
+Area for range.out is 32244
+Total deposited energies/ion: FDn 4032.21 FDe 966.714 FDf 0
+Energy/ion lost outside: sputtered 0.10325 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4114.21 < 1 eV 98.5661
+
+Output of 4080 recoil events at real run time 44 sec CPU time 41
+Ways of stopping: 4074 6 0 0 0 0 0 0
+Mean range 120.157 +- 1.1322 straggle 72.2573
+Area for range.out is 32564
+Total deposited energies/ion: FDn 4032.87 FDe 966.055 FDf 0
+Energy/ion lost outside: sputtered 0.102238 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4114.8 < 1 eV 98.4787
+
+Output of 4120 recoil events at real run time 44 sec CPU time 42
+Ways of stopping: 4114 6 0 0 0 0 0 0
+Mean range 120.118 +- 1.12678 straggle 72.2632
+Area for range.out is 32884
+Total deposited energies/ion: FDn 4033.24 FDe 965.683 FDf 0
+Energy/ion lost outside: sputtered 0.101245 transmitted 0 eV/ion
+Energy/ion lost to 46.92 recoils of type 1: total 4115.11 < 1 eV 98.4104
+
+Output of 4160 recoil events at real run time 44 sec CPU time 42
+Ways of stopping: 4154 6 0 0 0 0 0 0
+Mean range 120.154 +- 1.12153 straggle 72.2757
+Area for range.out is 33204
+Total deposited energies/ion: FDn 4032.89 FDe 966.03 FDf 0
+Energy/ion lost outside: sputtered 0.100272 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4114.77 < 1 eV 98.4143
+
+Output of 4200 recoil events at real run time 45 sec CPU time 43
+Ways of stopping: 4194 6 0 0 0 0 0 0
+Mean range 120.198 +- 1.11691 straggle 72.3237
+Area for range.out is 33524
+Total deposited energies/ion: FDn 4032.58 FDe 966.348 FDf 0
+Energy/ion lost outside: sputtered 0.099317 transmitted 0 eV/ion
+Energy/ion lost to 46.95 recoils of type 1: total 4114.47 < 1 eV 98.4268
+
+Output of 4240 recoil events at real run time 45 sec CPU time 43
+Ways of stopping: 4234 6 0 0 0 0 0 0
+Mean range 120.312 +- 1.11086 straggle 72.2741
+Area for range.out is 33844
+Total deposited energies/ion: FDn 4031.47 FDe 967.458 FDf 0
+Energy/ion lost outside: sputtered 0.09838 transmitted 0 eV/ion
+Energy/ion lost to 47.00 recoils of type 1: total 4113.44 < 1 eV 98.5189
+
+Output of 4280 recoil events at real run time 46 sec CPU time 43
+Ways of stopping: 4274 6 0 0 0 0 0 0
+Mean range 120.514 +- 1.10653 straggle 72.3316
+Area for range.out is 34164
+Total deposited energies/ion: FDn 4029.71 FDe 969.217 FDf 0
+Energy/ion lost outside: sputtered 0.0974606 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4111.85 < 1 eV 98.6985
+
+Output of 4320 recoil events at real run time 46 sec CPU time 44
+Ways of stopping: 4314 6 0 0 0 0 0 0
+Mean range 120.509 +- 1.10008 straggle 72.2457
+Area for range.out is 34484
+Total deposited energies/ion: FDn 4029.91 FDe 969.02 FDf 0
+Energy/ion lost outside: sputtered 0.0965582 transmitted 0 eV/ion
+Energy/ion lost to 47.06 recoils of type 1: total 4112.07 < 1 eV 98.7102
+
+Output of 4360 recoil events at real run time 47 sec CPU time 44
+Ways of stopping: 4354 6 0 0 0 0 0 0
+Mean range 120.461 +- 1.09309 straggle 72.1193
+Area for range.out is 34804
+Total deposited energies/ion: FDn 4030.23 FDe 968.695 FDf 0
+Energy/ion lost outside: sputtered 0.0956723 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4112.41 < 1 eV 98.7273
+
+Output of 4400 recoil events at real run time 47 sec CPU time 45
+Ways of stopping: 4394 6 0 0 0 0 0 0
+Mean range 120.46 +- 1.08827 straggle 72.1305
+Area for range.out is 35124
+Total deposited energies/ion: FDn 4030.48 FDe 968.446 FDf 0
+Energy/ion lost outside: sputtered 0.0948026 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4112.62 < 1 eV 98.6862
+
+Output of 4440 recoil events at real run time 47 sec CPU time 45
+Ways of stopping: 4434 6 0 0 0 0 0 0
+Mean range 120.473 +- 1.08051 straggle 71.941
+Area for range.out is 35444
+Total deposited energies/ion: FDn 4030.41 FDe 968.514 FDf 0
+Energy/ion lost outside: sputtered 0.0939485 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4112.54 < 1 eV 98.6724
+
+Output of 4480 recoil events at real run time 48 sec CPU time 45
+Ways of stopping: 4474 6 0 0 0 0 0 0
+Mean range 120.506 +- 1.07805 straggle 72.1003
+Area for range.out is 35764
+Total deposited energies/ion: FDn 4030.2 FDe 968.734 FDf 0
+Energy/ion lost outside: sputtered 0.0931097 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4112.34 < 1 eV 98.6856
+
+Output of 4520 recoil events at real run time 48 sec CPU time 46
+Ways of stopping: 4514 6 0 0 0 0 0 0
+Mean range 120.332 +- 1.07146 straggle 71.9798
+Area for range.out is 36084
+Total deposited energies/ion: FDn 4031.56 FDe 967.368 FDf 0
+Energy/ion lost outside: sputtered 0.0922857 transmitted 0 eV/ion
+Energy/ion lost to 47.00 recoils of type 1: total 4113.61 < 1 eV 98.5694
+
+Output of 4560 recoil events at real run time 49 sec CPU time 46
+Ways of stopping: 4554 6 0 0 0 0 0 0
+Mean range 120.357 +- 1.06672 straggle 71.9779
+Area for range.out is 36404
+Total deposited energies/ion: FDn 4031.53 FDe 967.405 FDf 0
+Energy/ion lost outside: sputtered 0.0914762 transmitted 0 eV/ion
+Energy/ion lost to 47.01 recoils of type 1: total 4113.58 < 1 eV 98.5753
+
+Output of 4600 recoil events at real run time 49 sec CPU time 47
+Ways of stopping: 4594 6 0 0 0 0 0 0
+Mean range 120.252 +- 1.0621 straggle 71.9805
+Area for range.out is 36724
+Total deposited energies/ion: FDn 4032.33 FDe 966.599 FDf 0
+Energy/ion lost outside: sputtered 0.0906807 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4114.3 < 1 eV 98.4663
+
+Output of 4640 recoil events at real run time 50 sec CPU time 47
+Ways of stopping: 4632 8 0 0 0 0 0 0
+Mean range 120.376 +- 1.05851 straggle 72.0329
+Area for range.out is 37028
+Total deposited energies/ion: FDn 4031.83 FDe 966.972 FDf 0
+Energy/ion lost outside: sputtered 0.225184 transmitted 0 eV/ion
+Energy/ion lost to 47.01 recoils of type 1: total 4113.83 < 1 eV 98.5128
+
+Output of 4680 recoil events at real run time 50 sec CPU time 47
+Ways of stopping: 4672 8 0 0 0 0 0 0
+Mean range 120.577 +- 1.05581 straggle 72.1593
+Area for range.out is 37348
+Total deposited energies/ion: FDn 4030.56 FDe 968.237 FDf 0
+Energy/ion lost outside: sputtered 0.223259 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4112.69 < 1 eV 98.6426
+
+Output of 4720 recoil events at real run time 50 sec CPU time 48
+Ways of stopping: 4712 8 0 0 0 0 0 0
+Mean range 120.591 +- 1.05149 straggle 72.1707
+Area for range.out is 37668
+Total deposited energies/ion: FDn 4030.42 FDe 968.378 FDf 0
+Energy/ion lost outside: sputtered 0.221367 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4112.55 < 1 eV 98.6534
+
+Output of 4760 recoil events at real run time 51 sec CPU time 48
+Ways of stopping: 4752 8 0 0 0 0 0 0
+Mean range 120.404 +- 1.04629 straggle 72.1179
+Area for range.out is 37988
+Total deposited energies/ion: FDn 4031.74 FDe 967.067 FDf 0
+Energy/ion lost outside: sputtered 0.219507 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4113.73 < 1 eV 98.5141
+
+Output of 4800 recoil events at real run time 51 sec CPU time 49
+Ways of stopping: 4792 8 0 0 0 0 0 0
+Mean range 120.431 +- 1.0415 straggle 72.0894
+Area for range.out is 38308
+Total deposited energies/ion: FDn 4031.35 FDe 967.452 FDf 0
+Energy/ion lost outside: sputtered 0.217677 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4113.35 < 1 eV 98.5214
+
+Output of 4840 recoil events at real run time 52 sec CPU time 49
+Ways of stopping: 4831 9 0 0 0 0 0 0
+Mean range 120.527 +- 1.03732 straggle 72.092
+Area for range.out is 38620
+Total deposited energies/ion: FDn 4030.72 FDe 968.065 FDf 0
+Energy/ion lost outside: sputtered 0.239251 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4112.71 < 1 eV 98.5232
+
+Output of 4880 recoil events at real run time 52 sec CPU time 50
+Ways of stopping: 4871 9 0 0 0 0 0 0
+Mean range 120.556 +- 1.03246 straggle 72.0509
+Area for range.out is 38940
+Total deposited energies/ion: FDn 4030.55 FDe 968.232 FDf 0
+Energy/ion lost outside: sputtered 0.23729 transmitted 0 eV/ion
+Energy/ion lost to 47.06 recoils of type 1: total 4112.56 < 1 eV 98.5481
+
+Output of 4920 recoil events at real run time 53 sec CPU time 50
+Ways of stopping: 4911 9 0 0 0 0 0 0
+Mean range 120.585 +- 1.02823 straggle 72.0494
+Area for range.out is 39260
+Total deposited energies/ion: FDn 4030.36 FDe 968.426 FDf 0
+Energy/ion lost outside: sputtered 0.235361 transmitted 0 eV/ion
+Energy/ion lost to 47.06 recoils of type 1: total 4112.39 < 1 eV 98.5637
+
+Output of 4960 recoil events at real run time 53 sec CPU time 50
+Ways of stopping: 4951 9 0 0 0 0 0 0
+Mean range 120.655 +- 1.02441 straggle 72.0739
+Area for range.out is 39580
+Total deposited energies/ion: FDn 4029.72 FDe 969.07 FDf 0
+Energy/ion lost outside: sputtered 0.233463 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4111.8 < 1 eV 98.6184
+
+Output of 5000 recoil events at real run time 53 sec CPU time 51
+Ways of stopping: 4991 9 0 0 0 0 0 0
+Mean range 120.695 +- 1.02018 straggle 72.0653
+Area for range.out is 39900
+Total deposited energies/ion: FDn 4029.57 FDe 969.226 FDf 0
+Energy/ion lost outside: sputtered 0.231595 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4111.66 < 1 eV 98.628
+
+Output of 5040 recoil events at real run time 54 sec CPU time 51
+Ways of stopping: 5031 9 0 0 0 0 0 0
+Mean range 120.699 +- 1.01604 straggle 72.0604
+Area for range.out is 40220
+Total deposited energies/ion: FDn 4029.69 FDe 969.109 FDf 0
+Energy/ion lost outside: sputtered 0.229757 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4111.78 < 1 eV 98.634
+
+Output of 5080 recoil events at real run time 54 sec CPU time 52
+Ways of stopping: 5071 9 0 0 0 0 0 0
+Mean range 120.499 +- 1.01115 straggle 71.9981
+Area for range.out is 40540
+Total deposited energies/ion: FDn 4031.17 FDe 967.622 FDf 0
+Energy/ion lost outside: sputtered 0.227948 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4113.14 < 1 eV 98.4849
+
+Output of 5120 recoil events at real run time 55 sec CPU time 52
+Ways of stopping: 5111 9 0 0 0 0 0 0
+Mean range 120.55 +- 1.00971 straggle 72.1782
+Area for range.out is 40860
+Total deposited energies/ion: FDn 4031.02 FDe 967.779 FDf 0
+Energy/ion lost outside: sputtered 0.226167 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4113.01 < 1 eV 98.5157
+
+Output of 5160 recoil events at real run time 55 sec CPU time 52
+Ways of stopping: 5151 9 0 0 0 0 0 0
+Mean range 120.673 +- 1.00708 straggle 72.2717
+Area for range.out is 41180
+Total deposited energies/ion: FDn 4030.27 FDe 968.533 FDf 0
+Energy/ion lost outside: sputtered 0.224414 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4112.32 < 1 eV 98.5819
+
+Output of 5200 recoil events at real run time 56 sec CPU time 53
+Ways of stopping: 5191 9 0 0 0 0 0 0
+Mean range 120.751 +- 1.00442 straggle 72.3603
+Area for range.out is 41500
+Total deposited energies/ion: FDn 4029.93 FDe 968.866 FDf 0
+Energy/ion lost outside: sputtered 0.222688 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4111.98 < 1 eV 98.5966
+
+Output of 5240 recoil events at real run time 56 sec CPU time 53
+Ways of stopping: 5231 9 0 0 0 0 0 0
+Mean range 120.727 +- 0.999533 straggle 72.285
+Area for range.out is 41820
+Total deposited energies/ion: FDn 4030.25 FDe 968.554 FDf 0
+Energy/ion lost outside: sputtered 0.220988 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4112.28 < 1 eV 98.5787
+
+Output of 5280 recoil events at real run time 56 sec CPU time 54
+Ways of stopping: 5270 10 0 0 0 0 0 0
+Mean range 120.855 +- 0.996588 straggle 72.3402
+Area for range.out is 42132
+Total deposited energies/ion: FDn 4029.51 FDe 969.291 FDf 0
+Energy/ion lost outside: sputtered 0.224677 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4111.58 < 1 eV 98.6293
+
+Output of 5320 recoil events at real run time 57 sec CPU time 54
+Ways of stopping: 5310 10 0 0 0 0 0 0
+Mean range 120.876 +- 0.993349 straggle 72.3783
+Area for range.out is 42452
+Total deposited energies/ion: FDn 4029.44 FDe 969.362 FDf 0
+Energy/ion lost outside: sputtered 0.222987 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4111.54 < 1 eV 98.6622
+
+Output of 5360 recoil events at real run time 57 sec CPU time 55
+Ways of stopping: 5350 10 0 0 0 0 0 0
+Mean range 120.838 +- 0.987815 straggle 72.2457
+Area for range.out is 42772
+Total deposited energies/ion: FDn 4029.87 FDe 968.929 FDf 0
+Energy/ion lost outside: sputtered 0.221323 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4111.95 < 1 eV 98.6408
+
+Output of 5400 recoil events at real run time 58 sec CPU time 55
+Ways of stopping: 5390 10 0 0 0 0 0 0
+Mean range 120.806 +- 0.984933 straggle 72.3038
+Area for range.out is 43092
+Total deposited energies/ion: FDn 4030.12 FDe 968.683 FDf 0
+Energy/ion lost outside: sputtered 0.219684 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4112.15 < 1 eV 98.5878
+
+Output of 5440 recoil events at real run time 58 sec CPU time 55
+Ways of stopping: 5430 10 0 0 0 0 0 0
+Mean range 120.89 +- 0.983702 straggle 72.4809
+Area for range.out is 43412
+Total deposited energies/ion: FDn 4029.55 FDe 969.254 FDf 0
+Energy/ion lost outside: sputtered 0.218068 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4111.65 < 1 eV 98.6595
+
+Output of 5480 recoil events at real run time 59 sec CPU time 56
+Ways of stopping: 5470 10 0 0 0 0 0 0
+Mean range 120.911 +- 0.980592 straggle 72.5174
+Area for range.out is 43732
+Total deposited energies/ion: FDn 4029.38 FDe 969.424 FDf 0
+Energy/ion lost outside: sputtered 0.216477 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4111.47 < 1 eV 98.6474
+
+Output of 5520 recoil events at real run time 59 sec CPU time 56
+Ways of stopping: 5510 10 0 0 0 0 0 0
+Mean range 120.993 +- 0.979885 straggle 72.7296
+Area for range.out is 44052
+Total deposited energies/ion: FDn 4028.94 FDe 969.871 FDf 0
+Energy/ion lost outside: sputtered 0.214908 transmitted 0 eV/ion
+Energy/ion lost to 47.12 recoils of type 1: total 4111.06 < 1 eV 98.6842
+
+Output of 5560 recoil events at real run time 59 sec CPU time 57
+Ways of stopping: 5550 10 0 0 0 0 0 0
+Mean range 120.911 +- 0.974606 straggle 72.6
+Area for range.out is 44372
+Total deposited energies/ion: FDn 4029.59 FDe 969.218 FDf 0
+Energy/ion lost outside: sputtered 0.213362 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4111.7 < 1 eV 98.6668
+
+Output of 5600 recoil events at real run time 60 sec CPU time 57
+Ways of stopping: 5590 10 0 0 0 0 0 0
+Mean range 120.909 +- 0.972075 straggle 72.672
+Area for range.out is 44692
+Total deposited energies/ion: FDn 4029.83 FDe 968.986 FDf 0
+Energy/ion lost outside: sputtered 0.211838 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4111.94 < 1 eV 98.6819
+
+Output of 5640 recoil events at real run time 60 sec CPU time 57
+Ways of stopping: 5630 10 0 0 0 0 0 0
+Mean range 120.991 +- 0.968799 straggle 72.6858
+Area for range.out is 45012
+Total deposited energies/ion: FDn 4029.2 FDe 969.616 FDf 0
+Energy/ion lost outside: sputtered 0.210336 transmitted 0 eV/ion
+Energy/ion lost to 47.13 recoils of type 1: total 4111.36 < 1 eV 98.7331
+
+Output of 5680 recoil events at real run time 61 sec CPU time 58
+Ways of stopping: 5670 10 0 0 0 0 0 0
+Mean range 121.035 +- 0.964576 straggle 72.6256
+Area for range.out is 45332
+Total deposited energies/ion: FDn 4029.14 FDe 969.677 FDf 0
+Energy/ion lost outside: sputtered 0.208854 transmitted 0 eV/ion
+Energy/ion lost to 47.15 recoils of type 1: total 4111.34 < 1 eV 98.7698
+
+Output of 5720 recoil events at real run time 61 sec CPU time 58
+Ways of stopping: 5710 10 0 0 0 0 0 0
+Mean range 120.96 +- 0.960766 straggle 72.5935
+Area for range.out is 45652
+Total deposited energies/ion: FDn 4029.68 FDe 969.136 FDf 0
+Energy/ion lost outside: sputtered 0.207394 transmitted 0 eV/ion
+Energy/ion lost to 47.13 recoils of type 1: total 4111.82 < 1 eV 98.7081
+
+Output of 5760 recoil events at real run time 62 sec CPU time 59
+Ways of stopping: 5750 10 0 0 0 0 0 0
+Mean range 120.872 +- 0.956616 straggle 72.5327
+Area for range.out is 45972
+Total deposited energies/ion: FDn 4030.08 FDe 968.735 FDf 0
+Energy/ion lost outside: sputtered 0.205954 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4112.17 < 1 eV 98.6575
+
+Output of 5800 recoil events at real run time 62 sec CPU time 59
+Ways of stopping: 5790 10 0 0 0 0 0 0
+Mean range 120.753 +- 0.95321 straggle 72.5255
+Area for range.out is 46292
+Total deposited energies/ion: FDn 4031.08 FDe 967.741 FDf 0
+Energy/ion lost outside: sputtered 0.204533 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4113.06 < 1 eV 98.5407
+
+Output of 5840 recoil events at real run time 62 sec CPU time 59
+Ways of stopping: 5830 10 0 0 0 0 0 0
+Mean range 120.736 +- 0.948944 straggle 72.4499
+Area for range.out is 46612
+Total deposited energies/ion: FDn 4031.12 FDe 967.699 FDf 0
+Energy/ion lost outside: sputtered 0.203132 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4113.1 < 1 eV 98.5478
+
+Output of 5880 recoil events at real run time 63 sec CPU time 60
+Ways of stopping: 5870 10 0 0 0 0 0 0
+Mean range 120.77 +- 0.947697 straggle 72.6025
+Area for range.out is 46932
+Total deposited energies/ion: FDn 4030.83 FDe 967.992 FDf 0
+Energy/ion lost outside: sputtered 0.20175 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4112.85 < 1 eV 98.5878
+
+Output of 5920 recoil events at real run time 63 sec CPU time 60
+Ways of stopping: 5910 10 0 0 0 0 0 0
+Mean range 120.661 +- 0.944714 straggle 72.6202
+Area for range.out is 47252
+Total deposited energies/ion: FDn 4031.57 FDe 967.25 FDf 0
+Energy/ion lost outside: sputtered 0.200387 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4113.52 < 1 eV 98.5076
+
+Output of 5960 recoil events at real run time 64 sec CPU time 61
+Ways of stopping: 5950 10 0 0 0 0 0 0
+Mean range 120.616 +- 0.941477 straggle 72.6159
+Area for range.out is 47572
+Total deposited energies/ion: FDn 4031.91 FDe 966.913 FDf 0
+Energy/ion lost outside: sputtered 0.199042 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4113.82 < 1 eV 98.4655
+
+Output of 6000 recoil events at real run time 64 sec CPU time 61
+Ways of stopping: 5990 10 0 0 0 0 0 0
+Mean range 120.684 +- 0.939228 straggle 72.6856
+Area for range.out is 47892
+Total deposited energies/ion: FDn 4031.48 FDe 967.343 FDf 0
+Energy/ion lost outside: sputtered 0.197715 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4113.43 < 1 eV 98.507
+
+Output of 6040 recoil events at real run time 64 sec CPU time 61
+Ways of stopping: 6030 10 0 0 0 0 0 0
+Mean range 120.671 +- 0.936683 straggle 72.7303
+Area for range.out is 48208
+Total deposited energies/ion: FDn 4031.38 FDe 967.447 FDf 0
+Energy/ion lost outside: sputtered 0.196406 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4113.35 < 1 eV 98.5299
+
+Output of 6080 recoil events at real run time 65 sec CPU time 62
+Ways of stopping: 6069 11 0 0 0 0 0 0
+Mean range 120.573 +- 0.935303 straggle 72.8576
+Area for range.out is 48520
+Total deposited energies/ion: FDn 4032.34 FDe 966.482 FDf 0
+Energy/ion lost outside: sputtered 0.197885 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4114.24 < 1 eV 98.4534
+
+Output of 6120 recoil events at real run time 65 sec CPU time 62
+Ways of stopping: 6109 11 0 0 0 0 0 0
+Mean range 120.576 +- 0.933051 straggle 72.9214
+Area for range.out is 48840
+Total deposited energies/ion: FDn 4032.19 FDe 966.633 FDf 0
+Energy/ion lost outside: sputtered 0.196592 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4114.12 < 1 eV 98.4861
+
+Output of 6160 recoil events at real run time 66 sec CPU time 63
+Ways of stopping: 6149 11 0 0 0 0 0 0
+Mean range 120.683 +- 0.931282 straggle 73.0211
+Area for range.out is 49160
+Total deposited energies/ion: FDn 4031.63 FDe 967.194 FDf 0
+Energy/ion lost outside: sputtered 0.195315 transmitted 0 eV/ion
+Energy/ion lost to 47.07 recoils of type 1: total 4113.6 < 1 eV 98.5249
+
+Output of 6200 recoil events at real run time 66 sec CPU time 63
+Ways of stopping: 6189 11 0 0 0 0 0 0
+Mean range 120.736 +- 0.92819 straggle 73.015
+Area for range.out is 49480
+Total deposited energies/ion: FDn 4031.29 FDe 967.541 FDf 0
+Energy/ion lost outside: sputtered 0.194055 transmitted 0 eV/ion
+Energy/ion lost to 47.09 recoils of type 1: total 4113.27 < 1 eV 98.5412
+
+Output of 6240 recoil events at real run time 67 sec CPU time 63
+Ways of stopping: 6229 11 0 0 0 0 0 0
+Mean range 120.755 +- 0.92651 straggle 73.118
+Area for range.out is 49796
+Total deposited energies/ion: FDn 4031.28 FDe 967.548 FDf 0
+Energy/ion lost outside: sputtered 0.192811 transmitted 0 eV/ion
+Energy/ion lost to 47.09 recoils of type 1: total 4113.26 < 1 eV 98.5414
+
+Output of 6280 recoil events at real run time 67 sec CPU time 64
+Ways of stopping: 6269 11 0 0 0 0 0 0
+Mean range 120.629 +- 0.922204 straggle 73.0116
+Area for range.out is 50116
+Total deposited energies/ion: FDn 4032.29 FDe 966.539 FDf 0
+Energy/ion lost outside: sputtered 0.191583 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4114.2 < 1 eV 98.4512
+
+Output of 6320 recoil events at real run time 67 sec CPU time 64
+Ways of stopping: 6309 11 0 0 0 0 0 0
+Mean range 120.823 +- 0.921531 straggle 73.1907
+Area for range.out is 50436
+Total deposited energies/ion: FDn 4030.94 FDe 967.894 FDf 0
+Energy/ion lost outside: sputtered 0.190371 transmitted 0 eV/ion
+Energy/ion lost to 47.10 recoils of type 1: total 4112.91 < 1 eV 98.5376
+
+Output of 6360 recoil events at real run time 68 sec CPU time 65
+Ways of stopping: 6349 11 0 0 0 0 0 0
+Mean range 120.83 +- 0.919599 straggle 73.2684
+Area for range.out is 50756
+Total deposited energies/ion: FDn 4031.14 FDe 967.691 FDf 0
+Energy/ion lost outside: sputtered 0.189173 transmitted 0 eV/ion
+Energy/ion lost to 47.09 recoils of type 1: total 4113.09 < 1 eV 98.5125
+
+Output of 6400 recoil events at real run time 68 sec CPU time 65
+Ways of stopping: 6389 11 0 0 0 0 0 0
+Mean range 120.854 +- 0.916916 straggle 73.2845
+Area for range.out is 51076
+Total deposited energies/ion: FDn 4031.07 FDe 967.77 FDf 0
+Energy/ion lost outside: sputtered 0.187991 transmitted 0 eV/ion
+Energy/ion lost to 47.11 recoils of type 1: total 4113.04 < 1 eV 98.5338
+
+Output of 6440 recoil events at real run time 69 sec CPU time 65
+Ways of stopping: 6429 11 0 0 0 0 0 0
+Mean range 120.792 +- 0.913218 straggle 73.2171
+Area for range.out is 51396
+Total deposited energies/ion: FDn 4031.62 FDe 967.216 FDf 0
+Energy/ion lost outside: sputtered 0.186823 transmitted 0 eV/ion
+Energy/ion lost to 47.08 recoils of type 1: total 4113.54 < 1 eV 98.4717
+
+Output of 6480 recoil events at real run time 69 sec CPU time 66
+Ways of stopping: 6469 11 0 0 0 0 0 0
+Mean range 120.605 +- 0.909197 straggle 73.1211
+Area for range.out is 51712
+Total deposited energies/ion: FDn 4032.89 FDe 965.945 FDf 0
+Energy/ion lost outside: sputtered 0.18567 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4114.71 < 1 eV 98.3544
+
+Output of 6520 recoil events at real run time 69 sec CPU time 66
+Ways of stopping: 6509 11 0 0 0 0 0 0
+Mean range 120.733 +- 0.907835 straggle 73.2371
+Area for range.out is 52032
+Total deposited energies/ion: FDn 4031.76 FDe 967.078 FDf 0
+Energy/ion lost outside: sputtered 0.184531 transmitted 0 eV/ion
+Energy/ion lost to 47.06 recoils of type 1: total 4113.67 < 1 eV 98.4599
+
+Output of 6560 recoil events at real run time 70 sec CPU time 67
+Ways of stopping: 6549 11 0 0 0 0 0 0
+Mean range 120.671 +- 0.904145 straggle 73.1632
+Area for range.out is 52352
+Total deposited energies/ion: FDn 4032.1 FDe 966.742 FDf 0
+Energy/ion lost outside: sputtered 0.183406 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4113.99 < 1 eV 98.4384
+
+Output of 6600 recoil events at real run time 70 sec CPU time 67
+Ways of stopping: 6589 11 0 0 0 0 0 0
+Mean range 120.692 +- 0.901152 straggle 73.1434
+Area for range.out is 52672
+Total deposited energies/ion: FDn 4031.77 FDe 967.075 FDf 0
+Energy/ion lost outside: sputtered 0.182294 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4113.67 < 1 eV 98.4526
+
+Output of 6640 recoil events at real run time 71 sec CPU time 68
+Ways of stopping: 6629 11 0 0 0 0 0 0
+Mean range 120.693 +- 0.899156 straggle 73.2025
+Area for range.out is 52992
+Total deposited energies/ion: FDn 4031.72 FDe 967.125 FDf 0
+Energy/ion lost outside: sputtered 0.181196 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4113.62 < 1 eV 98.4522
+
+Output of 6680 recoil events at real run time 71 sec CPU time 68
+Ways of stopping: 6669 11 0 0 0 0 0 0
+Mean range 120.658 +- 0.895914 straggle 73.1584
+Area for range.out is 53312
+Total deposited energies/ion: FDn 4031.88 FDe 966.966 FDf 0
+Energy/ion lost outside: sputtered 0.180111 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4113.76 < 1 eV 98.4331
+
+Output of 6720 recoil events at real run time 72 sec CPU time 68
+Ways of stopping: 6709 11 0 0 0 0 0 0
+Mean range 120.648 +- 0.89318 straggle 73.1536
+Area for range.out is 53632
+Total deposited energies/ion: FDn 4031.88 FDe 966.965 FDf 0
+Energy/ion lost outside: sputtered 0.179039 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4113.76 < 1 eV 98.4289
+
+Output of 6760 recoil events at real run time 72 sec CPU time 69
+Ways of stopping: 6749 11 0 0 0 0 0 0
+Mean range 120.576 +- 0.889846 straggle 73.0975
+Area for range.out is 53952
+Total deposited energies/ion: FDn 4032.37 FDe 966.478 FDf 0
+Energy/ion lost outside: sputtered 0.17798 transmitted 0 eV/ion
+Energy/ion lost to 47.00 recoils of type 1: total 4114.21 < 1 eV 98.3739
+
+Output of 6800 recoil events at real run time 72 sec CPU time 69
+Ways of stopping: 6789 11 0 0 0 0 0 0
+Mean range 120.517 +- 0.886731 straggle 73.0572
+Area for range.out is 54272
+Total deposited energies/ion: FDn 4032.83 FDe 966.013 FDf 0
+Energy/ion lost outside: sputtered 0.176933 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4114.65 < 1 eV 98.3473
+
+Output of 6840 recoil events at real run time 73 sec CPU time 69
+Ways of stopping: 6829 11 0 0 0 0 0 0
+Mean range 120.472 +- 0.885026 straggle 73.1312
+Area for range.out is 54592
+Total deposited energies/ion: FDn 4033.08 FDe 965.767 FDf 0
+Energy/ion lost outside: sputtered 0.175898 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4114.91 < 1 eV 98.3561
+
+Output of 6880 recoil events at real run time 73 sec CPU time 70
+Ways of stopping: 6869 11 0 0 0 0 0 0
+Mean range 120.492 +- 0.881673 straggle 73.0672
+Area for range.out is 54912
+Total deposited energies/ion: FDn 4032.89 FDe 965.959 FDf 0
+Energy/ion lost outside: sputtered 0.174875 transmitted 0 eV/ion
+Energy/ion lost to 47.01 recoils of type 1: total 4114.74 < 1 eV 98.3867
+
+Output of 6920 recoil events at real run time 74 sec CPU time 70
+Ways of stopping: 6909 11 0 0 0 0 0 0
+Mean range 120.395 +- 0.877965 straggle 72.9715
+Area for range.out is 55232
+Total deposited energies/ion: FDn 4033.67 FDe 965.179 FDf 0
+Energy/ion lost outside: sputtered 0.173865 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4115.48 < 1 eV 98.3348
+
+Output of 6960 recoil events at real run time 74 sec CPU time 71
+Ways of stopping: 6949 11 0 0 0 0 0 0
+Mean range 120.37 +- 0.87456 straggle 72.8986
+Area for range.out is 55552
+Total deposited energies/ion: FDn 4033.75 FDe 965.101 FDf 0
+Energy/ion lost outside: sputtered 0.172865 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4115.54 < 1 eV 98.3172
+
+Output of 7000 recoil events at real run time 74 sec CPU time 71
+Ways of stopping: 6989 11 0 0 0 0 0 0
+Mean range 120.315 +- 0.87186 straggle 72.8825
+Area for range.out is 55872
+Total deposited energies/ion: FDn 4034.3 FDe 964.554 FDf 0
+Energy/ion lost outside: sputtered 0.171878 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4116.05 < 1 eV 98.2781
+
+Output of 7040 recoil events at real run time 75 sec CPU time 71
+Ways of stopping: 7029 11 0 0 0 0 0 0
+Mean range 120.339 +- 0.86917 straggle 72.8653
+Area for range.out is 56192
+Total deposited energies/ion: FDn 4034.15 FDe 964.699 FDf 0
+Energy/ion lost outside: sputtered 0.170901 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4115.91 < 1 eV 98.2959
+
+Output of 7080 recoil events at real run time 75 sec CPU time 72
+Ways of stopping: 7069 11 0 0 0 0 0 0
+Mean range 120.284 +- 0.865787 straggle 72.788
+Area for range.out is 56512
+Total deposited energies/ion: FDn 4034.43 FDe 964.422 FDf 0
+Energy/ion lost outside: sputtered 0.169935 transmitted 0 eV/ion
+Energy/ion lost to 46.96 recoils of type 1: total 4116.18 < 1 eV 98.2735
+
+Output of 7120 recoil events at real run time 76 sec CPU time 72
+Ways of stopping: 7109 11 0 0 0 0 0 0
+Mean range 120.212 +- 0.862456 straggle 72.7127
+Area for range.out is 56832
+Total deposited energies/ion: FDn 4034.9 FDe 963.951 FDf 0
+Energy/ion lost outside: sputtered 0.168981 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.63 < 1 eV 98.2496
+
+Output of 7160 recoil events at real run time 76 sec CPU time 73
+Ways of stopping: 7149 11 0 0 0 0 0 0
+Mean range 120.323 +- 0.860174 straggle 72.7241
+Area for range.out is 57152
+Total deposited energies/ion: FDn 4033.95 FDe 964.91 FDf 0
+Energy/ion lost outside: sputtered 0.168037 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4115.73 < 1 eV 98.3227
+
+Output of 7200 recoil events at real run time 76 sec CPU time 73
+Ways of stopping: 7189 11 0 0 0 0 0 0
+Mean range 120.254 +- 0.857165 straggle 72.6722
+Area for range.out is 57472
+Total deposited energies/ion: FDn 4034.39 FDe 964.47 FDf 0
+Energy/ion lost outside: sputtered 0.167103 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.13 < 1 eV 98.2779
+
+Output of 7240 recoil events at real run time 77 sec CPU time 74
+Ways of stopping: 7229 11 0 0 0 0 0 0
+Mean range 120.233 +- 0.855326 straggle 72.7178
+Area for range.out is 57792
+Total deposited energies/ion: FDn 4034.57 FDe 964.283 FDf 0
+Energy/ion lost outside: sputtered 0.16618 transmitted 0 eV/ion
+Energy/ion lost to 46.93 recoils of type 1: total 4116.3 < 1 eV 98.2637
+
+Output of 7280 recoil events at real run time 77 sec CPU time 74
+Ways of stopping: 7269 11 0 0 0 0 0 0
+Mean range 120.392 +- 0.854657 straggle 72.8617
+Area for range.out is 58112
+Total deposited energies/ion: FDn 4033.42 FDe 965.442 FDf 0
+Energy/ion lost outside: sputtered 0.165267 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4115.22 < 1 eV 98.3491
+
+Output of 7320 recoil events at real run time 78 sec CPU time 74
+Ways of stopping: 7309 11 0 0 0 0 0 0
+Mean range 120.379 +- 0.851498 straggle 72.7919
+Area for range.out is 58432
+Total deposited energies/ion: FDn 4033.54 FDe 965.315 FDf 0
+Energy/ion lost outside: sputtered 0.164364 transmitted 0 eV/ion
+Energy/ion lost to 46.98 recoils of type 1: total 4115.34 < 1 eV 98.3456
+
+Output of 7360 recoil events at real run time 78 sec CPU time 75
+Ways of stopping: 7349 11 0 0 0 0 0 0
+Mean range 120.494 +- 0.851608 straggle 73.0003
+Area for range.out is 58752
+Total deposited energies/ion: FDn 4032.68 FDe 966.175 FDf 0
+Energy/ion lost outside: sputtered 0.163471 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4114.55 < 1 eV 98.4235
+
+Output of 7400 recoil events at real run time 79 sec CPU time 75
+Ways of stopping: 7389 11 0 0 0 0 0 0
+Mean range 120.561 +- 0.849137 straggle 72.9863
+Area for range.out is 59072
+Total deposited energies/ion: FDn 4032.12 FDe 966.743 FDf 0
+Energy/ion lost outside: sputtered 0.162587 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4114.03 < 1 eV 98.4755
+
+Output of 7440 recoil events at real run time 79 sec CPU time 76
+Ways of stopping: 7429 11 0 0 0 0 0 0
+Mean range 120.535 +- 0.846841 straggle 72.9857
+Area for range.out is 59392
+Total deposited energies/ion: FDn 4032.27 FDe 966.588 FDf 0
+Energy/ion lost outside: sputtered 0.161713 transmitted 0 eV/ion
+Energy/ion lost to 47.05 recoils of type 1: total 4114.17 < 1 eV 98.4546
+
+Output of 7480 recoil events at real run time 80 sec CPU time 76
+Ways of stopping: 7469 11 0 0 0 0 0 0
+Mean range 120.495 +- 0.844044 straggle 72.9403
+Area for range.out is 59712
+Total deposited energies/ion: FDn 4032.71 FDe 966.155 FDf 0
+Energy/ion lost outside: sputtered 0.160848 transmitted 0 eV/ion
+Energy/ion lost to 47.04 recoils of type 1: total 4114.58 < 1 eV 98.4299
+
+Output of 7520 recoil events at real run time 80 sec CPU time 76
+Ways of stopping: 7508 12 0 0 0 0 0 0
+Mean range 120.495 +- 0.841316 straggle 72.8941
+Area for range.out is 60024
+Total deposited energies/ion: FDn 4032.85 FDe 966.011 FDf 0
+Energy/ion lost outside: sputtered 0.1671 transmitted 0 eV/ion
+Energy/ion lost to 47.03 recoils of type 1: total 4114.71 < 1 eV 98.4156
+
+Output of 7560 recoil events at real run time 80 sec CPU time 77
+Ways of stopping: 7548 12 0 0 0 0 0 0
+Mean range 120.465 +- 0.839264 straggle 72.9098
+Area for range.out is 60344
+Total deposited energies/ion: FDn 4033.03 FDe 965.824 FDf 0
+Energy/ion lost outside: sputtered 0.166216 transmitted 0 eV/ion
+Energy/ion lost to 47.02 recoils of type 1: total 4114.87 < 1 eV 98.3752
+
+Output of 7600 recoil events at real run time 81 sec CPU time 77
+Ways of stopping: 7588 12 0 0 0 0 0 0
+Mean range 120.378 +- 0.836313 straggle 72.8457
+Area for range.out is 60664
+Total deposited energies/ion: FDn 4033.68 FDe 965.175 FDf 0
+Energy/ion lost outside: sputtered 0.165341 transmitted 0 eV/ion
+Energy/ion lost to 46.99 recoils of type 1: total 4115.45 < 1 eV 98.2966
+
+Output of 7640 recoil events at real run time 81 sec CPU time 78
+Ways of stopping: 7628 12 0 0 0 0 0 0
+Mean range 120.324 +- 0.833998 straggle 72.8353
+Area for range.out is 60984
+Total deposited energies/ion: FDn 4033.97 FDe 964.886 FDf 0
+Energy/ion lost outside: sputtered 0.164476 transmitted 0 eV/ion
+Energy/ion lost to 46.97 recoils of type 1: total 4115.73 < 1 eV 98.2898
+
+Output of 7680 recoil events at real run time 82 sec CPU time 78
+Ways of stopping: 7668 12 0 0 0 0 0 0
+Mean range 120.206 +- 0.830855 straggle 72.7508
+Area for range.out is 61304
+Total deposited energies/ion: FDn 4034.7 FDe 964.161 FDf 0
+Energy/ion lost outside: sputtered 0.163619 transmitted 0 eV/ion
+Energy/ion lost to 46.94 recoils of type 1: total 4116.4 < 1 eV 98.2285
+
+Output of 7720 recoil events at real run time 82 sec CPU time 78
+Ways of stopping: 7707 13 0 0 0 0 0 0
+Mean range 120.153 +- 0.828245 straggle 72.7065
+Area for range.out is 61616
+Total deposited energies/ion: FDn 4035.25 FDe 963.608 FDf 0
+Energy/ion lost outside: sputtered 0.16302 transmitted 0 eV/ion
+Energy/ion lost to 46.91 recoils of type 1: total 4116.9 < 1 eV 98.1637
+
+Output of 7760 recoil events at real run time 82 sec CPU time 79
+Ways of stopping: 7747 13 0 0 0 0 0 0
+Mean range 120.148 +- 0.825761 straggle 72.6763
+Area for range.out is 61932
+Total deposited energies/ion: FDn 4035.29 FDe 963.574 FDf 0
+Energy/ion lost outside: sputtered 0.162179 transmitted 0 eV/ion
+Energy/ion lost to 46.90 recoils of type 1: total 4116.93 < 1 eV 98.1604
+
+Output of 7800 recoil events at real run time 83 sec CPU time 79
+Ways of stopping: 7787 13 0 0 0 0 0 0
+Mean range 120.076 +- 0.822902 straggle 72.6115
+Area for range.out is 62252
+Total deposited energies/ion: FDn 4035.84 FDe 963.019 FDf 0
+Energy/ion lost outside: sputtered 0.161348 transmitted 0 eV/ion
+Energy/ion lost to 46.87 recoils of type 1: total 4117.43 < 1 eV 98.1125
+
+Output of 7840 recoil events at real run time 83 sec CPU time 80
+Ways of stopping: 7827 13 0 0 0 0 0 0
+Mean range 120.082 +- 0.821204 straggle 72.6475
+Area for range.out is 62572
+Total deposited energies/ion: FDn 4035.71 FDe 963.154 FDf 0
+Energy/ion lost outside: sputtered 0.160524 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4117.3 < 1 eV 98.116
+
+Output of 7880 recoil events at real run time 84 sec CPU time 80
+Ways of stopping: 7867 13 0 0 0 0 0 0
+Mean range 120.085 +- 0.819599 straggle 72.6906
+Area for range.out is 62892
+Total deposited energies/ion: FDn 4035.68 FDe 963.186 FDf 0
+Energy/ion lost outside: sputtered 0.15971 transmitted 0 eV/ion
+Energy/ion lost to 46.88 recoils of type 1: total 4117.28 < 1 eV 98.1208
+
+Output of 7920 recoil events at real run time 84 sec CPU time 80
+Ways of stopping: 7907 13 0 0 0 0 0 0
+Mean range 120.067 +- 0.817436 straggle 72.6829
+Area for range.out is 63212
+Total deposited energies/ion: FDn 4035.8 FDe 963.06 FDf 0
+Energy/ion lost outside: sputtered 0.158903 transmitted 0 eV/ion
+Energy/ion lost to 46.87 recoils of type 1: total 4117.4 < 1 eV 98.1125
+
+Output of 7960 recoil events at real run time 84 sec CPU time 81
+Ways of stopping: 7947 13 0 0 0 0 0 0
+Mean range 119.962 +- 0.815846 straggle 72.7248
+Area for range.out is 63532
+Total deposited energies/ion: FDn 4036.74 FDe 962.126 FDf 0
+Energy/ion lost outside: sputtered 0.158105 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4118.27 < 1 eV 98.0427
+
+Output of 8000 recoil events at real run time 85 sec CPU time 81
+Ways of stopping: 7987 13 0 0 0 0 0 0
+Mean range 119.925 +- 0.814008 straggle 72.7433
+Area for range.out is 63852
+Total deposited energies/ion: FDn 4037 FDe 961.87 FDf 0
+Energy/ion lost outside: sputtered 0.157314 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4118.51 < 1 eV 98.0246
+
+Output of 8040 recoil events at real run time 85 sec CPU time 82
+Ways of stopping: 8027 13 0 0 0 0 0 0
+Mean range 119.912 +- 0.811659 straggle 72.7148
+Area for range.out is 64172
+Total deposited energies/ion: FDn 4037.18 FDe 961.685 FDf 0
+Energy/ion lost outside: sputtered 0.156531 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4118.67 < 1 eV 97.9968
+
+Output of 8080 recoil events at real run time 86 sec CPU time 82
+Ways of stopping: 8067 13 0 0 0 0 0 0
+Mean range 119.885 +- 0.809533 straggle 72.7049
+Area for range.out is 64492
+Total deposited energies/ion: FDn 4037.29 FDe 961.575 FDf 0
+Energy/ion lost outside: sputtered 0.155756 transmitted 0 eV/ion
+Energy/ion lost to 46.81 recoils of type 1: total 4118.77 < 1 eV 97.984
+
+Output of 8120 recoil events at real run time 86 sec CPU time 82
+Ways of stopping: 8107 13 0 0 0 0 0 0
+Mean range 119.814 +- 0.807153 straggle 72.6706
+Area for range.out is 64812
+Total deposited energies/ion: FDn 4037.84 FDe 961.033 FDf 0
+Energy/ion lost outside: sputtered 0.154989 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.29 < 1 eV 97.9685
+
+Output of 8160 recoil events at real run time 86 sec CPU time 83
+Ways of stopping: 8147 13 0 0 0 0 0 0
+Mean range 119.882 +- 0.805358 straggle 72.6878
+Area for range.out is 65132
+Total deposited energies/ion: FDn 4037.38 FDe 961.487 FDf 0
+Energy/ion lost outside: sputtered 0.154229 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4118.87 < 1 eV 98.0143
+
+Output of 8200 recoil events at real run time 87 sec CPU time 83
+Ways of stopping: 8187 13 0 0 0 0 0 0
+Mean range 119.823 +- 0.802826 straggle 72.6369
+Area for range.out is 65452
+Total deposited energies/ion: FDn 4037.82 FDe 961.05 FDf 0
+Energy/ion lost outside: sputtered 0.153477 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.29 < 1 eV 97.995
+
+Output of 8240 recoil events at real run time 87 sec CPU time 84
+Ways of stopping: 8227 13 0 0 0 0 0 0
+Mean range 119.838 +- 0.800299 straggle 72.5849
+Area for range.out is 65772
+Total deposited energies/ion: FDn 4037.82 FDe 961.054 FDf 0
+Energy/ion lost outside: sputtered 0.152732 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.29 < 1 eV 97.9924
+
+Output of 8280 recoil events at real run time 88 sec CPU time 84
+Ways of stopping: 8267 13 0 0 0 0 0 0
+Mean range 119.844 +- 0.797571 straggle 72.5132
+Area for range.out is 66092
+Total deposited energies/ion: FDn 4037.85 FDe 961.018 FDf 0
+Energy/ion lost outside: sputtered 0.151994 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.31 < 1 eV 97.9819
+
+Output of 8320 recoil events at real run time 88 sec CPU time 84
+Ways of stopping: 8306 14 0 0 0 0 0 0
+Mean range 119.834 +- 0.796121 straggle 72.5519
+Area for range.out is 66404
+Total deposited energies/ion: FDn 4038.05 FDe 960.82 FDf 0
+Energy/ion lost outside: sputtered 0.151832 transmitted 0 eV/ion
+Energy/ion lost to 46.79 recoils of type 1: total 4119.49 < 1 eV 97.9558
+
+Output of 8360 recoil events at real run time 89 sec CPU time 85
+Ways of stopping: 8346 14 0 0 0 0 0 0
+Mean range 119.853 +- 0.795106 straggle 72.6337
+Area for range.out is 66724
+Total deposited energies/ion: FDn 4037.93 FDe 960.943 FDf 0
+Energy/ion lost outside: sputtered 0.151105 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.38 < 1 eV 97.9637
+
+Output of 8400 recoil events at real run time 89 sec CPU time 85
+Ways of stopping: 8386 14 0 0 0 0 0 0
+Mean range 119.802 +- 0.792889 straggle 72.6045
+Area for range.out is 67044
+Total deposited energies/ion: FDn 4038.31 FDe 960.567 FDf 0
+Energy/ion lost outside: sputtered 0.150386 transmitted 0 eV/ion
+Energy/ion lost to 46.79 recoils of type 1: total 4119.72 < 1 eV 97.9204
+
+Output of 8440 recoil events at real run time 89 sec CPU time 86
+Ways of stopping: 8426 14 0 0 0 0 0 0
+Mean range 119.847 +- 0.792034 straggle 72.699
+Area for range.out is 67364
+Total deposited energies/ion: FDn 4038.15 FDe 960.722 FDf 0
+Energy/ion lost outside: sputtered 0.149673 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.57 < 1 eV 97.9248
+
+Output of 8480 recoil events at real run time 90 sec CPU time 86
+Ways of stopping: 8466 14 0 0 0 0 0 0
+Mean range 119.84 +- 0.789375 straggle 72.6268
+Area for range.out is 67684
+Total deposited energies/ion: FDn 4038.2 FDe 960.68 FDf 0
+Energy/ion lost outside: sputtered 0.148967 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.6 < 1 eV 97.9208
+
+Output of 8520 recoil events at real run time 90 sec CPU time 86
+Ways of stopping: 8506 14 0 0 0 0 0 0
+Mean range 119.806 +- 0.787115 straggle 72.5897
+Area for range.out is 68004
+Total deposited energies/ion: FDn 4038.59 FDe 960.283 FDf 0
+Energy/ion lost outside: sputtered 0.148268 transmitted 0 eV/ion
+Energy/ion lost to 46.79 recoils of type 1: total 4119.97 < 1 eV 97.8804
+
+Output of 8560 recoil events at real run time 91 sec CPU time 87
+Ways of stopping: 8545 15 0 0 0 0 0 0
+Mean range 119.875 +- 0.786098 straggle 72.662
+Area for range.out is 68316
+Total deposited energies/ion: FDn 4038.23 FDe 960.638 FDf 0
+Energy/ion lost outside: sputtered 0.151819 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4119.63 < 1 eV 97.9033
+
+Output of 8600 recoil events at real run time 91 sec CPU time 87
+Ways of stopping: 8585 15 0 0 0 0 0 0
+Mean range 119.934 +- 0.784948 straggle 72.7253
+Area for range.out is 68636
+Total deposited energies/ion: FDn 4037.66 FDe 961.214 FDf 0
+Energy/ion lost outside: sputtered 0.151113 transmitted 0 eV/ion
+Energy/ion lost to 46.83 recoils of type 1: total 4119.12 < 1 eV 97.9804
+
+Output of 8640 recoil events at real run time 92 sec CPU time 88
+Ways of stopping: 8625 15 0 0 0 0 0 0
+Mean range 119.941 +- 0.782728 straggle 72.6884
+Area for range.out is 68956
+Total deposited energies/ion: FDn 4037.55 FDe 961.321 FDf 0
+Energy/ion lost outside: sputtered 0.150413 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.05 < 1 eV 98.0133
+
+Output of 8680 recoil events at real run time 92 sec CPU time 88
+Ways of stopping: 8665 15 0 0 0 0 0 0
+Mean range 119.905 +- 0.780902 straggle 72.6869
+Area for range.out is 69276
+Total deposited energies/ion: FDn 4038.02 FDe 960.85 FDf 0
+Energy/ion lost outside: sputtered 0.14972 transmitted 0 eV/ion
+Energy/ion lost to 46.83 recoils of type 1: total 4119.48 < 1 eV 97.9769
+
+Output of 8720 recoil events at real run time 92 sec CPU time 88
+Ways of stopping: 8705 15 0 0 0 0 0 0
+Mean range 119.973 +- 0.779639 straggle 72.7366
+Area for range.out is 69596
+Total deposited energies/ion: FDn 4037.57 FDe 961.306 FDf 0
+Energy/ion lost outside: sputtered 0.149033 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4119.05 < 1 eV 98.002
+
+Output of 8760 recoil events at real run time 93 sec CPU time 89
+Ways of stopping: 8745 15 0 0 0 0 0 0
+Mean range 119.94 +- 0.77768 straggle 72.7204
+Area for range.out is 69916
+Total deposited energies/ion: FDn 4037.74 FDe 961.136 FDf 0
+Energy/ion lost outside: sputtered 0.148353 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.21 < 1 eV 97.9855
+
+Output of 8800 recoil events at real run time 93 sec CPU time 89
+Ways of stopping: 8785 15 0 0 0 0 0 0
+Mean range 119.876 +- 0.775257 straggle 72.6594
+Area for range.out is 70236
+Total deposited energies/ion: FDn 4038.15 FDe 960.731 FDf 0
+Energy/ion lost outside: sputtered 0.147678 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.58 < 1 eV 97.952
+
+Output of 8840 recoil events at real run time 94 sec CPU time 90
+Ways of stopping: 8825 15 0 0 0 0 0 0
+Mean range 119.958 +- 0.773968 straggle 72.7036
+Area for range.out is 70556
+Total deposited energies/ion: FDn 4037.57 FDe 961.304 FDf 0
+Energy/ion lost outside: sputtered 0.14701 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.05 < 1 eV 98.0015
+
+Output of 8880 recoil events at real run time 94 sec CPU time 90
+Ways of stopping: 8864 16 0 0 0 0 0 0
+Mean range 119.998 +- 0.772486 straggle 72.7245
+Area for range.out is 70868
+Total deposited energies/ion: FDn 4037.4 FDe 961.474 FDf 0
+Energy/ion lost outside: sputtered 0.146473 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4118.87 < 1 eV 97.999
+
+Output of 8920 recoil events at real run time 94 sec CPU time 91
+Ways of stopping: 8904 16 0 0 0 0 0 0
+Mean range 119.967 +- 0.770144 straggle 72.6675
+Area for range.out is 71188
+Total deposited energies/ion: FDn 4037.65 FDe 961.229 FDf 0
+Energy/ion lost outside: sputtered 0.145816 transmitted 0 eV/ion
+Energy/ion lost to 46.83 recoils of type 1: total 4119.09 < 1 eV 97.9697
+
+Output of 8960 recoil events at real run time 95 sec CPU time 91
+Ways of stopping: 8944 16 0 0 0 0 0 0
+Mean range 119.944 +- 0.76788 straggle 72.6164
+Area for range.out is 71508
+Total deposited energies/ion: FDn 4037.78 FDe 961.102 FDf 0
+Energy/ion lost outside: sputtered 0.145165 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.2 < 1 eV 97.9522
+
+Output of 9000 recoil events at real run time 95 sec CPU time 91
+Ways of stopping: 8984 16 0 0 0 0 0 0
+Mean range 119.974 +- 0.766204 straggle 72.6198
+Area for range.out is 71828
+Total deposited energies/ion: FDn 4037.7 FDe 961.176 FDf 0
+Energy/ion lost outside: sputtered 0.14452 transmitted 0 eV/ion
+Energy/ion lost to 46.83 recoils of type 1: total 4119.14 < 1 eV 97.9607
+
+Output of 9040 recoil events at real run time 96 sec CPU time 92
+Ways of stopping: 9024 16 0 0 0 0 0 0
+Mean range 119.976 +- 0.764416 straggle 72.6114
+Area for range.out is 72148
+Total deposited energies/ion: FDn 4037.56 FDe 961.315 FDf 0
+Energy/ion lost outside: sputtered 0.14388 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.02 < 1 eV 97.9833
+
+Output of 9080 recoil events at real run time 96 sec CPU time 92
+Ways of stopping: 9064 16 0 0 0 0 0 0
+Mean range 120.012 +- 0.763784 straggle 72.7121
+Area for range.out is 72468
+Total deposited energies/ion: FDn 4037.3 FDe 961.582 FDf 0
+Energy/ion lost outside: sputtered 0.143246 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4118.78 < 1 eV 98.0109
+
+Output of 9120 recoil events at real run time 97 sec CPU time 93
+Ways of stopping: 9104 16 0 0 0 0 0 0
+Mean range 120.039 +- 0.762203 straggle 72.7215
+Area for range.out is 72788
+Total deposited energies/ion: FDn 4037.1 FDe 961.784 FDf 0
+Energy/ion lost outside: sputtered 0.142618 transmitted 0 eV/ion
+Energy/ion lost to 46.86 recoils of type 1: total 4118.59 < 1 eV 98.0208
+
+Output of 9160 recoil events at real run time 97 sec CPU time 93
+Ways of stopping: 9144 16 0 0 0 0 0 0
+Mean range 119.996 +- 0.760251 straggle 72.6945
+Area for range.out is 73108
+Total deposited energies/ion: FDn 4037.51 FDe 961.373 FDf 0
+Energy/ion lost outside: sputtered 0.141995 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4118.98 < 1 eV 97.9984
+
+Output of 9200 recoil events at real run time 97 sec CPU time 93
+Ways of stopping: 9183 17 0 0 0 0 0 0
+Mean range 120.013 +- 0.759524 straggle 72.7797
+Area for range.out is 73420
+Total deposited energies/ion: FDn 4037.69 FDe 961.176 FDf 0
+Energy/ion lost outside: sputtered 0.154731 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4119.17 < 1 eV 97.9992
+
+Output of 9240 recoil events at real run time 98 sec CPU time 94
+Ways of stopping: 9223 17 0 0 0 0 0 0
+Mean range 119.92 +- 0.75742 straggle 72.7359
+Area for range.out is 73740
+Total deposited energies/ion: FDn 4038.37 FDe 960.502 FDf 0
+Energy/ion lost outside: sputtered 0.154061 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.78 < 1 eV 97.9353
+
+Output of 9280 recoil events at real run time 98 sec CPU time 94
+Ways of stopping: 9263 17 0 0 0 0 0 0
+Mean range 119.903 +- 0.756162 straggle 72.7725
+Area for range.out is 74060
+Total deposited energies/ion: FDn 4038.43 FDe 960.441 FDf 0
+Energy/ion lost outside: sputtered 0.153397 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.84 < 1 eV 97.929
+
+Output of 9320 recoil events at real run time 99 sec CPU time 95
+Ways of stopping: 9303 17 0 0 0 0 0 0
+Mean range 119.935 +- 0.754313 straggle 72.7512
+Area for range.out is 74380
+Total deposited energies/ion: FDn 4038.15 FDe 960.721 FDf 0
+Energy/ion lost outside: sputtered 0.152739 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.58 < 1 eV 97.9527
+
+Output of 9360 recoil events at real run time 99 sec CPU time 95
+Ways of stopping: 9343 17 0 0 0 0 0 0
+Mean range 119.837 +- 0.751916 straggle 72.6757
+Area for range.out is 74700
+Total deposited energies/ion: FDn 4038.89 FDe 959.982 FDf 0
+Energy/ion lost outside: sputtered 0.152086 transmitted 0 eV/ion
+Energy/ion lost to 46.79 recoils of type 1: total 4120.27 < 1 eV 97.8926
+
+Output of 9400 recoil events at real run time 99 sec CPU time 95
+Ways of stopping: 9383 17 0 0 0 0 0 0
+Mean range 119.775 +- 0.749306 straggle 72.5783
+Area for range.out is 75020
+Total deposited energies/ion: FDn 4039.41 FDe 959.459 FDf 0
+Energy/ion lost outside: sputtered 0.151439 transmitted 0 eV/ion
+Energy/ion lost to 46.77 recoils of type 1: total 4120.77 < 1 eV 97.864
+
+Output of 9440 recoil events at real run time 100 sec CPU time 96
+Ways of stopping: 9423 17 0 0 0 0 0 0
+Mean range 119.779 +- 0.748284 straggle 72.6337
+Area for range.out is 75340
+Total deposited energies/ion: FDn 4039.34 FDe 959.537 FDf 0
+Energy/ion lost outside: sputtered 0.150797 transmitted 0 eV/ion
+Energy/ion lost to 46.78 recoils of type 1: total 4120.68 < 1 eV 97.8503
+
+Output of 9480 recoil events at real run time 100 sec CPU time 96
+Ways of stopping: 9462 18 0 0 0 0 0 0
+Mean range 119.846 +- 0.74698 straggle 72.657
+Area for range.out is 75652
+Total deposited energies/ion: FDn 4038.98 FDe 959.891 FDf 0
+Energy/ion lost outside: sputtered 0.151898 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4120.36 < 1 eV 97.8942
+
+Output of 9520 recoil events at real run time 101 sec CPU time 97
+Ways of stopping: 9502 18 0 0 0 0 0 0
+Mean range 119.922 +- 0.746323 straggle 72.7464
+Area for range.out is 75972
+Total deposited energies/ion: FDn 4038.39 FDe 960.48 FDf 0
+Energy/ion lost outside: sputtered 0.15126 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.8 < 1 eV 97.9303
+
+Output of 9560 recoil events at real run time 101 sec CPU time 97
+Ways of stopping: 9542 18 0 0 0 0 0 0
+Mean range 119.925 +- 0.744258 straggle 72.6977
+Area for range.out is 76292
+Total deposited energies/ion: FDn 4038.49 FDe 960.384 FDf 0
+Energy/ion lost outside: sputtered 0.150627 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.9 < 1 eV 97.9293
+
+Output of 9600 recoil events at real run time 102 sec CPU time 97
+Ways of stopping: 9582 18 0 0 0 0 0 0
+Mean range 119.889 +- 0.741936 straggle 72.6226
+Area for range.out is 76612
+Total deposited energies/ion: FDn 4038.74 FDe 960.137 FDf 0
+Energy/ion lost outside: sputtered 0.149999 transmitted 0 eV/ion
+Energy/ion lost to 46.81 recoils of type 1: total 4120.12 < 1 eV 97.9078
+
+Output of 9640 recoil events at real run time 102 sec CPU time 98
+Ways of stopping: 9622 18 0 0 0 0 0 0
+Mean range 119.884 +- 0.740056 straggle 72.5897
+Area for range.out is 76932
+Total deposited energies/ion: FDn 4038.9 FDe 959.973 FDf 0
+Energy/ion lost outside: sputtered 0.149377 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4120.27 < 1 eV 97.8837
+
+Output of 9680 recoil events at real run time 102 sec CPU time 98
+Ways of stopping: 9662 18 0 0 0 0 0 0
+Mean range 119.922 +- 0.738644 straggle 72.6016
+Area for range.out is 77252
+Total deposited energies/ion: FDn 4038.62 FDe 960.255 FDf 0
+Energy/ion lost outside: sputtered 0.14876 transmitted 0 eV/ion
+Energy/ion lost to 46.81 recoils of type 1: total 4120.02 < 1 eV 97.9155
+
+Output of 9720 recoil events at real run time 103 sec CPU time 99
+Ways of stopping: 9702 18 0 0 0 0 0 0
+Mean range 119.898 +- 0.736522 straggle 72.5428
+Area for range.out is 77572
+Total deposited energies/ion: FDn 4038.7 FDe 960.173 FDf 0
+Energy/ion lost outside: sputtered 0.148148 transmitted 0 eV/ion
+Energy/ion lost to 46.81 recoils of type 1: total 4120.09 < 1 eV 97.899
+
+Output of 9760 recoil events at real run time 103 sec CPU time 99
+Ways of stopping: 9742 18 0 0 0 0 0 0
+Mean range 119.87 +- 0.7346 straggle 72.5025
+Area for range.out is 77892
+Total deposited energies/ion: FDn 4038.88 FDe 959.995 FDf 0
+Energy/ion lost outside: sputtered 0.14754 transmitted 0 eV/ion
+Energy/ion lost to 46.80 recoils of type 1: total 4120.26 < 1 eV 97.8879
+
+Output of 9800 recoil events at real run time 104 sec CPU time 99
+Ways of stopping: 9782 18 0 0 0 0 0 0
+Mean range 119.937 +- 0.732748 straggle 72.468
+Area for range.out is 78212
+Total deposited energies/ion: FDn 4038.24 FDe 960.635 FDf 0
+Energy/ion lost outside: sputtered 0.146938 transmitted 0 eV/ion
+Energy/ion lost to 46.82 recoils of type 1: total 4119.66 < 1 eV 97.9313
+
+Output of 9840 recoil events at real run time 104 sec CPU time 100
+Ways of stopping: 9822 18 0 0 0 0 0 0
+Mean range 119.984 +- 0.731684 straggle 72.5106
+Area for range.out is 78532
+Total deposited energies/ion: FDn 4037.93 FDe 960.949 FDf 0
+Energy/ion lost outside: sputtered 0.146341 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.37 < 1 eV 97.966
+
+Output of 9880 recoil events at real run time 105 sec CPU time 100
+Ways of stopping: 9862 18 0 0 0 0 0 0
+Mean range 119.977 +- 0.730714 straggle 72.5617
+Area for range.out is 78852
+Total deposited energies/ion: FDn 4037.94 FDe 960.938 FDf 0
+Energy/ion lost outside: sputtered 0.145748 transmitted 0 eV/ion
+Energy/ion lost to 46.85 recoils of type 1: total 4119.38 < 1 eV 97.975
+
+Output of 9920 recoil events at real run time 105 sec CPU time 101
+Ways of stopping: 9902 18 0 0 0 0 0 0
+Mean range 120 +- 0.729153 straggle 72.5535
+Area for range.out is 79172
+Total deposited energies/ion: FDn 4037.83 FDe 961.047 FDf 0
+Energy/ion lost outside: sputtered 0.145161 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.26 < 1 eV 97.9579
+
+Output of 9960 recoil events at real run time 105 sec CPU time 101
+Ways of stopping: 9942 18 0 0 0 0 0 0
+Mean range 119.996 +- 0.727002 straggle 72.4854
+Area for range.out is 79492
+Total deposited energies/ion: FDn 4037.86 FDe 961.02 FDf 0
+Energy/ion lost outside: sputtered 0.144578 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.28 < 1 eV 97.9554
+
+Output of 10000 recoil events at real run time 106 sec CPU time 102
+Ways of stopping: 9981 19 0 0 0 0 0 0
+Mean range 119.956 +- 0.724657 straggle 72.3932
+Area for range.out is 79804
+Total deposited energies/ion: FDn 4038.05 FDe 960.832 FDf 0
+Energy/ion lost outside: sputtered 0.145311 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.47 < 1 eV 97.9523
+
+
+End of simulation of 10000 events at real run time 106 sec CPU time 102
+Output of 10000 recoil events at real run time 106 sec CPU time 102
+Ways of stopping: 9981 19 0 0 0 0 0 0
+Mean range 119.956 +- 0.724657 straggle 72.3932
+Area for range.out is 79804
+Total deposited energies/ion: FDn 4038.05 FDe 960.832 FDf 0
+Energy/ion lost outside: sputtered 0.145311 transmitted 0 eV/ion
+Energy/ion lost to 46.84 recoils of type 1: total 4119.47 < 1 eV 97.9523
+

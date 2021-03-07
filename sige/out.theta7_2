@@ -1,0 +1,70 @@
+real run time 0 sec CPU time 0
+Output of deposited energies selected
+Output of primary recoil spectrum  selected
+----- mdh V3.0 Jul 7 2002 -----
+
+Run started Wed Mar  3 11:40:59 2004
+Pid 4942 Host kl-crater.acclab.helsinki.fi
+Atom change calculations performed
+NUM OF LAYERS: 1 
+FINISHED READING CELLVOLUME FOR am. state 0: 16.635,16.635,16.635
+LAYER SMALLER THAN SIM.BOX!! USING BSCALING??
+LAYER SMALLER THAN SIM.BOX!! USING BSCALING??
+LAYER SMALLER THAN SIM.BOX!! USING BSCALING??
+FINISHED READING DOSE FOR am. state 0: 0(eV/atom)=0(eV/unitcell)
+Read in 216 atoms in layer 1 amorphization cell 0 Zmean 14 density 2188.38 kg/m^3 i.e. 0.046923 atoms/Å^3
+Had to move 0 coordinates
+unitboxsize(volume of the coordinates): 5.545,5.545,5.545 num 3 3 3
+
+Starting inistate calculations
+------------------------------
+
+Layer # 0 amorphstate # 0 Inistate calc. # 0
+Mean displacement (Debye) 0.123692
+
+Layer # 0 amorphstate # 0 Inistate calc. # 1
+Mean displacement (Debye) 0.129843
+
+Layer # 0 amorphstate # 0 Inistate calc. # 2
+Mean displacement (Debye) 0.120383
+
+Layer # 0 amorphstate # 0 Inistate calc. # 3
+Mean displacement (Debye) 0.120971
+
+Layer # 0 amorphstate # 0 Inistate calc. # 4
+Mean displacement (Debye) 0.118781
+
+Layer # 0 amorphstate # 0 Inistate calc. # 5
+Mean displacement (Debye) 0.122387
+
+Layer # 0 amorphstate # 0 Inistate calc. # 6
+Mean displacement (Debye) 0.119471
+
+Layer # 0 amorphstate # 0 Inistate calc. # 7
+Mean displacement (Debye) 0.116974
+
+Layer # 0 amorphstate # 0 Inistate calc. # 8
+Mean displacement (Debye) 0.123946
+
+Layer # 0 amorphstate # 0 Inistate calc. # 9
+Mean displacement (Debye) 0.124723
+
+Inistate calculation ended
+real run time 1 sec CPU time 0
+
+Starting recoil event calculation
+---------------------------------
+
+type of elstop for layer 0 is 0
+Read in 21 elstop(ZBL) points from elstop.in for layer 0 , max vel 2e+06 max Se 67.8835
+Recoil energy 40000 eV and velocity 525260 m/s
+Recoil velocity is 5.87167 percent of V_Fermi of Si
+Output of 40 recoil events at real run time 18 sec CPU time 16
+Ways of stopping: 38 2 0 0 0 0 0 0
+Mean range 551.733 +- 44.0845 straggle 268.156
+Area for range.out is 1140
+Total deposited energies/ion: FDn 27170.6 FDe 12358.5 FDf 0
+Energy/ion lost outside: sputtered 469.987 transmitted 0 eV/ion
+Energy/ion lost to 63.15 recoils of type 1: total 14331.3 < 1 eV 289.084
+Energy/ion lost to 69.33 recoils of type 2: total 13342.9 < 1 eV 288.327
+
