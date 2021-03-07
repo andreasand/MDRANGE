@@ -1,0 +1,29 @@
+Here are the tools for calculating the electron density of a Si unicell.
+The coordinates of the unitcell are in the file "5unitcell.Si", which consist of 5x5x5
+unitcells, of which the middle one is used for the electron density calculations. This is
+because the density must be periodic over the unitcell borders.
+
+"ctot" calculates the electron density in to a file "cdensity.dat" in e/Å^3 and
+with coordinates in to a file "cdensreal.dat" in format x y z dens, where x,y,z are the 
+coordinates inside the middle unitcell.
+
+"rsconvert" transforms the densities of the "cdensity.dat" to a form used in the MDRANGE
+in to a file "chargedens_rs.in". Use this file as a "charge.in" when running MDRANGE!
+
+Note 1. Using the PENR stopping with the total electron density profile  
+gives the same
+results as using Firsov stopping (elstop->Firsov:= 1 in param.in) and only 3p electron 
+density profile. 
+(At least for the low energy cases of B,As,P, which are tested). The 3p density profile 
+is calculated by using parameter "3p" when using ctot: ctot 3p
+
+Note 2. There are known problems with the too long channeling tails in the 110 channel 
+when simulating range profiles. This can be partly corrected by using a correction factor
+with the 3p-density (+Firsov of course). Use this correction as:  
+  cat chargedens_rs.in | correction 0.06 1 1 > corrected_chargedens_rs.in
+and use the "corrected_chargedens_rs.in" as the file "charge.in" when using MDRANGE. 
+
+(This correction is going to be published as J Peltola, K. Nordlund
+and J. Keinonen, "Electronic stopping power calculation method for
+molecular dynamics simulations using local elastic and inelastic contributions, 
+Rad. Eff. & Def in Sol. submitted (2004).

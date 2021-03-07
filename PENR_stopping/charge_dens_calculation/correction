@@ -1,0 +1,42 @@
+awk -v nc=$1 -v mode=$2 -v data=$3 '{
+pi=3.14159265359
+if(data==0 || data==2) #cdensreal.dat
+{
+if(data==0) n=$4; #e/Å^3
+if(data==2) n=$2;
+nau=n*0.148184822929; #e/a0^3
+rs=(4/3*pi*n)^-0.33333333;
+rsau=(4/3*pi*nau)^-0.33333333;
+}
+else if(data==1) #stopping.in
+{
+rsau=exp($1)
+rs=rsau*0.529177343575629789;
+nau=1.0/(4/3*pi*rsau*rsau*rsau);
+n=1.0/(4/3*pi*rs*rs*rs);
+}
+
+if(mode==1) # if(n<nc) n*=1+d^2
+  {
+  if(n>nc) fd=1.0;
+  else {d=(nc-n)*(1.95*0.045/0.02-1)/(nc-0.0); fd=1.0+d*d;}
+  ncor=n*fd;
+  ncorau=ncor*0.148184822929;
+  }
+else if(mode==2) #if(n<nc) n+=na
+{
+if(nau<0.008) ncorau=nau+0.013;  
+else ncorau=nau;
+ncor=ncorau/0.148184822929;
+#print $1,n,nau,rs,rsau,ncor;
+}
+
+rscor=(4/3*pi*ncor)^-0.33333333;
+rscorau=(4/3*pi*ncorau)^-0.33333333;
+
+
+if(data==0) print $1,$2,$3,ncor
+else if(data==1) print log(rscorau)
+else print $1,n,nau,rs,rsau,ncor;
+
+}'
