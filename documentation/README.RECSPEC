@@ -1,0 +1,213 @@
+
+  19.2.2010.
+
+
+ Notes on how the MDRANGE/mdh recoil spectra should be interpreted and handled.
+
+  Example calculation: 10 keV Ar -> Si, 7 degrees off-normal.
+
+1. BASICS
+
+- To get recoil spectra output, use the -recspec option
+
+- File naming convention: 
+
+"recspec.out" for monoelemental targets
+"recspec.1.out" for recoils of type 1 in multielemental/layered targets
+"recspec.2.out" for recoils of type 2 in multielemental/layered targets
+
+- Structure of recspec files:
+
+recspec.out
+
+Column 1 is energy E, midpoint of each bin, in eV
+Column 2 is n(E)=n'(E)/dE, number of recoils in this energy interval/ion/eV
+Column 3 is dE, width of this interval.
+Column 4 is n'(E), number of recoils in this energy interval/ion
+Column 6 is actual n'(E)*Nions, direct number of recoils in this interval
+
+  Note the difference between columns 2 and 4. To make plotting
+and comparison of difference energy intervals sensible, n(E)
+should be recoils/eV (see also notes on TRIM comparison below).
+
+  UNITS: column 2: [n(E)] = recoils/eV/ion
+  	 column 4: [n'(E)] = recoils/ion
+
+  Note that the interval width is variable! Hence some care must
+be taken in handling the file, in particular for integration
+the proper dE must be used in the summing up.
+
+  The interval comes from  
+recresult->drecspec=5.0; ... ind=(int)(log(E)*recresult->drecspec+0.5);
+
+2. INTEGRATION OF SPECTRUM
+
+2.0 NUMBER OF RECOILS
+
+- Note that parcas standard output gives out the following info
+directly coming from the recoil spectrum calculation:
+
+Energy/ion lost outside: sputtered 0.0161333 transmitted 0 eV/ion
+Energy/ion lost to 62.12 recoils of type 1: total 8838.92 < 1 eV 140.523
+
+- Here the number of recoils is per ion
+
+- The following integrations can be used to also obtain the number
+of recoils:
+
+Nrec = Integral_1^infty n(E) dE
+
+cat recspec.out | awk '{ s+=$2*$3 } END { print s }'
+63.8643
+
+  or 
+
+ cat recspec.out | integrate
+54.6315
+
+  Note that the numbers differ a bit; this is because of numerical
+inaccuracies in the lower limit and for the latter case of how dE
+is calculated. The former integration is to be preferred since it
+uses the correct dE values.
+
+  NOTE that for PLOTTING the distrubution, one should plot
+n(E), NOT n(E)dE as the former looks misleading due to
+the variable dE.
+
+
+2.1. SRIM comparison
+
+  By outputting the COLLISION.TXT file from SRIM/TRIM
+in the "Quick range calculation" mode one can obtain
+recoil information comparable to the MDRANGE results.
+
+  Ranges agree well, MD has a bit channeling as expected: GOOD.
+
+tail -100 RANGE.txt > SRIM_range.out
+xgr -setarea 1 SRIM_range.out range.out 
+
+  For doing that, NOTE that TRIM stupidly only starts
+outputting the information once the checkbox has been clicked,
+i.e. number of ions has to be checked manually. In example
+in this directory, first ion output was 72, last 10000,
+i.e. Nions=9928.
+
+  Number of SRIM recoils: 
+
+cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | wc -l | awk '{ print $1/9928 }'
+23.4572
+
+  Smaller than for MDRANGE, of course, because threshold is less. But:
+
+cat recspec.out | awk '$1>=25 { print }' | awk '{ s+=$2*$3 } END { print s }'
+20.4973
+
+  agrees well.
+
+  Forming recoil spectrum from SRIM output (note constant dE!):
+
+
+cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | cut -c 64-73 | roundx 10 | sort -n | uniq -c | awk '{ print $2,$1/9928/10,10 }' > SRIM_recspec.out
+
+xgr -lny -lnx SRIM_recspec.out recspec.out 
+
+  Excellent agreement. But note that division with dE = 10 eV is really
+needed to get it!
+
+
+2.2. FRACTIONS OF RECOILS
+
+  To get the fraction of recoils above some energy, one can do alternatively:
+
+2.2.1. Integration:
+
+cat recspec.out | awk '$1>=500 { print }' | awk '{ s+=$2*$3 } END { print s }'
+3.6001
+at recspec.out | awk '{ s+=$2*$3 } END { print s }'
+68.1286
+
+  ERGO: genius> 3.6001/68.1286 = 0.0528427121649
+
+2.2.2 DIRECT calculation of ions:
+
+cat recspec.out | awk '$1>=500 { print }' | awk '{ s+=$6 } END { print s }'
+36001
+cat recspec.out | awk '{ s+=$6 } END { print s }'
+681288
+
+genius> 36001/681288.0
+= 0.052842557039
+
+2.2.3. DIRECT calculation from SRIM:
+
+knordlun-laptop testrecspec> cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | cut -c 64-73 | awk '$1>500.0' | wc -l
+37849
+knordlun-laptop testrecspec> cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | cut -c 64-73 | awk '$1>25.0' | wc -l
+199252
+
+  which can be compared with MDRANGE:
+
+knordlun-laptop testrecspec> cat recspec.out | awk '$1>=500 { print }' | awk '{ s+=$6 } END { print s }'
+36001
+knordlun-laptop testrecspec> cat recspec.out | awk '$1>=25 { print }' | awk '{ s+=$6 } END { print s }'
+205450
+
+genius> 36001/205450.0
+= 0.175229982964
+genius> 37849/199252.0
+= 0.189955433321
+
+  Very nice agreement!
+
+
+2.3. WEIGHTED INTEGRATION
+
+  The recoil spectrum can also be used to estimate the
+energy deposited. Ideally one should obtain first FDn(E) by
+simulating different energies of the recoil in the material with
+MDRANGE. For an example see range/sio2/au_sio2/
+
+  But if (as can be expected for low energies FDn is linear with E,
+one can estimate the fraction of damage above some certain energy
+directly using E. 
+
+  E.g. to estimate the fraction of energy deposited by 
+recoils above 500 eV compared to above 25 eV one can do:
+
+cat recspec.out | awk '$1>=25 { print }' | awk '{ s+=$1*$2*$3 } END { print s }'
+8258.79
+knordlun-laptop testrecspec> cat recspec.out | awk '$1>=500 { print }' | awk '{ s+=$1*$2*$3 } END { print s }'
+6009.14
+
+genius> 6009.14/8258.79
+= 0.727605375606
+
+  SRIM sanity check on same issue using direct summation of
+recoil energies:
+
+
+knordlun-laptop testrecspec> cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | cut -c 64-73 | awk '$1>25.0' | awk '{ s+=$1; } END { print s/9928 }'
+8347.08
+knordlun-laptop testrecspec> cat COLLISON.txt | grep " Si " | egrep -v "Dis|Bin" | cut -c 64-73 | awk '$1>500.0' | awk '{ s+=$1; } END { print s/9928 }'
+6313.48
+
+genius> 6313.48/8347.08
+= 0.756369892226
+
+  Excellent agreement; conclusion becomes some 73 - 75% of energy deposited
+by recoils higher than 500 eV.
+
+cat recspec.out | awk '{ print $1,$1*$2 }' > recspec_EnE.dat
+
+  Integrated (cumulative) recoil spectrum.
+
+cat recspec.out | awk '{ s+=$1*$2*$3; print $1,s; }' > recspec_integrated_EnEdE.dat
+
+cat recspec.out | awk '$1>25 { s+=$1*$2*$3; print $1,s; }' > recspec_integrated_above25_EnEdE.dat
+
+xgr -setmax 1 recspec_integrated_EnEdE.dat
+
+  shows that energy where curve crosses 0.27 is 500 eV, fully consistent
+with the numbers above!
+
+xgr -setmax 1 recspec*_integrated*.dat

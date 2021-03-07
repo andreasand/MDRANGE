@@ -1,0 +1,1456 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.77 [en] (X11; U; Linux 2.4.18 i686) [Netscape]">
+   <title> The MDRANGE (<tt>mdh</tt>) program </title>
+<!- The URL of more MDH info: http://beam.helsinki.fi/~knordlun/mdh/mdh_program.html ->
+</head>
+<body>
+
+<h1>
+<a NAME="begin&quot;"></a>The MDRANGE (<tt>mdh</tt>) program</h1>
+
+<h3>
+<i>Authors of the program V1.0 - V1.83b </i></h3>
+<i><a href="http://www.helsinki.fi/~knordlun">Kai Nordlund</a></i>
+<p><i><a href="http://beam.helsinki.fi/">Accelerator Laboratory</a>, <a href="http://www.helsinki.fi/">University
+of Helsinki</a>, P.O. BOX 43, FIN-00014 Helsinki, <a href="http://www.funet.fi/resources/clickable-map.html">Finland</a></i>
+<br><i>(email kai.nordlund@helsinki.fi)</i>
+<h3>
+<i>Author of the user interface &amp; some minor modifications</i></h3>
+<i>Jussi Sillanp&auml;&auml;, jksillan@vesuri.helsinki.fi</i>
+<p><i>September 1, 1994 </i>
+<br>&nbsp;
+<h3>
+<i>Author of the program development from V1.X -> V3.0</i></h3>
+<i>Jarkko Peltola, jypeltol@beam.helsinki.fi</i>
+<br>&nbsp;
+<p>
+Last major update: Jarkko Peltola and Kai Nordlund, August 2003.
+Minor update (-recspec option) Kai Nordlund, July 28, 2003.
+<h1>
+Contents</h1>
+
+<ul>
+<li>
+<b><a href="#intro">Introduction</a></b></li>
+
+<ul>
+<li>
+<b><a href="#physics">Summary of physical principles used</a></b></li>
+</ul>
+
+<li>
+<b><a href="#useof2">Use of the program</a></b></li>
+
+<ul>
+<li>
+<b><a href="#progr2">Program compilation</a></b></li>
+
+<li>
+<b><a href="#run">Running mdh</a></b></li>
+
+<li> 
+<b><a href="#runmdhreed">Running mdhreed</a></b></li>
+
+<li> 
+<b><a href="#runmdsetup">Running mdsetup</a></b></li>
+
+<li>
+<b><a href="#debug">Debug output</a></b></li>
+
+<li>
+<b><a href="#regul">Regular output</a></b></li>
+
+<li>
+<b><a href="#angle">Incident angle selection</a></b></li>
+
+<li>
+<b><a href="#randomal">Creating random alloys</a></b></li>
+
+<li>
+<b><a href="#attractive">Notes on attractive potential</a></b></li>
+
+<li>
+<b><a href="#repulsive">Notes on using repulsive potential</a></b></li>
+</ul>
+
+<li>
+<b><a href="#princ">Programming principles</a></b></li>
+
+<ul>
+<li>
+<b><a href="#useof">Use of data structures</a></b></li>
+
+<li>
+<b><a href="#inter">Internal unit system</a></b></li>
+
+<li>
+<b><a href="#progr">Program organization</a></b></li>
+</ul>
+
+<li>
+<b><a href="#appen">Appendices</a></b></li>
+
+<ul>
+<li>
+<b><a href="#listo">List of MDRANGE program files</a></b></li>
+
+<li>
+<b><a href="#listo2">List of header and other files</a></b></li>
+
+<li>
+<b><a href="#progr3">More about the input files</a></b></li>
+
+<li>
+<b><a href="#antiprotons">Running mdh for antiprotons </a></b></li>
+
+<li>
+<b><a href="#mdrange3.0">Advanced options for MDRANGE3.0</a></b></li>
+
+<li>
+<b><a href="#defau">Default input and output file names</a></b></li>
+
+<li>
+<b><a href="#sampl">Sample run</a></b></li>
+
+<li>
+<b><a href="#readpar">List of the parameters</a></b></li>
+
+<li>
+<b><a href="#setupf">More about the compound library of <tt>mdsetup</tt></a></b></li>
+</ul>
+</ul>
+
+<h1> <a NAME="intro"></a>Introduction</h1>
+
+This document contains a brief description of the MDRANGE program and its
+setup program, <tt>mdsetup</tt>. This document evolves slowly as I write in more
+stuff every now and then. It was originally written to describe MDRANGE
+V1.01a, but now also covers some newer stuff.
+
+
+<p>It describes the programming principles and use of the program, not
+the physical principles underlying it. The physics is presented in the
+publication titled <i>Molecular dynamics simulations of ion ranges in the
+1-100 keV energy range </i>(Comp. Mat. Sci. 3 (1995) 448-). The reader
+is encouraged to read the publication first if he wishes to fully understand
+the forthcoming chapters in this document. A preprint of the paper is available
+in postscript format (with figures and everything) in <a href="http://beam.helsinki.fi/~knordlun/mdh/mdh_captions.ps">here</a>.
+Related information is available in my <a href="http://beam.helsinki.fi/~knordlun/thesis/">PhD
+thesis</a> and <a href="http://beam.helsinki.fi/~knordlun/pub/">publications</a>.
+
+<p>
+<i>The program source code files and sample input and output files can
+be viewed by selecting the links in this document. NOTE: the version here
+(V1.01A) is not the newest one, and contains a few minor bugs which caused
+problems on some systems and in some physical cases. Newer versions (where
+all known bugs have been corrected and a few features added) can be obtained
+from me.</i>
+
+<p><tt>mdh</tt> now has a user interface, <tt>mdsetup</tt>, which generates the input files
+needed. <tt>mdsetup</tt> has a small compound library and has default settings for
+those parameters for which sensible defaults can be assigned. Bear in mind
+the perennial caveat about scientific programs in general: <b>garbage in
+- garbage out</b>. If you attempt to use the program without understanding
+the physics underlying it, you may obtain more or less insane results,
+or simply get the program to tilt in some exotic way. However, <tt>mdsetup</tt>
+combined with a basic understanding of the physics concerned should be
+enough to take you through (if you survived TRIM, you are likely to live
+through <tt>mdh</tt> ).
+
+<p>The official name of the program is MDRANGE. However, in the actual
+program files the shorter, more convenient name mdh (abbreviated from Molecular
+Dynamics High-energy) is used. Both names therefore (at least for now)
+mean exactly the same program.
+
+<p>The program is a molecular dynamics (MD) simulation program tailored
+for effective calculation of ion ranges. The word effective used here must
+be understood in the context of high-energy molecular dynamics calculations;
+if such a simulation only needs a few hours of CPU time to yield useful
+results, it can be considered <i>very </i>effective.
+<h3>
+<a NAME="physics"></a>Summary of physical principles</h3>
+This is a brief summary of the physical principles used and features incorporated
+in version (1.52b) of the program. For more info, see <a href="http://beam.helsinki.fi/~knordlun/mdh/mdh_captions.ps"><i>Molecular
+dynamics simulations of ion ranges in the 1-100 keV energy range </i>(Comp.
+Mat. Sci. 3 (1995) 448-), as well as the other references cited at the end of this document.
+</a>.
+<h4>
+<a NAME="physics_what"></a>What it does</h4>
+
+<ul>
+<li>
+Calculates ion ranges in solids</li>
+
+<li>
+Calculates deposited energies</li>
+
+<li>
+Calculates the primary recoil spectrum</li>
+
+<li>
+Obtaining stopping powers possible indirectly (see <a href="http://beam.helsinki.fi/~knordlun/pub/hestop.ps">P.
+Haussalo et. al., NIM B 1996</a>)</li>
+
+<li>
+Ion and sample elements which can be used: any</li>
+
+<li>
+Energy range in which calculation can be done: roughly 1 eV/amu - 10 MeV/amu</li>
+
+<li>
+Energy range in which use is justified: roughly 100 eV/amu - 100 keV/amu</li>
+
+<li>
+MDRANGE3.0: option for Puska-Echenique-Nieminen-Ritchie(PENR)-electronic
+stopping model [Sil00]. Needs charge density file from user.</li>
+
+<li>
+MDRANGE3.0: option for Brandt-Kitakawa(BK)-electronic stopping model [Cai96].
+Needs charge density file from user.</li>
+</ul>
+
+<h4>
+<a NAME="physics_alg"></a>Algorithms</h4>
+
+<ul>
+<li>
+Newtonian microcanonical formalism</li>
+
+<li>
+Smith-Harrison (Computers in Physics <b>Sep/Oct 1989</b>, 68 (1989)) solution
+of equations of motion.</li>
+
+<li>
+Variable time step which ensures stability in strong collisions</li>
+
+<li>
+Simulation cell atom moving with slices</li>
+
+<li>
+Recoil interaction approximation (RIA) used, i.e. only recoil atom interactions
+taken into account</li>
+
+<li>
+Initial state calculation to give realistic thermal displacements</li>
+
+<li>
+MDRANGE3.0: Damage build-up process using user-defined atom coordinates
+for different damage states.</li>
+
+<li>
+MDRANGE3.0: Simple sputtering caused surface erosion simulation using Sigmunds
+linear theory.</li>
+</ul>
+
+<h4>
+<a NAME="physics_struct"></a>Supported sample structures</h4>
+
+<ul>
+<li>
+Initial atom coordinates read in from an input file</li>
+
+<li>
+Crystalline</li>
+
+<li>
+Amorphous</li>
+
+<li>
+Polycrystalline</li>
+
+<li>
+Multilayered combinations of crystalline and amorphous structures</li>
+
+<li>
+Random selection of crystalline or amorphous structure in multilayered
+structures</li>
+
+<li>
+An element and compound library in <tt>mdsetup</tt></li>
+</ul>
+
+<h4>
+<a NAME="physics_int"></a>Treatment of interactions</h4>
+
+<ul>
+<li>
+Morse-type potential for metals in initial state calculation</li>
+
+<li>
+Mazzone [Maz91] (Morse + harmonic well) for tetrehedral semiconductors
+in initial state calculation</li>
+
+<li>
+Initial state calculation using displacements calculated from the 
+Debye temperature of the elements.
+Strongly recommended, as this tends to correspond best to
+experiments. <b>Default in newer versions </b>
+</li>
+
+<li>
+ZBL-type repulsive potential builtin as default, but ZBL parameter values
+can be modified to yield more realistic (eg. DMol) potential</li>
+
+<li>
+Non-local electronic stopping power read in from input file (MDRANGE3.0
+now contains the possibility to use local stopping by Cai et. al. and Firsov
+inelastiv energy loss).</li>
+
+<li>
+MDRANGE3.0: PENR-model for local electronic stopping, needs phaseshifts
+and electronic density profiles (spherical symmetry) for target atoms.</li>
+
+<li>
+MDRANGE3.0: BK-model for local electronic stopping, needs the el. density
+file as above.</li>
+
+<li>
+MDRANGE3.0: An accurate 3 dimensional electron density profile of Si unit
+cell for el. stopping calculations, one can contact us for more information.</li>
+</ul>
+
+<h4>
+<a NAME="physics_tests"></a>Tests of simulation accuracy</h4>
+The accuracy of the integration accuracy of mdh V1.8 has been tested by
+comparing a single binary collision with a BCA integration. To very briefly
+summarize the results, using the default parameters the code treats the
+scattering of the test cases (1 GeV He -> Si, 5 MeV Cu -> Cu and 5 MeV
+Au->Au and lower energies) with an accuracy of 0.1 degree or better for
+all impact parameters tested.
+
+<p>Versions prior to 1.8 may have been somewhat inaccurate for collision
+energies higher than about 100 keV/amu due to potential interpolation problems
+at very high energies.
+
+<p>Details on the tests can be obtained from the authors.
+<h1>
+<a NAME="useof2"></a>Using mdh / mdhreed / mdsetup</h1>
+
+<h3>
+<a NAME="progr2"></a>Program compilation</h3>
+
+<tt>mdh</tt>, <tt>mdhreed</tt> and <tt>mdsetup</tt> are compiled by 
+uncompressing <tt>mdrange.tar.gz</tt> and issuing
+the command <tt>make</tt>. Compilation requires an ANSI C compiler (by
+default <tt>gcc</tt> is used) and of course the <tt>make (1)</tt> system
+command.
+
+<p>When compiling in a new environment, the user should set the appropriate
+compilation options in the file <tt>config</tt> according to instructions
+given therein.
+
+
+<p>
+If problems are encountered during compilation, the error most likely
+lies in wrong options in the  <tt>config</tt> file, the script
+<tt>writeheader</tt>, or 
+the subroutine <tt>eltime()</tt> in the file
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/output.c">output.c</a></tt></b>,
+the only subroutine that contains non-ANSI features.
+
+<h3> <a NAME="run"></a>Running <tt>mdh</tt></h3>
+
+To run <tt>mdh</tt> you need a least 3 input files, and often 4:
+
+<li> <tt>coords.in</tt>: the coordinates of the atoms in the simulation cell <br>
+<li> <tt>elstop.in</tt>: the electronic stopping (m/s, eV/&Aring;)<br>
+<li> <tt>param.in</tt>: the simulation parameters 
+<li> <tt>reppot.0.1.in</tt>: the repulsive potential (&Aring;, eV, eV/&Aring;) [Optional]..    If not provided, mdh can generate the ZBL repulsive potential automatically.
+
+  All input (and output) are just plain ascii files.
+To get these you have basically 4 ways to go:
+<p>
+<li> Generate all of them yourself from scratch <br>
+<li> Start with some of the examples provided in the program package and modify them to suit your needs
+<li> Use the <tt>mdsetup</tt> program, see below
+
+<p> 
+In longer-term use, it is usually most convenient to start by mdsetup,
+and after this change the few parameters which need to be
+changed parameters in the input file param.in by hand.
+
+<h3> <a NAME="runmdhreed"></a>Running <tt>mdhreed</tt></h3>
+
+mdh now also has a special version mdhreed, a version of mdh which uses
+a rare-event algorithm similar to the one introduced by Beardmore and
+Gronbech-Jensen [B98,Sil99].  However, because the reed method holds a
+U.S.  patent, No.  6,366,873, we do not distribute the reed method with
+the main package, but only to users outside the U.S.  on special
+request. 
+
+<p>
+  It works just like mdh, but for the
+calculation of the range profile it uses a reed-like method.  To turn on
+the reed calculation just use the option <pre> reccalc->reed:= 1 </pre>
+and use the executable <tt>mdhreed</tt> <p> Note that the other output
+files (deposited energy, recoil spectra, etc.) are not enhanced by the
+reed method.  So if you are primarily interested in those, using mdhreed
+will just slow things down, and it is better to use plain mdh. 
+
+<h3> <a NAME="runmdsetup"></a>Running mdsetup</h3>
+
+<p>
+This package includes <tt>mdsetup</tt>, a user interface to <tt>mdh</tt>. You can use
+<tt>mdsetup</tt> to create the input files <tt>coords.in</tt>,
+<tt>elstop.in</tt> and <tt>param.in</tt> for the most common
+cases of interest. However, mdh does have many options which
+can not be generated by mdsetup, but need to be handled by editing
+<tt>param.in</tt> manually.
+
+<p> <tt>mdsetup</tt> uses zbl96 to create the
+elstop - if you have a different version of zbl, just change the content
+of the string variable (zbl) in <tt>mdsetup</tt>.c and recompile. 
+
+<p>The repulsive
+potential can be calculated using quantum mechanical software, 
+for example DMol
+(<a href="#repulsive">See notes on using repulsive potential</a>).
+If you have no suitable
+programs available, select the default potential (ZBL universal repulsive
+potential. <tt>mdsetup</tt> gives
+you a chance to change the parameters). 
+<p>
+All of the input files are of ASCII-format; you can edit them easily.
+
+<p><tt>mdsetup</tt> has default values for all parameters for which sensible, "universal"
+default values can be given. The default value is shown when the value
+of parameter is requested, e.g.
+<pre>Please enter the atomic number or chemical symbol of the grid atoms: 22
+Ti&nbsp; , Z=22
+Is this OK (Y/N) [Y] :</pre>
+has the default value Y. If you are satisfied with the default value, just
+press enter. <tt>mdsetup</tt> also has online help where this has been deemed necessary,
+e.g.
+
+<p><tt>Please enter the average size of the domains (&Aring;, ? for help):</tt>
+
+<p>Start <tt>mdsetup</tt> and select the user level. If you choose to be an expert
+user, the range of settings you will be asked for is much wider (but you
+are still offered the defaults). The easiest and fastest way to use <tt>mdh</tt>
+is to answer No. First, the <a href="#coords">coordinates files</a> are
+created. Next MDSetup creates the <a href="#elstop">electronic stopping
+file</a>. The electronic stopping is weighted average of the stopping powers
+of all the elements in the target (averaged over every atom in every layer).
+
+<p>The next step is the creation of a
+<a href="#param">parameter file</a>,
+which contains most of the settings, e.g. the range of starting angles
+and positions.To save your time, some of the seldom used parameters have
+been omitted. You are now asked if you want to create a script. By creating
+a script you can select the input files used for the run and the output
+generated. The script is saved; you can either run it immediately (with
+an adjustable nice level) or later. As in creating the parameter file,
+some of the seldom used options have been omitted; enter <tt>mdh -h </tt>for
+a complete list of options.
+
+<p>If you run the series of simulations using the same substances, e.g.
+He-Mo with energies 25, 50, 75 and 100 keV, the same reppot.in and coords.in
+files can be used for all the simulations. As only one line, the energy
+of the projectile (reccalc->E0) is changed, it's sensible to create the
+param.in file for the first simulation using mdsetup and edit the file
+using any ASCII-editor for the subsequent simulations (changing the seed
+of the random number generator, gen->seed, is also recommended). The elstop
+file must contain the electronic stopping at sufficiently large velocities
+- therefore, you might use a 100 keV elstop for an 80 keV simulation but
+not vice versa.
+<h3>
+<a NAME="debug"></a>Debug output</h3>
+The easiest way to manipulate the output is to make a script using <tt>mdsetup</tt>.
+To enable easy debugging two debug options are incorporated in the program.
+Ordinary debug mode is implemented with the command line option "-d". It
+prints out to standard output and standard error the values of a number
+of important variables during run-time. Variables from within the loop
+over time steps are not printed out for each time step to prevent the number
+of output data from becoming too large. In maximum debug mode (selected
+with "-dm") variables from within the loop over time steps along with a
+large number of other information is printed out.
+
+<p>Apart from outright debugging the debug modes can also be used to obtain
+a number of physical quantities. For instance, the temperature in the cell
+as a function of time in the initial displacement calculation can be obtained
+with the Unix command sequence "<tt>mdh -dm |&amp; grep ^ini</tt>"
+
+<p>With the options "-r", "-p" and "-pi" output of the recoil/ion or of
+all atom coordinates during runtime can be selected. By piping the output
+of <tt>mdh</tt> to the drawing program <tt>dpc</tt> this enables making simple on-line
+animations of atom movement in the program.
+
+<p><i>There is unfortunately quite some confusion in the use of the terms
+"recoil" and "primary/secondary recoil spectrum" in the code. Frequently
+the energetic ion whose motion is followed is called the "recoil" in the
+code, without making the distinction whether this is an ion starting from
+outside the sample, or a recoiling atom starting from inside. This is primarily
+to avoid having to use the term "recoil/ion" all along (which, besides,
+isn't even possible in variable names). Also, the atoms receiving energy
+from the energetic ion are sometimes called primary and sometimes secondary
+recoils. In later versions of the code I try to always use "primary recoil
+spectrum" but the old term may still hang around in old versions :-(</i>
+
+<h3>
+<a NAME="regul"></a>Regular output</h3>
+In the beginning of the simulation data about program parameters is written
+to the file <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/startdata.out">startdata.out</a></tt></b>.
+The data includes values for all parameters the program attempts to read
+in from
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/param.in">param.in</a></tt></b>,
+including a note on whether the parameter was found in <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/param.in">param.in</a></tt></b>
+or given its default value.
+
+<p>The basic result output of the program consists of the file
+<b><tt><a
+href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/range.out">range.out</a></tt></b>,
+which contains the ion range distribution (in the units "number of
+atoms") as a function of the depth in &Aring;ngstr&ouml;ms. The
+MDRANGE3.0 version produced also a file <b>realrange.out</b>, which
+contains the range distribution as atom density vs. depth. This is
+handy, when comparing to the experiments and the experimental fluence
+is known (ions/cm^2). The fluence is given in the param.in file:
+physical->dose:= 1e14 (for example).
+
+<p>If the "-FD" command line option is selected the deposited energies
+are also output to the file <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/depen.out">depen.out</a></tt></b>.
+The first column in this file gives the depth in &Aring;ngstr&ouml;ms,
+the second and third the nuclear and electronic deposited energies in units
+of eV/&Aring;.
+
+<p> If the -recspec command line option is given, data on the primary
+recoil spectrum [Ave98,Nor98] n(E) dE is output to the file recspec.out. 
+If there are several sample atom types, instead files named
+recspec.1.out, recspec.2.out etc. are output for sample atom types
+1, 2, etc.
+<p>
+Because of
+the large energy range spanned by the recoils, from 1 eV up to the
+maximum possible transferred energy, the E step size is
+logarithmic. Hence if integrating over the recoil spectrum, it is
+absolutely necessary to include the dE (column 3) information in the
+integration.  <i> Note also that different literature sources have
+different definitions of recoil spectra.</i> The one given in the -recspec
+file is in many places called the "integrated primary recoil
+spectrum", where the integration means integrated over some penetration depth
+region. In mdrange by default the integration is over all depths,
+but a specific depth slice can be specified with the options
+<p> 
+<tt>
+reccalc->recspeczmin:= 200.0<br>
+reccalc->recspeczmax:= 600.0<br>
+</tt>
+<p>
+which with the particular numbers given would mean calculating the
+recoil spectrum in the depth region 200 - 600 Å.
+
+<p>
+The -recspec file has six columns, which have data in the form: 
+<ul>
+	<li> Column 1: E, in units of eV
+	<li> Column 2: n(E), in units of recoils/eV/ion
+	<li> Column 3: dE, in units of eV
+	<li> Column 4: n(E) dE
+	<li> Column 5: Ignore, left for legacy purposes
+	<li> Column 6: n(E) times number of ions, in units of recoils/eV
+</ul>
+So in practice it is most often to use columns 1 and 4 to carry out
+integrations of the type Integral_0^E f(E) n(E) dE, where f(E) is
+some function.
+<p>
+For some additional details on how to handle the recoil spectrum
+see file <tt> documentation/README.RECSPEC </tt>
+<p>
+As of mdh V3.05 it is also possible to output data on all recoils,
+using option
+<p>
+<tt> -collisionsout E0   print out all recoils with E > E0 into collisions.txt </tt>
+<p>
+The output format is 
+<ul><tt>
+x 12.37644678 6.863591591 0.2382907912 v -6446.97 -20315.7 2725.42 t 1 theta 1.44362 phi -1.87808 E 67.2006
+</ul></tt>
+where positions are in Ångströms, velocities in m/s, t is type, angles th and ph in radians
+and E in eV.
+<p>
+<hr>
+<h3>
+<a NAME="angle"></a>Incident angle selection</h3>
+The incident angle/crystal orientation is selected using the parameters
+theta and phi.The crystal is always oriented the same way, but the 'beam'
+direction is changed by changing the initial direction of each incident
+ion.
+
+<p>To be exact, the angle is chosen using the parameters
+<pre>reccalc->Fii0:=&nbsp;&nbsp;&nbsp;&nbsp; 0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Azimuth angle of the recoil atom&nbsp;
+reccalc->Fiimax:=&nbsp;&nbsp; 0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # is chosen randomly from [Fii0,Fiimax]&nbsp;
+reccalc->Theta0:=&nbsp;&nbsp; 8.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Polar angle of the recoil atom&nbsp;
+reccalc->Thetamax:= 8.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # is chosen randomly from [Theta0,Thetamax]</pre>
+and mdh selects the angle randomly between the min and max. If Theta0 ==
+0 the theta angle is weighted to give equal weighting of spatial angles.
+<li>
+theta determines the polar (tilt) angle, i.e. how much the incident direction
+is deflected from the z axis.</li>
+
+<li>
+phi determines the azimuthal (twist) angle, i.e. how much the incident
+direction is deflected from the x axis</li>
+
+
+<p>The exact algorithm used to determine the velocity components (vx,vy,vz)
+for a given velocity v, theta and phi is:
+<pre>vx=v*sin(theta)*cos(fii)
+vy=v*sin(theta)*sin(fii)
+vz=v*cos(theta)</pre>
+Thus e.g. Fii0=Fiimax=0 and Theta0=Thetamax=0 chooses implantation straight
+into the 001 channel.
+<br>For &lt;110>-implantations in FCC-materials, user can use normal 100-oriented
+coordinate file (which mdsetup creates) and set Fii0=Fiimax=0 and Theta0=Thetamax=45.
+<br>For &lt;111>-implantations in FCC-materials, user can use normal 100-oriented
+coordinate file (which mdsetup creates) and set Fii0=Fiimax=45 and Theta0=Thetamax=54.
+<br>! Note that if the &lt;110> or &lt;111> profiles calculated as above,
+one has to use&nbsp; projection obtion (Trange=1) to have the profiles
+in those directions.
+<h3>
+<a NAME="randomal"></a>Creating random alloys</h3>
+To create a random alloy, you can use the type[i].prob parameter. For example,
+to create a random CuAg alloy, first create a Cu FCC cell as usual, but
+with a lattice constant corresponding to CuAg. Then set the atom types
+as:
+<pre>type[0].Z:= 36
+type[0].m:= 86.0
+type[1].Z:= 29
+type[1].m:= 63.546
+type[1].prob:= 0.5&nbsp;
+type[2].Z:= 47
+type[2].m:= 107.87
+type[2].prob:= 0.5</pre>
+Of course you have to remember to set appropriate reppots, electronic stopping
+and Debye temperature.
+<h3>
+<a NAME="attractive"></a>Notes on using attractive potential</h3>
+During the initial state calculation, the program uses either a 2-body
+potential to model equilibrium interactions to give atoms realistic initial
+thermal displacements or calculates the displacements using the Debye temperature
+of the substance. For Si (and other systems with the tetrahedral diamond
+structure) the program uses a modified Morse potential potential by Mazzone
+[Maz91]. For metals, the ordinary Morse potential is used.
+
+<p>The attractive potential is only used for getting thermal displacements,
+and is not used at all in the actual range (recoil event) calculation.
+This justifies the use of the simple two-body potentials; as long as they
+yield a stabile lattice and realistic thermal displacements, they should
+be good enough in this application.
+
+<p>The default setting in <tt>mdsetup</tt> is to use the Debye method for elements
+and an attractive potential of the user's choice for compounds. The potential
+parameters can be modified in the <tt>param.in</tt> file. For instance,
+by choosing the potential parameters so that they correspond to the lattice
+constant, DMol potential and Debye thermal displacement, we have gotten
+a modified Mazzone potential for InP. It can be used by selecting the Mazzone
+potential and adding the following parameters in the <tt>param.in</tt>:
+<pre>pot->attr.mazD[1][1]:=&nbsp;&nbsp;&nbsp;&nbsp; 1.9838704
+pot->attr.mazalpha[1][1]:= 1.0814278
+pot->attr.mazr1[1][1]:=&nbsp;&nbsp;&nbsp; 2.8865101
+pot->attr.mazK[1][1]:=&nbsp;&nbsp;&nbsp;&nbsp; 1.800
+pot->attr.mazr2[1][1]:=&nbsp;&nbsp;&nbsp; 4.150
+pot->attr.mazd[1][1]:=&nbsp;&nbsp;&nbsp;&nbsp; 0.330
+pot->attr.mazD[1][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 2.5553605
+pot->attr.mazalpha[1][2]:= 1.1331184
+pot->attr.mazr1[1][2]:=&nbsp;&nbsp;&nbsp; 2.5358716
+pot->attr.mazK[1][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 0.0
+pot->attr.mazr2[1][2]:=&nbsp;&nbsp;&nbsp; 999.0
+pot->attr.mazd[1][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 0.0
+pot->attr.mazD[2][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 5.8563391
+pot->attr.mazalpha[2][2]:= 1.9528018
+pot->attr.mazr1[2][2]:=&nbsp;&nbsp;&nbsp; 1.8773916
+pot->attr.mazK[2][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 1.800
+pot->attr.mazr2[2][2]:=&nbsp;&nbsp;&nbsp; 4.150
+pot->attr.mazd[2][2]:=&nbsp;&nbsp;&nbsp;&nbsp; 0.330</pre>
+
+<h3>
+<a NAME="#repulsive"></a>Notes on using repulsive potential</h3>
+From MDRANGE V1.6 forward, the repulsive potential can be handled in two
+entirely different manners.
+
+<p>The old, <b>default way </b>is to use a ZBL-type potential [ZBL85],
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Z_1 Z_2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V(r) = --------------&nbsp;&nbsp; ------- phi(r),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 pi epsilon_0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r</pre>
+
+<pre>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -3.2x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.9423x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.4029&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.2016 x
+&nbsp;&nbsp;&nbsp; phi(x) = 0.1818 e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 0.5099 e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 0.2802 e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 0.02817 e
+
+</pre>
+where x = r / a_u and
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.8854 a_0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a_u = -------------------
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Z_1^0.23 + Z_2^0.23</pre>
+(a_0 is the Bohr atomic radius = 0.529 &Aring;).
+
+<p>The ZBL repulsive potential mode is selected with <tt>pot->rep.type[0][1]:=
+1</tt> for the atom type pair 0-1. Alternatively, pot->rep.type[0][1]:=
+3 does the same thing, but uses an array interpolation in an attempt to
+speed things up somewhat. Note, however, that type=3 can lead to small
+interpolation errors.
+
+<p>In <tt>mdsetup</tt> the exponential terms of phi(x) above can be modified in
+the param.in file using the pot->rep options. For instance, for He-Ta we
+have used the parameters
+<pre>#
+#&nbsp; DMol parameters for He - Ta
+#
+pot->rep.ai[0]:= 0.137986
+pot->rep.ai[1]:= 0.575647
+pot->rep.ai[2]:= 0.158109
+pot->rep.ai[3]:= 0.128257
+pot->rep.bi[0]:= -5.13475
+pot->rep.bi[1]:= -1.0958
+pot->rep.bi[2]:= -0.404614
+pot->rep.bi[3]:= -0.404567</pre>
+The <b>new</b> way to treat the repulsive potential is to read it in as
+a function of r from a file, and by evaluating the potential using spline
+interpolation. If the target material is a compound, you can use the built-in
+potential for some atoms and a precalculated one for others.
+
+<p>The file should be an ascii file with data in the format "r V dV", in
+a file called <tt>reppot.type1.type2.in</tt> (typically <tt>reppot.0.1.in</tt>).
+Note that the derivative should also be given; this is to force the user
+to do some thinking on how he should derivate the strongly decreasing potential
+function. Also, from some DFT/LDA codes like DMol the derivative can be
+directly obtained from the
+<i>ab initio</i> calculation, which should give
+a better derivative than any approximative calculation.
+
+<p>The units in the repulsive potential file should be eV, &Aring; (Angstrom)
+and eV/&Aring;.
+
+<p>The spline repulsive potential mode is selected with <tt>pot->rep.type[0][1]:=
+2</tt> for the atom type pair 0-1.
+
+<p>I recommend the newer approach, if it is possible to calculate enough
+points of the repulsive potential to make the spline interpolation reliable.
+Otherwise, the best approach probably is to fit a ZBL-type potential reliably
+to the points one has.
+<h1>
+<a NAME="princ"></a>Programming principles</h1>
+We have previously calculated ion ranges using an old molecular dynamics
+code ("MOLDY") originally written to simulate properties of vacancies in
+semiconductors. Because this program was originally written in the 1970's
+in FORTRAN-66, and had since been used for many different purposes, it
+carried with it lots of awkward and redundant features. In particular,
+it used an integer time step, which made implementation of a variable time
+step difficult.
+
+<p>Calculating ion ranges using the RIA approximation is a fairly specialized
+task, which doesn't resemble typical MD simulations very much. Therefore
+we felt that writing an entirely new program for this task was justified.
+
+<p>The program was written strictly in ANSI C, which allowed for very easy
+portability between different machine architectures. The sole exception
+to the use of ANSI C is made in the subroutine
+<tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/output.c">eltime()</a></tt>,
+which uses the Unix system call <tt>times()</tt> to obtain the CPU time
+used by the program. The user interface was originally written in C++ and
+does still contain some of its features - if this is a problem, contact
+us (it will be rewritten in ANSI C when we have the time).
+
+<p>Version 1.1a of the program has been successfully compiled and run in
+all Unix architectures (DEC Ultrix, DEC AXP, HP 9000, Sun OS4, Sun OS5,
+SGI MIPS, IBM RS/6000, Convex and Linux) where compilation has been attempted.
+Compilation in non-Unix environments has not been tried, but I believe
+it should be possible to do without major difficulties. Should you want
+to use the user interface in a non-unix environment, remove the two lines
+in <tt>mdsetup</tt>.C that calls chmod (marked <tt>/*Remove if using a non.unix
+environment*/</tt>).
+
+<p>Use of the C language had many advantages compared to FORTRAN-77. The
+program variables were assembled in logical entities by using data structures.
+This made the program much more readable than the typical FORTRAN program,
+and eliminated the need to use global variables. Also, the C preprocessor
+could be used to handle debugging and variable reading in a compact format.
+
+<p>Memory allocation subroutines were used to allocate space for large
+arrays during runtime in order to yield flexibility in memory usage. The
+data type <tt>real</tt> was used instead of <tt>float</tt> throughout the
+program to enable easy transformation of single precision to double.
+<h3>
+<a NAME="useof"></a>Use of data structures</h3>
+As mentioned above, data structures were used throughout the program. They
+structures are all defined in the header file <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/structs.h">structs.h</a></tt></b>.
+The actual variables using the structures are defined in the beginning
+of the main program <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/mdh.c">main()</a></tt>.
+
+<p>For instance, time variables were collected in the structure
+<tt>struct
+time</tt>. In the beginning of <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/mdh.c">main()</a></tt>,
+the time variables are defined with the command
+<tt>struct time time</tt>.
+Thus all time variables can be passed on to a subroutine by simply passing
+<tt>time</tt>
+as a subroutine argument.
+
+<p>Examples of other structures are <tt>struct unit</tt> for program units,
+<tt>struct
+atom</tt> for atom properties, <tt>struct reccalc</tt> for recoil calculation
+variables and
+<tt>struct file</tt> for input and output files used in the
+program.
+
+<h3>
+<a NAME="inter"></a>Internal unit system</h3>
+To reduce the amount of arithmetic operations needed during the simulation,
+the program uses an internal unit system where all masses equal to 1. The
+internal energy unit is eV and the length unit &Aring;ngstr&ouml;m. In
+this system all internal units involving time will depend on the atom mass.
+These units include the time, velocity and acceleration units. Some important
+conversion factors to obtain quantities in SI units from the internal units
+are:
+<pre>Internal quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Multiply with to obtain SI&nbsp;
+-----------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --------------------------
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.6022e-19 J
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1e-10 m
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.6022e-9 N
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.6606e-27*m(u) kg
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.1805e-15*sqrt(m(u)) s
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9822.66/sqrt(m(u)) m/s
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9.6485e17/m(u) m/s^2</pre>
+Here m(u) denotes the atom mass in atomic mass units.
+<h3>
+<a NAME="progr"></a>Program organization</h3>
+The program consists currently (V1.01a) of 17 ".c" program files, five
+".h" header files and a makefile for the unix command <tt>make (1)</tt>.
+The main header file
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/common.h">common.h</a></tt></b>
+loads in all the other MDRANGE header files and a number of necessary ANSI
+C system library headers.
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/common.h">common.h</a></tt></b>
+is then included in the beginning of all MDRANGE program files, except
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/readvar.c">readvar.c</a></tt></b>.
+This subroutine (which is used to read in program parameters from a file)
+is also used in the FORTRAN program MOLDY. To retain maximum portability
+of the subroutine, it does not contain any properties that would be specific
+to either program. Hence it does not use the MDRANGE include files.
+
+
+<p>
+<a href="http://beam.helsinki.fi/~knordlun/mdh/mdh_program_huge.gif"><img SRC="http://beam.helsinki.fi/~knordlun/mdh/mdh_program.gif" ></a>
+
+<p><i>Figure 1. A schematic view of the MDRANGE program. Subroutine calls
+are indicated with lines connecting the boxes; the starting point of the
+call is always higher than the subroutine it calls. The calls are shown
+in the order (left-to-right) in which they are made in the program.</i>
+
+
+
+<p>All files, and the most important subroutines and subroutine calls are
+shown schematically in figure 1.
+
+<p>Each program file contains one or more C subroutines. Them main program
+<tt>main()</tt>
+is in the file <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/mdh.c">mdh.c</a></tt></b>.
+It calls all initialization subroutines, and contains the main simulation
+loops where the recoil calculation is performed.
+
+<p>The initial displacement calculation is performed in another subroutine
+<tt>inistatecalc()</tt>
+in the file
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/inistatecalc.c">inistatecalc.c</a></tt></b>.
+Both <tt>main()</tt> and
+<tt>inistatecalc()</tt> contain somewhat differing
+versions of molecular dynamics loops over time steps (the central part
+of most MD programs).
+
+<p>Both loops over time steps work essentially by calling just three subroutines.
+The subroutines <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/solve.c">solve1()</a></tt>
+and <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/solve.c">solve2()</a></tt>
+are used to solve the equations of motion; two subroutines are needed because
+of the nature of the Smith-Harrison algorithm used in the solution. The
+<tt>accelerations()</tt>
+subroutine is used to calculate the accelerations the atoms experience.
+The accelerations are calculated by derivating a two-body potential obtained
+from the subroutine
+<tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/potential.c">potential()</a></tt>.
+
+<p>In addition to calling these subroutines, the <tt>inistatecalc()</tt>
+subroutine also calls <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/borders.c">borders()</a></tt>
+to enforce periodic boundary conditions on the simulation cell. The main
+program also calls <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/moveslice.c">moveslice()</a></tt>
+to perform the cell atom movings, <tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/time.c">calctsteps()</a></tt>
+to calculate the size of the time step and subroutines dealing with the
+recoil atom properties.
+
+<p>During the loop over recoil events, the simulation results are written
+to files on regular intervals, by default after every 40 recoil events.
+<h1>
+<a NAME="appen"></a>Appendices</h1>
+
+<h3>
+<a NAME="listo"></a>MDRANGE V1.01a program files</h3>
+
+<ul><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/accelerations.c">accelerations.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/borders.c">borders.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/elstop.c">elstop.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/inistatecalc.c">inistatecalc.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/initparams.c">initparams.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/mdh.c">mdh.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/moveslice.c">moveslice.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/output.c">output.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/potential.c">potential.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/random.c">random.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/readcoords.c">readcoords.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/readin.c">readin.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/readvar.c">readvar.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/recoil.c">recoil.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/solve.c">solve.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/start.c">start.c</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/time.c">time.c</a></tt></b></ul>
+<i>Note: many of these have bugs which have since been corrected</i>
+
+<h3>
+<a NAME="prog3"></a>More about the input files&nbsp;</a3></h3>
+
+
+The parameters of the simulation run are contained in a file with the default
+name
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/param.in">param.in</a></tt></b>.
+In the parameters file the parameters are marked with the variable name
+in the program, ":=" after the name and the value after the equal sign.
+Between ":" and "=" comments can be placed. The parameters can be in arbitrary
+order in the parameters file. A list of the parameters is in the appendices.
+
+<p>All program parameters have default values, and can be omitted from
+the parameter file if the default value is what is desired. If the parameter
+file is empty, the program by default simulates 10 keV Si implantation
+of crystalline silicon. However, although the parameter file can be left
+empty, it cannot be omitted.
+<h4>
+<a NAME="coords"></a>coordinates file</h4>
+The atom coordinates are read in from the file <b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/coords.in">coords.in</a></tt></b>.
+The three first numbers on each line give the initial atom coordinates
+and the fourth number gives the atom type. The atom types are defined in
+the parameters file. If multiple layers are used in the simulations, coordinates
+for each layer are read in from the files <b><tt>coords.in.1</tt></b>,
+<b><tt>coords.in.2</tt></b>,
+<b><tt>coords.in.3</tt></b>
+etc.
+<br>&nbsp;&nbsp;&nbsp; MDRANGE3.0: In the newest version (V3.0) the coordinate
+files can have some variation in size. For example, the simulation box
+does not have to be the same size as the coordinate files for each layer.
+The only restriction is that, the simulation box (defined in the param.in
+file) has to be smaller or equal size as the layer coordinate boxes. The
+size of layer structure in the coordinate file is defined in the first
+line as: V a b c na nb nc, where 'V' marks the line, 'a,b,c' are the unitcellsizes
+for the layer and 'na,nb,nc' are the number of unitcells in each direction.&nbsp;
+The newest version of MDSetup does this automatically.
+<br>During the reading of the coordinates, the program moves them to a
+box of (0,0,0,a*na,b*nb,c*nc) so user don't have to think what the offsets
+for the coordinates in each layer are, if only the offsets are not multiple
+unitcells away from the box that they are moved to!
+<p>
+As of V3.08, the option box->nomoveslice:= 1 can be used to disable
+the moveslice routine completely. Use only if you know what you
+are doing! Also,  box->nomoveslice:= 2 prevents moveslice in z but not x,y
+<p>
+<br>&nbsp;
+
+<p>
+<h3>
+<a NAME="antiprotons"></a> Running mdh for antiprotons  </a3></h3>
+
+  As of mdh V3.09, mdrange can be used also to simulate the stopping
+for antiprotons.
+
+  To do this physically realistically, you need an antiproton electronic
+stopping file (which is available experimentally) and a realistic
+antiproton interatomic potential. Once these are available,
+the special option reccalc->allowhugeenergy:= 6 (or other values
+between 1 and 6) allow for simulating antiproton transmission
+through foils and stopping simulation automatically when
+a nuclear reaction occurs (determined by a simple distance criterion).
+
+  Also time step needs to be very short. For antiprotons and Si, following
+parameters were found to work:
+
+<pre>
+reccalc->allowhugeenergy:= 6
+
+type[0].Z:= -1
+
+time->Et:= 0.5
+time->kt:= 0.01
+</pre>
+
+
+<h3>
+<a NAME="elstop"></a>electronic stopping</h3>
+The electronic stopping is read in from the file
+<b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/elstop.in">elstop.in</a></tt></b>.
+The first column in this file is interpreted as the ion velocity in m/s,
+and the second as the electronic stopping in units of eV/&Aring;. By using
+the option elstop->mode:= 1 in the parameter file, the straggling of electronic
+stopping can be included in the calculations (in V1.5a or bigger).
+<br>&nbsp;&nbsp;&nbsp; MDRANGE3.0 supports multiple layer structures, so
+that the elstop files are named <b>elstop.in.1, elstop.in.2 </b>etc. if
+there is more layers than one.
+<br>&nbsp;
+<h3>
+<a NAME="mdrange3.0"></a>Advanced options for MDRANGE 3.0</h3>
+//AMORPHIZATION
+<br>&nbsp;&nbsp;&nbsp; There is also a possibility to describe the amorphization
+of the target material for high fluence implantations. This is done by
+making multiple coordinate files for each layer where the degree of damage
+changes as a function of dose (eV/atom) in that layer. The coordinate files
+are named as <b>coords.in.1.0, coords.in.1.1 </b>etc. where the first number
+is the number of the layer and the second is the number of amorphization
+level. The maximum number of the amorphization levels for each layer is
+defined in param.in file as: layers->layer[1].Namorph:= 2 (in this case)
+and setting physical->Damage:= 1. Because the volume of the layer changes
+during the amorphization, there is also an option in param.in file: physical->scaling:=
+1. This takes care of the volume increases during the simulation. The method
+is still under development.
+
+<p>//SPUTTERING
+<br>If the user wants to shift the surface of the material by some value,
+he can modify the physical->sput_surf variable. The same variable is used
+in the surface erosion by sputtering modeling if physical->sputtering:=
+1. The model uses Sigmunds linear sputtering theory, which is based on
+the amount of nuclear deposited energy in the surface. The program erodes
+the surface during the simulation and takes this effect into account in
+the range profile calculations. The input term is the surface binding energy
+for the atoms in the surface: layers->layer[0].surfbind.
+<br>The sputtering model is somewhat simple, so it might give wrong values
+for yields. Better way of examing the effect of erosion is to take the
+value of the yield from the experiments and feed it to the program as:
+physical->Y and using physical->sputtering:= 2.
+<br>!Note, the sputtering calculations are under heavy development, so
+it might be somewhat buggy.
+
+<p>// OXIDE THICKNESS<br>
+
+<p> For implantation into SiO2, a surface oxide layer can be added on top
+using the layers function. This has, however, the problem that sometimes
+the real oxides are very thin. If the standard box size is, say 
+3*5.43=16.29 Å, one cannot directly make an oxide thinner than 16.29 Å.
+<p>
+But the sputtering options can be used to solve this problem.
+If you want a surface oxide less than the oxide box size, you can use
+the parameter
+<p>
+<tt>
+physical->sput_surf:= 2.0
+</tt>
+<p>
+  to reduce the oxide thickness from that given in the coordinate file.
+I.e. if your coordinate file has an oxide coordinate cell
+thickness of 16.29, using 2.0 would mean to reduce the thickness of 14.29.
+<p>
+  This really is a trick; what it does is scales of the top 2.0 Å
+of the simulation cell, then corrects for this in the actual
+output of the ion range. 
+<p>
+
+
+
+<p>//PENR MODEL FOR ELECTRONIC STOPPING
+<br>The newest version (V3.0) supports Puska, Echenique, Nieminen, Ritchie
+(PENR)-local electronic stopping model, which uses the local electronic
+density in the target material and phaseshifts for implanted ion for the
+calculations. This calculation is very advanced and good at describing
+the electronic stopping for ions (V&lt;V(Fermi)) in channeling directions.
+The input files are: phaseshift-based electronic stopping vs. one electron
+radius <b>stopping.in</b>, and the spherically symmetric electronic density
+as a function of radius for the lattice atoms <b>cdens.in</b>. The type
+of the electronic stopping model is defined in param.in file: layers->layer[0].elstop:=
+1 (PENR) 0 (ZBL=DEFAULT).
+<br>&nbsp;&nbsp;&nbsp; ! Note, if the PENR model is chosen, the electronic
+density at the point of the ion is calculated by summing densities of surrounding
+atoms inside a sphere of a radius defined in param.in as potcrit->rfirsov.
+It has default value of 1.47 &Aring; for Si. It is the same radius that
+is used for Firsov model for inelastic el. stopping, which is set on as:
+elstop->Firsov:= 1. If the PENR model is used, the Firsov model is not
+necessary. This radius should be set with some physical thinging involved
+if changing the target material.
+
+<p>//BK MODEL FOR ELECTRONIC STOPPING
+<br>Easier way to calculate local electronic stopping is using Brandt-Kitakawa
+(BK)-theory and correction terms. For this user has to give charge density
+file for the lattice atom type,
+<br>as above, but the program itself precalculates the stopping vs. one
+electron radius function by using linear theory and a correction function.
+The type of the electronic stopping model is defined in param.in file:
+layers->layer[0].elstop:= 2.
+<h3>
+<a NAME="listo2"></a>List of header and other files</h3>
+
+<ul><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/arraysizes.h">arraysizes.h</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/common.h">common.h</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/fmath.h">fmath.h</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/global.h">global.h</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/structs.h">structs.h</a></tt></b>
+
+<p><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/Makefile">Makefile</a></tt></b></ul>
+
+<h3>
+<a NAME="defau"></a>Default input and output file names</h3>
+<i>Clicking on the file names show you sample parameter files obtained
+from the test simulation described below</i>
+<ul><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/param.in">param.in</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/coords.in">coords.in</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/elstop.in">elstop.in</a></tt></b>
+
+<p><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/startdata.out">startdata.out</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/range.out">range.out</a></tt></b>
+<br><b><tt><a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/depen.out">depen.out</a></tt></b></ul>
+
+<h3>
+<a NAME="sampl"></a>Sample run</h3>
+
+A sample run of MDRANGE was performed using the following parameters file:
+
+<pre>
+reccalc->Ncalc:= 10000
+layers->Natomsmax:= 100
+
+reccalc->Theta0:= 6.0
+
+</pre>
+
+The simulation thus simulated implantation of 10 keV Si in c-Si, with the
+implantation direction deflected 6&deg; from the &lt;100> crystal axis.
+The ZBL interatomic potential and an experimental electronic stopping measured
+at our laboratory were used in the simulations.
+
+<p>The resulting <a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/range.out">range</a>
+and <a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/depen.out">deposited
+energy</a> distributions are shown in figure 2. All the program input and
+output files can be viewed by clicking on the file names in the list above.
+The standard output of the run is available <a href="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/out1">here</a>.
+
+<p><img SRC="http://beam.helsinki.fi/~knordlun/mdh/mdrangeV1.01a/10SiSi.gif" >
+<br>
+<i>Figure 2. The range and deposited energy distributions of 10 keV
+Si implantation of crystalline Si, beam aligned 6&deg; from the &lt;100>
+crystal direction. The surface peak depends on the interpretation of deposited
+energy at the surface.</i>
+
+<p>
+<hr>
+<h3>
+<a NAME="readpar"></a>List of the parameters</h3>
+(for a complete list of parameters, run <tt>mdh</tt> and read the startdata.out
+file)
+<pre>#
+# Input parameters for mdh&nbsp;
+#
+#
+
+
+#
+# Atom types
+#
+type[0].Z:= 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Projectile
+type[0].m:= 15.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # N-15
+
+type[1].Z:= 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Target
+type[1].m:= 28.08&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Si
+
+#
+# Recoil calculation parameters
+#
+reccalc->E0:= 100000&nbsp;
+reccalc->Atype:= 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Recoil atom type
+reccalc->Ncalc:= 10000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Number of histories
+reccalc->Trange:= 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Range type: 0=sz, 1=proj, 2=chord, 3=path
+reccalc->type:=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Recoil calculation type: 1=normal,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2=negative ranges allowed
+
+reccalc->Fii0:=&nbsp;&nbsp;&nbsp;&nbsp; 0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Azimuth angle of the recoil atom
+reccalc->Fiimax:=&nbsp;&nbsp; 0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # is chosen randomly from [Fii0,Fiimax]
+reccalc->Theta0:=&nbsp;&nbsp; 8.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Polar angle of the recoil atom
+reccalc->Thetamax:= 8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # is chosen randomly from [Theta0,Thetamax]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # All angles are measured in degrees.
+
+reccalc->Startmin.x:=&nbsp; 2.715&nbsp;&nbsp;&nbsp;&nbsp; # Starting position x coordinate chosen randomly between
+reccalc->Startmax.x:=&nbsp; 8.145&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp; [Startmin.x,Startmax.x].
+reccalc->Startmin.y:=&nbsp; 2.715&nbsp;&nbsp;&nbsp;&nbsp; # Likewise y and z. &Aring;. Unless you want to&nbsp;
+reccalc->Startmax.y:=&nbsp; 8.145&nbsp;&nbsp;&nbsp;&nbsp; # emphasize any region of the unit cell, you&nbsp;
+reccalc->Startmin.z:= -2.715&nbsp;&nbsp;&nbsp;&nbsp; # should set Startmax.x - Startmin.y = l,
+reccalc->Startmax.z:= -2.715&nbsp;&nbsp;&nbsp;&nbsp; # Likewise y. Z should be negative to&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ensure that the recoil atom does not start&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # from a position inside the grid.
+#
+# Repulsive potential
+#
+pot->rep.type[0][1]:= 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Exponential screening used for rep.pot.
+pot->rep.type[0][1]:= 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Potential read from file (reppot.0.1.in)
+pot->rep.type[0][1]:= 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Exponential screening with array speedup
+
+#
+#&nbsp; Attractive potential - These settings can be omitted if thermal&nbsp;
+#&nbsp; displacements are calculated using the Debye temperature
+#
+pot->attr.type:=&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Mazzone potential for silicon (and&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # other diamond structures
+pot->attr.type:=&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Morse potential
+&nbsp;
+#
+# Layer parameters
+#
+layers->Nlayers:=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Number of layers
+layers->Natomsmax:= 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Maximum number of atoms in a layer
+layers->Ninistate:= 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Number of inistate calculations
+&nbsp;
+layers->layer[0].minz:=-1.0e9&nbsp;&nbsp;&nbsp; # Minimum z of layer 0
+layers->layer[0].maxz:=1.0e9&nbsp;&nbsp;&nbsp;&nbsp; # Maximum z of layer 0
+layers->layer[0].ltype:=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Layer type (i.e. coordinates read in from coords.in.ltype). Must be > 0&nbsp;&nbsp;
+layers->layer[0].Timeinior:=8.0&nbsp; # Time of inistate calculation
+
+#
+# Misc params
+#
+
+box->Max.x:= 10.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Size of MD cell, &Aring;&nbsp;
+box->Max.y:= 10.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;
+box->Max.z:= 10.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+
+box->movelim.x:= 2.715&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Shift used in generating fresh crystal
+box->movelim.y:= 2.715&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # in front of the recoil.
+box->movelim.z:= 2.715&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 0.5*lattice const. is a good value, &Aring;.
+
+physical->Tini:= 300.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Temperature of the inistate calculation
+physical->debye:= 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Debye temp. used in inistate calculation
+physical->tdebye:= 375&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # The Debye temperature of lattice atoms, K
+time->Timeini:=1000.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Time of the inistate calculation
+gen->seed:= 897234121&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Random number generator seed
+
+potcrit->Rmini:= 6.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Neighbour list construction cut-off&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # radius in rec.calc
+potcrit->R0ini:= 5.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Potential cut-off radius in ini.calc.
+potcrit->Rmrec:= 3.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Neighbour list construction cut-off&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # radius in rec.calc
+potcrit->R0rec:= 2.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Potential cut-off radius in rec.calc.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # (Must be smaller than movelimit!)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # All cut-offs in &Aring;.
+
+elstop->scale:= 1.12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Electronic stopping power scaled by this
+pot->rep.scale:= 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Repulsive potential scaled by this
+
+</pre>
+
+<h3><a NAME="setupf"></a>More about the compound library of <tt>mdsetup</tt></h3>
+
+The compound data is stored in <tt>compounds.txt </tt>. The structure of
+the file is following:
+
+<p>
+<table>
+<tr>
+<td WIDTH="100">$&nbsp;</td>
+
+<td>The start of a new record&nbsp;</td>
+</tr>
+
+<tr>
+<td>CaF&nbsp;</td>
+
+<td>The name of the compound, max 70 chars&nbsp;</td>
+</tr>
+
+<tr>
+<td>DIA&nbsp;</td>
+
+<td>Grid type. Supported type are DIA, HEX, BCC, FCC and MUU for all others.&nbsp; ("muu" if Finnish for "other" - thanks/blame to Jussi Sillanpää on this feature...)</td>
+</tr>
+
+<tr>
+<td>250&nbsp;</td>
+
+<td>Debye temperature, zero if N/A&nbsp;</td>
+</tr>
+
+<tr>
+<td>2&nbsp;</td>
+
+<td>Number of elements in the compound&nbsp;</td>
+</tr>
+
+<tr>
+<td>4.22&nbsp;</td>
+
+<td>grid length, followed by height (HEX, MUU), width (MUU) and number
+of atoms in the simulation cell&nbsp;</td>
+</tr>
+
+<tr>
+<td>1
+<br>1
+<br>etc.&nbsp;</td>
+
+<td>Atom types&nbsp;</td>
+</tr>
+
+<tr>
+<td>29&nbsp;
+<br>etc.&nbsp;</td>
+
+<td>Atomic number of atom type 1...n&nbsp;</td>
+</tr>
+
+<tr>
+<td>58.61&nbsp;
+<br>etc.&nbsp;</td>
+
+<td>Mass of atom type 1...n, followed by the coordinates of the atoms in
+the simulation cell (MUU;x1,y1,z1,...)&nbsp;</td>
+</tr>
+
+<tr>
+<td>#&nbsp;</td>
+
+<td>End of the record&nbsp;</td>
+</tr>
+</table>
+
+
+<p>Should you add any new compounds, please post me your compound file
+so that it can be distributed to other users.
+<h3>
+<a NAME="incidence"></a>Notes on incidence of the atom</h3>
+<i>For experienced mdh users only: </i>There are a number of ways in which
+the atom can enter a crystal. The initial position of the atom is determined
+by six parameters:
+<br><tt>reccalc->Startmin.x, reccalc->Startmax.x,</tt>
+<br><tt>reccalc->Startmin.y, reccalc->Startmax.y,</tt>
+<br><tt>reccalc->Startmin.z, reccalc->Startmax.z,</tt>
+
+<p>which give the corners of a box within which the position of the recoil
+atom is selected randomly. There is now weighting on the positions, all
+positions are selected with equal probability. Usually it is advisable
+to have the inital position somewhat outside the cell, for instance <tt>reccalc->Startmin.z:=
+-3.0, reccalc->Startmax.z:= -3.0 </tt>. The x and y box limits are usually
+well advised to be set to the size of one unit cell in the crystal.
+
+<p>To find out what the default values of these are, look into the source
+code of <b><tt><a href="http://beam.helsinki.fi/~jypeltol/mdrangeV1.01a/readin.c">readin.c</a></tt></b>,
+and at the standard output file
+<b><tt><a href="http://beam.helsinki.fi/~jypeltol/mdrangeV1.01a/startdata.out">startdata.out</a></tt></b>.
+
+<p>The initial direction selection process is somewhat complex. If the
+parameters <tt>reccalc->Fiimax</tt> and <tt>reccalc->Thetamax</tt> are
+<b>not</b>
+given, or are equal to zero, the inital direction fii and theta are set
+to
+<tt>reccalc->Fii0</tt> and <tt>reccalc->Theta0</tt>. Theta is the angle
+from the normal of the simulation cell surface (i.e. from the z axis),
+and fii is the rotation angle. Both are input in units of degrees, but
+are in radians internally in the program.
+
+<p>If <tt>reccalc->Fiimax</tt> and <tt>reccalc->Thetamax</tt> are given
+and are nonzero, fii and theta are selected randomly. Fii is selected between
+Fii0 and Fiimax, Theta between -Thetamax and Theta0 or between Theta0 and
+Thetamax, using the correct weighting. To find out exactly how this is
+done, look into the source code of <b><tt><a href="http://beam.helsinki.fi/~jypeltol/mdrangeV1.01a/recoil.c">recoil.c</a></tt></b>
+
+<p><a href="#begin">Back to beginning of document</a>
+
+<h2> References cited </h2>
+
+<p>
+[Maz91]  A. M. Mazzone,
+       Interatomic Potentials in Silicon,
+       Phys. Stat. Sol. (b) 165, 395 (1991)
+       <ul> <li> Good enough to calculate displacements in Si at low temperatures, should not be used for anything else </ul>
+
+
+<p>
+[ZBL] J. F. Ziegler, J. P. Biersack, and U. Littmark,
+       The Stopping and Range of Ions in Matter, 1985,
+       <ul> <li> The classic book in the field </ul>
+
+
+<p>[Sil00]
+ J. Sillanpää,  K. Nordlund, and J. Keinonen, <i> Electronic stopping of Silicon from a 3D Charge Distribution</i>, Phys. Rev. B <b> 62</b>, 3109 (2000).
+
+
+<p>
+[Cai96] D. Cai, N. Grønbech-Jensen, C. M. Snell, and K. M. Beardmore,
+       Phenomenological electronic stopping-power model for molecular
+      dynamics and Monte Carlo simulation of ion implantation into silicon,
+       Phys. Rev. B <b>54</b>, 17147 (1996)
+
+<p>
+[B98] K. M. Beardmore and N. Gronbech-Jensen,
+     An Efficient Molecular Dynamics Scheme for the Calculation of Dopant
+     Profiles due to Ion Implantation,
+     Phys. Rev. E <b>57</b>, 7278 (1998).
+        <li> The original reed paper
+
+<p>
+[Sil99] J. Sillanpää, K. Nordlund, and J. Keinonen, Channeling in
+     manufacturing sharp junctions: a molecular dynamics simulation study,
+     Physica Scripta T79, 272 (1999).
+	<li> Our first implementation of a rare-event algorithm
+
+<p>
+[Ave98] R. S. Averback and T. Diaz de la Rubia,
+      Displacement damage in irradiated metals and semiconductors,
+      in Solid State Physics, edited by H. Ehrenfest and F. Spaepen,
+      volume 51, pages 281--402, Academic Press, New York, 1998.
+      <li> A very nice review of irradiation effects
+<p>
+[Nor98] K. Nordlund, L. Wei, Y. Zhong, and R. S. Averback,
+        Role of electron-phonon coupling on collision cascade development in
+        Ni, Pd and Pt, Phys. Rev. B (Rapid Comm.) 57, 13965 (1998).
+	<li> Describes one use of primary recoil spectra
+
+
+
+
+<h2> Other relevant references </h2>
+
+<p> 
+[5]  K. Nordlund, Molecular dynamics simulation of ion ranges in the 1 --
+    100 keV energy range, Comput. Mater. Sci. 3, 448 (1995).<br>
+<ul>
+        <li> The original paper on the method, and the basic paper to
+          cite for MDRANGE
+</ul>
+
+<p>
+[9] P. Haussalo, K. Nordlund, and J. Keinonen, Stopping of 5 -- 100 keV
+    helium in tantalum, niobium, tungsten, and AISI 316L steel, Nucl. Instr.
+    Meth. Phys. Res. B 111, 1 (1996). <br>
+<ul>
+        <li> Explains how the nuclear stopping power can be evaluated
+          from MDRANGE
+</ul>
+
+
+<p>
+[58] J. Sillanpää, J. Peltola, K. Nordlund, J. Keinonen, and M. J. Puska, 
+     Electronic stopping calculated using explicit phase shift factors, Phys.
+     Rev. B 63, 134113 (2000). <br>
+<ul>
+        <li> introduces the "Puska" or PENR pair-specific stopping model
+</ul>
+
+
+<p>
+[78] J. Peltola, K. Nordlund, and J. Keinonen, Effects of damage build-up
+     in range profiles in crystalline Si; molecular dynamics simulations, Nucl.
+      Instr. Meth. Phys. Res. B (2002), accepted for publication. <br>
+<ul>
+        <li> the MDRANGE damage buildup model
+</ul>
+
+
+<p>
+[92] J. Peltola, K. Nordlund, and J. Keinonen, Molecular dynamics
+     simulation method for calculating fluence-dependent range profiles, Nucl.
+      Instr. Meth. Phys. Res. B (2002), COSIRES 2002 conference paper, submitted
+     for publication.<br>
+<ul>
+
+
+</body>
+</html>
